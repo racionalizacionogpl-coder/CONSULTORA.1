@@ -1,0 +1,2159 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kipu Consultores · Servicios</title>
+<meta name="description" content="Consultora peruana en gestión por procesos para entidades públicas y empresas privadas. Documentar, procedimentar, medir y mejorar: el ciclo de Deming aplicado a su organización, alineado con la Norma Técnica N.º 002-2025-PCM/SGP.">
+<meta name="theme-color" content="#0D1A26">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="Kipu Consultores · Gestión por Procesos">
+<meta property="og:description" content="Documentar, procedimentar, medir y mejorar. Implementamos la gestión por procesos en entidades públicas y empresas privadas.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 16V2a14 14 0 0 1 14 14z' fill='%233341A6'/%3E%3Cpath d='M16 16h14a14 14 0 0 1-14 14z' fill='%230D7566'/%3E%3Cpath d='M16 16v14A14 14 0 0 1 2 16z' fill='%239A6500'/%3E%3Cpath d='M16 16H2A14 14 0 0 1 16 2z' fill='%23A3123A'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%230D1A26'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Kipu Consultores",
+  "description": "Consultora en gestión por procesos para entidades públicas y empresas privadas: documentar, procedimentar, medir y mejorar.",
+  "areaServed": "PE",
+  "address": {"@type": "PostalAddress", "addressLocality": "Lima", "addressCountry": "PE"},
+  "knowsAbout": ["Gestión por procesos", "Ciclo de Deming PHVA", "Norma Técnica N.º 002-2025-PCM/SGP", "BPMN 2.0", "Indicadores KPI", "OKR", "Automatización de procesos", "ISO 9001"],
+  "employee": [
+    {"@type": "Person", "name": "José Antonio Chumacero Calle", "jobTitle": "Gerente General", "honorificSuffix": "Doctor en Economía"},
+    {"@type": "Person", "name": "Álvaro Rojas Carnero", "jobTitle": "Subgerente"},
+    {"@type": "Person", "name": "Isabel Flores Guamaní", "jobTitle": "Especialista en Automatización de Procesos"},
+    {"@type": "Person", "name": "Oriol Romero Saavedra", "jobTitle": "Especialista en Indicadores, KPI y OKR"},
+    {"@type": "Person", "name": "Luis Valarenzo", "jobTitle": "Desarrollador Full Stack"}
+  ]
+}
+</script>
+<style>
+/* Layout: editorial consultancy. An ink band opens with the Deming wheel climbing the slope of maturity; white reading sections follow on a wide grid; four natural-dye colours (indigo, chilca green, q'olle ochre, cochineal) mark Documentar · Procedimentar · Medir · Mejorar wherever they appear. */
+:root{
+  --bg:#FFFFFF; --bg-alt:#F1F4F7; --surface:#FFFFFF;
+  --fg:#0F1B26; --fg-2:#3F4C59; --fg-3:#64717F;
+  --line:#DCE2E8; --line-2:#BAC4CE;
+  --accent:#A3123A; --accent-hi:#83102E; --accent-soft:#F8E8ED; --on-accent:#FFFFFF;
+  --p1:#3341A6; --p2:#0D7566; --p3:#946100; --p4:#A3123A; --on-p:#FFFFFF;
+  --p1-soft:#E9EBF8; --p2-soft:#E0F1ED; --p3-soft:#F6EEDC; --p4-soft:#F8E8ED;
+  --band:#0D1A26; --band-2:#16283A; --band-fg:#F2F5F8; --band-fg-2:#A9B7C5; --band-line:rgba(242,245,248,.15);
+  --b1:#8E9AF5; --b2:#43C9B2; --b3:#E9B64C; --b4:#F2607F;
+  --shadow:0 1px 2px rgba(15,27,38,.06),0 12px 32px -8px rgba(15,27,38,.16);
+  --f-display:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --f-body:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --wrap:1240px; --gut:clamp(16px,4vw,44px); --r:4px; --hdr:68px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A131C; --bg-alt:#0F1B27; --surface:#132230;
+    --fg:#E8EDF2; --fg-2:#B3BFCB; --fg-3:#8794A2;
+    --line:#223241; --line-2:#36485A;
+    --accent:#F2607F; --accent-hi:#FF8AA3; --accent-soft:#3A1622; --on-accent:#1A070D;
+    --p1:#929EF6; --p2:#4BD0B9; --p3:#EDBD58; --p4:#F2607F; --on-p:#0A131C;
+    --p1-soft:#1C2249; --p2-soft:#0E2F2A; --p3-soft:#33280D; --p4-soft:#3A1622;
+    --band:#060D14; --band-2:#102030; --band-fg:#F2F5F8; --band-fg-2:#A9B7C5; --band-line:rgba(242,245,248,.13);
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -8px rgba(0,0,0,.6);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A131C; --bg-alt:#0F1B27; --surface:#132230;
+  --fg:#E8EDF2; --fg-2:#B3BFCB; --fg-3:#8794A2;
+  --line:#223241; --line-2:#36485A;
+  --accent:#F2607F; --accent-hi:#FF8AA3; --accent-soft:#3A1622; --on-accent:#1A070D;
+  --p1:#929EF6; --p2:#4BD0B9; --p3:#EDBD58; --p4:#F2607F; --on-p:#0A131C;
+  --p1-soft:#1C2249; --p2-soft:#0E2F2A; --p3-soft:#33280D; --p4-soft:#3A1622;
+  --band:#060D14; --band-2:#102030; --band-fg:#F2F5F8; --band-fg-2:#A9B7C5; --band-line:rgba(242,245,248,.13);
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px -8px rgba(0,0,0,.6);
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hdr) + 16px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:inherit}
+h1,h2,h3,h4{margin:0;font-weight:500;text-wrap:balance}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.band :focus-visible,.hdr :focus-visible{outline-color:var(--b4)}
+[hidden]{display:none!important}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:16px;top:-60px;z-index:200;background:var(--accent);color:var(--on-accent);padding:10px 16px;text-decoration:none;font-weight:600;border-radius:var(--r)}
+.skip:focus{top:10px}
+.num{font-variant-numeric:tabular-nums}
+
+/* ---------- Type ---------- */
+.eyebrow{font-family:var(--f-mono);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-3);display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:24px;height:2px;background:var(--accent);flex:0 0 24px}
+.band .eyebrow{color:var(--band-fg-2)}
+.band .eyebrow::before{background:var(--b4)}
+.h2{font-family:var(--f-display);font-size:clamp(34px,4.4vw,56px);line-height:1.06;letter-spacing:-.018em;font-weight:400}
+.h2 em{font-style:italic}
+.lead{font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:var(--fg-2);max-width:64ch}
+.band .lead{color:var(--band-fg-2)}
+.fine{font-size:13.5px;line-height:1.5;color:var(--fg-3)}
+.band .fine{color:var(--band-fg-2)}
+.sec{padding-block:clamp(72px,9vw,128px)}
+.sec-head{display:grid;gap:20px;max-width:860px;margin-bottom:clamp(40px,5vw,64px)}
+.alt{background:var(--bg-alt)}
+.band{background:var(--band);color:var(--band-fg)}
+
+/* ---------- Buttons & links ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 15px/1.2 var(--f-body);padding:15px 22px;border-radius:var(--r);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
+.btn .arr{transition:transform .2s;display:inline-block}
+.btn:hover .arr{transform:translateX(3px)}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{background:var(--accent-hi)}
+.btn-ghost{background:transparent;color:var(--fg);border-color:var(--line-2)}
+.btn-ghost:hover{border-color:var(--fg)}
+.band .btn-primary,.hdr .btn-primary{background:var(--b4);color:var(--band)}
+.band .btn-primary:hover,.hdr .btn-primary:hover{background:var(--band-fg)}
+.band .btn-ghost{color:var(--band-fg);border-color:var(--band-line)}
+.band .btn-ghost:hover{border-color:var(--band-fg)}
+.link{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--accent);text-decoration:none;border:0;background:none;padding:0 0 2px;cursor:pointer;box-shadow:inset 0 -1px 0 currentColor}
+.link:hover{color:var(--accent-hi)}
+.band .link{color:var(--b4)}
+
+/* ---------- Header ---------- */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:var(--band);color:var(--band-fg);border-bottom:1px solid var(--band-line);transition:box-shadow .25s}
+.hdr.scrolled{box-shadow:0 10px 30px -12px rgba(0,0,0,.45)}
+.hdr-in{display:flex;align-items:center;gap:20px;height:var(--hdr)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;flex:0 0 auto}
+.brand svg{width:32px;height:32px;flex:0 0 32px}
+.brand-txt{display:grid;line-height:1}
+.brand-name{font-family:var(--f-display);font-size:26px;letter-spacing:.01em}
+.brand-sub{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--band-fg-2);margin-top:4px}
+.nav{display:flex;align-items:center;gap:2px;margin-left:auto}
+.nav a,.nav>button{font:500 14.5px/1 var(--f-body);color:var(--band-fg);text-decoration:none;background:none;border:0;padding:11px 12px;cursor:pointer;border-radius:3px;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.nav a:hover,.nav>button:hover,.nav>button[aria-expanded="true"]{background:var(--band-2)}
+.nav a.is-active{box-shadow:inset 0 -2px 0 var(--b4)}
+.chev{width:9px;height:9px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .2s}
+[aria-expanded="true"] .chev{transform:translateY(1px) rotate(-135deg)}
+.hdr-cta{margin-left:10px;padding:12px 16px;font-size:14px}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--band-line);color:var(--band-fg);border-radius:var(--r);padding:10px 14px;font:600 14px/1 var(--f-body);cursor:pointer;align-items:center;gap:10px}
+.burger{width:18px;height:12px;position:relative;display:inline-block}
+.burger::before,.burger::after,.burger i{content:"";position:absolute;left:0;right:0;height:1.5px;background:currentColor;transition:transform .2s,opacity .2s}
+.burger::before{top:0}.burger i{top:5px}.burger::after{bottom:0}
+[aria-expanded="true"] .burger::before{transform:translateY(5px) rotate(45deg)}
+[aria-expanded="true"] .burger i{opacity:0}
+[aria-expanded="true"] .burger::after{transform:translateY(-5.5px) rotate(-45deg)}
+
+.mega{position:absolute;left:0;right:0;top:100%;background:var(--band-2);border-bottom:1px solid var(--band-line);box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
+.mega-in{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) minmax(0,1.15fr);gap:0;padding-block:32px 36px}
+.mega-ph{padding:4px 22px 4px 0;margin-right:22px;border-right:1px solid var(--band-line);text-decoration:none;color:inherit;display:grid;gap:8px;align-content:start}
+.mega-ph:hover .mega-name{color:var(--c)}
+.mega-k{font:500 11.5px var(--f-mono);letter-spacing:.12em;color:var(--c);text-transform:uppercase}
+.mega-name{font-family:var(--f-display);font-size:24px;transition:color .2s}
+.mega-ph p{font-size:14px;line-height:1.5;color:var(--band-fg-2)}
+.mega-side{display:grid;gap:14px;align-content:start}
+.mega-side h4{font:500 11.5px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--band-fg-2)}
+.mega-side ul{display:grid;gap:4px}
+.mega-side a{text-decoration:none;font-size:15px}
+.mega-side a:hover{color:var(--b4)}
+.mega-feat{margin-top:6px;padding:16px 18px;border:1px solid var(--band-line);border-radius:var(--r);text-decoration:none;display:grid;gap:4px}
+.mega-feat strong{font-family:var(--f-display);font-weight:500;font-size:19px}
+.mega-feat span{font-size:13.5px;color:var(--band-fg-2)}
+.mega-feat:hover{border-color:var(--b4)}
+
+.mnav{position:fixed;left:0;right:0;bottom:0;top:calc(var(--hdr) + env(safe-area-inset-top,0px));z-index:59;background:var(--band);color:var(--band-fg);overflow-y:auto;padding-bottom:env(safe-area-inset-bottom,0px)}
+.mnav-in{display:grid;gap:4px;padding-block:20px 40px}
+.mnav a{font-family:var(--f-display);font-size:28px;text-decoration:none;padding:8px 0;border-bottom:1px solid var(--band-line)}
+.mnav .mnav-ph{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding-block:12px}
+.mnav .mnav-ph a{font-family:var(--f-body);font-size:16px;font-weight:600;border:1px solid var(--band-line);border-radius:var(--r);padding:12px 14px;display:flex;gap:10px;align-items:center}
+.mnav .mnav-ph a::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--c);flex:0 0 10px}
+.mnav .btn{margin-top:18px;font-family:var(--f-body)}
+@media (max-width:1120px){.nav,.hdr-cta{display:none}.menu-btn{display:inline-flex}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden}
+.hero-in{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);gap:clamp(24px,4vw,64px);align-items:center;padding-block:clamp(56px,8vw,104px) clamp(36px,5vw,60px)}
+.hero h1{font-family:var(--f-display);font-weight:400;font-size:clamp(40px,5.3vw,76px);line-height:1.02;letter-spacing:-.028em}
+.hero h1 .l1,.hero h1 .l2{display:block}
+.hero h1 .l2{font-style:italic;color:var(--band-fg-2);margin-top:.08em}
+.hero h1 u{text-decoration:none;background-image:linear-gradient(var(--c),var(--c));background-repeat:no-repeat;background-size:100% .07em;background-position:0 92%}
+.hero .lead{margin-top:30px;max-width:54ch}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+.hero-meta{margin-top:30px;display:flex;flex-wrap:wrap;gap:8px 22px;font:500 12px var(--f-mono);letter-spacing:.06em;color:var(--band-fg-2)}
+.hero-meta span{display:inline-flex;align-items:center;gap:8px}
+.hero-meta span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--b2)}
+.hero-art{position:relative;min-width:0}
+.wheel{display:block;width:100%;height:auto}
+.w-ground{fill:var(--band-2)}
+.w-ramp{stroke:var(--band-fg-2);stroke-width:1.5}
+.w-tick{stroke:var(--band-fg-2);stroke-width:1}
+.w-lvl,.w-ramp-l,.w-wedge-l{fill:var(--band-fg-2);font:500 10.5px var(--f-mono);letter-spacing:.1em}
+.w-wedge{fill:var(--band-fg)}
+.w-ring{transform-origin:250.6px 183.3px;animation:spin 70s linear infinite}
+.w-ring-c{fill:none;stroke:var(--band-line);stroke-width:1.2;stroke-dasharray:2 7}
+.w-chev{fill:none;stroke:var(--band-fg-2);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.w-seg.p1{fill:var(--b1)}.w-seg.p2{fill:var(--b2)}.w-seg.p3{fill:var(--b3)}.w-seg.p4{fill:var(--b4)}
+.w-name{fill:var(--band);font:600 11px var(--f-mono);letter-spacing:.13em}
+.w-verb{fill:var(--band);font:italic 400 15px var(--f-display)}
+.w-hub{fill:var(--band);stroke:var(--band-line)}
+.w-hub-t{fill:var(--band-fg);font:500 21px var(--f-display);letter-spacing:.08em}
+.w-hub-s{fill:var(--band-fg-2);font:500 8.5px var(--f-mono);letter-spacing:.24em}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero h1 .l1{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 .l2{animation:rise .7s .12s cubic-bezier(.2,.7,.2,1) both}
+.hero .lead,.hero-ctas{animation:rise .7s .24s cubic-bezier(.2,.7,.2,1) both}
+
+.phase-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--band-line)}
+.ps{position:relative;display:grid;gap:6px;align-content:start;padding:22px 22px 28px;border-right:1px solid var(--band-line);text-decoration:none;color:inherit;transition:background-color .2s}
+.ps:first-child{padding-left:0}
+.ps:last-child{border-right:0}
+.ps::before{content:"";position:absolute;left:0;right:0;top:-1px;height:3px;background:var(--c);transform:scaleX(.18);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.ps:hover::before,.ps:focus-visible::before{transform:scaleX(1)}
+.ps-k{font:500 11.5px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--c)}
+.ps-name{font-family:var(--f-display);font-size:clamp(22px,2.2vw,28px);line-height:1.1}
+.ps-d{font-size:14px;line-height:1.5;color:var(--band-fg-2)}
+@media (max-width:960px){
+  .hero-in{grid-template-columns:minmax(0,1fr)}
+  .hero-art{max-width:560px}
+  .phase-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ps:nth-child(2){border-right:0}
+  .ps:nth-child(3){padding-left:0}
+  .ps:nth-child(-n+2){border-bottom:1px solid var(--band-line)}
+}
+@media (max-width:480px){.ps{padding:18px 14px 22px}.ps:nth-child(odd){padding-left:0}}
+
+/* ---------- Helper (¿en qué podemos ayudarle?) ---------- */
+.helper{padding-block:clamp(44px,6vw,72px)}
+.helper-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:start}
+.helper-sentence{font-family:var(--f-display);font-size:clamp(24px,3.2vw,42px);line-height:1.3;letter-spacing:-.01em;margin-top:18px}
+.sel{position:relative;display:inline-block;max-width:100%;vertical-align:baseline}
+.sel select{width:auto;appearance:none;-webkit-appearance:none;background:transparent;border:0;border-bottom:2px solid var(--accent);border-radius:0;color:var(--accent);font:italic 400 1em/1.25 var(--f-display);padding:0 1.1em 2px 0;cursor:pointer;max-width:100%;text-overflow:ellipsis}
+.sel select:hover{border-bottom-color:var(--fg)}
+.sel::after{content:"";position:absolute;right:.25em;top:50%;width:.32em;height:.32em;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.sel option{font-style:normal;color:var(--fg);background:var(--surface);font-family:var(--f-body);font-size:16px}
+.helper-out{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:clamp(22px,3vw,32px);display:grid;gap:18px}
+.ho-k{font:500 11.5px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3)}
+.ho-t{font-family:var(--f-display);font-size:clamp(24px,2.4vw,30px);line-height:1.15;margin-top:6px}
+.ho-d{color:var(--fg-2);font-size:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;font:500 12.5px var(--f-mono);letter-spacing:.04em;padding:6px 10px 6px 8px;border-radius:100px;background:var(--cs);color:var(--c)}
+.chip::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c)}
+.chip.off{background:transparent;color:var(--fg-3);box-shadow:inset 0 0 0 1px var(--line)}
+.chip.off::before{background:var(--line-2)}
+.ho-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 24px;border-top:1px solid var(--line);padding-top:16px}
+.ho-facts dt{font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3)}
+.ho-facts dd{margin:4px 0 0;font-size:15px;line-height:1.45}
+.ho-facts .wide{grid-column:1/-1}
+.ho-actions{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+@media (max-width:900px){.helper-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- Services ---------- */
+.svc{display:grid;grid-template-columns:minmax(220px,300px) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.svc-tabs{display:grid;gap:0;position:sticky;top:calc(var(--hdr) + 24px);border-top:1px solid var(--line)}
+.tab{display:grid;grid-template-columns:44px minmax(0,1fr);grid-template-rows:auto auto;column-gap:10px;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:18px 12px 18px 0;cursor:pointer;position:relative;color:var(--fg-2)}
+.tab::before{content:"";position:absolute;left:-14px;top:14px;bottom:14px;width:3px;background:var(--c);transform:scaleY(0);transition:transform .25s}
+.tab .t-n{grid-row:1/3;font:500 13px var(--f-mono);color:var(--c);padding-top:7px}
+.tab .t-name{font-family:var(--f-display);font-size:26px;line-height:1.15;color:var(--fg)}
+.tab .t-sub{font-size:13.5px;color:var(--fg-3)}
+.tab:hover .t-name{color:var(--c)}
+.tab[aria-selected="true"]::before{transform:scaleY(1)}
+.tab[aria-selected="true"] .t-name{color:var(--c)}
+.panel{border-top:3px solid var(--c);padding-top:clamp(22px,3vw,34px)}
+.panel-k{font:500 12px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--c)}
+.panel h3{font-family:var(--f-display);font-weight:400;font-size:clamp(36px,4vw,54px);line-height:1.05;letter-spacing:-.015em;margin-top:10px}
+.panel-q{font-family:var(--f-display);font-style:italic;font-size:clamp(20px,2vw,25px);line-height:1.35;color:var(--fg-2);margin-top:14px;max-width:46ch}
+.panel-intro{margin-top:18px;color:var(--fg-2);max-width:68ch}
+.panel-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,3vw,44px);margin-top:clamp(28px,3vw,40px)}
+.panel h4,.cap h4,.sector h4,.case h4{font:600 12px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3);margin-bottom:14px}
+.ticks{display:grid;gap:12px}
+.ticks li{position:relative;padding-left:26px;line-height:1.5}
+.ticks li::before{content:"";position:absolute;left:2px;top:.55em;width:12px;height:6px;border-left:2px solid var(--c,var(--accent));border-bottom:2px solid var(--c,var(--accent));transform:rotate(-45deg)}
+.deliv{display:grid;gap:8px}
+.deliv li{display:flex;gap:12px;align-items:flex-start;background:var(--cs);border-radius:var(--r);padding:11px 14px;font-size:15.5px;line-height:1.4}
+.deliv li::before{content:"";flex:0 0 12px;height:15px;margin-top:2px;border:1.5px solid var(--c);border-radius:1px;background:linear-gradient(var(--c),var(--c)) 2px 4px/6px 1.5px no-repeat,linear-gradient(var(--c),var(--c)) 2px 8px/6px 1.5px no-repeat}
+.facts{display:grid;gap:14px;margin:22px 0 0;border-top:1px solid var(--line);padding-top:18px}
+.facts div{display:grid;grid-template-columns:130px minmax(0,1fr);gap:12px}
+.facts dt{font:500 11.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fg-3);padding-top:3px}
+.facts dd{margin:0;font-size:15.5px;line-height:1.5}
+.panel-foot{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;margin-top:30px;padding-top:24px;border-top:1px solid var(--line)}
+@media (max-width:960px){
+  .svc{grid-template-columns:minmax(0,1fr)}
+  .svc-tabs{position:static;display:flex;overflow-x:auto;border:0;gap:8px;padding-bottom:4px;scrollbar-width:thin}
+  .tab{flex:0 0 auto;grid-template-columns:auto auto;grid-template-rows:auto;border:1px solid var(--line);border-radius:100px;padding:10px 16px;align-items:center}
+  .tab::before{display:none}
+  .tab .t-n{grid-row:auto;padding:0}
+  .tab .t-name{font-size:18px}
+  .tab .t-sub{display:none}
+  .tab[aria-selected="true"]{background:var(--c);border-color:var(--c)}
+  .tab[aria-selected="true"] .t-name,.tab[aria-selected="true"] .t-n{color:var(--on-p)}
+  .panel-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:480px){.facts div{grid-template-columns:minmax(0,1fr);gap:2px}}
+
+.caps{margin-top:clamp(64px,8vw,104px)}
+.caps-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px 40px;margin-bottom:32px}
+.caps-head h3{font-family:var(--f-display);font-weight:400;font-size:clamp(28px,3vw,38px);line-height:1.1;max-width:22ch}
+.caps-head p{max-width:52ch;color:var(--fg-2)}
+.caps-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.cap{padding:28px 26px 30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:12px;align-content:start;transition:background-color .2s}
+.cap:hover{background:var(--bg-alt)}
+.cap svg{width:34px;height:34px;stroke:var(--accent);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.cap h3{font-family:var(--f-display);font-weight:500;font-size:23px;line-height:1.2}
+.cap p{font-size:15.5px;line-height:1.55;color:var(--fg-2)}
+.cap .who{font:500 12px var(--f-mono);letter-spacing:.04em;color:var(--fg-3);margin-top:4px}
+@media (max-width:960px){.caps-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.caps-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- Method ---------- */
+.mtable-wrap{overflow-x:auto;border:1px solid var(--band-line);border-radius:var(--r)}
+.mtable{width:100%;border-collapse:collapse;min-width:820px}
+.mtable th,.mtable td{text-align:left;padding:18px 20px;border-bottom:1px solid var(--band-line);vertical-align:top}
+.mtable thead th{font:500 11.5px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--band-fg-2);background:var(--band-2)}
+.mtable tbody tr:last-child td,.mtable tbody tr:last-child th{border-bottom:0}
+.mtable tbody th{font-family:var(--f-display);font-weight:400;font-size:24px;white-space:nowrap}
+.mtable tbody th small{display:block;font:500 11.5px var(--f-mono);letter-spacing:.1em;color:var(--c);margin-bottom:4px}
+.mtable td{font-size:15.5px;line-height:1.5;color:var(--band-fg-2)}
+.mtable td.phva{font-family:var(--f-display);font-style:italic;font-size:21px;color:var(--band-fg)}
+.mtable td.phva b{font-style:normal;font-family:var(--f-mono);font-size:13px;font-weight:500;color:var(--c);margin-right:8px}
+.wedge-note{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,80px);align-items:center;margin-top:clamp(56px,7vw,88px)}
+.quote{font-family:var(--f-display);font-size:clamp(28px,3.2vw,42px);line-height:1.2;letter-spacing:-.01em}
+.quote em{color:var(--b4)}
+.wedge-note p.body{color:var(--band-fg-2);font-size:16.5px}
+.wedge-note .body+.body{margin-top:14px}
+.rules{margin-top:clamp(56px,7vw,88px)}
+.rules h3{font-family:var(--f-display);font-weight:400;font-size:clamp(26px,2.6vw,34px);margin-bottom:26px}
+.rules-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(24px,3vw,44px)}
+.rule{border-top:1px solid var(--band-line);padding-block:22px 28px;display:grid;gap:8px;align-content:start}
+.rule h4{font-family:var(--f-body);font-weight:600;font-size:17px;line-height:1.3}
+.rule p{font-size:15px;line-height:1.55;color:var(--band-fg-2)}
+.rule code{font-family:var(--f-mono);font-size:13px;color:var(--b3)}
+@media (max-width:900px){.wedge-note{grid-template-columns:minmax(0,1fr)}.rules-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.rules-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- Sectors ---------- */
+.sectors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,36px)}
+.sector{border:1px solid var(--line);border-radius:var(--r);padding:clamp(24px,3vw,40px);display:grid;gap:22px;align-content:start;background:var(--surface)}
+.sector-k{font:500 12px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.sector h3{font-family:var(--f-display);font-weight:400;font-size:clamp(30px,3vw,40px);line-height:1.1}
+.sector .who{color:var(--fg-2)}
+.sector h4{margin-bottom:12px}
+.ref{display:flex;flex-wrap:wrap;gap:8px}
+.ref span{font:500 12.5px var(--f-mono);padding:6px 10px;border:1px solid var(--line);border-radius:var(--r);color:var(--fg-2)}
+.edu{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px 32px;align-items:center;background:var(--bg-alt);border:0}
+.edu p{color:var(--fg-2);max-width:72ch}
+.edu h3{font-size:clamp(24px,2.4vw,30px)}
+@media (max-width:860px){.sectors{grid-template-columns:minmax(0,1fr)}.edu{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- Experience ---------- */
+.case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:start}
+.kipu{display:grid;gap:14px}
+.kipu-svg{display:block;width:100%;height:auto}
+.k-main{fill:none;stroke:var(--fg-3);stroke-width:5;stroke-linecap:round}
+.k-guide{stroke:var(--line-2);stroke-width:1;stroke-dasharray:2 5}
+.k-pv{fill:var(--fg-3);font:500 11px var(--f-mono)}
+.k-cord{fill:none;stroke-width:4;stroke-linecap:round}
+.k-tassel{stroke-width:2;stroke-linecap:round}
+.c-k1{stroke:var(--p1)}.c-k2{stroke:var(--p2)}.c-k3{stroke:var(--p3)}.c-k4{stroke:var(--p4)}
+.f-k1{fill:var(--p1)}.f-k2{fill:var(--p2)}.f-k3{fill:var(--p3)}.f-k4{fill:var(--p4)}
+.k-knot{stroke:var(--bg-alt);stroke-width:1.6}
+.k-turn{stroke:var(--bg-alt);stroke-width:1.3}
+.k-labels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));text-align:center}
+.k-labels li{display:grid;gap:4px;padding-inline:4px}
+.k-labels b{font-family:var(--f-display);font-weight:400;font-size:clamp(26px,3vw,38px);line-height:1;color:var(--c)}
+.k-labels span{font-size:13px;line-height:1.35;color:var(--fg-2)}
+.k-labels i{font:500 10.5px var(--f-mono);font-style:normal;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3)}
+.kipu figcaption{font-size:14px;line-height:1.55;color:var(--fg-3);border-top:1px solid var(--line);padding-top:14px}
+.case-card{display:grid;gap:26px}
+.case-meta{display:flex;flex-wrap:wrap;gap:8px}
+.case-meta span{font:500 12px var(--f-mono);letter-spacing:.04em;padding:5px 10px;border-radius:100px;background:var(--surface);border:1px solid var(--line);color:var(--fg-2)}
+.case-card h3{font-family:var(--f-display);font-weight:400;font-size:clamp(28px,2.8vw,36px);line-height:1.15}
+.case-card p{color:var(--fg-2)}
+.case h4{margin-bottom:12px}
+.scen-head{margin-top:clamp(64px,8vw,104px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px 40px;margin-bottom:28px}
+.scen-head h3{font-family:var(--f-display);font-weight:400;font-size:clamp(28px,3vw,38px);line-height:1.1}
+.scen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.scen article{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:14px}
+.scen article .chips{margin-top:auto;padding-top:6px}
+.scen .tag{font:500 11px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3)}
+.scen h4{font-family:var(--f-display);font-weight:500;font-size:24px;line-height:1.2}
+.scen dl{display:grid;gap:12px;margin:0}
+.scen dt{font:600 11.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fg-3)}
+.scen dd{margin:3px 0 0;font-size:15px;line-height:1.5;color:var(--fg-2)}
+@media (max-width:960px){.case{grid-template-columns:minmax(0,1fr)}.scen{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.k-labels{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px;text-align:left}.k-labels li{border-left:3px solid var(--c);padding-left:10px}.k-labels span{font-size:13px}}
+@media (max-width:400px){.brand-sub{display:none}.menu-btn{padding:10px 12px}}
+
+/* ---------- Diagnostic ---------- */
+.diag{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,4vw,56px);align-items:start}
+.qgroup{margin-bottom:34px}
+.qgroup-h{display:flex;align-items:baseline;gap:12px;padding-bottom:12px;border-bottom:2px solid var(--c)}
+.qgroup-h b{font:500 12.5px var(--f-mono);color:var(--c)}
+.qgroup-h h3{font-family:var(--f-display);font-weight:500;font-size:25px}
+.qgroup-h span{margin-left:auto;font:500 12px var(--f-mono);color:var(--fg-3)}
+.q{border:0;margin:0;padding:18px 0;border-bottom:1px solid var(--line);min-width:0}
+.q legend{float:left;width:100%;padding:0 0 12px;font-size:16.5px;line-height:1.45}
+.seg{clear:both;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line-2);border-radius:var(--r);overflow:hidden}
+.seg label{position:relative;display:block;cursor:pointer;min-width:0}
+.seg input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.seg span{display:flex;align-items:center;justify-content:center;text-align:center;height:100%;min-height:44px;padding:8px 6px;font-size:13.5px;line-height:1.25;color:var(--fg-2);border-right:1px solid var(--line-2);transition:background-color .15s,color .15s}
+.seg label:last-child span{border-right:0}
+.seg label:hover span{background:var(--bg-alt)}
+.seg input:checked+span{background:var(--c);color:var(--on-p);font-weight:600}
+.seg input:focus-visible+span{outline:2px solid var(--fg);outline-offset:-4px}
+.res{position:static;background:var(--band);color:var(--band-fg);border-radius:var(--r);padding:clamp(22px,3vw,32px);display:grid;gap:22px}
+.res-tag{font:500 11.5px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--band-fg-2);display:flex;gap:8px;align-items:center}
+.res-tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--b3);flex:0 0 8px}
+.res-tag.mine::before{background:var(--b2)}
+.res-level{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:center}
+.res-n{font-family:var(--f-display);font-size:88px;line-height:.8;letter-spacing:-.04em}
+.res-n small{font:500 13px var(--f-mono);letter-spacing:.1em;display:block;color:var(--band-fg-2);margin-bottom:10px}
+.res-lname{font-family:var(--f-display);font-size:26px;line-height:1.1}
+.res-ldesc{font-size:14.5px;line-height:1.5;color:var(--band-fg-2);margin-top:6px}
+.scale{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}
+.scale span{height:6px;border-radius:2px;background:var(--band-line)}
+.scale span.on{background:var(--band-fg)}
+.bars{display:grid;gap:12px}
+.bar{display:grid;grid-template-columns:120px minmax(0,1fr) 44px;gap:12px;align-items:center;font-size:14px}
+.bar .tr{height:8px;background:var(--band-2);border-radius:2px;overflow:hidden}
+.bar .tr i{display:block;height:100%;background:var(--bc);border-radius:2px;transition:width .5s cubic-bezier(.2,.7,.2,1)}
+.bar .pc{font:500 13px var(--f-mono);text-align:right;color:var(--band-fg-2)}
+.start{border-top:1px solid var(--band-line);padding-top:18px;display:grid;gap:6px}
+.start .k{font:500 11.5px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--band-fg-2)}
+.start p.v{font-family:var(--f-display);font-size:24px;line-height:1.2}
+.start p.v em{color:var(--bc)}
+.start p.why{font-size:14px;line-height:1.5;color:var(--band-fg-2)}
+.road{border-top:1px solid var(--band-line);padding-top:18px;display:grid;gap:14px}
+.road-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
+.road-h h4{font:500 11.5px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--band-fg-2)}
+.road-h select{background:var(--band-2);color:var(--band-fg);border:1px solid var(--band-line);border-radius:var(--r);padding:7px 10px;font-size:13.5px;max-width:100%}
+.gantt{display:grid;gap:8px}
+.g-row{display:grid;grid-template-columns:104px 52px minmax(0,1fr);gap:10px;align-items:center;font-size:13.5px}
+.g-row .lb{color:var(--band-fg);white-space:nowrap}
+.g-row .wk{font:500 12px var(--f-mono);color:var(--band-fg-2);text-align:right;white-space:nowrap}
+.g-tr{position:relative;height:16px;background:repeating-linear-gradient(90deg,transparent 0 calc(var(--tick) - 1px),var(--band-line) calc(var(--tick) - 1px) var(--tick))}
+.g-tr i{position:absolute;top:2px;bottom:2px;background:var(--bc);border-radius:2px}
+.g-tr i.ok{background:transparent;box-shadow:inset 0 0 0 1px var(--bc)}
+.g-axis{display:grid;grid-template-columns:104px 52px minmax(0,1fr);gap:10px}
+.g-axis .ax{position:relative;height:16px;font:500 10.5px var(--f-mono);color:var(--band-fg-2)}
+.g-axis .ax span{position:absolute;top:0;transform:translateX(-50%)}
+.g-axis .ax span:first-child{transform:none}
+.g-total{font-size:14px;color:var(--band-fg-2)}
+.g-total b{color:var(--band-fg);font-weight:600}
+.res .btn{width:100%}
+@media (min-width:961px) and (min-height:940px){.res{position:sticky;top:calc(var(--hdr) + 24px)}}
+@media (max-width:960px){.diag{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:480px){.seg span{font-size:12.5px;padding:8px 3px}.bar{grid-template-columns:96px minmax(0,1fr) 40px}.g-row,.g-axis{grid-template-columns:96px 46px minmax(0,1fr);gap:8px}}
+
+/* ---------- Team ---------- */
+.team{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+.person{grid-column:span 2;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:16px}
+.person.lead-p{grid-column:span 3}
+.p-top{display:flex;gap:16px;align-items:center}
+.mono-tile{flex:0 0 64px;width:64px;height:64px;border-radius:var(--r);background:var(--band);color:var(--band-fg);display:grid;place-items:center;font-family:var(--f-display);font-size:26px;letter-spacing:.02em}
+.lead-p .mono-tile{flex-basis:76px;width:76px;height:76px;font-size:31px}
+.person h3{font-family:var(--f-display);font-weight:500;font-size:clamp(22px,2vw,26px);line-height:1.15}
+.p-role{font:500 11.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-top:6px;line-height:1.4}
+.p-cred{font-size:14px;color:var(--fg-3);margin-top:2px}
+.person p.bio{font-size:15.5px;line-height:1.55;color:var(--fg-2)}
+.p-tags{display:flex;flex-wrap:wrap;gap:6px}
+.p-tags span{font-size:12.5px;padding:4px 9px;border-radius:100px;background:var(--bg-alt);color:var(--fg-2)}
+.p-phases{margin-top:auto;display:flex;gap:6px;align-items:center;font:500 11px var(--f-mono);letter-spacing:.06em;color:var(--fg-3);border-top:1px solid var(--line);padding-top:14px}
+.p-phases i{width:22px;height:6px;border-radius:2px;background:var(--line)}
+.p-phases i.on{background:var(--c)}
+.p-phases span{margin-left:6px}
+.story{margin-top:clamp(56px,7vw,88px);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,72px);align-items:start;border-top:1px solid var(--line);padding-top:clamp(32px,4vw,48px)}
+.story h3{font-family:var(--f-display);font-weight:400;font-size:clamp(28px,3vw,38px);line-height:1.12}
+.story p{color:var(--fg-2)}
+.story p+p{margin-top:14px}
+@media (max-width:1000px){.team{grid-template-columns:repeat(2,minmax(0,1fr))}.person,.person.lead-p{grid-column:span 1}.person:last-child{grid-column:1/-1}}
+@media (max-width:640px){.team{grid-template-columns:minmax(0,1fr)}.person:last-child{grid-column:auto}.story{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- Insights ---------- */
+.ins{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.icard{position:relative;display:grid;gap:12px;align-content:start;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:border-color .2s,transform .2s,box-shadow .2s;color:var(--fg)}
+.icard .stretch{all:unset;cursor:pointer}
+.icard .stretch::after{content:"";position:absolute;inset:0;z-index:1}
+.icard .stretch:focus-visible{outline:none}
+.icard:has(.stretch:focus-visible){outline:2px solid var(--accent);outline-offset:3px}
+.icard:hover h3{color:var(--accent)}
+.icard.feat:hover h3{color:var(--band-fg)}
+.icard:hover{border-color:var(--line-2);transform:translateY(-2px);box-shadow:var(--shadow)}
+.icard .tag{font:500 11px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.icard h3{font-family:var(--f-display);font-weight:500;font-size:24px;line-height:1.2}
+.icard p{font-size:15px;line-height:1.55;color:var(--fg-2)}
+.icard .meta{font:500 12px var(--f-mono);color:var(--fg-3);margin-top:6px;display:flex;gap:8px;align-items:center}
+.icard.feat{grid-column:span 2;grid-row:span 2;background:var(--band);color:var(--band-fg);border-color:var(--band);padding:clamp(28px,3vw,44px);align-content:end;min-height:340px;overflow:hidden}
+.icard.feat .tag{color:var(--b4)}
+.icard.feat h3{font-weight:400;font-size:clamp(30px,3.4vw,46px);line-height:1.08;max-width:18ch}
+.icard.feat p{color:var(--band-fg-2);font-size:16.5px;max-width:52ch}
+.icard.feat .meta{color:var(--band-fg-2)}
+.icard.feat .seal{position:absolute;right:-30px;top:-30px;width:220px;height:220px;opacity:.9}
+@media (max-width:960px){.ins{grid-template-columns:repeat(2,minmax(0,1fr))}.icard.feat{grid-row:auto}.ins .icard:last-child{grid-column:span 2}}
+@media (max-width:600px){.ins{grid-template-columns:minmax(0,1fr)}.icard.feat,.ins .icard:last-child{grid-column:auto}.icard.feat{min-height:0}.icard.feat .seal{width:150px;height:150px}}
+
+.reader{border:0;padding:0;overflow:auto;width:min(760px,calc(100% - 24px));max-height:calc(100% - 32px);border-radius:var(--r);background:var(--surface);color:var(--fg);box-shadow:0 40px 80px -20px rgba(0,0,0,.5)}
+.reader::backdrop{background:rgba(6,13,20,.62);backdrop-filter:blur(3px)}
+.reader-in{padding:clamp(24px,4vw,48px)}
+.reader-x{position:sticky;top:0;float:right;margin:-8px -8px 0 12px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--surface);cursor:pointer;display:grid;place-items:center;font-size:20px;line-height:1;color:var(--fg)}
+.reader-x:hover{border-color:var(--fg)}
+.reader .tag{font:500 11.5px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.reader h2{font-family:var(--f-display);font-weight:400;font-size:clamp(30px,4vw,44px);line-height:1.08;letter-spacing:-.012em;margin-top:12px}
+.reader .meta{font:500 12px var(--f-mono);color:var(--fg-3);margin-top:12px}
+.prose{margin-top:26px;font-size:17px;line-height:1.7;color:var(--fg-2)}
+.prose>*+*{margin-top:16px}
+.prose h3{font-family:var(--f-display);font-weight:500;font-size:24px;line-height:1.25;color:var(--fg);margin-top:30px}
+.prose strong{color:var(--fg);font-weight:600}
+.prose ol{counter-reset:it;display:grid;gap:10px}
+.prose ol>li{counter-increment:it;position:relative;padding-left:34px}
+.prose ol>li::before{content:counter(it);position:absolute;left:0;top:1px;font:500 13px/24px var(--f-mono);width:24px;height:24px;text-align:center;border-radius:50%;background:var(--accent-soft);color:var(--accent)}
+.prose ul.dots{display:grid;gap:8px}
+.prose ul.dots li{position:relative;padding-left:20px}
+.prose ul.dots li::before{content:"";position:absolute;left:4px;top:.65em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.formula{font-family:var(--f-mono);font-size:clamp(14px,1.7vw,17px);background:var(--bg-alt);border-left:3px solid var(--accent);padding:16px 18px;color:var(--fg);overflow-x:auto;white-space:nowrap}
+.prose .note{font-size:14.5px;color:var(--fg-3);border-top:1px solid var(--line);padding-top:16px}
+.prose a{color:var(--accent)}
+.reader-cta{margin-top:30px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+.ex{background:var(--bg-alt);border-radius:var(--r);padding:16px 18px;font-size:15.5px}
+.ex dt{font:600 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3)}
+.ex dd{margin:2px 0 10px}
+.ex dd:last-child{margin-bottom:0}
+
+/* ---------- Engagement ---------- */
+.models{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--band-line)}
+.model{padding:26px 26px 30px 0;margin-right:26px;border-bottom:1px solid var(--band-line);display:grid;gap:10px;align-content:start}
+.model:nth-child(3n){margin-right:0}
+.model .k{font:500 11.5px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--b3)}
+.model h3{font-family:var(--f-display);font-weight:400;font-size:27px;line-height:1.15}
+.model p{font-size:15.5px;line-height:1.55;color:var(--band-fg-2)}
+.model .fit{font-size:14px;color:var(--band-fg)}
+.model .fit b{font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--band-fg-2);display:block;margin-bottom:2px}
+.steps-h{font-family:var(--f-display);font-weight:400;font-size:clamp(26px,2.6vw,34px);margin:clamp(56px,7vw,88px) 0 30px}
+.steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;counter-reset:st}
+.step{position:relative;padding:0 18px 0 0;display:grid;gap:8px;align-content:start;counter-increment:st}
+.step::before{content:counter(st,decimal-leading-zero);font:500 13px var(--f-mono);color:var(--band);background:var(--band-fg);width:36px;height:36px;border-radius:50%;display:grid;place-items:center;position:relative;z-index:1}
+.step::after{content:"";position:absolute;left:36px;right:0;top:18px;height:1px;background:var(--band-line)}
+.step:last-child::after{display:none}
+.step h4{font-weight:600;font-size:16.5px;line-height:1.3;margin-top:8px}
+.step p{font-size:14.5px;line-height:1.5;color:var(--band-fg-2)}
+@media (max-width:1000px){.models{grid-template-columns:repeat(2,minmax(0,1fr))}.model:nth-child(3n){margin-right:26px}.model:nth-child(2n){margin-right:0}.steps{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:32px}.step:nth-child(3)::after{display:none}}
+@media (max-width:600px){.models{grid-template-columns:minmax(0,1fr)}.model{margin-right:0!important;padding-right:0}.steps{grid-template-columns:minmax(0,1fr);row-gap:0}.step{grid-template-columns:36px minmax(0,1fr);column-gap:16px;padding:0 0 24px}.step::before{grid-row:1/3}.step::after{display:block!important;left:18px;right:auto;top:36px;bottom:0;width:1px;height:auto}.step:last-child::after{display:none!important}.step h4{margin-top:6px}}
+
+/* ---------- FAQ ---------- */
+.faq{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px);align-items:start}
+.faq .sec-head{position:sticky;top:calc(var(--hdr) + 24px);margin-bottom:0}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:baseline;padding:22px 0;font-family:var(--f-display);font-size:clamp(20px,1.9vw,24px);line-height:1.3}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:400 26px/1 var(--f-mono);color:var(--accent);transition:transform .2s;flex:0 0 auto}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--accent)}
+.faq .ans{padding:0 0 24px;color:var(--fg-2);max-width:68ch;display:grid;gap:12px}
+@media (max-width:900px){.faq{grid-template-columns:minmax(0,1fr)}.faq .sec-head{position:static}}
+
+/* ---------- Contact ---------- */
+.contact{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,5vw,80px);align-items:start}
+.cinfo{display:grid;gap:0;margin-top:34px;border-top:1px solid var(--line)}
+.cinfo div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.cinfo dt{font:500 11.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fg-3);padding-top:3px}
+.cinfo dd{margin:0;font-size:16px;overflow-wrap:anywhere}
+.cinfo a{text-decoration:none;color:var(--accent);font-weight:600}
+.form{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(22px,3vw,36px);box-shadow:var(--shadow);display:grid;gap:18px}
+.form h3{font-family:var(--f-display);font-weight:400;font-size:28px}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.fld{display:grid;gap:6px;min-width:0}
+.fld label,.fld legend{font-size:14px;font-weight:600}
+.fld label i,.fld legend i{font-style:normal;color:var(--accent)}
+.fld input:not([type="checkbox"]),.fld select,.fld textarea{width:100%;background:var(--bg);border:1px solid var(--line-2);border-radius:var(--r);padding:12px 14px;font-size:16px;line-height:1.4;transition:border-color .15s,box-shadow .15s}
+.fld textarea{min-height:130px;resize:vertical}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:0;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.fld [aria-invalid="true"]{border-color:var(--accent)}
+.err{font-size:13px;color:var(--accent);min-height:0}
+fieldset.fld{border:0;padding:0;margin:0}
+.checks{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.checks label{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;padding:8px 12px;border:1px solid var(--line-2);border-radius:100px;cursor:pointer;transition:background-color .15s,border-color .15s}
+.checks input{accent-color:var(--accent);margin:0}
+.checks label:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.5;color:var(--fg-2)}
+.consent input{margin-top:3px;accent-color:var(--accent);flex:0 0 auto}
+.done{display:grid;gap:14px}
+.done h3{font-family:var(--f-display);font-weight:400;font-size:28px}
+.done pre{white-space:pre-wrap;font:13.5px/1.6 var(--f-mono);background:var(--bg-alt);border-radius:var(--r);padding:16px;max-height:280px;overflow:auto;margin:0;color:var(--fg)}
+.done .acts{display:flex;flex-wrap:wrap;gap:10px}
+@media (max-width:900px){.contact{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.row2{grid-template-columns:minmax(0,1fr)}.cinfo div{grid-template-columns:minmax(0,1fr);gap:2px}}
+
+/* ---------- Footer ---------- */
+.ftr{padding-block:64px 40px}
+.ftr-grid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(4,minmax(0,1fr));gap:32px}
+.ftr .brand{margin-bottom:16px}
+.ftr p.about{color:var(--band-fg-2);font-size:15px;max-width:36ch}
+.ftr h4{font:500 11.5px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--band-fg-2);margin-bottom:14px}
+.ftr ul{display:grid;gap:8px}
+.ftr ul a{text-decoration:none;font-size:15px;color:var(--band-fg)}
+.ftr ul a:hover{color:var(--b4)}
+.ftr-bot{margin-top:56px;padding-top:22px;border-top:1px solid var(--band-line);display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;font-size:13.5px;color:var(--band-fg-2)}
+.ftr-phases{display:flex;gap:4px;margin-top:22px}
+.ftr-phases i{width:34px;height:4px;border-radius:2px;background:var(--c)}
+@media (max-width:960px){.ftr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ftr-grid>div:first-child{grid-column:1/-1}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<!-- ================= HEADER ================= -->
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="index.html" aria-label="Kipu Consultores, descripción general">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 16V2a14 14 0 0 1 14 14z" style="fill:var(--b1)"/><path d="M16 16h14a14 14 0 0 1-14 14z" style="fill:var(--b2)"/><path d="M16 16v14A14 14 0 0 1 2 16z" style="fill:var(--b3)"/><path d="M16 16H2A14 14 0 0 1 16 2z" style="fill:var(--b4)"/><circle cx="16" cy="16" r="6" style="fill:var(--band)"/></svg>
+      <span class="brand-txt"><span class="brand-name">Kipu</span><span class="brand-sub">Gestión por procesos</span></span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <button type="button" id="mega-btn" aria-expanded="false" aria-controls="mega">Servicios <span class="chev" aria-hidden="true"></span></button>
+      <a href="#metodologia" data-spy="metodologia">Metodología</a>
+      <a href="#sectores" data-spy="sectores">Sectores</a>
+      <a href="#experiencia" data-spy="experiencia">Experiencia</a>
+      <a href="#equipo" data-spy="equipo">Equipo</a>
+      <a href="#recursos" data-spy="recursos">Recursos</a>
+      <a href="#diagnostico" data-spy="diagnostico">Autodiagnóstico</a>
+    </nav>
+    <a class="btn btn-primary hdr-cta" href="#contacto">Solicitar propuesta</a>
+    <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mnav">Menú <span class="burger" aria-hidden="true"><i></i></span></button>
+  </div>
+
+  <div class="mega" id="mega" hidden>
+    <div class="wrap mega-in">
+      <a class="mega-ph" href="#documentar" data-tab="documentar" style="--c:var(--b1)"><span class="mega-k">01 · Planificar</span><span class="mega-name">Documentar</span><p>Inventario de productos, mapa de procesos y fichas de caracterización.</p></a>
+      <a class="mega-ph" href="#procedimentar" data-tab="procedimentar" style="--c:var(--b2)"><span class="mega-k">02 · Hacer</span><span class="mega-name">Procedimentar</span><p>Procedimientos en BPMN 2.0, manual de procedimientos y matrices RACI.</p></a>
+      <a class="mega-ph" href="#medir" data-tab="medir" style="--c:var(--b3)"><span class="mega-k">03 · Verificar</span><span class="mega-name">Medir</span><p>Indicadores, KPI y OKR con ficha técnica, línea base, meta y tablero.</p></a>
+      <a class="mega-ph" href="#mejorar" data-tab="mejorar" style="--c:var(--b4)"><span class="mega-k">04 · Actuar</span><span class="mega-name">Mejorar</span><p>Rediseño, simplificación, automatización y un plan de mejora priorizado.</p></a>
+      <div class="mega-side">
+        <h4>Capacidades transversales</h4>
+        <ul>
+          <li><a href="#capacidades">Automatización de procesos</a></li>
+          <li><a href="#capacidades">Plataformas a medida</a></li>
+          <li><a href="#capacidades">Análisis económico de procesos</a></li>
+          <li><a href="#capacidades">Diagnóstico documental y PMO</a></li>
+          <li><a href="#capacidades">Formación de dueños de proceso</a></li>
+        </ul>
+        <a class="mega-feat" href="#diagnostico"><strong>Autodiagnóstico de madurez</strong><span>Doce preguntas, tres minutos, resultado inmediato.</span></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="mnav" id="mnav" hidden>
+  <div class="wrap mnav-in">
+    <div class="mnav-ph">
+      <a href="#documentar" data-tab="documentar" style="--c:var(--b1)">Documentar</a>
+      <a href="#procedimentar" data-tab="procedimentar" style="--c:var(--b2)">Procedimentar</a>
+      <a href="#medir" data-tab="medir" style="--c:var(--b3)">Medir</a>
+      <a href="#mejorar" data-tab="mejorar" style="--c:var(--b4)">Mejorar</a>
+    </div>
+    <a href="#servicios">Servicios</a>
+    <a href="#metodologia">Metodología</a>
+    <a href="#sectores">Sectores</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#diagnostico">Autodiagnóstico</a>
+    <a href="#equipo">Equipo</a>
+    <a href="#recursos">Recursos</a>
+    <a href="#preguntas">Preguntas frecuentes</a>
+    <a class="btn btn-primary" href="#contacto">Solicitar propuesta</a>
+  </div>
+</div>
+
+<main id="contenido">
+
+<!-- ================= HERO ================= -->
+<section class="hero band" id="inicio" aria-labelledby="hero-t">
+  <div class="wrap hero-in">
+    <div>
+      <p class="eyebrow">Consultora en gestión por procesos · Perú</p>
+      <h1 id="hero-t" style="margin-top:26px">
+        <span class="l1">Lo que no se <u style="--c:var(--b1)">documenta</u> no se <u style="--c:var(--b3)">mide</u>.</span>
+        <span class="l2">Lo que no se mide no <u style="--c:var(--b4)">mejora</u>.</span>
+      </h1>
+      <p class="lead">Implementamos la gestión por procesos en entidades públicas y empresas privadas, en cuatro fases que siguen el ciclo de Deming: documentar, procedimentar, medir y mejorar. Para el sector público, cada entregable responde a la Norma Técnica N.º 002-2025-PCM/SGP.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#contacto">Solicitar una propuesta <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="#diagnostico">Medir la madurez de mi organización</a>
+      </div>
+      <p class="hero-meta"><span>Sector público y privado</span><span>Ciclo PHVA</span><span>NT N.º 002-2025-PCM/SGP</span></p>
+    </div>
+    <div class="hero-art">
+<svg class="wheel" viewBox="0 0 560 460" role="img" aria-labelledby="wheel-t wheel-d">
+<title id="wheel-t">La rueda de Deming sube la pendiente de la madurez</title>
+<desc id="wheel-d">Rueda dividida en cuatro fases: Documentar (Planificar), Procedimentar (Hacer), Medir (Verificar) y Mejorar (Actuar). Una cuña llamada estándar documentado impide que la rueda retroceda por la pendiente, marcada con los niveles de madurez 1 a 5.</desc>
+<defs><clipPath id="w-above"><polygon points="0,0 560,0 560,170 550,170 10,440 0,440"/></clipPath><path id="wp00" d="M 260.7 86.8 A 97 97 0 0 1 347.1 173.2"/><path id="wp01" d="M 258.2 110.7 A 73 73 0 0 1 323.2 175.7"/><path id="wp10" d="M 261.5 286.7 A 104 104 0 0 0 354 194.2"/><path id="wp11" d="M 259 262.9 A 80 80 0 0 0 330.2 191.7"/><path id="wp20" d="M 147.2 194.2 A 104 104 0 0 0 239.7 286.7"/><path id="wp21" d="M 171 191.7 A 80 80 0 0 0 242.2 262.9"/><path id="wp30" d="M 154.1 173.2 A 97 97 0 0 1 240.5 86.8"/><path id="wp31" d="M 178 175.7 A 73 73 0 0 1 243 110.7"/></defs>
+<polygon class="w-ground" points="10,440 550,170 560,170 560,460 0,460 0,440"/>
+<line class="w-ramp" x1="10" y1="440" x2="550" y2="170"/>
+<line class="w-tick" x1="63.7" y1="413.2" x2="68.1" y2="422.1"/>
+<text class="w-lvl" x="75.3" y="436.4" transform="rotate(-26.6 75.3 436.4)" text-anchor="middle">N1</text>
+<line class="w-tick" x1="157.6" y1="366.2" x2="162.1" y2="375.2"/>
+<text class="w-lvl" x="169.2" y="389.5" transform="rotate(-26.6 169.2 389.5)" text-anchor="middle">N2</text>
+<line class="w-tick" x1="251.5" y1="319.3" x2="256" y2="328.2"/>
+<text class="w-lvl" x="263.1" y="342.5" transform="rotate(-26.6 263.1 342.5)" text-anchor="middle">N3</text>
+<line class="w-tick" x1="363.3" y1="263.4" x2="367.8" y2="272.3"/>
+<text class="w-lvl" x="374.9" y="286.6" transform="rotate(-26.6 374.9 286.6)" text-anchor="middle">N4</text>
+<line class="w-tick" x1="457.2" y1="216.4" x2="461.7" y2="225.3"/>
+<text class="w-lvl" x="468.8" y="239.6" transform="rotate(-26.6 468.8 239.6)" text-anchor="middle">N5</text>
+<text class="w-ramp-l" x="434" y="277.2" transform="rotate(-26.6 434 277.2)" text-anchor="middle">MADUREZ DE LA GESTIÓN →</text>
+<polygon class="w-wedge" points="130.5,379.8 212.8,338.6 188.6,290.3"/>
+<text class="w-wedge-l" x="196.7" y="395.9" transform="rotate(-26.6 196.7 395.9)" text-anchor="middle">CUÑA · ESTÁNDAR DOCUMENTADO</text>
+<g clip-path="url(#w-above)"><g class="w-ring"><circle cx="250.6" cy="183.3" r="138" class="w-ring-c"/>
+<path class="w-chev" d="M -5 -5 L 2 0 L -5 5" transform="translate(333.7 73.1) rotate(37)"/>
+<path class="w-chev" d="M -5 -5 L 2 0 L -5 5" transform="translate(360.8 266.3) rotate(127)"/>
+<path class="w-chev" d="M -5 -5 L 2 0 L -5 5" transform="translate(167.6 293.5) rotate(217)"/>
+<path class="w-chev" d="M -5 -5 L 2 0 L -5 5" transform="translate(140.4 100.2) rotate(307)"/>
+</g></g>
+<path class="w-seg p1" d="M 253.2 61.3 A 122 122 0 0 1 372.6 180.7 L 308.6 182.1 A 58 58 0 0 0 251.8 125.3 Z"/>
+<path class="w-seg p2" d="M 372.6 185.9 A 122 122 0 0 1 253.2 305.3 L 251.8 241.3 A 58 58 0 0 0 308.6 184.5 Z"/>
+<path class="w-seg p3" d="M 248 305.3 A 122 122 0 0 1 128.6 185.9 L 192.6 184.5 A 58 58 0 0 0 249.4 241.3 Z"/>
+<path class="w-seg p4" d="M 128.6 180.7 A 122 122 0 0 1 248 61.3 L 249.4 125.3 A 58 58 0 0 0 192.6 182.1 Z"/>
+<text class="w-name"><textPath href="#wp00" startOffset="50%" text-anchor="middle">DOCUMENTAR</textPath></text>
+<text class="w-verb"><textPath href="#wp01" startOffset="50%" text-anchor="middle">Planificar</textPath></text>
+<text class="w-name"><textPath href="#wp10" startOffset="50%" text-anchor="middle">PROCEDIMENTAR</textPath></text>
+<text class="w-verb"><textPath href="#wp11" startOffset="50%" text-anchor="middle">Hacer</textPath></text>
+<text class="w-name"><textPath href="#wp20" startOffset="50%" text-anchor="middle">MEDIR</textPath></text>
+<text class="w-verb"><textPath href="#wp21" startOffset="50%" text-anchor="middle">Verificar</textPath></text>
+<text class="w-name"><textPath href="#wp30" startOffset="50%" text-anchor="middle">MEJORAR</textPath></text>
+<text class="w-verb"><textPath href="#wp31" startOffset="50%" text-anchor="middle">Actuar</textPath></text>
+<circle class="w-hub" cx="250.6" cy="183.3" r="52"/>
+<text class="w-hub-t" x="250.6" y="185.3" text-anchor="middle">PHVA</text>
+<text class="w-hub-s" x="250.6" y="203.3" text-anchor="middle">DEMING</text>
+</svg>
+    </div>
+  </div>
+  <div class="wrap">
+    <nav class="phase-strip" aria-label="Las cuatro fases del servicio">
+      <a class="ps" href="#documentar" data-tab="documentar" style="--c:var(--b1)"><span class="ps-k">01 · Planificar</span><span class="ps-name">Documentar</span><span class="ps-d">Qué entrega su organización, a quién y con qué procesos.</span></a>
+      <a class="ps" href="#procedimentar" data-tab="procedimentar" style="--c:var(--b2)"><span class="ps-k">02 · Hacer</span><span class="ps-name">Procedimentar</span><span class="ps-d">Cómo se ejecuta cada proceso, paso a paso y con controles.</span></a>
+      <a class="ps" href="#medir" data-tab="medir" style="--c:var(--b3)"><span class="ps-k">03 · Verificar</span><span class="ps-name">Medir</span><span class="ps-d">Si los procesos cumplen lo que prometen, con indicadores.</span></a>
+      <a class="ps" href="#mejorar" data-tab="mejorar" style="--c:var(--b4)"><span class="ps-k">04 · Actuar</span><span class="ps-name">Mejorar</span><span class="ps-d">Qué cambiar, en qué orden y cómo evitar que retroceda.</span></a>
+    </nav>
+  </div>
+</section>
+
+<!-- ================= HELPER ================= -->
+<section class="alt helper" id="ayuda" aria-labelledby="ayuda-t">
+  <div class="wrap helper-grid">
+    <div>
+      <p class="eyebrow" id="ayuda-t">¿En qué podemos ayudarle?</p>
+      <p class="helper-sentence">
+        Somos
+        <span class="sel"><label class="vh" for="h-org">Tipo de organización</label><select id="h-org">
+          <option value="publica">una entidad pública</option>
+          <option value="privada">una empresa privada</option>
+          <option value="universidad">una universidad o instituto</option>
+        </select></span>
+        y queremos
+        <span class="sel"><label class="vh" for="h-goal">Objetivo</label><select id="h-goal">
+          <option value="norma">cumplir la norma técnica de procesos</option>
+          <option value="ordenar">ordenar y documentar nuestros procesos</option>
+          <option value="manual">actualizar el manual de procedimientos</option>
+          <option value="medir">medir resultados con indicadores</option>
+          <option value="eficiencia">reducir tiempos, costos y reprocesos</option>
+          <option value="automatizar">automatizar tareas repetitivas</option>
+          <option value="iso">prepararnos para ISO 9001</option>
+          <option value="plataforma">un sistema para gestionar procesos</option>
+        </select></span>
+      </p>
+      <p class="fine" style="margin-top:22px">Elija las dos opciones y le mostramos qué servicio recomendamos, por dónde se empieza y cuánto suele durar.</p>
+    </div>
+    <div class="helper-out" id="h-out" aria-live="polite">
+      <div>
+        <p class="ho-k">Le recomendamos</p>
+        <h3 class="ho-t" id="h-svc">Proyecto integral de gestión por procesos</h3>
+      </div>
+      <p class="ho-d" id="h-desc">Las cuatro fases, en orden, con un solo equipo y un solo plan de trabajo.</p>
+      <div class="chips" id="h-chips"></div>
+      <dl class="ho-facts">
+        <div><dt>Primer entregable</dt><dd id="h-first">Inventario de productos y mapa de procesos</dd></div>
+        <div><dt>Duración referencial</dt><dd id="h-dur">24 a 44 semanas</dd></div>
+        <div class="wide"><dt>Marco de referencia</dt><dd id="h-marco">NT N.º 002-2025-PCM/SGP</dd></div>
+      </dl>
+      <div class="ho-actions">
+        <button type="button" class="btn btn-primary" id="h-cta">Solicitar propuesta para esto <span class="arr" aria-hidden="true">→</span></button>
+        <a class="link" href="#documentar" id="h-link" data-tab="documentar">Ver el servicio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="sec" id="servicios" aria-labelledby="svc-t">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Servicios</p>
+      <h2 class="h2" id="svc-t">Cuatro fases para que su organización funcione por procesos, <em>no por personas</em>.</h2>
+      <p class="lead">Cada fase tiene una pregunta que responder, entregables concretos y una persona del equipo que la lidera. Puede contratarlas juntas, como un proyecto integral, o por separado si ya avanzó alguna.</p>
+    </header>
+
+    <div class="svc">
+      <div class="svc-tabs" role="tablist" aria-label="Fases del servicio" aria-orientation="vertical">
+        <button class="tab" role="tab" type="button" id="tab-documentar" aria-controls="documentar" aria-selected="true" style="--c:var(--p1)"><span class="t-n">01</span><span class="t-name">Documentar</span><span class="t-sub">Planificar · Identificación</span></button>
+        <button class="tab" role="tab" type="button" id="tab-procedimentar" aria-controls="procedimentar" aria-selected="false" tabindex="-1" style="--c:var(--p2)"><span class="t-n">02</span><span class="t-name">Procedimentar</span><span class="t-sub">Hacer · Implementación</span></button>
+        <button class="tab" role="tab" type="button" id="tab-medir" aria-controls="medir" aria-selected="false" tabindex="-1" style="--c:var(--p3)"><span class="t-n">03</span><span class="t-name">Medir</span><span class="t-sub">Verificar · Evaluación</span></button>
+        <button class="tab" role="tab" type="button" id="tab-mejorar" aria-controls="mejorar" aria-selected="false" tabindex="-1" style="--c:var(--p4)"><span class="t-n">04</span><span class="t-name">Mejorar</span><span class="t-sub">Actuar · Mejora</span></button>
+      </div>
+
+      <div class="svc-panels">
+        <!-- 01 DOCUMENTAR -->
+        <article class="panel" role="tabpanel" id="documentar" aria-labelledby="tab-documentar" tabindex="0" style="--c:var(--p1);--cs:var(--p1-soft)">
+          <p class="panel-k">Fase 01 · P de PHVA · Fase de identificación en la NT</p>
+          <h3>Documentar</h3>
+          <p class="panel-q">¿Qué entrega su organización, a quién, y mediante qué procesos?</p>
+          <p class="panel-intro">Empezamos por los productos, no por los organigramas. Identificamos cada bien, servicio o regulación que su organización entrega, quién lo recibe y qué procesos lo producen. Con eso construimos el mapa de procesos y describimos cada proceso en una ficha que cualquiera puede leer.</p>
+          <div class="panel-grid">
+            <div>
+              <h4>Qué hacemos</h4>
+              <ul class="ticks">
+                <li>Revisión de la documentación existente: normas internas, reglamentos, manuales, organigrama y documentos de gestión.</li>
+                <li>Inventario de productos (bienes, servicios y regulaciones) y de sus destinatarios.</li>
+                <li>Identificación y clasificación de procesos en estratégicos, misionales y de soporte.</li>
+                <li>Mapa de procesos de Nivel 0 y su desagregación a los niveles que su organización necesite.</li>
+                <li>Fichas de caracterización: objetivo, dueño, alcance, entradas, salidas, proveedores, destinatarios, recursos e indicadores.</li>
+                <li>Catálogo maestro de procesos con códigos únicos, para que nadie use dos numeraciones a la vez.</li>
+                <li>Designación y capacitación de los dueños de proceso.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Entregables</h4>
+              <ul class="deliv">
+                <li>Inventario de productos y destinatarios</li>
+                <li>Mapa de procesos aprobado</li>
+                <li>Fichas de caracterización por proceso</li>
+                <li>Catálogo maestro de procesos</li>
+                <li>Manual de gestión de procesos</li>
+              </ul>
+              <dl class="facts">
+                <div><dt>Duración</dt><dd>6 a 10 semanas, referencial para una organización mediana</dd></div>
+                <div><dt>Lidera</dt><dd>Álvaro Rojas Carnero</dd></div>
+                <div><dt>Herramientas</dt><dd>Talleres con dueños de proceso, fichas estandarizadas, hojas de cálculo con validación</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="panel-foot">
+            <button type="button" class="btn btn-primary" data-quote="Documentar">Cotizar esta fase <span class="arr" aria-hidden="true">→</span></button>
+            <a class="link" href="#procedimentar" data-tab="procedimentar">Siguiente fase: Procedimentar</a>
+          </div>
+        </article>
+
+        <!-- 02 PROCEDIMENTAR -->
+        <article class="panel" role="tabpanel" id="procedimentar" aria-labelledby="tab-procedimentar" tabindex="0" hidden style="--c:var(--p2);--cs:var(--p2-soft)">
+          <p class="panel-k">Fase 02 · H de PHVA · Fase de implementación en la NT</p>
+          <h3>Procedimentar</h3>
+          <p class="panel-q">¿Cómo se ejecuta cada proceso, paso a paso, quién lo hace y con qué controles?</p>
+          <p class="panel-intro">Convertimos cada proceso en procedimientos que se pueden seguir sin preguntar. Los diagramamos en notación BPMN 2.0, los validamos con quienes los ejecutan y los reunimos en un manual de procedimientos que su organización aprueba y publica.</p>
+          <div class="panel-grid">
+            <div>
+              <h4>Qué hacemos</h4>
+              <ul class="ticks">
+                <li>Levantamiento de cada procedimiento con las personas que lo ejecutan, no solo con las jefaturas.</li>
+                <li>Diagramación en BPMN 2.0, con actividades, responsables, decisiones, plazos y registros.</li>
+                <li>Matriz RACI por procedimiento, con un solo aprobador por actividad.</li>
+                <li>Puntos de control y registros que dejan evidencia de cada paso.</li>
+                <li>Formatos, instructivos y plantillas estandarizados.</li>
+                <li>Validación con los dueños de proceso y acta de conformidad.</li>
+                <li>Sector público: coherencia con el TUPA y el TUSNE. Sector privado: coherencia con los requisitos de ISO 9001:2015.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Entregables</h4>
+              <ul class="deliv">
+                <li>Procedimientos diagramados en BPMN 2.0</li>
+                <li>Manual de procedimientos (MAPRO)</li>
+                <li>Matrices RACI</li>
+                <li>Formatos, instructivos y registros</li>
+                <li>Actas de validación</li>
+              </ul>
+              <dl class="facts">
+                <div><dt>Duración</dt><dd>8 a 14 semanas, según el número de procedimientos</dd></div>
+                <div><dt>Lidera</dt><dd>Álvaro Rojas Carnero, con Isabel Flores Guamaní</dd></div>
+                <div><dt>Herramientas</dt><dd>Bizagi Modeler u otra herramienta BPMN que su organización ya use</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="panel-foot">
+            <button type="button" class="btn btn-primary" data-quote="Procedimentar">Cotizar esta fase <span class="arr" aria-hidden="true">→</span></button>
+            <a class="link" href="#medir" data-tab="medir">Siguiente fase: Medir</a>
+          </div>
+        </article>
+
+        <!-- 03 MEDIR -->
+        <article class="panel" role="tabpanel" id="medir" aria-labelledby="tab-medir" tabindex="0" hidden style="--c:var(--p3);--cs:var(--p3-soft)">
+          <p class="panel-k">Fase 03 · V de PHVA · Fase de evaluación en la NT</p>
+          <h3>Medir</h3>
+          <p class="panel-q">¿Los procesos cumplen lo que prometen? ¿Con qué eficacia, eficiencia y calidad?</p>
+          <p class="panel-intro">Diseñamos el sistema de medición completo: qué se mide, con qué fórmula, de dónde sale el dato, cada cuánto y quién responde por él. Lo conectamos con la estrategia mediante OKR y lo dejamos en un tablero que se actualiza solo.</p>
+          <div class="panel-grid">
+            <div>
+              <h4>Qué hacemos</h4>
+              <ul class="ticks">
+                <li>Indicadores de eficacia, eficiencia y calidad para cada proceso.</li>
+                <li>Ficha técnica de cada indicador: fórmula, fuente de datos, frecuencia, responsable, línea base y meta.</li>
+                <li>OKR trimestrales que traducen la estrategia en resultados clave medibles.</li>
+                <li>Medición de la satisfacción de los destinatarios de cada producto.</li>
+                <li>Tableros de control con actualización automática desde las fuentes de datos.</li>
+                <li>Revisión de calidad de la documentación contra criterios de validación.</li>
+                <li>Auditoría de cumplimiento de los procesos implementados.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Entregables</h4>
+              <ul class="deliv">
+                <li>Fichas técnicas de indicadores</li>
+                <li>Línea base y metas por proceso</li>
+                <li>Sistema de OKR</li>
+                <li>Tablero de control en línea</li>
+                <li>Informe de evaluación</li>
+              </ul>
+              <dl class="facts">
+                <div><dt>Duración</dt><dd>4 a 8 semanas para el diseño; la medición continúa después</dd></div>
+                <div><dt>Lidera</dt><dd>Oriol Romero Saavedra</dd></div>
+                <div><dt>Herramientas</dt><dd>Looker Studio, Power BI o la plataforma que su organización ya tenga</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="panel-foot">
+            <button type="button" class="btn btn-primary" data-quote="Medir">Cotizar esta fase <span class="arr" aria-hidden="true">→</span></button>
+            <a class="link" href="#mejorar" data-tab="mejorar">Siguiente fase: Mejorar</a>
+          </div>
+        </article>
+
+        <!-- 04 MEJORAR -->
+        <article class="panel" role="tabpanel" id="mejorar" aria-labelledby="tab-mejorar" tabindex="0" hidden style="--c:var(--p4);--cs:var(--p4-soft)">
+          <p class="panel-k">Fase 04 · A de PHVA · Fase de mejora en la NT</p>
+          <h3>Mejorar</h3>
+          <p class="panel-q">¿Qué cambiamos, en qué orden, y cómo evitamos que la mejora retroceda?</p>
+          <p class="panel-intro">Con los datos de la medición identificamos dónde se pierde tiempo, dinero o calidad. Priorizamos las mejoras por su impacto y su costo, las implementamos con su equipo y cerramos cada una actualizando el procedimiento, para que el nuevo nivel quede fijo.</p>
+          <div class="panel-grid">
+            <div>
+              <h4>Qué hacemos</h4>
+              <ul class="ticks">
+                <li>Análisis de brechas y de causa raíz: diagrama de Ishikawa, cinco porqués y Pareto.</li>
+                <li>Rediseño de procesos con herramientas Lean: mapa de flujo de valor y eliminación de pasos que no agregan valor.</li>
+                <li>Simplificación administrativa de trámites y requisitos.</li>
+                <li>Análisis costo-beneficio de cada mejora, para decidir con números.</li>
+                <li>Automatización de tareas repetitivas y de la carga de datos.</li>
+                <li>Plan de mejora con responsables, plazos e indicadores de seguimiento.</li>
+                <li>Actualización de procedimientos y capacitación en la nueva forma de trabajo.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Entregables</h4>
+              <ul class="deliv">
+                <li>Informe de oportunidades de mejora</li>
+                <li>Procesos rediseñados (situación futura)</li>
+                <li>Plan de mejora priorizado</li>
+                <li>Automatizaciones en funcionamiento</li>
+                <li>Procedimientos actualizados</li>
+              </ul>
+              <dl class="facts">
+                <div><dt>Duración</dt><dd>6 a 12 semanas por ciclo de mejora</dd></div>
+                <div><dt>Lidera</dt><dd>José Antonio Chumacero Calle, con Isabel Flores Guamaní y Luis Valarenzo</dd></div>
+                <div><dt>Herramientas</dt><dd>Lean, análisis económico, automatización con las herramientas de su organización</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="panel-foot">
+            <button type="button" class="btn btn-primary" data-quote="Mejorar">Cotizar esta fase <span class="arr" aria-hidden="true">→</span></button>
+            <a class="link" href="#metodologia">Cómo se conectan las cuatro fases</a>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Capacidades -->
+    <div class="caps" id="capacidades">
+      <div class="caps-head">
+        <h3>Capacidades que acompañan a cada fase</h3>
+        <p>Lo que distingue a un proyecto que se sostiene de uno que se queda en el papel: datos que se cargan solos, sistemas propios y decisiones con sustento económico.</p>
+      </div>
+      <div class="caps-grid">
+        <article class="cap">
+          <svg viewBox="0 0 34 34" aria-hidden="true"><rect x="3" y="4" width="10" height="8" rx="1.5"/><rect x="21" y="22" width="10" height="8" rx="1.5"/><path d="M8 12v6a3 3 0 0 0 3 3h7"/><path d="M15 18l3 3-3 3"/><circle cx="26" cy="9" r="4"/><path d="M26 3v2M26 13v2M20 9h2M30 9h2"/></svg>
+          <h3>Automatización de procesos</h3>
+          <p>Formularios que llenan formatos solos, validaciones antes de guardar un registro, reportes que se consolidan sin copiar y pegar, alertas de plazos por vencer.</p>
+          <p class="who">Isabel Flores Guamaní</p>
+        </article>
+        <article class="cap">
+          <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M5 25a12 12 0 1 1 24 0"/><path d="M17 25l6-8"/><circle cx="17" cy="25" r="2"/><path d="M9 25h-1M26 25h-1M10.5 15.5l.7.7M23.5 15.5l-.7.7M17 13v1"/></svg>
+          <h3>Indicadores, KPI y OKR</h3>
+          <p>Sistemas de medición que la alta dirección entiende en un minuto: fichas técnicas, metas realistas, OKR trimestrales y tableros conectados a la fuente del dato.</p>
+          <p class="who">Oriol Romero Saavedra</p>
+        </article>
+        <article class="cap">
+          <svg viewBox="0 0 34 34" aria-hidden="true"><rect x="3" y="5" width="28" height="22" rx="2"/><path d="M3 11h28"/><path d="M13 17l-3 3 3 3M21 17l3 3-3 3M18.5 16l-3 8"/></svg>
+          <h3>Plataformas a medida</h3>
+          <p>Sistemas web propios para gestionar procesos: repositorio de procesos y fichas, módulos de indicadores, encuestas y actas digitales, integrados con sus sistemas actuales.</p>
+          <p class="who">Luis Valarenzo</p>
+        </article>
+        <article class="cap">
+          <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M4 28h26"/><rect x="7" y="17" width="5" height="11"/><rect x="15" y="11" width="5" height="17"/><rect x="23" y="6" width="5" height="22"/><path d="M6 12l7-5 6 3 9-6"/></svg>
+          <h3>Análisis económico de procesos</h3>
+          <p>Costeo de procesos y actividades, análisis costo-beneficio de las mejoras y evaluación de su impacto. Para que cada cambio se justifique en tiempo, dinero o valor público.</p>
+          <p class="who">José Antonio Chumacero Calle</p>
+        </article>
+        <article class="cap">
+          <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M8 3h13l6 6v22H8z"/><path d="M21 3v6h6"/><circle cx="17" cy="19" r="4.5"/><path d="M20.3 22.3l4.2 4.2"/></svg>
+          <h3>Diagnóstico documental y PMO</h3>
+          <p>Auditamos la coherencia entre planes, cronogramas y registros: hallazgos, contradicciones y recomendaciones con responsable. Gestionamos el proyecto con cronograma, ruta crítica y riesgos.</p>
+          <p class="who">Álvaro Rojas Carnero</p>
+        </article>
+        <article class="cap">
+          <svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="11" cy="11" r="4"/><circle cx="24" cy="11" r="4"/><path d="M3 27c0-4.4 3.6-8 8-8s8 3.6 8 8"/><path d="M19 21.5c1.3-1.6 3-2.5 5-2.5 4.4 0 8 3.6 8 8"/></svg>
+          <h3>Formación de dueños de proceso</h3>
+          <p>Talleres prácticos para que su equipo identifique productos, describa procesos, lea indicadores y lidere mejoras sin depender de una consultora.</p>
+          <p class="who">Todo el equipo</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= METHOD ================= -->
+<section class="sec band" id="metodologia" aria-labelledby="met-t">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Metodología</p>
+      <h2 class="h2" id="met-t">El ciclo de Deming, convertido en un método de trabajo.</h2>
+      <p class="lead">El ciclo PHVA (planificar, hacer, verificar, actuar) es la base de la mejora continua desde hace más de setenta años. Lo aplicamos fase por fase, y cada fase coincide con una de las cuatro que define la Norma Técnica N.º 002-2025-PCM/SGP para el sector público.</p>
+    </header>
+
+    <div class="mtable-wrap">
+      <table class="mtable">
+        <caption class="vh">Correspondencia entre las fases de Kipu, el ciclo PHVA y la norma técnica</caption>
+        <thead>
+          <tr><th scope="col">Nuestra fase</th><th scope="col">Ciclo PHVA</th><th scope="col">Fase en la NT 002-2025</th><th scope="col">Pregunta que responde</th><th scope="col">Resultado</th></tr>
+        </thead>
+        <tbody>
+          <tr style="--c:var(--b1)"><th scope="row"><small>01</small>Documentar</th><td class="phva"><b>P</b>Planificar</td><td>Identificación de productos y procesos</td><td>¿Qué entregamos, a quién y con qué procesos?</td><td>Inventario de productos, mapa de procesos y fichas de caracterización</td></tr>
+          <tr style="--c:var(--b2)"><th scope="row"><small>02</small>Procedimentar</th><td class="phva"><b>H</b>Hacer</td><td>Implementación de procesos</td><td>¿Cómo se hace cada proceso, paso a paso?</td><td>Procedimientos en BPMN 2.0, manual de procedimientos y matrices RACI</td></tr>
+          <tr style="--c:var(--b3)"><th scope="row"><small>03</small>Medir</th><td class="phva"><b>V</b>Verificar</td><td>Evaluación de productos y procesos</td><td>¿Los procesos cumplen lo que prometen?</td><td>Fichas de indicadores, línea base, metas y tablero de control</td></tr>
+          <tr style="--c:var(--b4)"><th scope="row"><small>04</small>Mejorar</th><td class="phva"><b>A</b>Actuar</td><td>Mejora de productos y procesos</td><td>¿Qué cambiamos y cómo evitamos retroceder?</td><td>Plan de mejora, procesos rediseñados y procedimientos actualizados</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="wedge-note">
+      <p class="quote">La rueda sube la pendiente una vuelta a la vez. Lo que impide que ruede hacia atrás es <em>un procedimiento escrito</em>.</p>
+      <div>
+        <p class="body">En la imagen clásica del ciclo de Deming, una cuña detrás de la rueda evita que retroceda. Esa cuña es el estándar: el procedimiento aprobado, el personal capacitado y el indicador que avisa si el proceso vuelve a su nivel anterior.</p>
+        <p class="body">Por eso Procedimentar está en el centro de nuestro método y por eso cerramos cada mejora actualizando su procedimiento. Sin la cuña, la mejora depende de la memoria de quien la hizo.</p>
+      </div>
+    </div>
+
+    <div class="rules">
+      <h3>Seis reglas que aplicamos en cada proyecto</h3>
+      <div class="rules-grid">
+        <div class="rule"><h4>Una fuente única para cada dato</h4><p>Cada cifra del proyecto sale de un solo documento. Si dos documentos discrepan, se decide en acta cuál manda y se corrige el otro.</p></div>
+        <div class="rule"><h4>Un solo aprobador por entregable</h4><p>Los demás participan como consultados o informados. Con dos aprobadores, ninguna decisión queda cerrada.</p></div>
+        <div class="rule"><h4>Códigos que nunca se reutilizan</h4><p>Un catálogo maestro de procesos (<code>PE.01</code>, <code>PM.01</code>, <code>PS.01</code>) y una codificación única para fases, tareas e hitos.</p></div>
+        <div class="rule"><h4>Avance medido con criterio</h4><p><code>(Conformes + 0,5 × Observados) ÷ Total</code>. El denominador incluye lo obligatorio aunque falte: registrar menos nunca mejora la cifra.</p></div>
+        <div class="rule"><h4>Plazos de respuesta por escrito</h4><p>Acordamos cuántos días hábiles tiene cada área para revisar un entregable y qué ocurre cuando el plazo vence.</p></div>
+        <div class="rule"><h4>Nada depende de una sola persona</h4><p>Documentamos herramientas, código y criterios, designamos un segundo responsable y transferimos todo a su equipo.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTORS ================= -->
+<section class="sec" id="sectores" aria-labelledby="sec-t">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Sectores</p>
+      <h2 class="h2" id="sec-t">El mismo método para el Estado y para la empresa. <em>Otras reglas, otros indicadores.</em></h2>
+      <p class="lead">En el sector público la gestión por procesos es obligatoria y se mide en valor público. En el privado es voluntaria y se mide en costos, plazos y clientes. Conocemos los dos marcos y adaptamos los entregables a cada uno.</p>
+    </header>
+    <div class="sectors">
+      <article class="sector">
+        <p class="sector-k">Sector público</p>
+        <h3>Entidades del Estado</h3>
+        <p class="who">Ministerios y organismos públicos, gobiernos regionales y municipalidades, universidades públicas, hospitales y redes de salud, organismos reguladores y empresas del Estado.</p>
+        <div>
+          <h4>Lo que suelen necesitar</h4>
+          <ul class="ticks">
+            <li>Cumplir la NT N.º 002-2025-PCM/SGP con entregables que resistan una revisión.</li>
+            <li>Actualizar un manual de procedimientos que ya no refleja cómo se trabaja.</li>
+            <li>Reducir plazos de atención y simplificar trámites para la ciudadanía.</li>
+            <li>Indicadores que sirvan para reportar a la alta dirección y a los órganos de control.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Marco de referencia</h4>
+          <div class="ref"><span>NT N.º 002-2025-PCM/SGP</span><span>Lineamientos N.º 001-2025-PCM/SGP</span><span>D.S. N.º 103-2022-PCM</span><span>TUPA y TUSNE</span></div>
+        </div>
+      </article>
+      <article class="sector">
+        <p class="sector-k">Sector privado</p>
+        <h3>Empresas y organizaciones privadas</h3>
+        <p class="who">Empresas industriales, comerciales y de servicios, clínicas, universidades e institutos privados, cooperativas y empresas medianas en crecimiento.</p>
+        <div>
+          <h4>Lo que suelen necesitar</h4>
+          <ul class="ticks">
+            <li>Ordenar la operación para crecer sin depender de personas clave.</li>
+            <li>Prepararse para una certificación ISO 9001.</li>
+            <li>Bajar costos, tiempos de ciclo y reprocesos.</li>
+            <li>Automatizar reportes y tareas administrativas que consumen horas cada semana.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Marco de referencia</h4>
+          <div class="ref"><span>ISO 9001:2015</span><span>BPMN 2.0</span><span>Lean</span><span>OKR</span></div>
+        </div>
+      </article>
+      <article class="sector edu">
+        <div>
+          <p class="sector-k">Educación superior</p>
+          <h3 style="margin-top:10px">Universidades con muchas facultades y una sola forma de trabajar</h3>
+          <p style="margin-top:12px">Nuestra experiencia más grande está aquí: un mapa de procesos estándar para veinte facultades, con sus inventarios de productos, fichas e indicadores. Sabemos lo que cuesta poner de acuerdo a unidades con historias distintas, y cómo hacerlo sin detener la vida académica.</p>
+        </div>
+        <a class="btn btn-ghost" href="#experiencia">Ver la experiencia <span class="arr" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section class="sec alt" id="experiencia" aria-labelledby="exp-t">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Experiencia</p>
+      <h2 class="h2" id="exp-t">Veinte facultades, <em>un mismo mapa de procesos</em>.</h2>
+      <p class="lead">El equipo de Kipu ha conducido la implementación de la gestión por procesos en una universidad pública con veinte facultades: desde la identificación de procesos hasta el tablero que mide el avance de cada facultad.</p>
+    </header>
+
+    <div class="case">
+      <figure class="kipu" style="margin:0">
+<svg class="kipu-svg" viewBox="0 0 560 360" aria-hidden="true">
+<path class="k-main" d="M 8 30 Q 280 46 552 30"/>
+<line class="k-guide" x1="0" y1="78" x2="560" y2="78"/>
+<text class="k-pv" x="0" y="72">×1000</text>
+<line class="k-guide" x1="0" y1="142" x2="560" y2="142"/>
+<text class="k-pv" x="0" y="136">×100</text>
+<line class="k-guide" x1="0" y1="212" x2="560" y2="212"/>
+<text class="k-pv" x="0" y="206">×10</text>
+<line class="k-guide" x1="0" y1="282" x2="560" y2="282"/>
+<text class="k-pv" x="0" y="276">×1</text>
+<path class="k-cord c-k1" d="M 70 36.5 C 73 120, 67 230, 70 330"/>
+<line class="k-tassel c-k1" x1="70" y1="328" x2="65" y2="346"/>
+<line class="k-tassel c-k1" x1="70" y1="328" x2="70" y2="346"/>
+<line class="k-tassel c-k1" x1="70" y1="328" x2="75" y2="346"/>
+<circle class="k-knot f-k1" cx="70" cy="212" r="5"/>
+<rect class="k-knot f-k1" x="64" y="262.5" width="12" height="39" rx="6"/>
+<line class="k-turn" x1="65" y1="270.2" x2="75" y2="266.2"/>
+<line class="k-turn" x1="65" y1="275.8" x2="75" y2="271.8"/>
+<line class="k-turn" x1="65" y1="281.2" x2="75" y2="277.2"/>
+<line class="k-turn" x1="65" y1="286.8" x2="75" y2="282.8"/>
+<line class="k-turn" x1="65" y1="292.2" x2="75" y2="288.2"/>
+<line class="k-turn" x1="65" y1="297.8" x2="75" y2="293.8"/>
+<path class="k-cord c-k2" d="M 210 44.9 C 213 120, 207 230, 210 330"/>
+<line class="k-tassel c-k2" x1="210" y1="328" x2="205" y2="346"/>
+<line class="k-tassel c-k2" x1="210" y1="328" x2="210" y2="346"/>
+<line class="k-tassel c-k2" x1="210" y1="328" x2="215" y2="346"/>
+<circle class="k-knot f-k2" cx="210" cy="207.2" r="5"/>
+<circle class="k-knot f-k2" cx="210" cy="216.8" r="5"/>
+<path class="k-cord c-k3" d="M 350 44.9 C 353 120, 347 230, 350 330"/>
+<line class="k-tassel c-k3" x1="350" y1="328" x2="345" y2="346"/>
+<line class="k-tassel c-k3" x1="350" y1="328" x2="350" y2="346"/>
+<line class="k-tassel c-k3" x1="350" y1="328" x2="355" y2="346"/>
+<circle class="k-knot f-k3" cx="350" cy="73.2" r="5"/>
+<circle class="k-knot f-k3" cx="350" cy="82.8" r="5"/>
+<circle class="k-knot f-k3" cx="350" cy="108.8" r="5"/>
+<circle class="k-knot f-k3" cx="350" cy="118.2" r="5"/>
+<circle class="k-knot f-k3" cx="350" cy="127.8" r="5"/>
+<circle class="k-knot f-k3" cx="350" cy="137.2" r="5"/>
+<circle class="k-knot f-k3" cx="350" cy="146.8" r="5"/>
+<circle class="k-knot f-k3" cx="350" cy="156.2" r="5"/>
+<circle class="k-knot f-k3" cx="350" cy="165.8" r="5"/>
+<circle class="k-knot f-k3" cx="350" cy="175.2" r="5"/>
+<circle class="k-knot f-k3" cx="350" cy="207.2" r="5"/>
+<circle class="k-knot f-k3" cx="350" cy="216.8" r="5"/>
+<rect class="k-knot f-k3" x="344" y="270.8" width="12" height="22.5" rx="6"/>
+<line class="k-turn" x1="345" y1="278.5" x2="355" y2="274.5"/>
+<line class="k-turn" x1="345" y1="284" x2="355" y2="280"/>
+<line class="k-turn" x1="345" y1="289.5" x2="355" y2="285.5"/>
+<path class="k-cord c-k4" d="M 490 36.5 C 493 120, 487 230, 490 330"/>
+<line class="k-tassel c-k4" x1="490" y1="328" x2="485" y2="346"/>
+<line class="k-tassel c-k4" x1="490" y1="328" x2="490" y2="346"/>
+<line class="k-tassel c-k4" x1="490" y1="328" x2="495" y2="346"/>
+<circle class="k-knot f-k4" cx="490" cy="142" r="5"/>
+<rect class="k-knot f-k4" x="484" y="257" width="12" height="50" rx="6"/>
+<line class="k-turn" x1="485" y1="264.8" x2="495" y2="260.8"/>
+<line class="k-turn" x1="485" y1="270.2" x2="495" y2="266.2"/>
+<line class="k-turn" x1="485" y1="275.8" x2="495" y2="271.8"/>
+<line class="k-turn" x1="485" y1="281.2" x2="495" y2="277.2"/>
+<line class="k-turn" x1="485" y1="286.8" x2="495" y2="282.8"/>
+<line class="k-turn" x1="485" y1="292.2" x2="495" y2="288.2"/>
+<line class="k-turn" x1="485" y1="297.8" x2="495" y2="293.8"/>
+<line class="k-turn" x1="485" y1="303.2" x2="495" y2="299.2"/>
+</svg>
+        <ul class="k-labels">
+          <li style="--c:var(--p1)"><b class="num">16</b><span>procesos de Nivel 0</span><i>Documentar</i></li>
+          <li style="--c:var(--p2)"><b class="num">20</b><span>facultades bajo un mismo estándar</span><i>Procedimentar</i></li>
+          <li style="--c:var(--p3)"><b class="num">2&nbsp;823</b><span>productos revisados</span><i>Medir</i></li>
+          <li style="--c:var(--p4)"><b class="num">108</b><span>recomendaciones de mejora</span><i>Mejorar</i></li>
+        </ul>
+        <figcaption>Las cifras del proyecto, anotadas como en un kipu. Cada cuerda guarda una cifra: los nudos simples cuentan millares, centenas y decenas; el nudo largo, las unidades. Los colores siguen las cuatro fases.</figcaption>
+      </figure>
+
+      <div class="case-card">
+        <div class="case-meta"><span>Universidad pública</span><span>20 facultades</span><span>2025 – 2026</span><span>Proyecto en curso</span></div>
+        <h3>Gestión por procesos en una universidad pública centenaria</h3>
+        <div>
+          <h4>El reto</h4>
+          <p>Veinte facultades con historias, formatos y niveles de avance distintos debían adoptar un mismo modelo de gestión por procesos, conforme a la nueva norma técnica, y documentarlo en un manual por facultad.</p>
+        </div>
+        <div>
+          <h4>Lo que construimos</h4>
+          <ul class="ticks" style="--c:var(--accent)">
+            <li>Un Mapa de Procesos Estándar con 16 procesos de Nivel 0: 3 estratégicos, 3 misionales y 10 de soporte, con un catálogo maestro de códigos.</li>
+            <li>La guía de gestión por procesos y los formatos de inventario de productos y de caracterización de procesos.</li>
+            <li>Un indicador estándar para cada proceso de Nivel 0.</li>
+            <li>La revisión de 2&nbsp;823 productos registrados por las facultades, contra criterios de validación publicados.</li>
+            <li>Un diagnóstico documental del proyecto: 37 hallazgos y 108 recomendaciones, cada una con responsable y entregable de cierre.</li>
+            <li>Un tablero de avance por facultad y una plataforma web, en desarrollo, para consultar procesos, indicadores y fichas.</li>
+            <li>El plan del proyecto bajo PMBOK: cronograma con ruta crítica, registro de riesgos y bitácora.</li>
+          </ul>
+        </div>
+        <p class="fine">Experiencia del equipo. Cifras a agosto de 2026.</p>
+      </div>
+    </div>
+
+    <div class="scen-head">
+      <h3>Así se vería un proyecto con nosotros</h3>
+      <p class="fine" style="max-width:46ch">Ejemplos ilustrativos de cómo combinamos las fases según la situación. No corresponden a clientes reales.</p>
+    </div>
+    <div class="scen">
+      <article>
+        <p class="tag">Ejemplo · Sector público</p>
+        <h4>Municipalidad distrital</h4>
+        <dl>
+          <div><dt>Situación</dt><dd>Manual de procedimientos de hace años, plazos de atención largos y la obligación de cumplir la norma técnica.</dd></div>
+          <div><dt>Propuesta</dt><dd>Proyecto integral en cuatro fases, empezando por el inventario de servicios al ciudadano.</dd></div>
+          <div><dt>Primer resultado visible</dt><dd>Mapa de procesos aprobado por la alta dirección.</dd></div>
+        </dl>
+        <div class="chips"><span class="chip" style="--c:var(--p1);--cs:var(--p1-soft)">01</span><span class="chip" style="--c:var(--p2);--cs:var(--p2-soft)">02</span><span class="chip" style="--c:var(--p3);--cs:var(--p3-soft)">03</span><span class="chip" style="--c:var(--p4);--cs:var(--p4-soft)">04</span></div>
+      </article>
+      <article>
+        <p class="tag">Ejemplo · Sector privado</p>
+        <h4>Empresa industrial mediana</h4>
+        <dl>
+          <div><dt>Situación</dt><dd>Crecimiento rápido, procedimientos que viven en la cabeza de los supervisores y un cliente que exige ISO 9001.</dd></div>
+          <div><dt>Propuesta</dt><dd>Documentar, procedimentar y medir, con foco en producción y despacho.</dd></div>
+          <div><dt>Primer resultado visible</dt><dd>Procedimientos críticos escritos, validados y en uso en planta.</dd></div>
+        </dl>
+        <div class="chips"><span class="chip" style="--c:var(--p1);--cs:var(--p1-soft)">01</span><span class="chip" style="--c:var(--p2);--cs:var(--p2-soft)">02</span><span class="chip" style="--c:var(--p3);--cs:var(--p3-soft)">03</span><span class="chip off">04</span></div>
+      </article>
+      <article>
+        <p class="tag">Ejemplo · Salud privada</p>
+        <h4>Clínica privada</h4>
+        <dl>
+          <div><dt>Situación</dt><dd>Tiempos de espera altos en admisión y reportes mensuales armados a mano.</dd></div>
+          <div><dt>Propuesta</dt><dd>Medir y mejorar, con automatización de la toma de datos y del reporte.</dd></div>
+          <div><dt>Primer resultado visible</dt><dd>Tablero de tiempos de espera por turno, actualizado automáticamente.</dd></div>
+        </dl>
+        <div class="chips"><span class="chip off">01</span><span class="chip off">02</span><span class="chip" style="--c:var(--p3);--cs:var(--p3-soft)">03</span><span class="chip" style="--c:var(--p4);--cs:var(--p4-soft)">04</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DIAGNOSTIC ================= -->
+<section class="sec" id="diagnostico" aria-labelledby="diag-t">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Autodiagnóstico</p>
+      <h2 class="h2" id="diag-t">¿En qué nivel de madurez está su organización?</h2>
+      <p class="lead">Doce afirmaciones, tres por fase. Marque qué tan cierta es cada una y obtenga su nivel de madurez, su punto de partida y una hoja de ruta referencial. El cálculo se hace en su navegador: sus respuestas no se envían a ningún lugar.</p>
+    </header>
+
+    <div class="diag">
+      <form id="diag-form" novalidate>
+        <div class="qgroup" style="--c:var(--p1)">
+          <div class="qgroup-h"><b>01</b><h3>Documentar</h3><span id="gs-d">—</span></div>
+          <fieldset class="q"><legend>Tenemos un mapa de procesos aprobado y vigente.</legend><div class="seg" data-q="d1"></div></fieldset>
+          <fieldset class="q"><legend>Sabemos qué productos (bienes, servicios o regulaciones) entregamos y a quién.</legend><div class="seg" data-q="d2"></div></fieldset>
+          <fieldset class="q"><legend>Cada proceso tiene un dueño designado y una ficha que lo describe.</legend><div class="seg" data-q="d3"></div></fieldset>
+        </div>
+        <div class="qgroup" style="--c:var(--p2)">
+          <div class="qgroup-h"><b>02</b><h3>Procedimentar</h3><span id="gs-p">—</span></div>
+          <fieldset class="q"><legend>Los procedimientos clave están escritos y diagramados.</legend><div class="seg" data-q="p1"></div></fieldset>
+          <fieldset class="q"><legend>Las personas trabajan según el procedimiento escrito, no según la costumbre.</legend><div class="seg" data-q="p2"></div></fieldset>
+          <fieldset class="q"><legend>Está claro quién ejecuta, quién revisa y quién aprueba cada actividad.</legend><div class="seg" data-q="p3"></div></fieldset>
+        </div>
+        <div class="qgroup" style="--c:var(--p3)">
+          <div class="qgroup-h"><b>03</b><h3>Medir</h3><span id="gs-m">—</span></div>
+          <fieldset class="q"><legend>Cada proceso tiene indicadores con fórmula, línea base y meta.</legend><div class="seg" data-q="m1"></div></fieldset>
+          <fieldset class="q"><legend>Los indicadores se reportan con una frecuencia fija y desde una sola fuente de datos.</legend><div class="seg" data-q="m2"></div></fieldset>
+          <fieldset class="q"><legend>Medimos la satisfacción de quienes reciben nuestros productos.</legend><div class="seg" data-q="m3"></div></fieldset>
+        </div>
+        <div class="qgroup" style="--c:var(--p4)">
+          <div class="qgroup-h"><b>04</b><h3>Mejorar</h3><span id="gs-a">—</span></div>
+          <fieldset class="q"><legend>Las mejoras se priorizan con datos y siguen un plan con responsables.</legend><div class="seg" data-q="a1"></div></fieldset>
+          <fieldset class="q"><legend>Cuando mejoramos un proceso, actualizamos su procedimiento.</legend><div class="seg" data-q="a2"></div></fieldset>
+          <fieldset class="q"><legend>Las tareas repetitivas de registro y reporte están automatizadas.</legend><div class="seg" data-q="a3"></div></fieldset>
+        </div>
+        <button type="button" class="link" id="diag-reset">Volver a las respuestas de ejemplo</button>
+      </form>
+
+      <aside class="res band" aria-live="polite" aria-labelledby="res-t">
+        <h3 class="vh" id="res-t">Resultado del autodiagnóstico</h3>
+        <p class="res-tag" id="r-tag">Ejemplo: entidad con mapa de procesos, sin medición</p>
+        <div class="res-level">
+          <p class="res-n"><small>NIVEL</small><span id="r-n">2</span></p>
+          <div><p class="res-lname" id="r-name">Identificado</p><p class="res-ldesc" id="r-desc"></p></div>
+        </div>
+        <div class="scale" id="r-scale" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="bars" id="r-bars"></div>
+        <div class="start" id="r-start-box">
+          <p class="k">Punto de partida recomendado</p>
+          <p class="v" id="r-start"></p>
+          <p class="why" id="r-why"></p>
+        </div>
+        <div class="road">
+          <div class="road-h">
+            <h4>Hoja de ruta referencial</h4>
+            <label class="vh" for="r-size">Tamaño de la organización</label>
+            <select id="r-size">
+              <option value="s">Hasta 8 procesos</option>
+              <option value="m" selected>9 a 16 procesos</option>
+              <option value="l">17 a 30 procesos</option>
+              <option value="xl">Más de 30 o varias sedes</option>
+            </select>
+          </div>
+          <div class="gantt" id="r-gantt"></div>
+          <p class="g-total" id="r-total"></p>
+          <p class="fine">Estimación en semanas para planificar. La propuesta formal la ajusta después de la reunión inicial.</p>
+        </div>
+        <button type="button" class="btn btn-primary" id="r-send">Solicitar propuesta con este resultado <span class="arr" aria-hidden="true">→</span></button>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEAM ================= -->
+<section class="sec alt" id="equipo" aria-labelledby="team-t">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Equipo</p>
+      <h2 class="h2" id="team-t">Un equipo pequeño que cubre <em>el ciclo completo</em>.</h2>
+      <p class="lead">Economía, gestión de proyectos, automatización, indicadores y desarrollo de software. Quien diseña el proceso trabaja en la misma mesa que quien lo mide y quien construye el sistema que lo sostiene.</p>
+    </header>
+
+    <div class="team">
+      <article class="person lead-p">
+        <div class="p-top"><span class="mono-tile" aria-hidden="true">JC</span><div><h3>José Antonio Chumacero Calle</h3><p class="p-role">Gerente General</p><p class="p-cred">Doctor en Economía</p></div></div>
+        <p class="bio">Dirige la firma y la relación con cada cliente. Aporta la mirada económica a cada proyecto: que todo proceso rediseñado se justifique en costo, tiempo y valor generado, y que las decisiones de mejora se tomen con números.</p>
+        <div class="p-tags"><span>Dirección de proyectos</span><span>Análisis costo-beneficio</span><span>Costeo de procesos</span><span>Evaluación de impacto</span></div>
+        <div class="p-phases" aria-label="Fases en las que participa: las cuatro"><i class="on" style="--c:var(--p1)"></i><i class="on" style="--c:var(--p2)"></i><i class="on" style="--c:var(--p3)"></i><i class="on" style="--c:var(--p4)"></i><span>Las cuatro fases</span></div>
+      </article>
+      <article class="person lead-p">
+        <div class="p-top"><span class="mono-tile" aria-hidden="true">ÁR</span><div><h3>Álvaro Rojas Carnero</h3><p class="p-role">Subgerente</p><p class="p-cred">Coordinación de proyectos</p></div></div>
+        <p class="bio">Coordina la ejecución: plan de trabajo, cronograma, ruta crítica y control de calidad de cada entregable. Es el punto de contacto diario del cliente y lidera la documentación y la procedimentación.</p>
+        <div class="p-tags"><span>Gestión de proyectos (PMBOK)</span><span>Mapas de procesos</span><span>Fichas de caracterización</span><span>Control de calidad</span></div>
+        <div class="p-phases" aria-label="Fases que lidera: Documentar y Procedimentar"><i class="on" style="--c:var(--p1)"></i><i class="on" style="--c:var(--p2)"></i><i></i><i></i><span>Documentar · Procedimentar</span></div>
+      </article>
+      <article class="person">
+        <div class="p-top"><span class="mono-tile" aria-hidden="true">IF</span><div><h3>Isabel Flores Guamaní</h3><p class="p-role">Especialista en automatización</p></div></div>
+        <p class="bio">Convierte tareas repetitivas en flujos automáticos: carga y validación de datos, formularios, reportes y alertas. Automatiza solo lo que ya está documentado y estandarizado.</p>
+        <div class="p-tags"><span>Automatización de flujos</span><span>Integración de datos</span><span>Validaciones</span></div>
+        <div class="p-phases" aria-label="Fases en las que participa: Procedimentar y Mejorar"><i></i><i class="on" style="--c:var(--p2)"></i><i></i><i class="on" style="--c:var(--p4)"></i><span>Procedimentar · Mejorar</span></div>
+      </article>
+      <article class="person">
+        <div class="p-top"><span class="mono-tile" aria-hidden="true">OR</span><div><h3>Oriol Romero Saavedra</h3><p class="p-role">Especialista en KPI y OKR</p></div></div>
+        <p class="bio">Diseña el sistema de medición: indicadores con ficha técnica, línea base y meta; OKR que conectan la estrategia con la operación; y tableros que se leen en un minuto.</p>
+        <div class="p-tags"><span>KPI</span><span>OKR</span><span>Tableros de control</span><span>Fichas de indicadores</span></div>
+        <div class="p-phases" aria-label="Fases en las que participa: Medir y Mejorar"><i></i><i></i><i class="on" style="--c:var(--p3)"></i><i class="on" style="--c:var(--p4)"></i><span>Medir · Mejorar</span></div>
+      </article>
+      <article class="person">
+        <div class="p-top"><span class="mono-tile" aria-hidden="true">LV</span><div><h3>Luis Valarenzo</h3><p class="p-role">Desarrollador full stack · backend</p></div></div>
+        <p class="bio">Construye las plataformas que sostienen la gestión por procesos: repositorios de procesos, módulos de indicadores, encuestas y actas digitales, e integraciones con los sistemas del cliente.</p>
+        <div class="p-tags"><span>Backend y API</span><span>Bases de datos</span><span>Plataformas web</span><span>Integraciones</span></div>
+        <div class="p-phases" aria-label="Fases en las que participa: Medir y Mejorar"><i></i><i></i><i class="on" style="--c:var(--p3)"></i><i class="on" style="--c:var(--p4)"></i><span>Medir · Mejorar</span></div>
+      </article>
+    </div>
+
+    <div class="story">
+      <h3>Por qué nos llamamos Kipu</h3>
+      <div>
+        <p>El kipu fue el sistema de cuerdas anudadas con el que el Tahuantinsuyo registraba y contaba: tributos, cosechas, poblaciones. Era, a su manera, un sistema de información para gobernar, y funcionaba en todo un imperio.</p>
+        <p>Tomamos su nombre porque hacemos lo mismo con los procesos de su organización: registrarlos, ordenarlos y medirlos para decidir mejor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INSIGHTS ================= -->
+<section class="sec" id="recursos" aria-labelledby="ins-t">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Recursos</p>
+      <h2 class="h2" id="ins-t">Lo que aprendimos, <em>por escrito</em>.</h2>
+      <p class="lead">Guías breves para quien lidera una implementación de gestión por procesos. Se leen aquí mismo, en pocos minutos.</p>
+    </header>
+    <div class="ins">
+      <article class="icard feat">
+        <svg class="seal" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke-width="22"><path d="M100 22a78 78 0 0 1 78 78" style="stroke:var(--b1)"/><path d="M178 100a78 78 0 0 1-78 78" style="stroke:var(--b2)"/><path d="M100 178a78 78 0 0 1-78-78" style="stroke:var(--b3)"/><path d="M22 100a78 78 0 0 1 78-78" style="stroke:var(--b4)"/></g></svg>
+        <span class="tag">Sector público · Normativa</span>
+        <h3><button type="button" class="stretch" data-open="art-nt">La Norma Técnica N.º 002-2025-PCM/SGP en cinco puntos</button></h3>
+        <p>Qué exige, qué cambió frente a la norma de 2018 y cómo se traduce en entregables concretos para su entidad.</p>
+        <span class="meta">Lectura de 4 min →</span>
+      </article>
+      <article class="icard">
+        <span class="tag">Gestión de proyectos</span>
+        <h3><button type="button" class="stretch" data-open="art-errores">Cinco errores que frenan una implementación</button></h3>
+        <p>Ninguno es técnico. Todos tienen una solución sencilla si se detectan a tiempo.</p>
+        <span class="meta">Lectura de 5 min →</span>
+      </article>
+      <article class="icard">
+        <span class="tag">Indicadores</span>
+        <h3><button type="button" class="stretch" data-open="art-avance">Cómo medir el avance sin engañarse</button></h3>
+        <p>Una fórmula, un peso para lo observado y la trampa que esconde el denominador.</p>
+        <span class="meta">Lectura de 3 min →</span>
+      </article>
+      <article class="icard">
+        <span class="tag">Indicadores</span>
+        <h3><button type="button" class="stretch" data-open="art-kpi">KPI y OKR: dos herramientas, dos preguntas</button></h3>
+        <p>Cuándo usar cada uno y cómo se conectan, con un ejemplo de atención al usuario.</p>
+        <span class="meta">Lectura de 4 min →</span>
+      </article>
+      <article class="icard">
+        <span class="tag">Automatización</span>
+        <h3><button type="button" class="stretch" data-open="art-auto">Automatizar después de documentar</button></h3>
+        <p>Automatizar un proceso desordenado produce el mismo desorden, pero más rápido.</p>
+        <span class="meta">Lectura de 3 min →</span>
+      </article>
+      <article class="icard">
+        <span class="tag">Metodología</span>
+        <h3><button type="button" class="stretch" data-open="art-cuna">La cuña de Deming: por qué las mejoras retroceden</button></h3>
+        <p>Y las tres cosas con las que cerramos cada mejora para que no vuelva atrás.</p>
+        <span class="meta">Lectura de 3 min →</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ENGAGEMENT ================= -->
+<section class="sec band" id="como-trabajamos" aria-labelledby="eng-t">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow">Cómo trabajamos</p>
+      <h2 class="h2" id="eng-t">Seis formas de empezar. <em>Un solo estándar de calidad.</em></h2>
+      <p class="lead">Elija la modalidad según el punto en que se encuentra. Todas usan el mismo método, los mismos formatos y las mismas reglas de trabajo.</p>
+    </header>
+    <div class="models">
+      <article class="model"><p class="k">Para empezar</p><h3>Diagnóstico de madurez</h3><p>Revisamos sus documentos, entrevistamos a los dueños de proceso y le entregamos un informe de brechas con una hoja de ruta priorizada.</p><p class="fit"><b>Conviene si</b>todavía no sabe por dónde empezar.</p></article>
+      <article class="model"><p class="k">El más completo</p><h3>Proyecto integral</h3><p>Las cuatro fases con un solo equipo, un solo plan de trabajo y un cronograma con ruta crítica. Termina con su equipo operando el ciclo.</p><p class="fit"><b>Conviene si</b>debe implementar la gestión por procesos desde cero.</p></article>
+      <article class="model"><p class="k">A la medida</p><h3>Por fase</h3><p>Contrata solo la fase que le falta: por ejemplo, el sistema de indicadores para un mapa de procesos que ya existe.</p><p class="fit"><b>Conviene si</b>ya avanzó parte del camino.</p></article>
+      <article class="model"><p class="k">Continuidad</p><h3>Acompañamiento mensual</h3><p>Revisión periódica de indicadores, conducción de ciclos de mejora y actualización de procedimientos.</p><p class="fit"><b>Conviene si</b>quiere sostener la mejora continua sin un equipo dedicado.</p></article>
+      <article class="model"><p class="k">Capacidades</p><h3>Formación</h3><p>Talleres prácticos para dueños de proceso, equipos de planeamiento y jefaturas, con casos de su propia organización.</p><p class="fit"><b>Conviene si</b>quiere que su equipo lo haga por su cuenta.</p></article>
+      <article class="model"><p class="k">Tecnología</p><h3>Automatización y plataformas</h3><p>Automatizaciones y sistemas web a medida para registrar procesos, medir indicadores y eliminar trabajo manual.</p><p class="fit"><b>Conviene si</b>sus procesos ya están definidos y el cuello de botella es operativo.</p></article>
+    </div>
+
+    <h3 class="steps-h">Cómo empezamos</h3>
+    <ol class="steps">
+      <li class="step"><h4>Conversación inicial</h4><p>Una reunión para entender su situación, sus plazos y lo que ya tiene avanzado.</p></li>
+      <li class="step"><h4>Revisión documental</h4><p>Leemos sus documentos de gestión para no proponer lo que ya existe.</p></li>
+      <li class="step"><h4>Propuesta</h4><p>Técnica y económica, con alcance, entregables, cronograma y equipo asignado.</p></li>
+      <li class="step"><h4>Arranque</h4><p>Plan de trabajo, contraparte designada, plazos de respuesta acordados y ruta crítica.</p></li>
+      <li class="step"><h4>Ejecución</h4><p>Entregas por fase, informes de avance periódicos y validación con sus dueños de proceso.</p></li>
+      <li class="step"><h4>Cierre y transferencia</h4><p>Entrega de todos los archivos, capacitación y acompañamiento en el primer ciclo.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="sec" id="preguntas" aria-labelledby="faq-t">
+  <div class="wrap faq">
+    <header class="sec-head">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2 class="h2" id="faq-t">Lo que suelen preguntarnos antes de empezar.</h2>
+      <p class="lead">Si su pregunta no está aquí, escríbanos desde el formulario de contacto.</p>
+    </header>
+    <div>
+      <details><summary>¿Cuánto cuesta un proyecto?</summary><div class="ans"><p>Depende del alcance: el número de procesos, de unidades o sedes, y de las fases que necesite. Cotizamos por entregables, con un precio definido desde la propuesta.</p><p>El autodiagnóstico de esta página le da una estimación de duración que sirve como primera referencia.</p></div></details>
+      <details><summary>¿Cuánto dura una implementación completa?</summary><div class="ans"><p>Para una organización mediana, entre 6 y 10 meses para las cuatro fases. Como referencia: documentar toma de 6 a 10 semanas, procedimentar de 8 a 14, medir de 4 a 8 y cada ciclo de mejora de 6 a 12.</p><p>Las organizaciones con varias sedes o más de 30 procesos necesitan más tiempo, y las que ya tienen avance, menos.</p></div></details>
+      <details><summary>¿Puedo contratar solo una fase?</summary><div class="ans"><p>Sí. Antes revisamos lo que ya tiene. Si una fase previa tiene vacíos que afectan a la que contrata, se lo decimos en la propuesta: no conviene medir procesos que todavía no están documentados.</p></div></details>
+      <details><summary>¿Trabajan con entidades públicas?</summary><div class="ans"><p>Sí. Respondemos a sus términos de referencia y preparamos los entregables conforme a la Norma Técnica N.º 002-2025-PCM/SGP y a la Guía práctica de la Secretaría de Gestión Pública. Conocemos la dinámica de las oficinas de planeamiento y modernización.</p></div></details>
+      <details><summary>¿Qué necesitan de nuestra organización?</summary><div class="ans"><p>Las tres condiciones que la propia norma técnica señala: compromiso de la alta dirección, disponibilidad de recursos, y sensibilización y compromiso del personal.</p><p>En la práctica: una contraparte designada, acceso a los documentos de gestión y unas horas por semana de cada dueño de proceso para talleres y validaciones.</p></div></details>
+      <details><summary>¿Qué herramientas usan? ¿Hay que comprar licencias?</summary><div class="ans"><p>Diagramamos en BPMN 2.0 con Bizagi Modeler, que es gratuito, o con la herramienta que su organización ya use. Los indicadores y tableros se construyen en Looker Studio, Power BI o las hojas de cálculo que ya tenga. No exigimos licencias adicionales.</p></div></details>
+      <details><summary>¿De quién son los entregables y el código?</summary><div class="ans"><p>De su organización. Entregamos todos los archivos editables: diagramas, manuales, fichas, tableros y, en los desarrollos a medida, el código fuente con su documentación.</p></div></details>
+      <details><summary>¿Trabajan fuera de Lima?</summary><div class="ans"><p>Sí. Combinamos talleres presenciales en los momentos clave con trabajo remoto el resto del tiempo, de modo que la distancia no encarece el proyecto.</p></div></details>
+      <details><summary>¿Nos ayudan a certificar ISO 9001?</summary><div class="ans"><p>Preparamos el sistema: procesos, procedimientos, indicadores y la evidencia que pide el enfoque basado en procesos de ISO 9001:2015. La certificación la otorga un organismo de certificación acreditado e independiente, no la consultora.</p></div></details>
+      <details><summary>¿Qué pasa cuando termina el proyecto?</summary><div class="ans"><p>Su equipo queda capacitado para operar el ciclo por su cuenta. Si lo prefiere, seguimos con un acompañamiento mensual para revisar indicadores y conducir nuevos ciclos de mejora.</p></div></details>
+      <details><summary>¿Cómo protegen la información de nuestra organización?</summary><div class="ans"><p>Firmamos un acuerdo de confidencialidad antes de recibir cualquier documento, trabajamos en los repositorios que usted nos indique y tratamos los datos personales conforme a la Ley N.º 29733, de Protección de Datos Personales.</p></div></details>
+      <details><summary>¿Desarrollan software a medida?</summary><div class="ans"><p>Sí, cuando hace falta. Construimos plataformas web para registrar procesos, fichas e indicadores, módulos de encuestas y actas digitales, y automatizaciones que conectan sus sistemas existentes. Primero documentamos el proceso; después lo programamos.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="sec alt" id="contacto" aria-labelledby="ct-t">
+  <div class="wrap contact">
+    <div>
+      <p class="eyebrow">Contacto</p>
+      <h2 class="h2" id="ct-t" style="margin-top:20px">Conversemos sobre <em>sus procesos</em>.</h2>
+      <p class="lead" style="margin-top:20px">Cuéntenos qué necesita. Con su mensaje preparamos la primera reunión: revisamos su situación, le decimos qué fases recomendamos y qué necesitaríamos de su equipo.</p>
+      <dl class="cinfo">
+        <div><dt>Oficina</dt><dd data-config="ciudad">Lima, Perú</dd></div>
+        <div><dt>Cobertura</dt><dd>Todo el Perú, en forma presencial y remota</dd></div>
+        <div data-config-row="correo" hidden><dt>Correo</dt><dd><a data-config="correo" href="#"></a></dd></div>
+        <div data-config-row="telefono" hidden><dt>Teléfono</dt><dd><a data-config="telefono" href="#"></a></dd></div>
+        <div data-config-row="whatsapp" hidden><dt>WhatsApp</dt><dd><a data-config="whatsapp" href="#" target="_blank" rel="noopener"></a></dd></div>
+        <div data-config-row="linkedin" hidden><dt>LinkedIn</dt><dd><a data-config="linkedin" href="#" target="_blank" rel="noopener">Kipu Consultores</a></dd></div>
+      </dl>
+    </div>
+
+    <div>
+      <form class="form" id="ct-form" novalidate>
+        <h3>Solicitar una propuesta</h3>
+        <div class="row2">
+          <div class="fld"><label for="f-nombre">Nombre y apellido <i>*</i></label><input id="f-nombre" name="nombre" autocomplete="name" required><span class="err" id="e-nombre"></span></div>
+          <div class="fld"><label for="f-cargo">Cargo</label><input id="f-cargo" name="cargo" autocomplete="organization-title"></div>
+        </div>
+        <div class="row2">
+          <div class="fld"><label for="f-org">Organización <i>*</i></label><input id="f-org" name="organizacion" autocomplete="organization" required><span class="err" id="e-org"></span></div>
+          <div class="fld"><label for="f-tipo">Tipo de organización</label>
+            <select id="f-tipo" name="tipo"><option>Entidad pública</option><option>Empresa privada</option><option>Universidad o instituto</option><option>Otra</option></select></div>
+        </div>
+        <div class="row2">
+          <div class="fld"><label for="f-correo">Correo electrónico <i>*</i></label><input id="f-correo" name="correo" type="email" autocomplete="email" required><span class="err" id="e-correo"></span></div>
+          <div class="fld"><label for="f-tel">Teléfono</label><input id="f-tel" name="telefono" type="tel" autocomplete="tel"></div>
+        </div>
+        <fieldset class="fld">
+          <legend>Servicios de interés</legend>
+          <div class="checks">
+            <label><input type="checkbox" name="svc" value="Documentar" id="c-doc"> Documentar</label>
+            <label><input type="checkbox" name="svc" value="Procedimentar" id="c-pro"> Procedimentar</label>
+            <label><input type="checkbox" name="svc" value="Medir" id="c-med"> Medir</label>
+            <label><input type="checkbox" name="svc" value="Mejorar" id="c-mej"> Mejorar</label>
+            <label><input type="checkbox" name="svc" value="Automatización" id="c-aut"> Automatización</label>
+            <label><input type="checkbox" name="svc" value="Plataforma a medida" id="c-pla"> Plataforma a medida</label>
+            <label><input type="checkbox" name="svc" value="Formación" id="c-for"> Formación</label>
+            <label><input type="checkbox" name="svc" value="No estoy seguro" id="c-nos"> No estoy seguro</label>
+          </div>
+        </fieldset>
+        <div class="fld"><label for="f-msg">¿Qué necesita? <i>*</i></label><textarea id="f-msg" name="mensaje" required placeholder="Por ejemplo: somos una municipalidad con 14 procesos identificados y necesitamos actualizar el manual de procedimientos antes de fin de año."></textarea><span class="err" id="e-msg"></span></div>
+        <label class="consent"><input type="checkbox" id="f-ok" required> <span>Acepto que Kipu Consultores use estos datos solo para responder mi consulta, conforme a la Ley N.º 29733, de Protección de Datos Personales.</span></label>
+        <span class="err" id="e-ok"></span>
+        <div><button type="submit" class="btn btn-primary">Preparar mi solicitud <span class="arr" aria-hidden="true">→</span></button></div>
+      </form>
+
+      <div class="form done" id="ct-done" hidden tabindex="-1">
+        <h3>Su solicitud está lista</h3>
+        <p id="done-msg">Revise el texto y envíelo desde su correo.</p>
+        <pre id="done-text"></pre>
+        <div class="acts">
+          <a class="btn btn-primary" id="done-mail" href="#" hidden>Abrir en mi correo <span class="arr" aria-hidden="true">→</span></a>
+          <button type="button" class="btn btn-ghost" id="done-copy">Copiar el texto</button>
+          <button type="button" class="link" id="done-back">Editar la solicitud</button>
+        </div>
+        <p class="fine" id="done-note"></p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="band ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div>
+        <a class="brand" href="#inicio" aria-label="Kipu Consultores, volver al inicio">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 16V2a14 14 0 0 1 14 14z" style="fill:var(--b1)"/><path d="M16 16h14a14 14 0 0 1-14 14z" style="fill:var(--b2)"/><path d="M16 16v14A14 14 0 0 1 2 16z" style="fill:var(--b3)"/><path d="M16 16H2A14 14 0 0 1 16 2z" style="fill:var(--b4)"/><circle cx="16" cy="16" r="6" style="fill:var(--band)"/></svg>
+          <span class="brand-txt"><span class="brand-name">Kipu</span><span class="brand-sub">Gestión por procesos</span></span>
+        </a>
+        <p class="about">Consultora en gestión por procesos para entidades públicas y empresas privadas. Documentar, procedimentar, medir y mejorar.</p>
+        <div class="ftr-phases" aria-hidden="true"><i style="--c:var(--b1)"></i><i style="--c:var(--b2)"></i><i style="--c:var(--b3)"></i><i style="--c:var(--b4)"></i></div>
+      </div>
+      <div><h4>Servicios</h4><ul><li><a href="#documentar" data-tab="documentar">Documentar</a></li><li><a href="#procedimentar" data-tab="procedimentar">Procedimentar</a></li><li><a href="#medir" data-tab="medir">Medir</a></li><li><a href="#mejorar" data-tab="mejorar">Mejorar</a></li><li><a href="#capacidades">Capacidades</a></li></ul></div>
+      <div><h4>La firma</h4><ul><li><a href="#metodologia">Metodología</a></li><li><a href="#sectores">Sectores</a></li><li><a href="#experiencia">Experiencia</a></li><li><a href="#equipo">Equipo</a></li><li><a href="#como-trabajamos">Cómo trabajamos</a></li></ul></div>
+      <div><h4>Recursos</h4><ul><li><a href="#recursos">Artículos</a></li><li><a href="#diagnostico">Autodiagnóstico</a></li><li><a href="#preguntas">Preguntas frecuentes</a></li></ul></div>
+      <div><h4>Contacto</h4><ul><li><a href="#contacto">Solicitar propuesta</a></li><li><span data-config="ciudad" style="color:var(--band-fg-2);font-size:15px">Lima, Perú</span></li></ul></div>
+    </div>
+    <div class="ftr-bot">
+      <span>© <span id="year">2026</span> Kipu Consultores. Lima, Perú.</span>
+      <span>Este sitio no usa cookies ni rastreadores. Sus respuestas del autodiagnóstico se quedan en su navegador.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= ARTICLES ================= -->
+<dialog class="reader" id="art-nt" aria-labelledby="art-nt-t">
+  <div class="reader-in">
+    <button type="button" class="reader-x" data-close aria-label="Cerrar">×</button>
+    <p class="tag">Sector público · Normativa</p>
+    <h2 id="art-nt-t">La Norma Técnica N.º 002-2025-PCM/SGP en cinco puntos</h2>
+    <p class="meta">Lectura de 4 min</p>
+    <div class="prose">
+      <p>La gestión por procesos dejó de ser una buena práctica opcional en el Estado peruano. Desde febrero de 2025 rige la Norma Técnica N.º 002-2025-PCM/SGP, aprobada por la Resolución de Secretaría de Gestión Pública N.º 002-2025-PCM/SGP, que reemplaza a la Norma Técnica N.º 001-2018-SGP.</p>
+      <h3>1. Es de cumplimiento obligatorio</h3>
+      <p>Aplica a las entidades de la administración pública. Su finalidad es que entreguen bienes, servicios y regulaciones de calidad, que respondan a las necesidades de las personas y generen valor público.</p>
+      <h3>2. Los productos van primero</h3>
+      <p>La norma pone en el centro los productos de la entidad (bienes, servicios y regulaciones) y a quienes los reciben. Antes de dibujar un proceso hay que saber qué produce y para quién. Por eso nuestra fase Documentar empieza por el inventario de productos.</p>
+      <h3>3. Cuatro fases</h3>
+      <p>El ciclo que propone tiene cuatro fases: identificación de productos y procesos, implementación de procesos, evaluación de productos y procesos, y mejora de productos y procesos. Corresponden una a una con nuestras fases: documentar, procedimentar, medir y mejorar.</p>
+      <h3>4. Tres condiciones previas</h3>
+      <p>Compromiso de la alta dirección, disponibilidad de recursos, y sensibilización y compromiso de los servidores. Sin estas tres, cualquier implementación se queda en documentos. Las verificamos en la reunión de arranque y las dejamos por escrito.</p>
+      <h3>5. Hay una guía práctica</h3>
+      <p>En octubre de 2025 la Secretaría de Gestión Pública aprobó los Lineamientos N.º 001-2025-PCM/SGP, «Guía práctica para la Gestión por Procesos en las entidades de la Administración Pública», mediante la Resolución de Secretaría de Gestión Pública N.º 009-2025-PCM/SGP. Es el documento de consulta para aplicar las herramientas de la norma.</p>
+      <p class="note">Este resumen es orientativo. Para cualquier decisión, consulte los textos oficiales en gob.pe: <a href="https://www.gob.pe/institucion/pcm/normas-legales/6501954-002-2025-pcm-sgp" target="_blank" rel="noopener">Resolución N.º 002-2025-PCM/SGP</a> y <a href="https://www.gob.pe/institucion/pcm/normas-legales/7260049-009-2025-pcm-sgp" target="_blank" rel="noopener">Resolución N.º 009-2025-PCM/SGP</a>.</p>
+    </div>
+    <div class="reader-cta"><a class="btn btn-primary" href="#contacto" data-close-go>Hablar con el equipo <span class="arr" aria-hidden="true">→</span></a><a class="link" href="#diagnostico" data-close-go>Hacer el autodiagnóstico</a></div>
+  </div>
+</dialog>
+
+<dialog class="reader" id="art-errores" aria-labelledby="art-errores-t">
+  <div class="reader-in">
+    <button type="button" class="reader-x" data-close aria-label="Cerrar">×</button>
+    <p class="tag">Gestión de proyectos</p>
+    <h2 id="art-errores-t">Cinco errores que frenan una implementación</h2>
+    <p class="meta">Lectura de 5 min</p>
+    <div class="prose">
+      <p>Los reunimos de nuestra propia experiencia. Ninguno es técnico: todos son de organización, y todos tienen una solución sencilla si se detectan a tiempo.</p>
+      <ol>
+        <li><strong>Medir el avance con la fuente equivocada.</strong> Cuando el cronograma dice 80 % y la revisión de calidad dice 60 %, cada quien cita la cifra que le conviene. Decida desde el inicio cuál es la fuente oficial del avance y use la otra solo para la gestión interna.</li>
+        <li><strong>Dos codificaciones circulando a la vez.</strong> Basta que un proceso de soporte cambie de número en un documento para que la información de varias unidades se cruce. Publique un catálogo maestro de procesos, con códigos que nunca se reutilizan, y audite contra él antes de seguir cargando datos.</li>
+        <li><strong>Entregables con dos aprobadores.</strong> Si dos personas aprueban el mismo documento, ninguna lo cierra. Un solo aprobador por entregable; los demás, consultados o informados.</li>
+        <li><strong>Depender de una sola persona.</strong> Cuando el conocimiento de una herramienta o de un sistema vive en una sola cabeza, una renuncia detiene el proyecto. Documente el código y los procedimientos y designe siempre un segundo responsable.</li>
+        <li><strong>Esperar respuestas sin plazo.</strong> Las áreas consultadas tienen su propia carga. Acuerde por escrito cuántos días hábiles tienen para revisar y qué ocurre cuando el plazo vence; por ejemplo, que la propuesta se da por conforme.</li>
+      </ol>
+      <p>Los cinco tienen algo en común: se resuelven con una decisión explícita al inicio del proyecto. Por eso las convertimos en reglas de trabajo y las dejamos en el acta de arranque.</p>
+    </div>
+    <div class="reader-cta"><a class="btn btn-primary" href="#contacto" data-close-go>Hablar con el equipo <span class="arr" aria-hidden="true">→</span></a><a class="link" href="#metodologia" data-close-go>Ver nuestras reglas de trabajo</a></div>
+  </div>
+</dialog>
+
+<dialog class="reader" id="art-avance" aria-labelledby="art-avance-t">
+  <div class="reader-in">
+    <button type="button" class="reader-x" data-close aria-label="Cerrar">×</button>
+    <p class="tag">Indicadores</p>
+    <h2 id="art-avance-t">Cómo medir el avance sin engañarse</h2>
+    <p class="meta">Lectura de 3 min</p>
+    <div class="prose">
+      <p>Un buen indicador de avance responde una sola pregunta: ¿qué parte del trabajo ya se puede publicar? Proponemos esta fórmula:</p>
+      <p class="formula">Avance = (Conformes + 0,5 × Observados) ÷ Total de productos</p>
+      <p>Un producto conforme suma un punto. Uno observado suma medio punto: existe, pero aún tiene correcciones pendientes. Uno sin registrar no suma.</p>
+      <h3>La trampa está en el denominador</h3>
+      <p>Si una unidad debe registrar 16 procesos obligatorios y solo carga 15, todos conformes, una fórmula que divida entre lo registrado le dará 100 %. Dividiendo entre lo exigido, el resultado correcto es 15 ÷ 16 = 93,8 %. <strong>Registrar menos nunca debe mejorar la cifra.</strong></p>
+      <h3>Avance no es ejecución</h3>
+      <p>El porcentaje de actividades iniciadas o culminadas del cronograma mide cuánto se ha trabajado, no cuánto está listo. Las dos cifras sirven, pero solo una se reporta como avance a la alta dirección. Mezclarlas es la forma más rápida de perder credibilidad.</p>
+    </div>
+    <div class="reader-cta"><a class="btn btn-primary" href="#contacto" data-close-go>Hablar con el equipo <span class="arr" aria-hidden="true">→</span></a><a class="link" href="#medir" data-tab="medir" data-close-go>Ver la fase Medir</a></div>
+  </div>
+</dialog>
+
+<dialog class="reader" id="art-kpi" aria-labelledby="art-kpi-t">
+  <div class="reader-in">
+    <button type="button" class="reader-x" data-close aria-label="Cerrar">×</button>
+    <p class="tag">Indicadores</p>
+    <h2 id="art-kpi-t">KPI y OKR: dos herramientas, dos preguntas</h2>
+    <p class="meta">Lectura de 4 min</p>
+    <div class="prose">
+      <p>Un KPI responde «¿cómo está funcionando el proceso?». Un OKR responde «¿qué queremos cambiar este trimestre?». Se complementan, pero no se sustituyen.</p>
+      <h3>El KPI vigila</h3>
+      <p>Se mide siempre, con la misma fórmula, para seguir la salud de un proceso: su eficacia, su eficiencia y su calidad. Cada uno necesita una ficha técnica con fórmula, fuente de datos, frecuencia, responsable, línea base y meta.</p>
+      <h3>El OKR empuja</h3>
+      <p>Es un objetivo cualitativo y ambicioso, acompañado de tres a cinco resultados clave medibles, con un plazo corto, normalmente un trimestre. Sirve para mover a la organización hacia algo nuevo.</p>
+      <h3>Un ejemplo</h3>
+      <dl class="ex">
+        <dt>Proceso</dt><dd>Atención de solicitudes de usuarios</dd>
+        <dt>KPI</dt><dd>Tiempo promedio de atención, en días hábiles, medido cada mes</dd>
+        <dt>Objetivo del trimestre</dt><dd>Atender sin colas ni papeles</dd>
+        <dt>Resultados clave</dt><dd>Bajar el tiempo promedio de 12 a 5 días hábiles · 90 % de solicitudes ingresadas en línea · 85 % o más de satisfacción en la encuesta de salida</dd>
+      </dl>
+      <p class="note">Cifras ilustrativas.</p>
+      <p>Cuando el OKR se cumple, el nuevo nivel pasa a ser la meta del KPI. Así la mejora queda fija y el siguiente OKR puede apuntar a otra cosa.</p>
+    </div>
+    <div class="reader-cta"><a class="btn btn-primary" href="#contacto" data-close-go>Hablar con el equipo <span class="arr" aria-hidden="true">→</span></a><a class="link" href="#medir" data-tab="medir" data-close-go>Ver la fase Medir</a></div>
+  </div>
+</dialog>
+
+<dialog class="reader" id="art-auto" aria-labelledby="art-auto-t">
+  <div class="reader-in">
+    <button type="button" class="reader-x" data-close aria-label="Cerrar">×</button>
+    <p class="tag">Automatización</p>
+    <h2 id="art-auto-t">Automatizar después de documentar</h2>
+    <p class="meta">Lectura de 3 min</p>
+    <div class="prose">
+      <p>Automatizar un proceso desordenado produce el mismo desorden, pero más rápido. Por eso, en nuestro método, la automatización llega cuando el proceso ya está documentado, estandarizado y medido.</p>
+      <h3>Buenas candidatas</h3>
+      <ul class="dots">
+        <li>Tareas repetitivas con reglas claras.</li>
+        <li>Volumen alto: decenas o cientos de registros por semana.</li>
+        <li>Datos que ya están en formato digital.</li>
+        <li>Errores frecuentes al copiar información de un lugar a otro.</li>
+      </ul>
+      <h3>Lo que solemos automatizar</h3>
+      <ul class="dots">
+        <li>Llenado de formatos a partir de formularios.</li>
+        <li>Validación de códigos y campos obligatorios antes de que un registro entre a la base de datos.</li>
+        <li>Consolidación de reportes de varias unidades en un solo tablero.</li>
+        <li>Alertas de plazos por vencer.</li>
+      </ul>
+      <p>Cada automatización se entrega documentada, con su procedimiento y con un responsable de mantenimiento designado en su organización.</p>
+    </div>
+    <div class="reader-cta"><a class="btn btn-primary" href="#contacto" data-close-go>Hablar con el equipo <span class="arr" aria-hidden="true">→</span></a><a class="link" href="#capacidades" data-close-go>Ver las capacidades</a></div>
+  </div>
+</dialog>
+
+<dialog class="reader" id="art-cuna" aria-labelledby="art-cuna-t">
+  <div class="reader-in">
+    <button type="button" class="reader-x" data-close aria-label="Cerrar">×</button>
+    <p class="tag">Metodología</p>
+    <h2 id="art-cuna-t">La cuña de Deming: por qué las mejoras retroceden</h2>
+    <p class="meta">Lectura de 3 min</p>
+    <div class="prose">
+      <p>La imagen clásica del ciclo PHVA es una rueda que sube una pendiente. Cada vuelta (planificar, hacer, verificar, actuar) la lleva un poco más arriba. Detrás de la rueda hay una cuña que le impide rodar hacia atrás: el estándar.</p>
+      <p>Sin la cuña, la mejora depende de la memoria y de la voluntad de quienes la hicieron. Basta un cambio de jefatura o de personal para que el proceso vuelva a ser como antes.</p>
+      <h3>Cómo se pone la cuña</h3>
+      <p>Cerramos cada mejora con tres cosas:</p>
+      <ol>
+        <li>El procedimiento actualizado y aprobado.</li>
+        <li>El personal capacitado en la nueva forma de trabajar.</li>
+        <li>Un indicador que avise si el proceso vuelve a su nivel anterior.</li>
+      </ol>
+      <p>Es la razón por la que la fase Procedimentar está en el centro del método: un procedimiento escrito es la cuña.</p>
+    </div>
+    <div class="reader-cta"><a class="btn btn-primary" href="#contacto" data-close-go>Hablar con el equipo <span class="arr" aria-hidden="true">→</span></a><a class="link" href="#metodologia" data-close-go>Ver la metodología</a></div>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ==========================================================
+     DATOS DE CONTACTO. Complete estos campos y se mostrarán
+     automáticamente en la sección Contacto. Un campo vacío
+     simplemente no aparece en la página.
+     ========================================================== */
+  var CONFIG = {
+    firma: 'Kipu Consultores',
+    correo: '',     // p. ej. 'contacto@sudominio.pe'
+    telefono: '',   // p. ej. '+51 1 234 5678'
+    whatsapp: '',   // solo dígitos con código de país, p. ej. '51987654321'
+    linkedin: '',   // URL completa de la página de LinkedIn
+    ciudad: 'Lima, Perú'
+  };
+
+  document.documentElement.lang = 'es';
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var store = {
+    get: function (k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
+    set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* sin almacenamiento */ } }
+  };
+
+  /* ---------- Contact data ---------- */
+  ['correo', 'telefono', 'whatsapp', 'linkedin'].forEach(function (k) {
+    var v = CONFIG[k];
+    var row = $('[data-config-row="' + k + '"]');
+    if (!row || !v) return;
+    var a = $('[data-config="' + k + '"]', row);
+    if (k === 'correo') { a.href = 'mailto:' + v; a.textContent = v; }
+    if (k === 'telefono') { a.href = 'tel:' + v.replace(/[^\d+]/g, ''); a.textContent = v; }
+    if (k === 'whatsapp') { a.href = 'https://wa.me/' + v.replace(/\D/g, ''); a.textContent = '+' + v.replace(/\D/g, ''); }
+    if (k === 'linkedin') { a.href = v; }
+    row.hidden = false;
+  });
+  $$('[data-config="ciudad"]').forEach(function (el) { el.textContent = CONFIG.ciudad; });
+  $('#year').textContent = String(new Date().getFullYear());
+
+  /* ---------- Header ---------- */
+  var hdr = $('#hdr');
+  var onScroll = function () { hdr.classList.toggle('scrolled', window.scrollY > 8); };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var megaBtn = $('#mega-btn'), mega = $('#mega');
+  function setMega(open) { megaBtn.setAttribute('aria-expanded', String(open)); mega.hidden = !open; }
+  megaBtn.addEventListener('click', function (e) { e.stopPropagation(); setMega(mega.hidden); });
+  document.addEventListener('click', function (e) { if (!mega.hidden && !mega.contains(e.target) && e.target !== megaBtn) setMega(false); });
+  mega.addEventListener('click', function (e) { if (e.target.closest('a')) setMega(false); });
+
+  var menuBtn = $('#menu-btn'), mnav = $('#mnav');
+  function setMenu(open) {
+    menuBtn.setAttribute('aria-expanded', String(open));
+    mnav.hidden = !open;
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  menuBtn.addEventListener('click', function () { setMenu(mnav.hidden); });
+  mnav.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+  window.addEventListener('resize', function () { if (window.innerWidth > 1120 && !mnav.hidden) setMenu(false); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    if (!mega.hidden) { setMega(false); megaBtn.focus(); }
+    if (!mnav.hidden) { setMenu(false); menuBtn.focus(); }
+  });
+
+  if ('IntersectionObserver' in window) {
+    var spyLinks = $$('[data-spy]');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        spyLinks.forEach(function (a) { a.classList.toggle('is-active', a.getAttribute('data-spy') === en.target.id); });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    spyLinks.forEach(function (a) { var s = document.getElementById(a.getAttribute('data-spy')); if (s) io.observe(s); });
+  }
+
+  /* ---------- Service tabs ---------- */
+  var tabs = $$('.tab');
+  var PANELS = tabs.map(function (t) { return t.getAttribute('aria-controls'); });
+  function selectTab(id, focus) {
+    tabs.forEach(function (t) {
+      var on = t.getAttribute('aria-controls') === id;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      if (on && focus) t.focus();
+      if (on && window.matchMedia('(max-width:960px)').matches) t.scrollIntoView({ block: 'nearest', inline: 'center' });
+    });
+  }
+  function goTab(id) {
+    selectTab(id);
+    var target = window.matchMedia('(max-width:960px)').matches ? $('.svc-tabs') : $('#servicios .svc');
+    target.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { selectTab(t.getAttribute('aria-controls')); });
+    t.addEventListener('keydown', function (e) {
+      var k = e.key, n = null;
+      if (k === 'ArrowDown' || k === 'ArrowRight') n = (i + 1) % tabs.length;
+      if (k === 'ArrowUp' || k === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+      if (k === 'Home') n = 0;
+      if (k === 'End') n = tabs.length - 1;
+      if (n !== null) { e.preventDefault(); selectTab(tabs[n].getAttribute('aria-controls'), true); }
+    });
+  });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-tab]');
+    if (!a) return;
+    e.preventDefault();
+    var d = a.closest('dialog');
+    if (d) { d.dataset.going = '1'; d.close(); }
+    goTab(a.getAttribute('data-tab'));
+  });
+  function fromHash() {
+    var h = (location.hash || '').slice(1);
+    if (PANELS.indexOf(h) > -1) goTab(h);
+  }
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
+
+  /* ---------- Helper ---------- */
+  var PH = [
+    { n: '01', name: 'Documentar', c: 'var(--p1)', cs: 'var(--p1-soft)' },
+    { n: '02', name: 'Procedimentar', c: 'var(--p2)', cs: 'var(--p2-soft)' },
+    { n: '03', name: 'Medir', c: 'var(--p3)', cs: 'var(--p3-soft)' },
+    { n: '04', name: 'Mejorar', c: 'var(--p4)', cs: 'var(--p4-soft)' }
+  ];
+  var GOALS = {
+    norma: { svc: 'Proyecto integral de gestión por procesos', desc: 'Las cuatro fases, en el orden que pide la norma técnica, con un solo equipo y un solo plan de trabajo. Termina con su entidad operando el ciclo por su cuenta.', ph: [1, 2, 3, 4], first: 'Inventario de productos y mapa de procesos de Nivel 0', dur: '24 a 44 semanas para las cuatro fases', tab: 'documentar', quote: ['Documentar', 'Procedimentar', 'Medir', 'Mejorar'] },
+    ordenar: { svc: 'Documentación y procedimentación de procesos', desc: 'Identificamos qué entrega su organización y con qué procesos, y convertimos cada proceso en procedimientos escritos, diagramados y validados.', ph: [1, 2], first: 'Mapa de procesos y fichas de caracterización', dur: '14 a 24 semanas', tab: 'documentar', quote: ['Documentar', 'Procedimentar'] },
+    manual: { svc: 'Manual de procedimientos (MAPRO)', desc: 'Levantamos, diagramamos en BPMN 2.0 y validamos sus procedimientos con quienes los ejecutan. Antes revisamos que el mapa de procesos siga vigente.', ph: [2], first: 'Procedimientos priorizados, diagramados en BPMN 2.0', dur: '8 a 14 semanas', tab: 'procedimentar', quote: ['Procedimentar'] },
+    medir: { svc: 'Sistema de indicadores, KPI y OKR', desc: 'Indicadores con ficha técnica, línea base y meta para cada proceso, OKR trimestrales y un tablero que se actualiza solo.', ph: [3], first: 'Fichas técnicas de indicadores con su línea base', dur: '4 a 8 semanas para el diseño', tab: 'medir', quote: ['Medir'] },
+    eficiencia: { svc: 'Rediseño y mejora de procesos', desc: 'Medimos dónde se pierde tiempo y dinero, buscamos la causa raíz y rediseñamos el proceso con herramientas Lean. Cada mejora se justifica con un análisis costo-beneficio.', ph: [3, 4], first: 'Línea base de tiempos y costos del proceso priorizado', dur: '10 a 20 semanas', tab: 'mejorar', quote: ['Medir', 'Mejorar'] },
+    automatizar: { svc: 'Automatización de procesos', desc: 'Automatizamos carga de datos, validaciones, reportes y alertas. Primero confirmamos que el proceso esté documentado: automatizar el desorden lo acelera.', ph: [2, 4], first: 'Inventario de tareas automatizables, priorizadas por horas ahorradas', dur: '6 a 12 semanas por paquete de automatizaciones', tab: 'mejorar', quote: ['Automatización'] },
+    iso: { svc: 'Preparación para ISO 9001:2015', desc: 'Construimos el sistema basado en procesos que pide la norma: mapa, procedimientos, indicadores y evidencia. La certificación la otorga un organismo acreditado.', ph: [1, 2, 3], first: 'Mapa de procesos y análisis de brechas frente a la norma', dur: '18 a 30 semanas', tab: 'documentar', quote: ['Documentar', 'Procedimentar', 'Medir'] },
+    plataforma: { svc: 'Plataforma de gestión por procesos a medida', desc: 'Un sistema web propio para registrar procesos, fichas, indicadores, encuestas y actas, integrado con sus sistemas actuales.', ph: [1, 3], first: 'Prototipo navegable del repositorio de procesos', dur: '10 a 20 semanas', tab: 'medir', quote: ['Plataforma a medida'] }
+  };
+  var ORGS = {
+    publica: { label: 'Entidad pública', marco: 'NT N.º 002-2025-PCM/SGP y Lineamientos N.º 001-2025-PCM/SGP (Guía práctica)' },
+    privada: { label: 'Empresa privada', marco: 'ISO 9001:2015 (enfoque basado en procesos), BPMN 2.0, Lean y OKR' },
+    universidad: { label: 'Universidad o instituto', marco: 'NT N.º 002-2025-PCM/SGP si es pública; en todos los casos, coherencia con los modelos de licenciamiento y acreditación' }
+  };
+  var hOrg = $('#h-org'), hGoal = $('#h-goal');
+  function renderHelper() {
+    var org = hOrg.value;
+    var normaOpt = hGoal.querySelector('option[value="norma"]');
+    normaOpt.disabled = org === 'privada';
+    if (org === 'privada' && hGoal.value === 'norma') hGoal.value = 'ordenar';
+    var g = GOALS[hGoal.value], o = ORGS[org];
+    $('#h-svc').textContent = g.svc;
+    $('#h-desc').textContent = g.desc;
+    $('#h-first').textContent = g.first;
+    $('#h-dur').textContent = g.dur;
+    $('#h-marco').textContent = o.marco;
+    $('#h-chips').innerHTML = PH.map(function (p, i) {
+      var on = g.ph.indexOf(i + 1) > -1;
+      return '<span class="chip' + (on ? '' : ' off') + '" style="--c:' + p.c + ';--cs:' + p.cs + '">' + p.n + ' ' + p.name + '</span>';
+    }).join('');
+    var link = $('#h-link');
+    link.setAttribute('data-tab', g.tab);
+    link.setAttribute('href', '#' + g.tab);
+    link.textContent = 'Ver la fase ' + PH[PANELS.indexOf(g.tab)].name;
+  }
+  var meas = document.createElement('span');
+  meas.setAttribute('aria-hidden', 'true');
+  meas.style.cssText = 'position:absolute;left:-9999px;top:0;visibility:hidden;white-space:pre';
+  document.body.appendChild(meas);
+  function fit(sel) {
+    var cs = getComputedStyle(sel);
+    meas.style.font = cs.font;
+    meas.style.letterSpacing = cs.letterSpacing;
+    meas.textContent = sel.options[sel.selectedIndex].text;
+    sel.style.width = Math.ceil(meas.getBoundingClientRect().width + parseFloat(cs.paddingRight) + 6) + 'px';
+  }
+  function fitBoth() { fit(hOrg); fit(hGoal); }
+  hOrg.addEventListener('change', function () { renderHelper(); fitBoth(); });
+  hGoal.addEventListener('change', function () { renderHelper(); fitBoth(); });
+  window.addEventListener('resize', fitBoth);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitBoth);
+  renderHelper();
+  fitBoth();
+  $('#h-cta').addEventListener('click', function () {
+    var g = GOALS[hGoal.value], o = ORGS[hOrg.value];
+    prefill('Somos ' + hOrg.options[hOrg.selectedIndex].text + ' y queremos ' + hGoal.options[hGoal.selectedIndex].text + '.\nServicio que nos interesa: ' + g.svc + '.\n\n', g.quote, o.label);
+  });
+
+  /* ---------- Diagnostic ---------- */
+  var OPTS = ['No existe', 'Parcial o informal', 'Existe y se usa', 'Se revisa y mejora'];
+  var KEYS = ['d1', 'd2', 'd3', 'p1', 'p2', 'p3', 'm1', 'm2', 'm3', 'a1', 'a2', 'a3'];
+  var EXAMPLE = { d1: 2, d2: 2, d3: 1, p1: 1, p2: 1, p3: 1, m1: 0, m2: 1, m3: 0, a1: 0, a2: 1, a3: 0 };
+  var LEVELS = [
+    { name: 'Inicial', desc: 'El trabajo depende de las personas. Los procesos no están identificados ni escritos.' },
+    { name: 'Identificado', desc: 'Hay procesos identificados, pero la documentación es parcial o no se usa en el día a día.' },
+    { name: 'Estandarizado', desc: 'Procesos y procedimientos documentados y en uso. La medición todavía es incipiente.' },
+    { name: 'Medido', desc: 'Los procesos se miden con indicadores. Las mejoras aún no siguen un método.' },
+    { name: 'Mejora continua', desc: 'El ciclo completo funciona: se mide, se mejora y cada mejora queda en el estándar.' }
+  ];
+  var BASE = [10, 14, 8, 12];
+  var SIZE = { s: 0.6, m: 1, l: 1.5, xl: 2.1 };
+  var GROUPS = [['d1', 'd2', 'd3'], ['p1', 'p2', 'p3'], ['m1', 'm2', 'm3'], ['a1', 'a2', 'a3']];
+  var BC = ['var(--b1)', 'var(--b2)', 'var(--b3)', 'var(--b4)'];
+
+  $$('.seg').forEach(function (seg) {
+    var q = seg.getAttribute('data-q');
+    seg.innerHTML = OPTS.map(function (o, v) {
+      return '<label><input type="radio" name="q-' + q + '" id="q-' + q + '-' + v + '" value="' + v + '"><span>' + o + '</span></label>';
+    }).join('');
+  });
+
+  var saved = store.get('kipu-diagnostico-v1');
+  var mine = !!(saved && saved.mine);
+  function setAnswers(ans) {
+    KEYS.forEach(function (k) {
+      var r = document.getElementById('q-' + k + '-' + ans[k]);
+      if (r) r.checked = true;
+    });
+  }
+  setAnswers(mine ? saved.answers : EXAMPLE);
+  if (saved && saved.size && SIZE[saved.size]) $('#r-size').value = saved.size;
+
+  function readAnswers() {
+    var a = {};
+    KEYS.forEach(function (k) { var c = $('input[name="q-' + k + '"]:checked'); a[k] = c ? +c.value : 0; });
+    return a;
+  }
+  function pct(n) { return Math.round(n); }
+
+  function renderDiag() {
+    var a = readAnswers();
+    var scores = GROUPS.map(function (g) { return g.reduce(function (s, k) { return s + a[k]; }, 0) / 9 * 100; });
+    var avg = scores.reduce(function (s, v) { return s + v; }, 0) / 4;
+    var lvl = avg < 20 ? 1 : avg < 40 ? 2 : avg < 60 ? 3 : avg < 80 ? 4 : 5;
+
+    var tag = $('#r-tag');
+    tag.textContent = mine ? 'Su resultado' : 'Ejemplo: entidad con mapa de procesos, sin medición';
+    tag.classList.toggle('mine', mine);
+    $('#r-n').textContent = String(lvl);
+    $('#r-name').textContent = LEVELS[lvl - 1].name;
+    $('#r-desc').textContent = LEVELS[lvl - 1].desc;
+    $$('#r-scale span').forEach(function (s, i) { s.classList.toggle('on', i < lvl); });
+    ['d', 'p', 'm', 'a'].forEach(function (k, i) { $('#gs-' + k).textContent = pct(scores[i]) + ' %'; });
+
+    $('#r-bars').innerHTML = scores.map(function (s, i) {
+      return '<div class="bar" style="--bc:' + BC[i] + '"><span>' + PH[i].name + '</span><span class="tr"><i style="width:' + Math.max(s, 1.5) + '%"></i></span><span class="pc num">' + pct(s) + ' %</span></div>';
+    }).join('');
+
+    var start = -1;
+    for (var i = 0; i < 4; i++) { if (scores[i] < 60) { start = i; break; } }
+    var why;
+    if (start === -1) {
+      var low = scores.indexOf(Math.min.apply(null, scores));
+      start = low;
+      why = 'Su base es sólida. El mayor margen está en esta fase; un acompañamiento mensual puede sostener el ciclo.';
+    } else if (start === 0) {
+      why = 'Todo empieza aquí: sin productos y procesos identificados no hay nada que procedimentar ni medir.';
+    } else {
+      why = 'Las fases anteriores tienen una base suficiente. Conviene avanzar aquí antes de pasar a la siguiente.';
+    }
+    var sb = $('#r-start-box');
+    sb.style.setProperty('--bc', BC[start]);
+    $('#r-start').innerHTML = '<em>' + PH[start].n + ' · ' + PH[start].name + '</em>';
+    $('#r-why').textContent = why;
+
+    var mult = SIZE[$('#r-size').value] || 1;
+    var weeks = scores.map(function (s, i) {
+      if (s >= 85) return 0;
+      var gap = 1 - s / 100;
+      return Math.max(2, Math.round(BASE[i] * mult * (0.3 + 0.7 * gap)));
+    });
+    var total = weeks.reduce(function (s, w) { return s + w; }, 0);
+    var span = Math.max(total, 8);
+    var step = span > 60 ? 12 : span > 30 ? 8 : 4;
+    var tickPct = step / span * 100;
+    var acc = 0;
+    var rows = weeks.map(function (w, i) {
+      var left = acc / span * 100, width = w / span * 100;
+      acc += w;
+      var bar = w === 0
+        ? '<i class="ok" style="left:' + left + '%;width:' + Math.max(2 / span * 100, 3) + '%;--bc:' + BC[i] + '" title="Sin brecha relevante"></i>'
+        : '<i style="left:' + left + '%;width:' + width + '%;--bc:' + BC[i] + '"></i>';
+      return '<div class="g-row"><span class="lb">' + PH[i].name + '</span><span class="wk num">' + (w === 0 ? 'al día' : w + ' sem') + '</span><span class="g-tr" style="--tick:' + tickPct + '%">' + bar + '</span></div>';
+    });
+    var ticks = '';
+    for (var t = 0; t <= span; t += step) ticks += '<span style="left:' + (t / span * 100) + '%">' + t + '</span>';
+    rows.push('<div class="g-axis"><span></span><span></span><span class="ax num">' + ticks + '</span></div>');
+    $('#r-gantt').innerHTML = rows.join('');
+    $('#r-total').innerHTML = total
+      ? 'Duración estimada: <b class="num">' + total + ' semanas</b> (unos ' + Math.max(1, Math.round(total / 4.3)) + ' meses).'
+      : 'Sin brechas relevantes: le conviene un acompañamiento para sostener el ciclo.';
+
+    renderDiag.last = { a: a, scores: scores, lvl: lvl, start: start, weeks: weeks, total: total };
+  }
+  $('#diag-form').addEventListener('change', function () {
+    mine = true;
+    store.set('kipu-diagnostico-v1', { mine: true, answers: readAnswers(), size: $('#r-size').value });
+    renderDiag();
+  });
+  $('#r-size').addEventListener('change', function () {
+    store.set('kipu-diagnostico-v1', { mine: mine, answers: readAnswers(), size: $('#r-size').value });
+    renderDiag();
+  });
+  $('#diag-reset').addEventListener('click', function () {
+    mine = false;
+    setAnswers(EXAMPLE);
+    store.set('kipu-diagnostico-v1', { mine: false, answers: EXAMPLE, size: $('#r-size').value });
+    renderDiag();
+  });
+  renderDiag();
+  $('#r-send').addEventListener('click', function () {
+    var r = renderDiag.last;
+    var lines = ['Resultado del autodiagnóstico' + (mine ? '' : ' (respuestas de ejemplo)') + ':',
+      '- Nivel de madurez: ' + r.lvl + ' · ' + LEVELS[r.lvl - 1].name];
+    PH.forEach(function (p, i) { lines.push('- ' + p.name + ': ' + pct(r.scores[i]) + ' %'); });
+    lines.push('- Punto de partida sugerido: ' + PH[r.start].name);
+    lines.push('- Tamaño: ' + $('#r-size').options[$('#r-size').selectedIndex].text + ' · hoja de ruta referencial de ' + r.total + ' semanas');
+    var svcs = PH.filter(function (p, i) { return r.weeks[i] > 0; }).map(function (p) { return p.name; });
+    prefill(lines.join('\n') + '\n\n', svcs.length ? svcs : ['No estoy seguro']);
+  });
+
+  /* ---------- Quote buttons ---------- */
+  $$('[data-quote]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var ph = b.getAttribute('data-quote');
+      prefill('Nos interesa la fase ' + ph + '.\n\n', [ph]);
+    });
+  });
+
+  /* ---------- Articles ---------- */
+  var lastOpener = null;
+  $$('[data-open]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var d = document.getElementById(b.getAttribute('data-open'));
+      lastOpener = b;
+      if (typeof d.showModal === 'function') d.showModal(); else d.setAttribute('open', '');
+    });
+  });
+  $$('dialog.reader').forEach(function (d) {
+    d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+    d.addEventListener('close', function () { if (lastOpener && !d.dataset.going) lastOpener.focus(); delete d.dataset.going; });
+    $$('[data-close]', d).forEach(function (x) { x.addEventListener('click', function () { d.close(); }); });
+    $$('[data-close-go]', d).forEach(function (a) {
+      if (a.hasAttribute('data-tab')) return;
+      a.addEventListener('click', function () { d.dataset.going = '1'; d.close(); });
+    });
+  });
+
+  function fromArticleHash() {
+    var h = (location.hash || '').slice(1);
+    var d = h && document.getElementById(h);
+    if (d && d.tagName === 'DIALOG' && !d.open) { if (typeof d.showModal === 'function') d.showModal(); else d.setAttribute('open', ''); }
+  }
+  window.addEventListener('hashchange', fromArticleHash);
+  fromArticleHash();
+
+  /* ---------- Contact form ---------- */
+  var form = $('#ct-form'), done = $('#ct-done');
+  var TIPO = { 'Entidad pública': 0, 'Empresa privada': 1, 'Universidad o instituto': 2, 'Otra': 3 };
+  function prefill(text, services, tipo) {
+    var msg = $('#f-msg');
+    if (msg.value.indexOf(text.trim()) === -1) msg.value = text + msg.value;
+    if (services) $$('input[name="svc"]', form).forEach(function (c) { c.checked = services.indexOf(c.value) > -1; });
+    if (tipo && TIPO[tipo] !== undefined) $('#f-tipo').selectedIndex = TIPO[tipo];
+    done.hidden = true; form.hidden = false;
+    $('#contacto').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+    setTimeout(function () { $('#f-nombre').focus({ preventScroll: true }); }, 450);
+  }
+  function setErr(input, errEl, msg) {
+    errEl.textContent = msg || '';
+    if (input) input.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    if (input && msg) input.setAttribute('aria-describedby', errEl.id); else if (input) input.removeAttribute('aria-describedby');
+    return !msg;
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = {
+      nombre: $('#f-nombre').value.trim(), cargo: $('#f-cargo').value.trim(), org: $('#f-org').value.trim(),
+      tipo: $('#f-tipo').value, correo: $('#f-correo').value.trim(), tel: $('#f-tel').value.trim(),
+      msg: $('#f-msg').value.trim(), ok: $('#f-ok').checked,
+      svcs: $$('input[name="svc"]:checked', form).map(function (c) { return c.value; })
+    };
+    var ok = true;
+    ok = setErr($('#f-nombre'), $('#e-nombre'), f.nombre ? '' : 'Escriba su nombre.') && ok;
+    ok = setErr($('#f-org'), $('#e-org'), f.org ? '' : 'Indique su organización.') && ok;
+    ok = setErr($('#f-correo'), $('#e-correo'), /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.correo) ? '' : 'Escriba un correo válido, como nombre@entidad.gob.pe.') && ok;
+    ok = setErr($('#f-msg'), $('#e-msg'), f.msg.length >= 10 ? '' : 'Cuéntenos en una o dos frases qué necesita.') && ok;
+    ok = setErr($('#f-ok'), $('#e-ok'), f.ok ? '' : 'Necesitamos su autorización para responderle.') && ok;
+    if (!ok) { var first = form.querySelector('[aria-invalid="true"]'); if (first) first.focus(); return; }
+
+    var asunto = 'Solicitud de propuesta · ' + f.org;
+    var body = [
+      'Nombre: ' + f.nombre + (f.cargo ? ' (' + f.cargo + ')' : ''),
+      'Organización: ' + f.org + ' · ' + f.tipo,
+      'Correo: ' + f.correo + (f.tel ? ' · Teléfono: ' + f.tel : ''),
+      'Servicios de interés: ' + (f.svcs.length ? f.svcs.join(', ') : 'No indicado'),
+      '',
+      f.msg
+    ].join('\n');
+    $('#done-text').textContent = 'Asunto: ' + asunto + '\n\n' + body;
+    var mail = $('#done-mail');
+    if (CONFIG.correo) {
+      mail.href = 'mailto:' + CONFIG.correo + '?subject=' + encodeURIComponent(asunto) + '&body=' + encodeURIComponent(body);
+      mail.hidden = false;
+      $('#done-msg').textContent = 'Revise el texto y envíelo a ' + CONFIG.correo + ' desde su correo, o cópielo.';
+    } else {
+      mail.hidden = true;
+      $('#done-msg').textContent = 'Revise el texto y cópielo para enviarlo por el canal que prefiera.';
+    }
+    $('#done-note').textContent = 'Todavía no se ha enviado nada: el mensaje sale cuando usted lo envía desde su correo.';
+    form.hidden = true; done.hidden = false; done.focus();
+  });
+  $('#done-back').addEventListener('click', function () { done.hidden = true; form.hidden = false; $('#f-msg').focus(); });
+  $('#done-copy').addEventListener('click', function () {
+    var btn = this, pre = $('#done-text');
+    function selectPre() { var r = document.createRange(); r.selectNodeContents(pre); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Texto seleccionado: cópielo'; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(pre.textContent).then(function () { btn.textContent = 'Copiado'; setTimeout(function () { btn.textContent = 'Copiar el texto'; }, 2200); }, selectPre);
+    } else { selectPre(); }
+  });
+})();
+</script>
+</body>
+</html>

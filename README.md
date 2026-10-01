@@ -111,8 +111,12 @@ Aquí ese papel lo cumple el autodiagnóstico de madurez.
 La portada sigue la estructura de la página «Descripción general» de
 McKinsey: encabezado con pestañas, video a pantalla completa con
 «Bienvenido a Kipu en Perú», texto de presentación, «Nuestro impacto»,
-cuatro tarjetas y «Nuestra gente». El contenido detallado está en
-[`trabajo.html`](trabajo.html).
+cuatro tarjetas y «Nuestra gente». «Nuestro trabajo» está en [`trabajo.html`](trabajo.html), con la estructura de
+la página equivalente de McKinsey: portada animada, áreas de especialización,
+historias de impacto y funcionalidades destacadas. Sus imágenes abstractas se
+dibujan en el navegador; una foto en `media/` con el nombre indicado en el
+código las reemplaza. El contenido detallado (fases, autodiagnóstico,
+artículos y contacto) está en [`servicios.html`](servicios.html).
 
 Archivos que hay que agregar en `media/` (mientras falten, se muestra un fondo
 de color en su lugar):
@@ -120,6 +124,7 @@ de color en su lugar):
 | Archivo | Contenido |
 |---|---|
 | `media/peru.mp4` | Video de fondo de la portada. Sugerido: [Aerial Footage of the Coastal City of Lima, Peru](https://www.pexels.com/video/aerial-footage-of-the-coastal-city-of-lima-peru-15809948/) (licencia gratuita de Pexels). Descárguelo en HD 1920×1080 y renómbrelo. |
+| `media/trabajo.mp4` | Video opcional de fondo de «Nuestro trabajo»; sin él se ve la animación de esferas. |
 | `media/caso-universidad.jpg` | Foto del estudio de caso |
 | `media/norma.jpg`, `media/errores.jpg`, `media/indicadores.jpg`, `media/diagnostico.jpg` | Fotos de las cuatro tarjetas |
 | `media/equipo/chumacero.jpg`, `rojas.jpg`, `flores.jpg`, `romero.jpg`, `valarenzo.jpg` | Fotos del equipo, cuadradas |
