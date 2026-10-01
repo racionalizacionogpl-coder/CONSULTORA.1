@@ -105,3 +105,24 @@ Aquí ese papel lo cumple el autodiagnóstico de madurez.
 - [Resolución de Secretaría de Gestión Pública N.º 009-2025-PCM/SGP](https://www.gob.pe/institucion/pcm/normas-legales/7260049-009-2025-pcm-sgp): aprueba los Lineamientos N.º 001-2025-PCM/SGP, «Guía práctica para la Gestión por Procesos».
 - [Decreto Supremo N.º 103-2022-PCM](https://www.gob.pe/institucion/pcm/normas-legales/3361746-103-2022-pcm): Política Nacional de Modernización de la Gestión Pública al 2030.
 - Ley N.º 29733, de Protección de Datos Personales: se cita en el formulario de contacto.
+
+## Portada (index.html) y video
+
+La portada sigue la estructura de la página «Descripción general» de
+McKinsey: encabezado con pestañas, video a pantalla completa con
+«Bienvenido a Kipu en Perú», texto de presentación, «Nuestro impacto»,
+cuatro tarjetas y «Nuestra gente». El contenido detallado está en
+[`trabajo.html`](trabajo.html).
+
+Archivos que hay que agregar en `media/` (mientras falten, se muestra un fondo
+de color en su lugar):
+
+| Archivo | Contenido |
+|---|---|
+| `media/peru.mp4` | Video de fondo de la portada. Sugerido: [Aerial Footage of the Coastal City of Lima, Peru](https://www.pexels.com/video/aerial-footage-of-the-coastal-city-of-lima-peru-15809948/) (licencia gratuita de Pexels). Descárguelo en HD 1920×1080 y renómbrelo. |
+| `media/caso-universidad.jpg` | Foto del estudio de caso |
+| `media/norma.jpg`, `media/errores.jpg`, `media/indicadores.jpg`, `media/diagnostico.jpg` | Fotos de las cuatro tarjetas |
+| `media/equipo/chumacero.jpg`, `rojas.jpg`, `flores.jpg`, `romero.jpg`, `valarenzo.jpg` | Fotos del equipo, cuadradas |
+
+Los correos y perfiles de LinkedIn del equipo se completan en el bloque
+`EQUIPO` del script de `index.html`.
