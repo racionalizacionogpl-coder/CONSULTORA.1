@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Nuestro trabajo · Kipu</title>
+<title>Nuestro impacto · Kipu</title>
 <meta name="description" content="Kipu Consultores: gestión por procesos para entidades públicas y empresas privadas en el Perú. Documentar, procedimentar, medir y mejorar.">
 <meta name="theme-color" content="#FFFFFF">
 <meta property="og:type" content="website">
@@ -199,6 +199,44 @@ img{max-width:100%;display:block}
   .acard:first-child{box-shadow:none}
 }
 @media (max-width:620px){.sgrid{grid-template-columns:minmax(0,1fr)}.acard{padding:0}.acard:hover{box-shadow:none}}
+
+/* ---------- Nuestro impacto ---------- */
+.im-hero{position:relative;height:calc(100vh - var(--hdr) - 110px);min-height:460px;max-height:720px;overflow:hidden;color:#fff;background:#4D6B86}
+.im-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.im-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,.35) 100%)}
+.im-txt{position:absolute;z-index:1;left:0;right:0;bottom:clamp(90px,15vh,130px);text-align:center;padding-inline:16px}
+.im-txt p{font-size:clamp(15px,1.1vw,17px);text-shadow:0 1px 8px rgba(0,0,0,.4)}
+.im-txt h1{font-family:var(--serif);font-weight:700;font-size:clamp(44px,5.4vw,84px);line-height:1.38;margin-top:6px;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+.im-intro{max-width:1110px;margin-inline:auto;padding:clamp(56px,7vw,90px) 16px clamp(56px,6vw,96px)}
+.im-intro p{font-size:clamp(18px,1.4vw,21px);font-weight:300;line-height:1.9}
+.im-intro p+p{margin-top:20px}
+.im-block .label{margin-bottom:clamp(28px,3vw,44px)}
+.im-wide{position:relative;max-width:1530px;margin-inline:auto;aspect-ratio:1530/700;overflow:hidden;background:#33475B}
+.im-wide img,.im-video video,.shape-in img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (min-width:1600px){.im-wide{margin-inline:auto}}
+.im-wide{width:calc(100% - 2*clamp(16px,9vw,174px))}
+.im-cap{max-width:1500px;margin:clamp(32px,4vw,56px) auto 0;padding-inline:16px;text-align:center;font-size:clamp(18px,1.4vw,22px);font-weight:300;line-height:1.85;color:var(--muted)}
+.im-cols{max-width:1560px;margin-inline:auto;padding:clamp(48px,5vw,90px) clamp(16px,8vw,150px) clamp(64px,7vw,110px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(24px,2.5vw,44px)}
+.im-cols h3{font-family:var(--sans);font-weight:700;font-size:clamp(21px,1.6vw,27px);line-height:1.32;color:#000}
+.im-cols h3 a:hover{text-decoration:underline;text-underline-offset:4px}
+.im-cols p{margin-top:28px;font-size:clamp(18px,1.3vw,22px);font-weight:300;line-height:1.82;color:var(--text)}
+.ext{display:flex;gap:10px;margin-top:26px;font-size:17px;font-weight:300;line-height:1.75;color:var(--blue)}
+.ext svg{flex:0 0 22px;width:22px;height:22px;margin-top:14px;fill:none;stroke:var(--blue);stroke-width:1.4}
+.ext:hover{text-decoration:underline}
+.im-feat{max-width:1600px;margin-inline:auto;padding:0 clamp(16px,4vw,80px) clamp(40px,5vw,80px);display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(24px,5vw,80px);align-items:start}
+.im-shape{filter:drop-shadow(0 8px 14px rgba(0,0,0,.28))}
+.shape-in{position:relative;aspect-ratio:660/410;clip-path:polygon(4% 18%,30% 4%,52% 1%,58% 12%,82% 1%,99% 2%,97% 30%,89% 46%,92% 60%,85% 78%,70% 98%,57% 88%,45% 95%,32% 80%,20% 70%,12% 52%,1% 46%);background:#3E5872}
+.im-feat .kind{margin-top:4px}
+.im-feat h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.6vw,56px);line-height:1.2;color:#000;margin-top:4px}
+.im-feat h2 a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+.im-feat-p{margin-top:28px;font-size:clamp(18px,1.4vw,22px);font-weight:300;line-height:1.82}
+.im-cards{margin-top:clamp(40px,4vw,64px)}
+.im-banner{padding:clamp(24px,3vw,40px) clamp(16px,4.5vw,70px) clamp(64px,7vw,110px)}
+.im-video{position:relative;aspect-ratio:1530/540;overflow:hidden;background:#111}
+.im-banner p{max-width:1500px;margin:clamp(32px,4vw,56px) auto 0;text-align:center;font-size:clamp(18px,1.4vw,21px);font-weight:300;line-height:1.85;color:var(--muted)}
+@media (max-width:1100px){.im-cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){.im-feat{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:620px){.im-cols{grid-template-columns:minmax(0,1fr)}.im-wide{width:calc(100% - 32px)}.im-video{aspect-ratio:16/9}}
 </style>
 </head>
 <body>
@@ -211,8 +249,8 @@ img{max-width:100%;display:block}
       <p class="country">Perú</p>
       <ul class="tabs">
         <li><a href="index.html">Descripción general</a></li>
-        <li><a href="trabajo.html" aria-current="page">Nuestro trabajo</a></li>
-        <li><a href="impacto.html">Nuestro impacto</a></li>
+        <li><a href="trabajo.html">Nuestro trabajo</a></li>
+        <li><a href="impacto.html" aria-current="page">Nuestro impacto</a></li>
         <li><a href="index.html#gente">Nuestra gente</a></li>
         <li><a href="servicios.html#recursos">Nuestras perspectivas</a></li>
         <li><button type="button" id="car-btn" aria-expanded="false" aria-controls="car-drop">Carreras profesionales <span class="dn" aria-hidden="true"></span></button>
@@ -256,74 +294,73 @@ img{max-width:100%;display:block}
 </div>
 
 <main>
-  <section class="wk-hero" aria-labelledby="wk-t">
-    <canvas class="art" data-art="ring" data-anim="1" aria-hidden="true"></canvas>
-    <video id="vid" autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="media/trabajo.mp4" type="video/mp4"></video>
-    <div class="wk-txt">
-      <p class="wk-kick">Nuestro trabajo en el Perú</p>
-      <h1 id="wk-t">Procesos claros. Resultados que se sostienen.</h1>
-      <p class="wk-lead">Combinamos el ciclo de Deming con un conocimiento directo de la gestión pública y privada peruana para que su organización documente, mida y mejore lo que hace, y lo siga haciendo cuando nos vayamos.</p>
-      <a class="wk-down" href="#areas" aria-label="Ir al contenido"><svg viewBox="0 0 44 52" aria-hidden="true"><path d="M22 2v46M4 31l18 18 18-18"/></svg></a>
-    </div>
-    <button type="button" class="pause dark" id="pause" aria-label="Pausar la animación"><i aria-hidden="true"></i><span class="tip" id="pause-tip">Pausar animación</span></button>
-  </section>
-
-  <section class="areas" id="areas" aria-labelledby="areas-t">
-    <h2 class="label" id="areas-t">Áreas de especialización destacadas</h2>
-    <div class="agrid">
-      <article class="acard">
-        <a class="amedia" href="servicios.html#documentar" tabindex="-1" aria-hidden="true"><canvas class="art" data-art="cords"></canvas><img src="media/area-documentar.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
-        <h3><a href="servicios.html#documentar">Documentación de procesos<span class="chev-r" aria-hidden="true"></span></a></h3>
-        <p>Las organizaciones que funcionan bien saben qué entregan, a quién y con qué procesos. Construimos el inventario de productos, el mapa de procesos y las fichas que convierten lo que hoy vive en la memoria de las personas en un activo de la institución.</p>
-      </article>
-      <article class="acard">
-        <a class="amedia" href="servicios.html#procedimentar" tabindex="-1" aria-hidden="true"><canvas class="art" data-art="arc"></canvas><img src="media/area-procedimentar.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
-        <h3><a href="servicios.html#procedimentar">Procedimientos que se cumplen, no que se archivan<span class="chev-r" aria-hidden="true"></span></a></h3>
-        <p>Un manual que nadie consulta no estandariza nada. Diagramamos cada procedimiento en BPMN 2.0 con quienes lo ejecutan, fijamos un solo responsable por decisión y dejamos controles que prueban que el trabajo se hizo como se acordó.</p>
-      </article>
-      <article class="acard">
-        <a class="amedia" href="servicios.html#medir" tabindex="-1" aria-hidden="true"><canvas class="art" data-art="bars"></canvas><img src="media/area-medir.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
-        <h3><a href="servicios.html#medir">Medir para decidir: indicadores, KPI y OKR<span class="chev-r" aria-hidden="true"></span></a></h3>
-        <p>Lo que no se mide se discute; lo que se mide se gestiona. Diseñamos indicadores con fórmula, línea base y meta, los conectamos con la estrategia mediante OKR y los llevamos a tableros que la alta dirección entiende en un minuto.</p>
-      </article>
-      <article class="acard">
-        <a class="amedia" href="servicios.html#mejorar" tabindex="-1" aria-hidden="true"><canvas class="art" data-art="spiral"></canvas><img src="media/area-mejorar.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
-        <h3><a href="servicios.html#mejorar">Mejora continua que no retrocede<span class="chev-r" aria-hidden="true"></span></a></h3>
-        <p>Mejorar una vez es fácil; sostener la mejora es lo difícil. Priorizamos con datos y con análisis costo-beneficio, rediseñamos con herramientas Lean, automatizamos lo repetitivo y cerramos cada ciclo actualizando el procedimiento para que el nuevo nivel quede fijo.</p>
-      </article>
+  <section class="im-hero" aria-labelledby="im-t">
+    <canvas class="art" data-art="crowd" aria-hidden="true"></canvas>
+    <img src="media/impacto-portada.jpg" alt="" onerror="this.remove()">
+    <div class="im-txt">
+      <p>Nuestro impacto</p>
+      <h1 id="im-t">Un Estado que funciona mejor para todos</h1>
     </div>
   </section>
 
-  <section class="stories" aria-labelledby="st-t">
-    <h2 class="label" id="st-t">Historias de impacto</h2>
-    <div class="sgrid">
-      <a class="story" href="servicios.html#experiencia"><canvas class="art" data-art="moon"></canvas><img src="media/historia-1.jpg" alt="" loading="lazy" onerror="this.remove()"><span>Veinte facultades de una universidad pública, un mismo mapa de procesos.</span></a>
-      <a class="story" href="servicios.html#experiencia"><canvas class="art" data-art="grid"></canvas><img src="media/historia-2.jpg" alt="" loading="lazy" onerror="this.remove()"><span>2&nbsp;823 productos revisados contra un solo criterio de calidad.</span></a>
-      <a class="story" href="servicios.html#art-errores"><canvas class="art" data-art="lines"></canvas><img src="media/historia-3.jpg" alt="" loading="lazy" onerror="this.remove()"><span>Dentro de un diagnóstico documental: 37 hallazgos y 108 recomendaciones.</span></a>
-      <a class="story" href="servicios.html#art-nt"><canvas class="art" data-art="wheel"></canvas><img src="media/historia-4.jpg" alt="" loading="lazy" onerror="this.remove()"><span>La nueva norma técnica de gestión por procesos, explicada para el sector público.</span></a>
+  <section class="im-intro">
+    <p>Cuando una entidad pública ordena sus procesos, el beneficio no se queda dentro de la institución. Llega a la persona que hace un trámite, a la familia que espera una atención y al estudiante que necesita un certificado. Procesos claros significan menos requisitos, menos colas y respuestas en plazos que se cumplen.</p>
+    <p>Creemos que hay cuatro frentes en los que la gestión por procesos acelera ese cambio en el Perú. Primero, formando a los servidores que operan los procesos; segundo, simplificando los trámites que enfrenta la ciudadanía; tercero, midiendo y publicando resultados con indicadores; y, finalmente, fortaleciendo a las universidades públicas, que forman a quienes gestionarán el país.</p>
+  </section>
+
+  <section class="im-block" aria-labelledby="b1-t">
+    <h2 class="label" id="b1-t">Formación y fortalecimiento de capacidades</h2>
+    <div class="im-wide"><canvas class="art" data-art="workers"></canvas><img src="media/impacto-formacion.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+    <p class="im-cap">Una implementación solo se sostiene si las personas que trabajan cada día en los procesos saben describirlos, medirlos y mejorarlos. Por eso cada proyecto deja capacidades instaladas en el equipo del cliente, y no solo documentos. Así lo hacemos:</p>
+    <div class="im-cols">
+      <article><h3><a href="servicios.html#como-trabajamos">Dueños de proceso formados<span class="chev-r" aria-hidden="true"></span></a></h3>
+        <p>Cada proceso tiene un responsable designado. Lo capacitamos con talleres prácticos sobre los casos de su propia institución para que identifique productos, lea indicadores y conduzca la mejora sin depender de una consultora.</p></article>
+      <article><h3><a href="servicios.html#procedimentar">Trámites más simples<span class="chev-r" aria-hidden="true"></span></a></h3>
+        <p>Diagramar un procedimiento revela los pasos que no agregan valor. Eliminarlos reduce requisitos, plazos y visitas a ventanilla para la ciudadanía, y libera horas del personal para atender mejor.</p>
+        <a class="ext" href="https://www.gob.pe/22194-gestion-por-procesos-en-entidades-publicas" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M11 3h6v6M17 3l-8 8M15 12v5H3V5h5"/></svg>Obtén más información sobre la gestión por procesos en el Estado</a></article>
+      <article><h3><a href="servicios.html#medir">Resultados que se pueden ver<span class="chev-r" aria-hidden="true"></span></a></h3>
+        <p>Indicadores con fórmula, línea base y meta permiten que la alta dirección, los órganos de control y la ciudadanía sepan si un servicio mejora. Medir con una sola fuente de datos es también una forma de transparencia.</p>
+        <a class="ext" href="https://www.gob.pe/institucion/pcm/normas-legales/6501954-002-2025-pcm-sgp" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M11 3h6v6M17 3l-8 8M15 12v5H3V5h5"/></svg>Obtén más información sobre la Norma Técnica N.º 002-2025-PCM/SGP</a></article>
+      <article><h3><a href="servicios.html#experiencia">Universidades públicas más fuertes<span class="chev-r" aria-hidden="true"></span></a></h3>
+        <p>Nuestro equipo condujo la implementación de la gestión por procesos en una universidad pública de veinte facultades, con un mismo mapa de 16 procesos de Nivel 0. Una universidad ordenada atiende mejor a miles de estudiantes, docentes e investigadores.</p></article>
     </div>
   </section>
 
-  <section class="feats" aria-labelledby="ft-t">
-    <h2 class="label" id="ft-t">Funcionalidades destacadas</h2>
-    <div class="fgrid">
-      <article class="fcard">
-        <a class="fmedia" href="servicios.html#diagnostico" tabindex="-1" aria-hidden="true"><canvas class="art" data-art="levels"></canvas><img src="media/func-diagnostico.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
-        <h3><a href="servicios.html#diagnostico">Autodiagnóstico de madurez<span class="chev-r" aria-hidden="true"></span></a></h3>
-        <p>Doce preguntas que ubican a su organización en uno de cinco niveles de madurez y proponen una hoja de ruta referencial.</p>
-      </article>
-      <article class="fcard">
-        <a class="fmedia" href="servicios.html#capacidades" tabindex="-1" aria-hidden="true"><canvas class="art" data-art="spark"></canvas><img src="media/func-plataformas.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
-        <h3><a href="servicios.html#capacidades">Plataformas y automatización<span class="chev-r" aria-hidden="true"></span></a></h3>
-        <p>Sistemas web propios y automatizaciones que combinan sus datos con su forma de trabajar para entregar resultados más rápido y sostenerlos en el tiempo.</p>
-      </article>
-      <article class="fcard">
-        <a class="fmedia" href="servicios.html#como-trabajamos" tabindex="-1" aria-hidden="true"><canvas class="art" data-art="people"></canvas><img src="media/func-formacion.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
-        <h3><a href="servicios.html#como-trabajamos">Escuela de dueños de proceso<span class="chev-r" aria-hidden="true"></span></a></h3>
-        <p>Talleres prácticos que dejan a su equipo listo para identificar procesos, leer indicadores y liderar la mejora sin depender de una consultora.</p>
-      </article>
+  <section class="im-feat" aria-labelledby="f-t">
+    <div class="im-shape"><div class="shape-in"><canvas class="art" data-art="mosaic"></canvas><img src="media/impacto-interactivo.jpg" alt="" loading="lazy" onerror="this.remove()"></div></div>
+    <div>
+      <p class="kind">Interactivo</p>
+      <h2 id="f-t"><a href="servicios.html#diagnostico">¿En qué nivel de madurez está su organización?<span class="chev-r" aria-hidden="true"></span></a></h2>
+      <p class="im-feat-p">El autodiagnóstico de Kipu muestra, en doce preguntas, cómo documenta, procedimenta, mide y mejora su organización, cuál es su punto de partida y qué hoja de ruta le permitiría llegar al siguiente nivel.</p>
     </div>
-    <hr class="endrule">
+  </section>
+
+  <section class="cards im-cards" aria-label="Más lecturas">
+    <article class="card">
+      <a class="media" href="servicios.html#art-kpi" tabindex="-1" aria-hidden="true"><canvas class="art" data-art="pink"></canvas><img src="media/impacto-1.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
+      <p class="kind">Artículo</p>
+      <h3><a href="servicios.html#art-kpi">KPI y OKR: dos herramientas para medir si un servicio público mejora<span class="chev-r" aria-hidden="true"></span></a></h3>
+    </article>
+    <article class="card">
+      <a class="media" href="servicios.html#art-cuna" tabindex="-1" aria-hidden="true"><canvas class="art" data-art="wheel"></canvas><img src="media/impacto-2.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
+      <p class="kind">Artículo</p>
+      <h3><a href="servicios.html#art-cuna">La cuña de Deming: por qué las mejoras en el Estado retroceden<span class="chev-r" aria-hidden="true"></span></a></h3>
+    </article>
+    <article class="card">
+      <a class="media" href="servicios.html#art-nt" tabindex="-1" aria-hidden="true"><canvas class="art" data-art="bars"></canvas><img src="media/impacto-3.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
+      <p class="kind">Informe</p>
+      <h3><a href="servicios.html#art-nt">Lo que la nueva norma técnica exige a las entidades públicas<span class="chev-r" aria-hidden="true"></span></a></h3>
+    </article>
+    <article class="card">
+      <a class="media" href="servicios.html#art-auto" tabindex="-1" aria-hidden="true"><canvas class="art" data-art="spark"></canvas><img src="media/impacto-4.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
+      <p class="kind">Artículo</p>
+      <h3><a href="servicios.html#art-auto">Automatizar después de documentar: menos trabajo manual, mejor atención<span class="chev-r" aria-hidden="true"></span></a></h3>
+    </article>
+  </section>
+
+  <section class="im-banner" aria-label="Nuestra aspiración">
+    <div class="im-video"><canvas class="art" data-art="spot"></canvas><video id="vid2" muted loop playsinline preload="metadata" aria-hidden="true"><source src="media/impacto.mp4" type="video/mp4"></video></div>
+    <p>Aspiramos a que cada peruano reciba servicios más simples, rápidos y predecibles. Nuestra estrategia se basa en una convicción respaldada por la experiencia: cuando los procesos están claros, medidos y en mejora continua, las instituciones sirven mejor a las personas.</p>
   </section>
 </main>
 
@@ -479,6 +516,50 @@ img{max-width:100%;display:block}
       c.globalAlpha = 1;
     }
   };
+
+  ART.crowd = function (c, w, h) {
+    var g = c.createLinearGradient(0, 0, w, h); g.addColorStop(0, '#7C93A8'); g.addColorStop(1, '#2E465E'); c.fillStyle = g; c.fillRect(0, 0, w, h);
+    var R = rng(21);
+    for (var k = 0; k < 6; k++) { c.fillStyle = 'rgba(255,255,255,' + (.05 + R() * .07) + ')'; c.fillRect(w * R(), h * R() * .5, w * (.1 + R() * .2), h * (.2 + R() * .3)); }
+    [[.2, .62, .34, '#8FB2CF'], [.52, .66, .3, '#7FA4C4'], [.8, .64, .26, '#93B5D2']].forEach(function (p) {
+      var x = w * p[0], y = h * p[1], r = Math.min(w, h * 1.6) * p[2] * .5;
+      c.fillStyle = '#3A2E2A'; c.beginPath(); c.arc(x, y - r * 1.05, r * .42, 0, Math.PI * 2); c.fill();
+      c.fillStyle = p[3]; c.beginPath(); c.ellipse(x, y - r * 1.35, r * .5, r * .2, 0, Math.PI, 0); c.fill();
+      c.beginPath(); c.ellipse(x, y + r * .9, r * 1.05, r * 1.15, 0, Math.PI, 0); c.fill();
+    });
+  };
+  ART.workers = function (c, w, h) {
+    var g = c.createLinearGradient(0, 0, 0, h); g.addColorStop(0, '#E9EEF2'); g.addColorStop(1, '#9AA8B4'); c.fillStyle = g; c.fillRect(0, 0, w, h);
+    var R = rng(31);
+    for (var i = 0; i < 26; i++) { c.fillStyle = ['rgba(200,90,60,.35)', 'rgba(80,140,110,.35)', 'rgba(90,110,140,.35)', 'rgba(160,150,120,.35)'][i % 4]; c.fillRect(w * R(), h * (.45 + R() * .4), w * (.04 + R() * .1), h * (.06 + R() * .25)); }
+    for (var j = 0; j < 6; j++) { c.fillStyle = 'rgba(255,255,255,.9)'; c.fillRect(w * (.08 + j * .17), h * .06, w * .09, h * .02); }
+    var x = w * .56, y = h * .5, r = h * .22;
+    c.fillStyle = '#2B2622'; c.beginPath(); c.arc(x, y - r * .2, r * .42, 0, Math.PI * 2); c.fill();
+    c.fillStyle = '#D7DADB'; c.beginPath(); c.ellipse(x, y + r * 1.4, r * 1.25, r * 1.2, 0, Math.PI, 0); c.fill();
+  };
+  ART.mosaic = function (c, w, h) {
+    var g = c.createLinearGradient(0, 0, w, h); g.addColorStop(0, '#506C86'); g.addColorStop(1, '#22364A'); c.fillStyle = g; c.fillRect(0, 0, w, h);
+    c.strokeStyle = 'rgba(255,255,255,.85)'; c.lineWidth = Math.max(3, w * .008);
+    c.beginPath(); c.moveTo(w * .42, 0); c.lineTo(w * .42, h * .52); c.moveTo(w * .42, h * .45); c.lineTo(w, h * .45); c.moveTo(0, h * .58); c.lineTo(w * .7, h * .58); c.stroke();
+    var x = w * .3, y = h * .52, r = h * .3;
+    c.fillStyle = '#2A211E'; c.beginPath(); c.arc(x, y - r * .45, r * .36, 0, Math.PI * 2); c.fill();
+    c.fillStyle = '#C97A62'; c.beginPath(); c.ellipse(x, y + r * .9, r * .9, r * .95, 0, Math.PI, 0); c.fill();
+  };
+  ART.pink = function (c, w, h) {
+    var g = c.createLinearGradient(0, 0, w, h); g.addColorStop(0, '#D2508F'); g.addColorStop(1, '#E66AA6'); c.fillStyle = g; c.fillRect(0, 0, w, h);
+    c.strokeStyle = 'rgba(255,255,255,.35)'; c.lineWidth = 2; for (var i = 0; i < 9; i++) { c.beginPath(); c.moveTo(w * .4, h * (i * .12)); c.lineTo(w, h * (i * .12 - .2)); c.stroke(); }
+    c.fillStyle = '#fff'; c.font = '600 ' + Math.round(h * .12) + 'px Georgia,serif'; c.fillText('“', w * .12, h * .36);
+    c.font = '500 ' + Math.round(h * .07) + 'px Arial,sans-serif'; ['Medir no es', 'controlar: es', 'saber si mejora'].forEach(function (t, k) { c.fillText(t, w * .12, h * (.47 + k * .1)); });
+    c.fillStyle = '#F6D6C8'; c.beginPath(); c.arc(w * .78, h * .42, h * .14, 0, Math.PI * 2); c.fill();
+    c.fillStyle = '#5A6E8C'; c.beginPath(); c.ellipse(w * .78, h * 1.02, h * .3, h * .38, 0, Math.PI, 0); c.fill();
+  };
+  ART.spot = function (c, w, h) {
+    c.fillStyle = '#0B0F12'; c.fillRect(0, 0, w, h);
+    var g = c.createRadialGradient(w * .5, h * .35, 10, w * .5, h * .4, w * .45); g.addColorStop(0, 'rgba(120,135,140,.55)'); g.addColorStop(1, 'rgba(0,0,0,0)'); c.fillStyle = g; c.fillRect(0, 0, w, h);
+    var x = w * .5, r = h * .2;
+    c.fillStyle = '#2A2422'; c.beginPath(); c.arc(x, h * .42, r * .9, 0, Math.PI * 2); c.fill();
+    c.fillStyle = '#7F98AE'; c.beginPath(); c.ellipse(x, h * 1.12, r * 2.1, h * .52, 0, Math.PI, 0); c.fill();
+  };
   var canvases = Array.prototype.slice.call(document.querySelectorAll('canvas.art'));
   function draw(cv, t) {
     var r = cv.getBoundingClientRect(), dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -492,26 +573,10 @@ img{max-width:100%;display:block}
   drawAll();
   var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(drawAll, 120); });
 
-  var hero = document.querySelector('canvas[data-anim]'), playing = !reduce, t0 = 0, last = 0, raf;
-  function loop(ts) { if (ts - last > 33) { t0 += ts - last > 200 ? 33 : ts - last; draw(hero, t0); } last = ts; if (playing) raf = requestAnimationFrame(loop); }
-  if (playing) raf = requestAnimationFrame(function (ts) { last = ts; loop(ts); });
-
-  var vid = document.getElementById('vid'), pause = document.getElementById('pause'), tip = document.getElementById('pause-tip');
-  if (vid.networkState === 3 || vid.error) vid.hidden = true;
-  vid.querySelector('source').addEventListener('error', function () { vid.hidden = true; });
-  if (reduce) { vid.removeAttribute('autoplay'); vid.pause(); }
-  function setPaused(p) {
-    pause.classList.toggle('play', p);
-    pause.setAttribute('aria-label', p ? 'Reproducir la animación' : 'Pausar la animación');
-    tip.textContent = p ? 'Reproducir animación' : 'Pausar animación';
-  }
-  setPaused(!playing);
-  pause.addEventListener('click', function () {
-    playing = !playing;
-    if (playing) { last = performance.now(); raf = requestAnimationFrame(loop); if (!vid.hidden) { var p = vid.play(); if (p && p.catch) p.catch(function () {}); } }
-    else { cancelAnimationFrame(raf); if (!vid.hidden) vid.pause(); }
-    setPaused(!playing);
-  });
+  var v2 = document.getElementById('vid2');
+  v2.querySelector('source').addEventListener('error', function () { v2.hidden = true; });
+  if (v2.networkState === 3 || v2.error) v2.hidden = true;
+  else if (!reduce) { var pp = v2.play(); if (pp && pp.catch) pp.catch(function () {}); }
 
   /* ---------- Menus ---------- */
   var side = $('#side'), openBtn = $('#menu-open');

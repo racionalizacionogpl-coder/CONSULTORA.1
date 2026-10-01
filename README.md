@@ -131,3 +131,19 @@ de color en su lugar):
 
 Los correos y perfiles de LinkedIn del equipo se completan en el bloque
 `EQUIPO` del script de `index.html`.
+
+## Nuestro impacto (impacto.html)
+
+Sigue la estructura de la página «Nuestro impacto social» de McKinsey: portada
+con foto, introducción, «Formación y fortalecimiento de capacidades» con
+cuatro frentes, la pieza interactiva (autodiagnóstico), cuatro lecturas y un
+video con su texto. Las figuras de personas son ilustraciones provisionales;
+esta página necesita fotos reales:
+
+| Archivo | Contenido sugerido |
+|---|---|
+| `media/impacto-portada.jpg` | Personas atendidas o equipo trabajando, horizontal y ancha |
+| `media/impacto-formacion.jpg` | Taller o capacitación con servidores públicos |
+| `media/impacto-interactivo.jpg` | Persona usando el autodiagnóstico o un tablero |
+| `media/impacto-1.jpg` … `media/impacto-4.jpg` | Fotos de las cuatro lecturas |
+| `media/impacto.mp4` | Video del gerente o del equipo explicando la propuesta de la firma |
