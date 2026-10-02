@@ -3,7 +3,7 @@
 //   - errores de JavaScript;
 //   - archivos que no cargan (salvo las fotos y videos de media/ que aún faltan);
 //   - desplazamiento horizontal: algo más ancho que la pantalla;
-//   - pestañas del encabezado montadas sobre la lupa de búsqueda.
+//   - pestañas del encabezado pegadas o montadas sobre la lupa de búsqueda.
 //
 // Uso, desde la raíz del repositorio:
 //   node herramientas/verificacion/verificar.js             solo el informe
@@ -17,7 +17,7 @@ const { pathToFileURL } = require('url');
 
 const RAIZ = path.resolve(__dirname, '..', '..');
 const PAGINAS = ['index.html', 'trabajo.html', 'impacto.html', 'servicios.html'];
-const ANCHOS = [320, 390, 820, 1120, 1280, 1440, 1920];
+const ANCHOS = [320, 390, 820, 1120, 1280, 1366, 1440, 1536, 1600, 1920];
 const CAPTURAS = process.argv.includes('--capturas');
 const DIR_CAPTURAS = path.join(__dirname, 'capturas');
 
@@ -54,17 +54,19 @@ const DIR_CAPTURAS = path.join(__dirname, 'capturas');
           }
           anchos.push((el.id ? '#' + el.id : el.tagName.toLowerCase()) + ' (' + Math.round(r.right) + ' px)');
         });
+        // Se mide la última pestaña y no la lista: la lista se encoge y las pestañas se desbordan fuera de ella.
         let choque = null;
         const tabs = document.querySelector('.tabs, .mk-tabs');
         const lupa = document.querySelector('#search-open');
         if (tabs && lupa && tabs.getBoundingClientRect().width > 0) {
-          const t = tabs.getBoundingClientRect().right, l = lupa.getBoundingClientRect().left;
-          if (t > l) choque = Math.round(t - l);
+          const fin = Math.max(...[...tabs.querySelectorAll(':scope > li')].map(li => li.getBoundingClientRect().right));
+          const hueco = lupa.getBoundingClientRect().left - fin;
+          if (hueco < 16) choque = Math.round(16 - hueco);
         }
         return { desborde: de.scrollWidth - de.clientWidth, anchos: anchos.slice(0, 5), choque };
       });
       if (medida.desborde > 0) hallazgos.push(`desplazamiento horizontal de ${medida.desborde} px: ${medida.anchos.join(', ')}`);
-      if (medida.choque) hallazgos.push(`las pestañas se montan ${medida.choque} px sobre la lupa`);
+      if (medida.choque) hallazgos.push(`la última pestaña queda a menos de 16 px de la lupa (faltan ${medida.choque} px)`);
 
       if (CAPTURAS) await p.screenshot({ path: path.join(DIR_CAPTURAS, `${pagina.replace('.html', '')}-${ancho}.png`) });
       console.log((hallazgos.length ? '✗ ' : '✓ ') + pagina.padEnd(15) + String(ancho).padStart(5) + ' px' +
