@@ -12,6 +12,9 @@ Fonts.
 | [`impacto.html`](impacto.html) | Nuestro impacto |
 | [`servicios.html`](servicios.html) | Fases, metodología, autodiagnóstico, artículos, preguntas frecuentes y contacto |
 
+Las herramientas para regenerar el logo y los gráficos, y para verificar el
+sitio antes de publicar un cambio, están en [`herramientas/`](herramientas/).
+
 ## Publicación
 
 El sitio se publica con GitHub Pages en
@@ -76,10 +79,11 @@ afirmaciones son supuestos razonables, pero las tiene que confirmar la firma:
 
 1. **Caso de la universidad.** Se presenta como «experiencia del equipo» en
    una universidad pública de 20 facultades, sin nombrarla. Si hay autorización
-   para citar a la UNMSM, puede nombrarse en la sección Experiencia.
+   para citar a la universidad por su nombre, puede nombrarse en la sección
+   Experiencia.
 2. **Cifras del caso**: 16 procesos de Nivel 0, 20 facultades, 2 823
    productos revisados, 37 hallazgos y 108 recomendaciones (datos del
-   repositorio, a agosto de 2026).
+   proyecto, a agosto de 2026).
 3. **Duraciones referenciales** de cada fase (6–10, 8–14, 4–8 y 6–12 semanas)
    y la fórmula del autodiagnóstico. Se ajustan en las constantes
    `BASE` y `SIZE` del script, en el bloque del autodiagnóstico.
