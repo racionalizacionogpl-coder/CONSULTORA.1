@@ -1,19 +1,31 @@
-# Kipu Consultores · sitio web
+# ROIC & Company · sitio web
 
-Sitio de la consultora en gestión por procesos. Es un único archivo,
-[`index.html`](index.html): estilos, scripts y gráficos van dentro. Solo
-descarga las tipografías desde Google Fonts.
+Sitio de ROIC & Company (Management & Technology Consulting), consultora en
+gestión por procesos. Son cuatro páginas HTML autocontenidas: estilos, scripts
+y gráficos van dentro de cada una, y solo descargan las tipografías de Google
+Fonts.
 
-Se abre con doble clic o se publica con GitHub Pages. Si el repositorio ya
-está publicado, la dirección es `https://USUARIO.github.io/REPOSITORIO/consultora/`.
+| Página | Contenido |
+|---|---|
+| [`index.html`](index.html) | Descripción general |
+| [`trabajo.html`](trabajo.html) | Nuestro trabajo |
+| [`impacto.html`](impacto.html) | Nuestro impacto |
+| [`servicios.html`](servicios.html) | Fases, metodología, autodiagnóstico, artículos, preguntas frecuentes y contacto |
 
-> **«Kipu» es un nombre provisional.** Para cambiarlo, reemplace `Kipu` en
-> `index.html` (14 apariciones), incluido el bloque «Por qué nos llamamos
-> Kipu» de la sección Equipo, que explica el nombre.
+## Publicación
+
+El sitio se publica con GitHub Pages en
+**https://racionalizacionogpl-coder.github.io/CONSULTORA.1/**
+
+GitHub Pages sirve la rama `gh-pages`. No hace falta tocarla: el flujo
+[`.github/workflows/publicar.yml`](.github/workflows/publicar.yml) la iguala a
+`main` cada vez que se sube un cambio, y el sitio se actualiza solo en uno o
+dos minutos. Trabaje siempre en `main`: lo que se escriba directamente en
+`gh-pages` se reemplaza en la siguiente publicación.
 
 ---
 
-## Qué contiene
+## Qué contiene `servicios.html`
 
 | Sección | Para qué sirve |
 |---|---|
@@ -35,11 +47,11 @@ el navegador del visitante.
 
 ## Datos que hay que completar
 
-En `index.html`, busque `var CONFIG` (al inicio del bloque `<script>`):
+En `servicios.html`, busque `var CONFIG` (al inicio del bloque `<script>`):
 
 ```js
 var CONFIG = {
-  firma: 'Kipu Consultores',
+  firma: 'ROIC & Company',
   correo: '',     // p. ej. 'contacto@sudominio.pe'
   telefono: '',   // p. ej. '+51 1 234 5678'
   whatsapp: '',   // solo dígitos con código de país, p. ej. '51987654321'
@@ -55,8 +67,7 @@ redactado.
 **El formulario no envía nada por sí mismo**, porque GitHub Pages no tiene
 servidor: prepara el texto y el visitante lo envía desde su correo. Para
 recibir las solicitudes directamente hay que conectarlo a un servicio de
-formularios (Formspree, Google Forms o un Apps Script como el de
-[`apps-script/`](../apps-script/)).
+formularios (Formspree, Google Forms o un Apps Script de Google).
 
 ## Afirmaciones que conviene confirmar antes de publicar
 
@@ -110,7 +121,7 @@ Aquí ese papel lo cumple el autodiagnóstico de madurez.
 
 La portada sigue la estructura de la página «Descripción general» de
 McKinsey: encabezado con pestañas, video a pantalla completa con
-«Bienvenido a Kipu en Perú», texto de presentación, «Nuestro impacto»,
+«Bienvenido a ROIC & Company en Perú», texto de presentación, «Nuestro impacto»,
 cuatro tarjetas y «Nuestra gente». «Nuestro trabajo» está en [`trabajo.html`](trabajo.html), con la estructura de
 la página equivalente de McKinsey: portada animada, áreas de especialización,
 historias de impacto y funcionalidades destacadas. Sus imágenes abstractas se

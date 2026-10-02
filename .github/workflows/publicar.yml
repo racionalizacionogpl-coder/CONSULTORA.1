@@ -1,0 +1,25 @@
+# Publica el sitio: iguala la rama gh-pages, que es la que sirve GitHub Pages,
+# al contenido de main cada vez que main cambia.
+name: Publicar sitio
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publicar-sitio
+  cancel-in-progress: true
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Igualar gh-pages a main
+        run: git push --force origin HEAD:refs/heads/gh-pages
