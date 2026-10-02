@@ -159,8 +159,9 @@ img{max-width:100%;display:block}
 /* ---------- Nuestro trabajo ---------- */
 .art{position:absolute;inset:0;width:100%;height:100%;display:block}
 .wk-hero{position:relative;height:calc(100vh - var(--hdr));min-height:560px;max-height:960px;overflow:hidden;color:#fff;background:linear-gradient(110deg,#03111D 0%,#061E3A 45%,#0B2A8C 100%)}
-.wk-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.wk-txt{position:absolute;z-index:1;right:clamp(16px,10vw,186px);top:50%;transform:translateY(-46%);width:min(820px,calc(100% - 32px));text-align:right}
+.wk-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left center}
+.wk-txt{position:absolute;z-index:1;right:clamp(16px,8vw,186px);top:50%;transform:translateY(-46%);width:min(820px,50vw,calc(100% - 32px));text-align:right;text-shadow:0 0 22px rgba(3,17,29,.85),0 2px 4px rgba(3,17,29,.5)}
+.wk-txt::before{content:"";position:absolute;inset:-10% -6% -10% -18%;z-index:-1;pointer-events:none;background:radial-gradient(closest-side,rgba(3,17,29,.6),rgba(3,17,29,0));filter:blur(18px)}
 .wk-kick{font-size:clamp(15px,1.1vw,17px)}
 .wk-txt h1{font-family:var(--serif);font-weight:700;font-size:clamp(44px,5.4vw,84px);line-height:1.15;letter-spacing:-.01em;margin-top:14px}
 .wk-lead{font-size:clamp(18px,1.6vw,27px);font-weight:400;line-height:1.67;margin-top:18px}
@@ -268,7 +269,7 @@ img{max-width:100%;display:block}
 <main>
   <section class="wk-hero" aria-labelledby="wk-t">
     <canvas class="art" data-art="ring" data-anim="1" aria-hidden="true"></canvas>
-    <video id="vid" autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="media/trabajo.mp4" type="video/mp4"></video>
+    <video id="vid" muted loop playsinline preload="none" aria-hidden="true" hidden data-webm="media/trabajo.webm" data-mp4="media/trabajo.mp4"></video>
     <div class="wk-txt">
       <p class="wk-kick">Nuestro trabajo en el Perú</p>
       <h1 id="wk-t">Procesos claros. Resultados que se sostienen.</h1>
@@ -368,7 +369,7 @@ img{max-width:100%;display:block}
   var ART = {
     ring: function (c, w, h, t) {
       bg(c, w, h);
-      var wide = w > 900, cx = wide ? w * .15 : w * .5, cy = h * (wide ? .5 : .2), R = wide ? Math.min(h * .4, w * .2) : Math.min(h * .15, w * .3), r = R * .3;
+      var wide = w > 900, cx = wide ? w * .08 : w * .5, cy = h * (wide ? .5 : .2), R = wide ? Math.min(h * .36, w * .18) : Math.min(h * .15, w * .3), r = R * .3;
       var pts = [], U = 34, V = 12, rot = t * .00012;
       for (var i = 0; i < U; i++) for (var j = 0; j < V; j++) {
         var u = i / U * Math.PI * 2 + rot, v = j / V * Math.PI * 2 + rot * 2.2;
@@ -502,14 +503,31 @@ img{max-width:100%;display:block}
   drawAll();
   var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(drawAll, 120); });
 
-  var hero = document.querySelector('canvas[data-anim]'), playing = !reduce, t0 = 0, last = 0, raf;
-  function loop(ts) { if (ts - last > 33) { t0 += ts - last > 200 ? 33 : ts - last; draw(hero, t0); } last = ts; if (playing) raf = requestAnimationFrame(loop); }
-  if (playing) raf = requestAnimationFrame(function (ts) { last = ts; loop(ts); });
+  // Portada: en pantallas anchas se reproduce el video (WebM o MP4, el que el
+  // navegador admita). En celulares, con «reducir movimiento» o si el video no
+  // carga, se ve la misma animación dibujada en el lienzo.
+  var hero = document.querySelector('canvas[data-anim]'), playing = !reduce, t0 = 0, last = 0, raf, conVideo = false;
+  function loop(ts) { if (ts - last > 33) { t0 += ts - last > 200 ? 33 : ts - last; draw(hero, t0); } last = ts; if (playing && !conVideo) raf = requestAnimationFrame(loop); }
+  function animarLienzo() { cancelAnimationFrame(raf); last = performance.now(); raf = requestAnimationFrame(loop); }
 
   var vid = document.getElementById('vid'), pause = document.getElementById('pause'), tip = document.getElementById('pause-tip');
-  if (vid.networkState === 3 || vid.error) vid.hidden = true;
-  vid.querySelector('source').addEventListener('error', function () { vid.hidden = true; });
-  if (reduce) { vid.removeAttribute('autoplay'); vid.pause(); }
+  function reproducir() { var pr = vid.play(); if (pr && pr.catch) pr.catch(function () {}); }
+  if (!reduce && window.matchMedia('(min-width: 901px)').matches) {
+    var fuente = vid.canPlayType('video/webm; codecs="vp9"') ? vid.getAttribute('data-webm')
+      : vid.canPlayType('video/mp4; codecs="avc1.640028"') ? vid.getAttribute('data-mp4') : '';
+    if (fuente) {
+      vid.addEventListener('playing', function () {
+        if (!playing) { vid.pause(); return; }
+        conVideo = true; vid.hidden = false; cancelAnimationFrame(raf);
+      });
+      vid.addEventListener('error', function () { conVideo = false; vid.hidden = true; if (playing) animarLienzo(); });
+      vid.muted = true;
+      vid.src = fuente;
+      reproducir();
+    }
+  }
+  if (playing) animarLienzo();
+
   function setPaused(p) {
     pause.classList.toggle('play', p);
     pause.setAttribute('aria-label', p ? 'Reproducir la animación' : 'Pausar la animación');
@@ -518,8 +536,9 @@ img{max-width:100%;display:block}
   setPaused(!playing);
   pause.addEventListener('click', function () {
     playing = !playing;
-    if (playing) { last = performance.now(); raf = requestAnimationFrame(loop); if (!vid.hidden) { var p = vid.play(); if (p && p.catch) p.catch(function () {}); } }
-    else { cancelAnimationFrame(raf); if (!vid.hidden) vid.pause(); }
+    if (conVideo) { if (playing) reproducir(); else vid.pause(); }
+    else if (playing) animarLienzo();
+    else cancelAnimationFrame(raf);
     setPaused(!playing);
   });
 

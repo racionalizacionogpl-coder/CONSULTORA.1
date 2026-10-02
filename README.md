@@ -133,13 +133,12 @@ dibujan en el navegador; una foto en `media/` con el nombre indicado en el
 código las reemplaza. El contenido detallado (fases, autodiagnóstico,
 artículos y contacto) está en [`servicios.html`](servicios.html).
 
-Archivos que hay que agregar en `media/` (mientras falten, se muestra un fondo
-de color en su lugar):
+Archivos de `media/` (los que aún faltan se reemplazan por un fondo de color):
 
 | Archivo | Contenido |
 |---|---|
 | `media/peru.mp4` | Video de fondo de la portada. Sugerido: [Aerial Footage of the Coastal City of Lima, Peru](https://www.pexels.com/video/aerial-footage-of-the-coastal-city-of-lima-peru-15809948/) (licencia gratuita de Pexels). Descárguelo en HD 1920×1080 y renómbrelo. |
-| `media/trabajo.mp4` | Video opcional de fondo de «Nuestro trabajo»; sin él se ve la animación de esferas. |
+| `media/trabajo.webm`, `media/trabajo.mp4` | **Incluidos.** Video de fondo de «Nuestro trabajo»: anillo de esferas plateadas, bucle de 12 s en 1920 × 1080, en VP9 y en H.264. En pantallas de más de 900 px se reproduce el formato que admita el navegador; en celulares se ve la misma animación dibujada, sin descargar el video. Se regenera con `herramientas/video/generar_video_trabajo.js`. |
 | `media/caso-universidad.jpg` | Foto del estudio de caso |
 | `media/norma.jpg`, `media/errores.jpg`, `media/indicadores.jpg`, `media/diagnostico.jpg` | Fotos de las cuatro tarjetas |
 | `media/equipo/chumacero.jpg`, `rojas.jpg`, `flores.jpg`, `romero.jpg`, `valarenzo.jpg` | Fotos del equipo, cuadradas |

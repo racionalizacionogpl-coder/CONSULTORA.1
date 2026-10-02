@@ -36,6 +36,25 @@ function comprobar(ok, descripcion, detalle) {
   const lienzos = await p.$$eval('canvas.art', cs => cs.filter(c => c.width > 0).length);
   comprobar(lienzos >= 10, 'trabajo.html: se dibujan las ilustraciones', lienzos);
 
+  // Video de «Nuestro trabajo»: se reproduce en pantalla ancha y el botón lo pausa.
+  const enMarcha = await p.waitForFunction(() => {
+    const v = document.getElementById('vid');
+    return !v.hidden && !v.paused && v.currentTime > 0.2;
+  }, null, { timeout: 10000 }).then(() => true, () => false);
+  comprobar(enMarcha, 'trabajo.html: el video de la portada se reproduce',
+    await p.$eval('#vid', v => ({ oculto: v.hidden, pausado: v.paused, fuente: v.currentSrc.split('/').pop(), error: v.error && v.error.code })));
+  await p.click('#pause');
+  comprobar(await p.$eval('#vid', v => v.paused), 'trabajo.html: el botón pausa el video');
+  await p.click('#pause');
+  await p.waitForTimeout(400);
+  comprobar(await p.$eval('#vid', v => !v.paused), 'trabajo.html: el botón vuelve a reproducir el video');
+  const movil = await navegador.newContext({ viewport: { width: 390, height: 844 }, ignoreHTTPSErrors: true });
+  const pm = await movil.newPage();
+  await pm.goto(url('trabajo.html'), { waitUntil: 'load' });
+  await pm.waitForTimeout(1500);
+  comprobar(await pm.$eval('#vid', v => v.hidden && !v.currentSrc), 'trabajo.html: en celular no se descarga el video y se ve la animación');
+  await movil.close();
+
   await p.goto(url('servicios.html'), { waitUntil: 'load' });
   await p.evaluate(() => localStorage.clear());
   await p.reload({ waitUntil: 'load' });

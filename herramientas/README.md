@@ -11,6 +11,7 @@ Todos se ejecutan desde la raíz del repositorio.
 - Python 3 con `pip install fonttools uharfbuzz`
 - Node.js con `npm install playwright` y `npx playwright install chromium`
 - ImageMagick (`convert`, `compare`), solo para `ajustar_logo.py`
+- ffmpeg con libx264 y libvpx-vp9, solo para el video
 
 ## Logo (`logo/`)
 
@@ -44,12 +45,27 @@ que están dentro de `servicios.html`.
 python3 herramientas/graficos/generar_svgs.py --comparar
 ```
 
+## Video de «Nuestro trabajo» (`video/`)
+
+`generar_video_trabajo.js` dibuja, cuadro por cuadro, el anillo de esferas
+plateadas de la portada de «Nuestro trabajo» y lo codifica con ffmpeg en
+`media/trabajo.webm` (VP9) y `media/trabajo.mp4` (H.264): 12 s, 1920 × 1080,
+30 cuadros por segundo. Es un bucle perfecto: el último cuadro empalma con el
+primero.
+
+```sh
+node herramientas/video/generar_video_trabajo.js            # video completo (1 a 2 minutos)
+node herramientas/video/generar_video_trabajo.js --muestra  # un solo cuadro en video/muestra.png
+```
+
+Requiere ffmpeg con libx264 y libvpx-vp9.
+
 ## Verificación (`verificacion/`)
 
 | Archivo | Qué revisa |
 |---|---|
-| `verificar.js` | Las cuatro páginas en siete anchos (320 a 1920 px): errores de JavaScript, archivos que no cargan, desplazamiento horizontal y pestañas que chocan con la búsqueda. Con `--capturas` guarda una captura de cada combinación en `verificacion/capturas/`. |
-| `probar-interacciones.js` | Selector «¿En qué podemos ayudarle?», pestañas, menú lateral, búsqueda, autodiagnóstico, formulario, artículos y enlaces directos. |
+| `verificar.js` | Las cuatro páginas en diez anchos (320 a 1920 px): errores de JavaScript, archivos que no cargan, desplazamiento horizontal y pestañas pegadas a la búsqueda. Con `--capturas` guarda una captura de cada combinación en `verificacion/capturas/`. |
+| `probar-interacciones.js` | Video de «Nuestro trabajo» (reproducción, pausa y que no se descargue en celular), selector «¿En qué podemos ayudarle?», pestañas, menú lateral, búsqueda, autodiagnóstico, formulario, artículos y enlaces directos. |
 
 ```sh
 node herramientas/verificacion/verificar.js
