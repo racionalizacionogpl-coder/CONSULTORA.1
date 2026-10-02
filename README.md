@@ -147,3 +147,13 @@ esta página necesita fotos reales:
 | `media/impacto-interactivo.jpg` | Persona usando el autodiagnóstico o un tablero |
 | `media/impacto-1.jpg` … `media/impacto-4.jpg` | Fotos de las cuatro lecturas |
 | `media/impacto.mp4` | Video del gerente o del equipo explicando la propuesta de la firma |
+
+## Logo
+
+`media/roic-logo.svg` es el logo de ROIC & Company reconstruido como vector a
+partir de la imagen original: Montserrat SemiBold para «ROIC», Medium para
+«& Company» y SemiBold para el eslogan, en color #182E46, con las letras
+convertidas en trazos (no depende de que la fuente esté instalada). Se ve
+nítido a cualquier tamaño. También hay una versión `media/roic-logo.png` de
+2392 × 1000 px con fondo transparente para documentos y redes, y el ícono en
+`media/roic-icono.svg` y `media/roic-icono.png`.
