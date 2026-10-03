@@ -60,6 +60,17 @@ node herramientas/video/generar_video_trabajo.js --muestra  # un solo cuadro en 
 
 Requiere ffmpeg con libx264 y libvpx-vp9.
 
+## Video de la portada (`video/preparar_video_peru.sh`)
+
+Descarga la toma original de Lima en 4K del release `video-peru` y produce
+`media/peru.mp4` (1920 × 1080), `media/peru-720.mp4` (1280 × 720, para
+celulares) y `media/peru.jpg` (imagen mientras carga). El último segundo se
+funde con el principio para que el bucle no se note.
+
+```sh
+sh herramientas/video/preparar_video_peru.sh
+```
+
 ## Verificación (`verificacion/`)
 
 | Archivo | Qué revisa |

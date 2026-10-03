@@ -137,7 +137,7 @@ Archivos de `media/` (los que aún faltan se reemplazan por un fondo de color):
 
 | Archivo | Contenido |
 |---|---|
-| `media/peru.mp4` | Video de fondo de la portada. Sugerido: [Aerial Footage of the Coastal City of Lima, Peru](https://www.pexels.com/video/aerial-footage-of-the-coastal-city-of-lima-peru-15809948/) (licencia gratuita de Pexels). Descárguelo en HD 1920×1080 y renómbrelo. |
+| `media/peru.mp4`, `media/peru-720.mp4`, `media/peru.jpg` | **Incluidos.** Video de fondo de la portada: toma aérea de la costa de Miraflores, en Lima. Bucle de 11 s sin salto visible, en H.264: 1920 × 1080 para computadoras (5,5 MB) y 1280 × 720 para celulares (2,3 MB). `peru.jpg` es la imagen que se ve mientras carga. La toma original en 4K está en el release `video-peru`; se regeneran con `herramientas/video/preparar_video_peru.sh`. |
 | `media/trabajo.webm`, `media/trabajo.mp4` | **Incluidos.** Video de fondo de «Nuestro trabajo»: anillo de esferas plateadas, bucle de 12 s en 1920 × 1080, en VP9 y en H.264. En pantallas de más de 900 px se reproduce el formato que admita el navegador; en celulares se ve la misma animación dibujada, sin descargar el video. Se regenera con `herramientas/video/generar_video_trabajo.js`. |
 | `media/caso-universidad.jpg` | Foto del estudio de caso |
 | `media/norma.jpg`, `media/errores.jpg`, `media/indicadores.jpg`, `media/diagnostico.jpg` | Fotos de las cuatro tarjetas |

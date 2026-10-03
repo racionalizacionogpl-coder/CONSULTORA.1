@@ -94,7 +94,7 @@ img{max-width:100%;display:block}
 .hero{position:relative;height:calc(100vh - var(--hdr));min-height:520px;max-height:960px;overflow:hidden;color:#fff;
   background:#0B2A3C linear-gradient(160deg,#173F57 0%,#0B2A3C 45%,#051C2C 100%)}
 .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(0,0,0,.42) 100%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 25%,rgba(0,0,0,.5) 100%);pointer-events:none}
 .hero-txt{position:absolute;left:0;right:0;bottom:clamp(110px,15vh,150px);z-index:1;text-align:center;padding-inline:16px}
 .hero-txt p{font-size:clamp(15px,1.2vw,18px);font-weight:400;text-shadow:0 1px 8px rgba(0,0,0,.4)}
 .hero-txt h1{font-family:var(--serif);font-weight:700;font-size:clamp(52px,7vw,104px);line-height:1.06;letter-spacing:-.01em;margin-top:6px;text-shadow:0 2px 24px rgba(0,0,0,.35)}
@@ -219,7 +219,8 @@ img{max-width:100%;display:block}
 
 <main>
   <section class="hero" aria-labelledby="hero-t">
-    <video id="vid" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+    <video id="vid" autoplay muted loop playsinline preload="auto" poster="media/peru.jpg" aria-hidden="true">
+      <source src="media/peru-720.mp4" type="video/mp4" media="(max-width: 900px)">
       <source src="media/peru.mp4" type="video/mp4">
     </video>
     <div class="hero-txt">
@@ -325,7 +326,7 @@ img{max-width:100%;display:block}
     tip.textContent = p ? 'Reproducir video' : 'Pausar video';
   }
   vid.addEventListener('error', function () { pause.hidden = true; }, true);
-  vid.querySelector('source').addEventListener('error', function () { pause.hidden = true; });
+  vid.querySelector('source:last-of-type').addEventListener('error', function () { pause.hidden = true; });
   if (vid.networkState === 3 || vid.error) pause.hidden = true;
   if (reduce) { vid.removeAttribute('autoplay'); vid.pause(); setPaused(true); }
   pause.addEventListener('click', function () {
