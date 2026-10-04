@@ -1,4 +1,4 @@
-// Revisa las cuatro páginas en siete anchos de pantalla, de un celular
+// Revisa las páginas del sitio en diez anchos de pantalla, de un celular
 // pequeño (320 px) a un monitor grande (1920 px). En cada combinación busca:
 //   - errores de JavaScript;
 //   - archivos que no cargan (salvo las fotos y videos de media/ que aún faltan);
@@ -16,7 +16,7 @@ const path = require('path');
 const { pathToFileURL } = require('url');
 
 const RAIZ = path.resolve(__dirname, '..', '..');
-const PAGINAS = ['index.html', 'trabajo.html', 'impacto.html', 'servicios.html'];
+const PAGINAS = ['index.html', 'trabajo.html', 'impacto.html', 'servicios.html', 'persona.html?p=chumacero'];
 const ANCHOS = [320, 390, 820, 1120, 1280, 1366, 1440, 1536, 1600, 1920];
 const CAPTURAS = process.argv.includes('--capturas');
 const DIR_CAPTURAS = path.join(__dirname, 'capturas');
@@ -39,7 +39,8 @@ const DIR_CAPTURAS = path.join(__dirname, 'capturas');
         if (u.includes('fonts.g')) return;                               // sin red: el sitio usa fuentes de respaldo
         hallazgos.push('no carga: ' + u);
       });
-      await p.goto(pathToFileURL(path.join(RAIZ, pagina)).href, { waitUntil: 'load' });
+      const [archivo, consulta] = pagina.split('?');
+      await p.goto(pathToFileURL(path.join(RAIZ, archivo)).href + (consulta ? '?' + consulta : ''), { waitUntil: 'load' });
       await p.evaluate(() => document.fonts.ready);
       await p.waitForTimeout(300);
 
@@ -68,8 +69,8 @@ const DIR_CAPTURAS = path.join(__dirname, 'capturas');
       if (medida.desborde > 0) hallazgos.push(`desplazamiento horizontal de ${medida.desborde} px: ${medida.anchos.join(', ')}`);
       if (medida.choque) hallazgos.push(`la última pestaña queda a menos de 16 px de la lupa (faltan ${medida.choque} px)`);
 
-      if (CAPTURAS) await p.screenshot({ path: path.join(DIR_CAPTURAS, `${pagina.replace('.html', '')}-${ancho}.png`) });
-      console.log((hallazgos.length ? '✗ ' : '✓ ') + pagina.padEnd(15) + String(ancho).padStart(5) + ' px' +
+      if (CAPTURAS) await p.screenshot({ path: path.join(DIR_CAPTURAS, `${pagina.replace('.html', '').replace('?p=', '-')}-${ancho}.png`) });
+      console.log((hallazgos.length ? '✗ ' : '✓ ') + pagina.padEnd(26) + String(ancho).padStart(5) + ' px' +
         (hallazgos.length ? '\n    ' + hallazgos.join('\n    ') : ''));
       problemas += hallazgos.length;
       await contexto.close();

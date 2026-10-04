@@ -78,7 +78,7 @@ sh herramientas/video/preparar_videos_regiones.sh puno   # solo una
 
 | Archivo | Qué revisa |
 |---|---|
-| `verificar.js` | Las cuatro páginas en diez anchos (320 a 1920 px): errores de JavaScript, archivos que no cargan, desplazamiento horizontal y pestañas pegadas a la búsqueda. Con `--capturas` guarda una captura de cada combinación en `verificacion/capturas/`. |
+| `verificar.js` | Las páginas del sitio (incluido un perfil) en diez anchos (320 a 1920 px): errores de JavaScript, archivos que no cargan, desplazamiento horizontal y pestañas pegadas a la búsqueda. Con `--capturas` guarda una captura de cada combinación en `verificacion/capturas/`. |
 | `probar-interacciones.js` | Video de «Nuestro trabajo» (reproducción, pausa y que no se descargue en celular), selector «¿En qué podemos ayudarle?», pestañas, menú lateral, búsqueda, autodiagnóstico, formulario, artículos y enlaces directos. |
 
 ```sh

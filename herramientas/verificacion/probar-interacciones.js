@@ -1,8 +1,9 @@
 // Prueba, en un navegador real, que las partes interactivas del sitio
 // funcionen: selector «¿En qué podemos ayudarle?», pestañas de las fases,
 // menú lateral, búsqueda, autodiagnóstico, formulario de contacto, artículos
-// y enlaces directos. También comprueba que el logo cargue en las cuatro
-// páginas y que se dibujen las ilustraciones de «Nuestro trabajo».
+// y enlaces directos. También comprueba que el logo cargue en todas las
+// páginas, que se dibujen las ilustraciones de «Nuestro trabajo» y que cada
+// tarjeta de «Nuestra gente» abra el perfil de su integrante.
 //
 // Uso, desde la raíz del repositorio: node herramientas/verificacion/probar-interacciones.js
 // Termina con código 1 si alguna prueba falla.
@@ -11,7 +12,7 @@ const path = require('path');
 const { pathToFileURL } = require('url');
 
 const RAIZ = path.resolve(__dirname, '..', '..');
-const url = (pagina, ancla = '') => pathToFileURL(path.join(RAIZ, pagina)).href + ancla;
+const url = (pagina, ancla = '') => { const [archivo, consulta] = pagina.split('?'); return pathToFileURL(path.join(RAIZ, archivo)).href + (consulta ? '?' + consulta : '') + ancla; };
 
 let fallas = 0;
 function comprobar(ok, descripcion, detalle) {
@@ -26,8 +27,8 @@ function comprobar(ok, descripcion, detalle) {
   const errores = [];
   p.on('pageerror', e => errores.push(e.message));
 
-  // Las cuatro páginas cargan el logo vectorial.
-  for (const pagina of ['index.html', 'trabajo.html', 'impacto.html', 'servicios.html']) {
+  // Todas las páginas cargan el logo vectorial.
+  for (const pagina of ['index.html', 'trabajo.html', 'impacto.html', 'servicios.html', 'persona.html?p=rojas']) {
     await p.goto(url(pagina), { waitUntil: 'load' });
     const logo = await p.$eval('.logo img, .mk-logo img', i => i.complete && i.naturalWidth > 0);
     comprobar(logo, `${pagina}: el logo carga`);
@@ -54,6 +55,23 @@ function comprobar(ok, descripcion, detalle) {
   await pm.waitForTimeout(1500);
   comprobar(await pm.$eval('#vid', v => v.hidden && !v.currentSrc), 'trabajo.html: en celular no se descarga el video y se ve la animación');
   await movil.close();
+
+  // «Nuestra gente»: cada tarjeta abre el perfil de su integrante.
+  await p.goto(url('index.html'), { waitUntil: 'load' });
+  const nombres = await p.$$eval('#pgrid h3', h => h.map(x => x.textContent));
+  comprobar(nombres.includes('Isabel Flores Huamani') && nombres.includes('Luis Balarezo'), 'index.html: los nombres del equipo están corregidos', nombres);
+  await p.click('#pgrid h3 >> text=Luis Balarezo');
+  await p.waitForLoadState('load');
+  comprobar(await p.textContent('h1') === 'Luis Balarezo' && p.url().endsWith('persona.html?p=balarezo'), 'la tarjeta abre el perfil de Luis Balarezo', p.url());
+  comprobar(await p.getAttribute('.pf-soc a[href*="linkedin"]', 'href') === 'https://www.linkedin.com/in/luisbalarezo/', 'el perfil enlaza a su LinkedIn');
+  comprobar(await p.$$eval('#pf-pubs .pub', l => l.length) === 4, 'el perfil muestra cuatro publicaciones');
+  comprobar(await p.$$eval('#pf-mas .mp', l => l.length) === 4, 'el perfil muestra al resto del equipo');
+  await p.click('#pf-mas a >> text=Oriol Romero Saavedra');
+  await p.waitForLoadState('load');
+  comprobar(await p.textContent('#pf-acerca-t') === 'Acerca de Oriol', 'desde un perfil se pasa al de otro integrante');
+  await p.goto(url('persona.html?p=nadie'), { waitUntil: 'load' });
+  await p.waitForTimeout(300);
+  comprobar(p.url().endsWith('index.html#gente'), 'un perfil que no existe lleva a «Nuestra gente»', p.url());
 
   await p.goto(url('servicios.html'), { waitUntil: 'load' });
   await p.evaluate(() => localStorage.clear());
@@ -89,6 +107,8 @@ function comprobar(ok, descripcion, detalle) {
   await p.fill('#q', 'indicadores');
   const resultados = await p.$$eval('#srch-res li', l => l.length);
   comprobar(resultados > 0, 'la búsqueda encuentra «indicadores»', resultados);
+  await p.fill('#q', 'balarezo');
+  comprobar((await p.$$eval('#srch-res li a', l => l.map(a => a.getAttribute('href')))).includes('persona.html?p=balarezo'), 'la búsqueda encuentra a Luis Balarezo y lleva a su perfil');
   await p.keyboard.press('Escape');
   comprobar(!(await p.isVisible('#srch')), 'Escape cierra la búsqueda');
 

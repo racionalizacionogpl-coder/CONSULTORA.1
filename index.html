@@ -163,7 +163,9 @@ img{max-width:100%;display:block}
 .role{font-size:16px;font-weight:600;color:#000;margin-top:14px;line-height:1.55}
 .person hr{width:76px;border:0;border-top:1px solid #CCC;margin:12px 0 18px}
 .bio{font-size:16px;font-weight:300;color:var(--muted);line-height:1.6}
-.soc{display:flex;gap:20px;margin-top:28px}
+.soc{display:flex;gap:20px;margin-top:28px;position:relative;z-index:1}
+.person h3 a::after{content:"";position:absolute;inset:0}
+.person:hover h3{color:var(--blue)}
 .soc a{width:40px;height:40px;border-radius:50%;background:#000;display:grid;place-items:center}
 .soc a:hover{background:var(--blue)}
 .soc svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:1.5}
@@ -299,27 +301,13 @@ img{max-width:100%;display:block}
   </section>
 </main>
 
+<script src="equipo.js"></script>
 <script>
 (function () {
   'use strict';
 
-  /* ==========================================================
-     EQUIPO. Para mostrar una foto, guárdela en media/equipo/
-     con el nombre indicado en "foto". Complete "correo" y
-     "linkedin" para que aparezcan sus íconos.
-     ========================================================== */
-  var EQUIPO = [
-    { nombre: 'Dr. José Antonio Chumacero Calle', ini: 'JC', foto: 'media/equipo/chumacero.jpg', cargo: 'Gerente general, Lima',
-      bio: 'Doctor en Economía. Dirige la firma y la relación con cada cliente, y aporta la mirada económica: que cada proceso rediseñado se justifique en costo, tiempo y valor generado.', correo: '', linkedin: '' },
-    { nombre: 'Álvaro Rojas Carnero', ini: 'ÁR', foto: 'media/equipo/rojas.jpg', cargo: 'Subgerente, Lima',
-      bio: 'Coordina la ejecución de los proyectos: plan de trabajo, cronograma, ruta crítica y control de calidad de cada entregable. Lidera la documentación y la procedimentación.', correo: '', linkedin: '' },
-    { nombre: 'Isabel Flores Guamaní', ini: 'IF', foto: 'media/equipo/flores.jpg', cargo: 'Especialista en automatización de procesos',
-      bio: 'Convierte tareas repetitivas en flujos automáticos: carga y validación de datos, formularios, reportes y alertas, sobre procesos ya documentados.', correo: '', linkedin: '' },
-    { nombre: 'Oriol Romero Saavedra', ini: 'OR', foto: 'media/equipo/romero.jpg', cargo: 'Especialista en indicadores, KPI y OKR',
-      bio: 'Diseña sistemas de medición: indicadores con ficha técnica, línea base y meta, OKR que conectan la estrategia con la operación, y tableros que se leen en un minuto.', correo: '', linkedin: '' },
-    { nombre: 'Luis Valarenzo', ini: 'LV', foto: 'media/equipo/valarenzo.jpg', cargo: 'Desarrollador full stack, especialidad backend',
-      bio: 'Construye las plataformas que sostienen la gestión por procesos: repositorios de procesos, módulos de indicadores, actas digitales e integraciones con los sistemas del cliente.', correo: '', linkedin: '' }
-  ];
+  /* El equipo (nombres, cargos, fotos y perfiles) está en equipo.js. */
+  var EQUIPO = window.EQUIPO || [];
 
   var $ = function (s) { return document.querySelector(s); };
   function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
@@ -329,9 +317,10 @@ img{max-width:100%;display:block}
   var IN = '<svg class="in" viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="7.5" width="3" height="10"/><circle cx="4" cy="4" r="1.8"/><path d="M8 7.5h2.9v1.4c.5-.9 1.6-1.6 3.1-1.6 2.6 0 3.5 1.6 3.5 4.3v5.9h-3v-5.2c0-1.3-.3-2.3-1.6-2.3-1.4 0-1.9 1-1.9 2.3v5.2H8z"/></svg>';
   $('#pgrid').innerHTML = EQUIPO.map(function (p) {
     var mail = p.correo ? 'mailto:' + p.correo : 'servicios.html#contacto';
+    var nombre = (p.tratamiento ? p.tratamiento + ' ' : '') + p.nombre;
     return '<article class="person">' +
-      '<div class="avatar" aria-hidden="true">' + esc(p.ini) + '<img src="' + esc(p.foto) + '" alt="" loading="lazy" onerror="this.remove()"></div>' +
-      '<div><h3>' + esc(p.nombre) + '</h3><p class="role">' + esc(p.cargo) + '</p><hr><p class="bio">' + esc(p.bio) + '</p>' +
+      '<div class="avatar" aria-hidden="true">' + esc(p.ini) + '<img src="media/equipo/' + esc(p.id) + '.jpg" alt="" loading="lazy" onerror="this.remove()"></div>' +
+      '<div><h3><a href="persona.html?p=' + esc(p.id) + '">' + esc(nombre) + '</a></h3><p class="role">' + esc(p.cargo) + (p.sede ? ', ' + esc(p.sede) : '') + '</p><hr><p class="bio">' + esc(p.bio) + '</p>' +
       '<div class="soc"><a href="' + esc(mail) + '" aria-label="Escribir a ' + esc(p.nombre) + '">' + MAIL + '</a>' +
       (p.linkedin ? '<a href="' + esc(p.linkedin) + '" target="_blank" rel="noopener" aria-label="LinkedIn de ' + esc(p.nombre) + '">' + IN + '</a>' : '') +
       '</div></div></article>';
@@ -454,7 +443,12 @@ img{max-width:100%;display:block}
     ['Cómo trabajamos', 'Modalidades: proyecto integral, por fase, acompañamiento, formación, tecnología', 'servicios.html#como-trabajamos'],
     ['Preguntas frecuentes', 'Costos, plazos, ISO 9001, herramientas, confidencialidad', 'servicios.html#preguntas'],
     ['Contáctanos', 'Solicitar una propuesta', 'servicios.html#contacto'],
-    ['Nuestra gente', 'José Antonio Chumacero, Álvaro Rojas, Isabel Flores, Oriol Romero, Luis Valarenzo', '#gente']
+    ['Nuestra gente', 'José Antonio Chumacero, Álvaro Rojas, Isabel Flores, Oriol Romero, Luis Balarezo', '#gente'],
+    ['José Antonio Chumacero Calle', 'Gerente general · Doctor en Economía', 'persona.html?p=chumacero'],
+    ['Álvaro Rojas Carnero', 'Subgerente · Coordinación de proyectos', 'persona.html?p=rojas'],
+    ['Isabel Flores Huamani', 'Especialista en automatización de procesos', 'persona.html?p=flores'],
+    ['Oriol Romero Saavedra', 'Especialista en indicadores, KPI y OKR', 'persona.html?p=romero'],
+    ['Luis Balarezo', 'Desarrollador full stack, especialidad backend', 'persona.html?p=balarezo']
   ];
   var srch = $('#srch'), q = $('#q'), res = $('#srch-res'), none = $('#srch-none'), sBtn = $('#search-open');
   function norm(t) { return t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }

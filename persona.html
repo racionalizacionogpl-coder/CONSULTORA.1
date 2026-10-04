@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Nuestra gente | ROIC &amp; Company</title>
+<meta name="description" content="Perfil de un integrante del equipo de ROIC &amp; Company, Management &amp; Technology Consulting: gestión por procesos en el Perú.">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:type" content="website">
+<meta property="og:image" content="media/roic-logo.png">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="Nuestra gente | ROIC &amp; Company">
+<meta property="og:description" content="Gestión por procesos para entidades públicas y empresas privadas en el Perú.">
+<link rel="icon" type="image/svg+xml" href="media/roic-icono.svg">
+<link rel="icon" type="image/png" sizes="256x256" href="media/roic-icono.png">
+<link rel="apple-touch-icon" href="media/roic-icono.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Public+Sans:wght@300;400;500;600;700&display=swap">
+<style>
+/* Layout: team member profile, after McKinsey's people pages. Same white sticky header as the overview; light-blue hero with name, role, contact links and photo; two-column body with bio and a sidebar of specialties; related publications; the rest of the team on grey. */
+:root{
+  --ink:#051C2C; --text:#222222; --muted:#4D4D4D; --line:#E6E6E6;
+  --blue:#2251FF; --grey:#F0F0F0; --white:#FFFFFF;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"Public Sans","Helvetica Neue",Arial,sans-serif;
+  --hdr:110px;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--hdr)}
+body{margin:0;background:var(--white);color:var(--text);font-family:var(--sans);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+img{max-width:100%;display:block}
+[hidden]{display:none!important}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.chev-r{display:inline-block;width:.42em;height:.42em;border-top:.13em solid var(--blue);border-right:.13em solid var(--blue);transform:rotate(45deg);margin-left:.18em;vertical-align:.12em}
+
+/* ---------- Header ---------- */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--white);height:var(--hdr);border-bottom:1px solid var(--line)}
+.hdr-in{height:100%;display:flex;align-items:stretch;padding-inline:clamp(16px,2.6vw,40px);gap:clamp(16px,3vw,56px)}
+.burger{align-self:center;width:32px;height:22px;position:relative;flex:0 0 32px}
+.burger span,.burger::before,.burger::after{content:"";position:absolute;left:0;right:0;height:3px;background:var(--ink)}
+.burger::before{top:0}.burger span{top:9.5px}.burger::after{bottom:0}
+.logo{align-self:center;font-family:var(--serif);font-weight:500;color:var(--ink);line-height:.98;font-size:29px;letter-spacing:-.01em;flex:0 0 auto}
+.logo span{display:block}
+.logo span+span{padding-left:.9em}
+.nav{display:flex;flex-direction:column;justify-content:flex-end;min-width:0}
+.country{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.tabs{display:flex;gap:clamp(14px,2vw,30px)}
+.tabs>li{position:relative}
+.tabs a,.tabs>li>button{display:inline-flex;align-items:center;gap:6px;padding:4px 0 28px;font-size:18px;font-weight:300;color:var(--text);white-space:nowrap;position:relative}
+.tabs a:hover,.tabs>li>button:hover{color:var(--blue)}
+.tabs a[aria-current="page"]{color:var(--blue)}
+.tabs a[aria-current="page"]::after{content:"";position:absolute;left:4px;right:4px;bottom:0;height:4px;background:var(--blue)}
+.dn{width:8px;height:8px;border-right:1.4px solid currentColor;border-bottom:1.4px solid currentColor;transform:translateY(-3px) rotate(45deg)}
+.drop{position:absolute;top:100%;left:0;background:var(--white);border:1px solid var(--line);box-shadow:0 12px 30px rgba(0,0,0,.12);min-width:240px;padding:10px 0}
+.drop a{display:block;padding:10px 20px;font-size:16px}
+.drop a:hover{background:var(--grey)}
+.util{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;padding-block:12px 18px}
+.util .acct{font-size:18px;color:var(--blue);font-weight:300}
+.util .acct a:hover{text-decoration:underline}
+.search-btn svg{width:42px;height:42px;stroke:var(--ink);stroke-width:1.6;fill:none}
+@media (max-width:1660px){.tabs{gap:16px}.tabs a,.tabs>li>button{font-size:15.5px}}
+@media (max-width:1460px){.tabs{gap:12px}.tabs a,.tabs>li>button{font-size:14px}}
+@media (max-width:1279px){.nav,.util .acct{display:none}:root{--hdr:84px}.util{justify-content:center}.search-btn svg{width:32px;height:32px}.logo{font-size:25px}}
+
+/* side menu */
+.side{position:fixed;inset:0;z-index:80;display:flex}
+.side-panel{width:min(420px,100%);height:100%;overflow-y:auto;background:var(--white);padding:28px clamp(20px,3vw,40px) 40px;box-shadow:20px 0 60px rgba(0,0,0,.2)}
+.side-scrim{flex:1;background:rgba(5,28,44,.5)}
+.side-x{font-size:34px;line-height:1;color:var(--ink);margin-bottom:24px}
+.side h2{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:26px 0 8px}
+.side a{display:block;padding:9px 0;font-size:20px;font-weight:300;border-bottom:1px solid var(--line)}
+.side a:hover{color:var(--blue)}
+
+/* search */
+.srch{position:fixed;inset:0;z-index:90;background:rgba(255,255,255,.98);padding:clamp(24px,6vw,80px) clamp(16px,6vw,120px);overflow-y:auto}
+.srch-top{display:flex;gap:16px;align-items:center;border-bottom:2px solid var(--ink);max-width:1000px;margin-inline:auto}
+.srch input{flex:1;min-width:0;border:0;outline:0;font:400 clamp(26px,4vw,44px)/1.3 var(--serif);color:var(--ink);padding:10px 0;background:transparent}
+.srch-x{font-size:40px;line-height:1;color:var(--ink)}
+.srch ul{max-width:1000px;margin:24px auto 0;display:grid;gap:4px}
+.srch li a{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
+.srch li a b{display:block;font:600 22px/1.3 var(--serif);color:var(--ink)}
+.srch li a span{font-size:15px;color:var(--muted)}
+.srch li a:hover b{color:var(--blue)}
+.srch .none{max-width:1000px;margin:24px auto 0;color:var(--muted)}
+
+/* ---------- Perfil: cabecera celeste ---------- */
+.pf-hero{background:linear-gradient(100deg,#C6D9FF 0%,#C9EAFD 46%,#E2F5FE 74%,#FFFFFF 100%)}
+.pf-in{max-width:1400px;margin-inline:auto;padding-inline:clamp(16px,7vw,100px);display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,440px);gap:clamp(24px,4vw,64px);min-height:clamp(420px,36vw,500px)}
+.pf-txt{align-self:center;padding-block:clamp(40px,5vw,64px)}
+.back{display:inline-flex;align-items:center;gap:14px;font-size:16px;font-weight:300;color:#333}
+.back::before{content:"";width:7px;height:7px;border-left:1.3px solid currentColor;border-bottom:1.3px solid currentColor;transform:rotate(45deg)}
+.back:hover{color:var(--blue)}
+.pf-hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(40px,4.3vw,60px);line-height:1.08;letter-spacing:-.01em;color:#000;margin-top:20px;text-wrap:balance}
+.pf-cargo{font-size:clamp(16px,1.2vw,18px);color:#000;margin-top:18px}
+.pf-cargo a{color:var(--blue)}
+.pf-cargo a:hover{text-decoration:underline;text-underline-offset:3px}
+.pf-res{font-size:clamp(16px,1.2vw,18px);color:#000;margin-top:30px;max-width:640px}
+.pf-soc{display:flex;flex-wrap:wrap;gap:16px 26px;margin-top:30px}
+.pf-soc a{display:inline-flex;align-items:center;gap:10px;font-size:16px;font-weight:300;color:#222}
+.pf-soc i{width:32px;height:32px;border-radius:50%;background:#000;display:grid;place-items:center;transition:background .2s}
+.pf-soc a:hover i{background:var(--blue)}
+.pf-soc svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:1.5}
+.pf-soc svg.in{fill:#fff;stroke:none}
+/* Foto: recortada sin fondo (como en McKinsey), en círculo o, si no hay, las iniciales. */
+.pf-foto{position:relative;display:flex;justify-content:center}
+.pf-foto.recorte{align-self:end}
+.pf-foto.recorte img{height:clamp(360px,33vw,470px);width:auto;max-width:100%;object-fit:contain;object-position:bottom}
+.pf-foto.circulo{align-self:center}
+.pf-foto.circulo img,.pf-mono{width:clamp(220px,23vw,330px);aspect-ratio:1;border-radius:50%;object-fit:cover;border:6px solid #fff;box-shadow:0 24px 60px rgba(5,28,44,.18)}
+.pf-mono{display:grid;place-items:center;background:var(--ink);color:#fff;font-family:var(--serif);font-weight:600;font-size:clamp(64px,6.6vw,100px);letter-spacing:.02em}
+
+/* ---------- Perfil: cuerpo ---------- */
+.pf-body{max-width:1400px;margin-inline:auto;padding:clamp(48px,6vw,84px) clamp(16px,7vw,100px) 0;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:clamp(40px,7vw,110px);align-items:start}
+.k{font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#000}
+.prose p,.prose li{font-size:clamp(17px,1.25vw,19px);font-weight:300;line-height:1.75;color:#333}
+.prose p{margin-top:22px}
+.prose ul{list-style:disc;padding-left:24px;margin-top:12px}
+.prose li{padding-left:6px}
+.prose li+li{margin-top:8px}
+.blk{border-top:1px solid #000;margin-top:56px;padding-top:30px}
+.item{margin-top:24px}
+.item b{display:block;font-size:18px;font-weight:700;color:#222}
+.item span{display:block;font-size:17px;font-weight:300;color:#444;margin-top:2px}
+.pf-side{position:sticky;top:calc(var(--hdr) + 24px)}
+.cta{display:flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:12px 20px;background:var(--blue);color:#fff;font-size:18px;transition:background .2s}
+.cta:hover{background:#1A3FD1}
+.cta svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;flex:0 0 auto}
+.pf-side hr{border:0;border-top:1px solid #000;margin:40px 0 30px}
+.esp{margin-top:16px}
+.esp a{display:flex;gap:12px;align-items:baseline;padding:9px 0;color:var(--blue);font-size:17px;line-height:1.45}
+.esp a::before{content:"";flex:0 0 6px;width:6px;height:6px;border-top:1.3px solid #8A96B8;border-right:1.3px solid #8A96B8;transform:translateY(-2px) rotate(45deg)}
+.esp a:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- Perfil: publicaciones ---------- */
+.pubs{max-width:1400px;margin:clamp(64px,7vw,96px) auto 0;padding-inline:clamp(16px,7vw,100px)}
+.pubs>div{border-top:1px solid #000;padding-top:30px}
+.pubs-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(20px,2.4vw,40px);margin-top:32px}
+.pub{position:relative;padding:16px;margin:-16px;transition:box-shadow .25s}
+.pub:hover{box-shadow:0 6px 30px rgba(0,0,0,.12)}
+.pub-art{aspect-ratio:16/9.4;background:linear-gradient(135deg,#051C2C 0%,#0B2A6B 60%,#163E9E 100%);overflow:hidden}
+.pub-art svg{width:100%;height:100%;display:block}
+.pub .tag{display:block;font-size:14px;color:#333;margin-top:22px}
+.pub h3{font-size:clamp(19px,1.45vw,23px);font-weight:700;line-height:1.3;color:#000;margin-top:6px}
+.pub h3 a::after{content:"";position:absolute;inset:0}
+.pub:hover h3{text-decoration:underline;text-underline-offset:4px}
+.pub .meta{display:block;font-size:15px;color:#555;margin-top:16px}
+
+/* ---------- Perfil: resto del equipo ---------- */
+.mas{background:var(--grey);margin-top:clamp(72px,8vw,110px);padding:clamp(48px,5vw,72px) clamp(16px,7vw,100px) clamp(56px,6vw,88px)}
+.mas-in{max-width:1400px;margin-inline:auto}
+.mas-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;margin-top:30px}
+.mp{position:relative;background:#fff;padding:26px 22px;display:flex;gap:18px;align-items:center;transition:box-shadow .25s}
+.mp:hover{box-shadow:0 8px 40px rgba(0,0,0,.14);z-index:1}
+.mp .av{flex:0 0 72px;width:72px;height:72px;border-radius:50%;overflow:hidden;position:relative;background:#DCE3EA;display:grid;place-items:center;font-family:var(--serif);font-weight:600;font-size:24px;color:var(--ink)}
+.mp .av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.mp b{display:block;font-family:var(--serif);font-weight:700;font-size:20px;line-height:1.2;color:#000}
+.mp a::after{content:"";position:absolute;inset:0}
+.mp:hover b{color:var(--blue)}
+.mp span{display:block;font-size:14px;color:#555;margin-top:6px;line-height:1.4}
+
+@media (max-width:1100px){.pubs-grid,.mas-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){
+  .pf-in{grid-template-columns:minmax(0,1fr);min-height:0;gap:0}
+  .pf-foto{order:-1;padding-top:32px}
+  .pf-foto.recorte img{height:300px}
+  .pf-foto.circulo img,.pf-mono{width:200px;font-size:64px}
+  .pf-txt{padding-top:28px}
+  .pf-body{grid-template-columns:minmax(0,1fr)}
+  .pf-side{position:static}
+}
+@media (max-width:560px){.pubs-grid,.mas-grid{grid-template-columns:minmax(0,1fr)}}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+.logo img{height:64px;width:auto;display:block}
+.side-logo{display:block;border:0!important;padding:0 0 18px!important;margin-bottom:8px}
+.side-logo img{width:240px;height:auto}
+@media (max-width:1279px){.logo img{height:48px}}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <button type="button" class="burger" id="menu-open" aria-label="Abrir el menú" aria-expanded="false" aria-controls="side"><span></span></button>
+    <a class="logo" href="index.html" aria-label="ROIC &amp; Company, inicio"><img src="media/roic-logo.svg" alt="ROIC &amp; Company · Management &amp; Technology Consulting" width="598" height="250"></a>
+    <nav class="nav" aria-label="ROIC &amp; Company Group in the Perú">
+      <p class="country">Perú</p>
+      <ul class="tabs">
+        <li><a href="index.html">Descripción general</a></li>
+        <li><a href="trabajo.html">Nuestro trabajo</a></li>
+        <li><a href="impacto.html">Nuestro impacto</a></li>
+        <li><a href="index.html#gente" aria-current="page">Nuestra gente</a></li>
+        <li><a href="servicios.html#recursos">Nuestras perspectivas</a></li>
+        <li><button type="button" id="car-btn" aria-expanded="false" aria-controls="car-drop">Carreras profesionales <span class="dn" aria-hidden="true"></span></button>
+          <div class="drop" id="car-drop" hidden><a href="servicios.html#contacto">Trabaja con nosotros</a><a href="index.html#gente">Conoce al equipo</a></div></li>
+        <li><a href="servicios.html#contacto">Contáctanos</a></li>
+      </ul>
+    </nav>
+    <div class="util">
+      <p class="acct"><a href="servicios.html#contacto">Suscribirse</a></p>
+      <button type="button" class="search-btn" id="search-open" aria-label="Buscar en el sitio"><svg viewBox="0 0 42 42" aria-hidden="true"><circle cx="18" cy="18" r="14"/><path d="M28 28l11 11"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="side" id="side" hidden>
+  <nav class="side-panel" aria-label="Menú">
+    <button type="button" class="side-x" id="menu-close" aria-label="Cerrar el menú">×</button>
+    <a class="side-logo" href="index.html" aria-label="ROIC &amp; Company, inicio"><img src="media/roic-logo.svg" alt="ROIC &amp; Company · Management &amp; Technology Consulting" width="598" height="250"></a>
+    <a href="index.html">Descripción general</a>
+    <a href="trabajo.html">Nuestro trabajo</a>
+    <a href="impacto.html">Nuestro impacto</a>
+    <a href="index.html#gente">Nuestra gente</a>
+    <a href="servicios.html#recursos">Nuestras perspectivas</a>
+    <a href="servicios.html#contacto">Contáctanos</a>
+    <h2>Servicios</h2>
+    <a href="servicios.html#documentar">Documentar</a>
+    <a href="servicios.html#procedimentar">Procedimentar</a>
+    <a href="servicios.html#medir">Medir</a>
+    <a href="servicios.html#mejorar">Mejorar</a>
+    <h2>Herramientas</h2>
+    <a href="servicios.html#diagnostico">Autodiagnóstico de madurez</a>
+    <a href="servicios.html#metodologia">Metodología</a>
+    <a href="servicios.html#preguntas">Preguntas frecuentes</a>
+  </nav>
+  <div class="side-scrim" id="side-scrim"></div>
+</div>
+
+<div class="srch" id="srch" hidden role="dialog" aria-label="Buscar">
+  <div class="srch-top"><label class="vh" for="q">Buscar</label><input id="q" type="search" placeholder="Buscar en ROIC &amp; Company" autocomplete="off"><button type="button" class="srch-x" id="search-close" aria-label="Cerrar la búsqueda">×</button></div>
+  <ul id="srch-res"></ul>
+  <p class="none" id="srch-none" hidden>No encontramos resultados. Pruebe con «indicadores», «manual» o «norma técnica».</p>
+</div>
+
+<main id="perfil">
+  <section class="pf-hero" aria-labelledby="pf-nombre">
+    <div class="pf-in">
+      <div class="pf-txt">
+        <a class="back" href="index.html#gente">Volver a Nuestra gente</a>
+        <h1 id="pf-nombre"></h1>
+        <p class="pf-cargo" id="pf-cargo"></p>
+        <p class="pf-res" id="pf-res"></p>
+        <div class="pf-soc" id="pf-soc"></div>
+      </div>
+      <div class="pf-foto" id="pf-foto"></div>
+    </div>
+  </section>
+
+  <div class="pf-body">
+    <article>
+      <h2 class="k" id="pf-acerca-t"></h2>
+      <div class="prose" id="pf-acerca"></div>
+      <section class="blk" id="pf-exp" hidden aria-labelledby="pf-exp-t">
+        <h2 class="k" id="pf-exp-t">Experiencia previa</h2>
+        <div id="pf-exp-l"></div>
+      </section>
+      <section class="blk" id="pf-edu" hidden aria-labelledby="pf-edu-t">
+        <h2 class="k" id="pf-edu-t">Formación</h2>
+        <div id="pf-edu-l"></div>
+      </section>
+    </article>
+    <aside class="pf-side" aria-label="Contacto y especialidades">
+      <a class="cta" id="pf-cta" href="servicios.html#contacto"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="4.5" width="16" height="11" rx="1"/><path d="M2.5 5l7.5 6 7.5-6"/></svg>Ponerse en contacto</a>
+      <hr>
+      <h2 class="k">Especialidades</h2>
+      <ul class="esp" id="pf-esp"></ul>
+    </aside>
+  </div>
+
+  <section class="pubs" aria-labelledby="pubs-t">
+    <div>
+      <h2 class="k" id="pubs-t">Publicaciones relacionadas</h2>
+      <div class="pubs-grid" id="pf-pubs"></div>
+    </div>
+  </section>
+
+  <section class="mas" aria-labelledby="mas-t">
+    <div class="mas-in">
+      <h2 class="k" id="mas-t">Conozca al resto del equipo</h2>
+      <div class="mas-grid" id="pf-mas"></div>
+    </div>
+  </section>
+</main>
+
+<script src="equipo.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (s) { return document.querySelector(s); };
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  /* ---------- Perfil ---------- */
+  var id = new URLSearchParams(location.search).get('p');
+  var p = (window.EQUIPO || []).filter(function (x) { return x.id === id; })[0];
+  if (!p) { location.replace('index.html#gente'); return; }
+
+  var MAIL = '<svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="4.5" width="16" height="11" rx="1"/><path d="M2.5 5l7.5 6 7.5-6"/></svg>';
+  var IN = '<svg class="in" viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="7.5" width="3" height="10"/><circle cx="4" cy="4" r="1.8"/><path d="M8 7.5h2.9v1.4c.5-.9 1.6-1.6 3.1-1.6 2.6 0 3.5 1.6 3.5 4.3v5.9h-3v-5.2c0-1.3-.3-2.3-1.6-2.3-1.4 0-1.9 1-1.9 2.3v5.2H8z"/></svg>';
+  var contacto = p.correo ? 'mailto:' + p.correo : 'servicios.html#contacto';
+
+  document.title = p.nombre + ' | ROIC & Company';
+  $('#pf-nombre').textContent = p.nombre;
+  $('#pf-cargo').innerHTML = esc(p.cargo) + ', <a href="index.html">' + esc(p.sede) + '</a>';
+  $('#pf-res').textContent = p.resumen;
+  $('#pf-soc').innerHTML =
+    '<a href="' + esc(contacto) + '"><i>' + MAIL + '</i>Contacto</a>' +
+    (p.linkedin ? '<a href="' + esc(p.linkedin) + '" target="_blank" rel="noopener"><i>' + IN + '</i>LinkedIn</a>' : '');
+  $('#pf-cta').href = contacto;
+
+  // Foto: primero el recorte sin fondo, luego la foto cuadrada; si no hay ninguna, las iniciales.
+  var foto = $('#pf-foto');
+  foto.className = 'pf-foto circulo';
+  foto.innerHTML = '<div class="pf-mono" aria-hidden="true">' + esc(p.ini) + '</div>';
+  function probar(src, ok, mal) { var im = new Image(); im.onload = function () { ok(src); }; im.onerror = mal; im.src = src; }
+  function poner(clase) { return function (src) { foto.className = 'pf-foto ' + clase; foto.innerHTML = '<img src="' + esc(src) + '" alt="' + esc(p.nombre) + '">'; }; }
+  probar('media/equipo/' + p.id + '-recorte.png', poner('recorte'), function () {
+    probar('media/equipo/' + p.id + '.jpg', poner('circulo'), function () {});
+  });
+
+  $('#pf-acerca-t').textContent = 'Acerca de ' + p.corto;
+  $('#pf-acerca').innerHTML = p.acerca.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') +
+    (p.lista && p.lista.length ? '<p>' + esc(p.listaIntro) + '</p><ul>' + p.lista.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' : '');
+
+  function items(lista, campos) {
+    return lista.map(function (x) {
+      var partes = campos.map(function (c) { return x[c]; }).filter(Boolean);
+      return '<div class="item"><b>' + esc(partes[0]) + '</b>' + partes.slice(1).map(function (t) { return '<span>' + esc(t) + '</span>'; }).join('') + '</div>';
+    }).join('');
+  }
+  if (p.experiencia.length) { $('#pf-exp').hidden = false; $('#pf-exp-l').innerHTML = items(p.experiencia, ['empresa', 'cargo', 'periodo']); }
+  if (p.formacion.length) { $('#pf-edu').hidden = false; $('#pf-edu-l').innerHTML = items(p.formacion, ['institucion', 'programa', 'grado']); }
+
+  $('#pf-esp').innerHTML = p.especialidades.map(function (e) { return '<li><a href="' + esc(e[1]) + '">' + esc(e[0]) + '</a></li>'; }).join('');
+
+  // Ilustración de cada publicación: anillos concéntricos, como la rueda de Deming del sitio.
+  function arte(color) {
+    return '<svg viewBox="0 0 320 188" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="' + color + '">' +
+      '<circle cx="246" cy="146" r="64" stroke-width="20"/><circle cx="246" cy="146" r="104" stroke-width="10" opacity=".45"/>' +
+      '<circle cx="246" cy="146" r="142" stroke-width="4" opacity=".25"/></g></svg>';
+  }
+  $('#pf-pubs').innerHTML = p.publicaciones.map(function (k) {
+    var a = window.PUBLICACIONES[k];
+    return '<article class="pub"><div class="pub-art">' + arte(a.color) + '</div><span class="tag">' + esc(a.tag) + '</span>' +
+      '<h3><a href="servicios.html#' + k + '">' + esc(a.titulo) + '<span class="chev-r" aria-hidden="true"></span></a></h3>' +
+      '<span class="meta">' + esc(a.lectura) + '</span></article>';
+  }).join('');
+
+  $('#pf-mas').innerHTML = window.EQUIPO.filter(function (x) { return x.id !== p.id; }).map(function (x) {
+    return '<article class="mp"><div class="av" aria-hidden="true">' + esc(x.ini) + '<img src="media/equipo/' + esc(x.id) + '.jpg" alt="" loading="lazy" onerror="this.remove()"></div>' +
+      '<div><b><a href="persona.html?p=' + esc(x.id) + '">' + esc(x.nombre) + '</a></b><span>' + esc(x.cargo) + '</span></div></article>';
+  }).join('');
+
+  /* ---------- Menus ---------- */
+  var side = $('#side'), openBtn = $('#menu-open');
+  function setSide(o) { side.hidden = !o; openBtn.setAttribute('aria-expanded', String(o)); document.body.style.overflow = o ? 'hidden' : ''; if (o) $('#menu-close').focus(); else openBtn.focus(); }
+  openBtn.addEventListener('click', function () { setSide(true); });
+  $('#menu-close').addEventListener('click', function () { setSide(false); });
+  $('#side-scrim').addEventListener('click', function () { setSide(false); });
+  side.addEventListener('click', function (e) { if (e.target.closest('a')) { side.hidden = true; openBtn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; } });
+
+  var carBtn = $('#car-btn'), carDrop = $('#car-drop');
+  carBtn.addEventListener('click', function (e) { e.stopPropagation(); var o = carDrop.hidden; carDrop.hidden = !o; carBtn.setAttribute('aria-expanded', String(o)); });
+  document.addEventListener('click', function (e) { if (!carDrop.hidden && !carDrop.contains(e.target)) { carDrop.hidden = true; carBtn.setAttribute('aria-expanded', 'false'); } });
+
+  /* ---------- Search ---------- */
+  var IDX = [
+    ['Documentar', 'Inventario de productos, mapa de procesos y fichas de caracterización', 'servicios.html#documentar'],
+    ['Procedimentar', 'Procedimientos en BPMN 2.0, manual de procedimientos (MAPRO) y matrices RACI', 'servicios.html#procedimentar'],
+    ['Medir', 'Indicadores, KPI y OKR, línea base, metas y tableros de control', 'servicios.html#medir'],
+    ['Mejorar', 'Rediseño, Lean, simplificación administrativa, automatización y plan de mejora', 'servicios.html#mejorar'],
+    ['Metodología', 'Ciclo de Deming PHVA y Norma Técnica N.º 002-2025-PCM/SGP', 'servicios.html#metodologia'],
+    ['Sectores', 'Sector público, sector privado y educación superior', 'servicios.html#sectores'],
+    ['Experiencia', 'Universidad pública con 20 facultades y 16 procesos de Nivel 0', 'servicios.html#experiencia'],
+    ['Autodiagnóstico de madurez', 'Doce preguntas, nivel de madurez y hoja de ruta', 'servicios.html#diagnostico'],
+    ['La norma técnica en cinco puntos', 'NT N.º 002-2025-PCM/SGP, entidades públicas, guía práctica', 'servicios.html#art-nt'],
+    ['Cinco errores que frenan una implementación', 'Gestión de proyectos, aprobadores, codificación', 'servicios.html#art-errores'],
+    ['Cómo medir el avance sin engañarse', 'Fórmula de avance, conformes, observados', 'servicios.html#art-avance'],
+    ['KPI y OKR', 'Indicadores y objetivos trimestrales', 'servicios.html#art-kpi'],
+    ['Automatizar después de documentar', 'Automatización de procesos', 'servicios.html#art-auto'],
+    ['La cuña de Deming', 'Por qué las mejoras retroceden', 'servicios.html#art-cuna'],
+    ['Cómo trabajamos', 'Modalidades: proyecto integral, por fase, acompañamiento, formación, tecnología', 'servicios.html#como-trabajamos'],
+    ['Preguntas frecuentes', 'Costos, plazos, ISO 9001, herramientas, confidencialidad', 'servicios.html#preguntas'],
+    ['Contáctanos', 'Solicitar una propuesta', 'servicios.html#contacto'],
+    ['Nuestra gente', 'José Antonio Chumacero, Álvaro Rojas, Isabel Flores, Oriol Romero, Luis Balarezo', 'index.html#gente'],
+    ['José Antonio Chumacero Calle', 'Gerente general · Doctor en Economía', 'persona.html?p=chumacero'],
+    ['Álvaro Rojas Carnero', 'Subgerente · Coordinación de proyectos', 'persona.html?p=rojas'],
+    ['Isabel Flores Huamani', 'Especialista en automatización de procesos', 'persona.html?p=flores'],
+    ['Oriol Romero Saavedra', 'Especialista en indicadores, KPI y OKR', 'persona.html?p=romero'],
+    ['Luis Balarezo', 'Desarrollador full stack, especialidad backend', 'persona.html?p=balarezo']
+  ];
+  var srch = $('#srch'), q = $('#q'), res = $('#srch-res'), none = $('#srch-none'), sBtn = $('#search-open');
+  function norm(t) { return t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+  function render() {
+    var v = norm(q.value.trim());
+    var hits = IDX.filter(function (r) { return !v || norm(r[0] + ' ' + r[1]).indexOf(v) > -1; });
+    res.innerHTML = hits.map(function (r) { return '<li><a href="' + r[2] + '"><b>' + esc(r[0]) + '</b><span>' + esc(r[1]) + '</span></a></li>'; }).join('');
+    none.hidden = hits.length > 0;
+  }
+  function setSearch(o) { srch.hidden = !o; document.body.style.overflow = o ? 'hidden' : ''; if (o) { render(); q.focus(); } else sBtn.focus(); }
+  sBtn.addEventListener('click', function () { setSearch(true); });
+  $('#search-close').addEventListener('click', function () { setSearch(false); });
+  q.addEventListener('input', render);
+  srch.addEventListener('click', function (e) { if (e.target.closest('a')) { srch.hidden = true; document.body.style.overflow = ''; } });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    if (!srch.hidden) setSearch(false);
+    else if (!side.hidden) setSide(false);
+    else if (!carDrop.hidden) { carDrop.hidden = true; carBtn.setAttribute('aria-expanded', 'false'); carBtn.focus(); }
+  });
+})();
+</script>
+</body>
+</html>
