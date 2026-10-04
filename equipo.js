@@ -12,7 +12,8 @@
    Si no hay foto, se muestran las iniciales.
 
    Datos del perfil de LinkedIn de cada integrante:
-     experiencia:     [{ empresa: '', cargo: '', periodo: '' }]
+     experiencia:     [{ empresa: '', cargo: '', periodo: '' }]  (o cargos: ['', ''])
+     experienciaIntro: texto opcional antes de la experiencia
      formacion:       [{ institucion: '', programa: '', grado: '' }]
      certificaciones: ['', '']
    Bloques con subtítulo debajo de «Acerca de» (opcional):
@@ -69,42 +70,45 @@ window.EQUIPO = [
     nombre: 'Alvaro Rojas Carnero',
     corto: 'Alvaro',
     ini: 'AR',
-    cargo: 'Subgerente de Operaciones',
-    sede: 'Lima',
-    bio: 'Supervisa y coordina al equipo de especialistas —automatización, indicadores y desarrollo— y la ejecución de cada proyecto. Analista de procesos y mejora continua: BPMN 2.0, Lean Six Sigma y automatización RPA.',
-    resumen: 'Alvaro es el Subgerente de Operaciones de ROIC & Company: supervisa y coordina al equipo de especialistas y la ejecución de cada proyecto.',
+    cargo: 'Engagement Manager & Subgerente de Operaciones',
+    sede: 'Lima, Perú',
+    bio: 'Dirige la ejecución de cada proyecto bajo la guía del PMBOK y supervisa al equipo de especialistas en automatización, indicadores y desarrollo. Investigación Operativa, BPMN 2.0 y Lean Six Sigma.',
+    resumen: 'Alvaro es Engagement Manager y Subgerente de Operaciones de ROIC & Company: dirige la ejecución de cada proyecto y al equipo de especialistas.',
     acerca: [
-      'Alvaro es el Subgerente de Operaciones de ROIC & Company. Supervisa, delega y coordina directamente el trabajo de los especialistas de la firma: Isabel Flores Huamani en automatización, Oriol Romero Saavedra en indicadores, KPI y OKR, y Luis Balarezo en el desarrollo de plataformas. Responde por la calidad técnica de cada entregable y por el cumplimiento del cronograma, y lidera las fases de documentar y procedimentar.',
-      'Es analista de procesos y mejora continua en la Oficina General de Planificación de la Universidad Nacional Mayor de San Marcos, donde diseñó el marco metodológico de gestión por procesos de la institución y acompaña técnicamente a sus 20 facultades. Cursa el décimo ciclo de Investigación Operativa en la misma universidad, lo que le da una base cuantitativa para medir cada mejora.',
-      'Trabaja con BPM y BPMN 2.0 (Bizagi Modeler y Microsoft Visio), análisis AS-IS/TO-BE, Lean Six Sigma, KPI y OKR, Power BI, Excel avanzado, automatización RPA con UiPath, Google Apps Script e ISO 9001.'
+      'Alvaro es Engagement Manager y Subgerente de Operaciones de ROIC & Company. Su liderazgo en la firma se respalda en su trayectoria técnica y directiva en la Universidad Nacional Mayor de San Marcos (UNMSM), donde ocupó el cargo de Analista Senior de Gestión por Procesos y Mejora Continua: diseñó el marco metodológico de gestión por procesos de la institución y brindó acompañamiento técnico a sus 20 facultades.',
+      'En la consultora supervisa, delega y coordina directamente el trabajo de los especialistas técnicos: Isabel Flores Huamani en automatización, Oriol Romero Saavedra en indicadores, KPI y OKR, y Luis Balarezo en el desarrollo de plataformas. Responde ante el Managing Partner & Gerente General por la calidad técnica de cada entregable y por el cumplimiento estricto del cronograma, y dirige personalmente la ejecución de las cuatro fases de la gestión por procesos —documentar, procedimentar, medir y mejorar⁠—, construidas sobre el ciclo de Deming.',
+      'Su formación en Investigación Operativa le da una base cuantitativa rigurosa para medir y sustentar cada mejora. Domina la gestión integral de proyectos: estructura y dirige la ejecución de cada iniciativa según los estándares globales de la guía del PMBOK (7.ª y 8.ª edición). Trabaja además a nivel avanzado con BPM y el estándar BPMN 2.0 (Bizagi Modeler y Microsoft Visio), análisis AS-IS/TO-BE, Lean Six Sigma, diseño de KPI y OKR, Power BI, automatización RPA con UiPath, Google Apps Script y la norma ISO 9001.'
     ],
-    listaIntro: 'Entre sus trabajos recientes:',
+    listaIntro: 'Entre sus trabajos recientes de mayor impacto:',
     lista: [
-      'redujo en 18,92 % el tiempo de ciclo del procedimiento de disponibilidad presupuestal (de 37 a 30 horas) con un procedimiento operativo estándar y listas de verificación obligatorias, eliminando reprocesos;',
-      'diseñó y estandarizó el marco metodológico de gestión por procesos de la universidad —plan de gestión, guía práctica, fichas de caracterización e indicadores⁠— y reestructuró su mapa de procesos;',
-      'condujo y auditó el modelamiento de procesos de extremo a extremo en BPMN 2.0, identificando las brechas del AS-IS para diseñar flujos TO-BE más eficientes;',
-      'actuó como enlace entre negocio y TI en el Sistema de Gestión por Procesos, donde definió especificaciones funcionales, reglas de negocio y la arquitectura de flujos;',
-      'desarrolló automatizaciones con Google Apps Script para el control documental e implementó un sistema de actas digitales para dar seguimiento a los acuerdos;',
-      'formuló KPI por proceso alineados con los objetivos estratégicos y reportó cada mes a la jefatura con tableros dinámicos y reportes ejecutivos.'
+      'redujo en 18,92 % el tiempo de ciclo del procedimiento de disponibilidad presupuestal (de 37 a 30 horas) con un procedimiento operativo estándar y listas de verificación obligatorias, eliminando de raíz los reprocesos;',
+      'diseñó y estandarizó el marco metodológico de gestión por procesos de la universidad —plan de gestión, guía práctica, fichas de caracterización e indicadores⁠— y reestructuró su mapa de procesos institucional;',
+      'condujo y auditó el modelamiento de procesos de extremo a extremo en BPMN 2.0, identificando las brechas operativas del AS-IS para diseñar flujos TO-BE de alta eficiencia;',
+      'actuó como enlace técnico entre las áreas de negocio y TI en el desarrollo del Sistema de Gestión por Procesos, donde definió las especificaciones funcionales, las reglas de negocio y la arquitectura de flujos;',
+      'desarrolló automatizaciones con Google Apps Script para el control documental e implementó un sistema de actas digitales que asegura el seguimiento de los acuerdos directivos;',
+      'formuló KPI por proceso alineados con los objetivos estratégicos de la organización y reportó cada mes a la jefatura con tableros dinámicos y reportes ejecutivos.'
     ],
     especialidades: [
+      ['Dirección de proyectos (PMBOK 7.ª y 8.ª ed.)', 'servicios.html#como-trabajamos'],
       ['Documentar', 'servicios.html#documentar'],
       ['Procedimentar', 'servicios.html#procedimentar'],
       ['BPM y BPMN 2.0', 'servicios.html#procedimentar'],
       ['Mejora continua y Lean Six Sigma', 'servicios.html#mejorar'],
-      ['Automatización RPA y Apps Script', 'servicios.html#servicios'],
       ['Indicadores, KPI y OKR', 'servicios.html#medir'],
-      ['Gestión de proyectos y PMO', 'servicios.html#como-trabajamos']
+      ['Automatización RPA y Apps Script', 'servicios.html#servicios']
     ],
+    experienciaIntro: 'Su capacidad de ejecución se apoya en una carrera progresiva, con responsabilidades crecientes:',
     experiencia: [
-      { empresa: 'Universidad Nacional Mayor de San Marcos', cargo: 'Analista de Procesos y Mejora Continua, Oficina General de Planificación', periodo: 'Julio de 2025 - actualidad' },
-      { empresa: 'Universidad Nacional Mayor de San Marcos', cargo: 'Asistente de Procesos', periodo: 'Mayo - julio de 2025' },
-      { empresa: 'Universidad Nacional Mayor de San Marcos', cargo: 'Asistente de Calidad', periodo: 'Enero - mayo de 2025' },
-      { empresa: 'Facultad de Medicina San Fernando, UNMSM', cargo: 'Asistente de Procesos', periodo: 'Agosto - noviembre de 2024' },
-      { empresa: 'Facultad de Ciencias Matemáticas, UNMSM', cargo: 'Asistente de Procesos', periodo: 'Mayo - julio de 2024' }
+      { empresa: 'Universidad Nacional Mayor de San Marcos (UNMSM)', cargos: [
+        'Analista Senior de Gestión por Procesos y Mejora Continua',
+        'Analista Junior de Procesos',
+        'Asistente de Procesos',
+        'Asistente de Calidad',
+        'Practicante Profesional de Procesos'
+      ] }
     ],
     formacion: [
-      { institucion: 'Universidad Nacional Mayor de San Marcos', programa: 'Investigación Operativa', grado: 'Pregrado, décimo ciclo' }
+      { institucion: 'Universidad Nacional Mayor de San Marcos (UNMSM)', programa: 'Investigación Operativa' }
     ],
     certificaciones: [
       'Lean Six Sigma Yellow Belt',
@@ -159,7 +163,7 @@ window.EQUIPO = [
     resumen: 'Oriol es el especialista en indicadores, KPI y OKR de ROIC & Company.',
     acerca: [
       'Oriol diseña el sistema de medición de cada proyecto: indicadores con ficha técnica, línea base y meta; OKR que conectan la estrategia con la operación; y tableros que la alta dirección entiende en un minuto.',
-      'Trabaja bajo la supervisión de Alvaro Rojas Carnero, Subgerente de Operaciones, quien le delega y coordina directamente el diseño de cada sistema de medición. Lidera la fase de medir y participa en la de mejorar, donde los indicadores muestran si un cambio funcionó.'
+      'Trabaja bajo la supervisión de Alvaro Rojas Carnero, Subgerente de Operaciones, quien le delega y coordina directamente el diseño de cada sistema de medición. Es el responsable técnico de la fase de medir y participa en la de mejorar, donde los indicadores muestran si un cambio funcionó.'
     ],
     listaIntro: 'En cada proyecto, Oriol se encarga de:',
     lista: [
