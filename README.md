@@ -125,7 +125,7 @@ Aquí ese papel lo cumple el autodiagnóstico de madurez.
 
 La portada sigue la estructura de la página «Descripción general» de
 McKinsey: encabezado con pestañas, video a pantalla completa con
-«Bienvenido a ROIC & Company en Perú», texto de presentación, «Nuestro impacto»,
+«Bienvenido a ROIC & Company Group in the Perú», texto de presentación, «Nuestro impacto»,
 cuatro tarjetas y «Nuestra gente». «Nuestro trabajo» está en [`trabajo.html`](trabajo.html), con la estructura de
 la página equivalente de McKinsey: portada animada, áreas de especialización,
 historias de impacto y funcionalidades destacadas. Sus imágenes abstractas se
