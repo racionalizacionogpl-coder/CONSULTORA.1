@@ -93,7 +93,7 @@ afirmaciones son supuestos razonables, pero las tiene que confirmar la firma:
    confidencialidad, cobertura en todo el Perú y trabajo remoto.
 6. **El equipo.** El encargo habla de cuatro personas y enumera cinco; el
    sitio muestra a las cinco. Solo se indica la formación académica que se
-   conoce (Doctor en Economía). Las fotos se reemplazaron por iniciales.
+   conoce (Magíster en Economía). Las fotos se reemplazaron por iniciales.
 
 ## Referencias de diseño
 

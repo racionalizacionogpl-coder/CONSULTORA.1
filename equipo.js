@@ -15,39 +15,51 @@
      experiencia:     [{ empresa: '', cargo: '', periodo: '' }]
      formacion:       [{ institucion: '', programa: '', grado: '' }]
      certificaciones: ['', '']
+   Bloques con subtítulo debajo de «Acerca de» (opcional):
+     secciones: [{ titulo: '', items: [['Etiqueta', 'Texto'], …] }]
    Las secciones vacías no se muestran.
    ========================================================== */
 window.EQUIPO = [
   {
     id: 'chumacero',
-    tratamiento: 'Dr.',
     nombre: 'José Antonio Chumacero Calle',
     corto: 'José Antonio',
     ini: 'JC',
-    cargo: 'Gerente general',
-    sede: 'Lima',
-    bio: 'Doctor en Economía. Dirige la firma y la relación con cada cliente, y aporta la mirada económica: que cada proceso rediseñado se justifique en costo, tiempo y valor generado.',
-    resumen: 'José Antonio es el gerente general de ROIC & Company y dirige la relación de la firma con cada cliente.',
+    cargo: 'Gerente General',
+    sede: 'Lima, Perú',
+    bio: 'Magíster en Economía, especializado en inversión pública y privada. Dirige la relación estratégica con cada cliente y la estructuración de costos de cada propuesta, con decisiones fundamentadas en modelos cuantitativos.',
+    resumen: 'José Antonio es el Gerente General de ROIC & Company y dirige la relación estratégica con cada cliente.',
     acerca: [
-      'José Antonio dirige ROIC & Company y la relación con cada cliente, desde el primer diagnóstico hasta la entrega final. Es doctor en Economía y aporta esa mirada a cada proyecto: que todo proceso rediseñado se justifique en costo, tiempo y valor generado, y que las decisiones de mejora se tomen con números.',
-      'Participa en las cuatro fases de la gestión por procesos —documentar, procedimentar, medir y mejorar\u2060— y lidera la fase de mejora junto con Isabel Flores Huamani y Luis Balarezo.'
+      'Como Gerente General de ROIC & Company, José Antonio dirige la relación estratégica con cada cliente desde el diagnóstico preliminar hasta la entrega del valor final. Su grado de Magíster en Economía inyecta un rigor financiero implacable a cada proyecto, garantizando que todo rediseño de procesos se justifique en costo, tiempo y rentabilidad, y que las decisiones de mejora se fundamenten estrictamente en modelos cuantitativos.',
+      'Con una alta especialización en evaluación de inversión pública y privada, José Antonio lidera la viabilidad financiera de las intervenciones. Para ello, trabaja en absoluta sinergia con el Subgerente, Alvaro Rojas Carnero; mientras Alvaro orquesta y diseña la arquitectura integral del plan de gestión del proyecto, José Antonio asume el control exclusivo de la estructuración de costos, asegurando la rentabilidad de la propuesta.'
     ],
-    listaIntro: 'En cada proyecto, José Antonio se encarga de:',
-    lista: [
-      'costear procesos y actividades, para saber cuánto cuesta realmente cada servicio;',
-      'analizar el costo y el beneficio de cada mejora antes de implementarla;',
-      'evaluar el impacto de los cambios en tiempo, dinero o valor público;',
-      'dirigir el proyecto y rendir cuentas ante la alta dirección del cliente.'
+    secciones: [
+      { titulo: 'Capacidades directivas y estructuración comercial', items: [
+        ['Negociación global', 'Es el encargado de ejecutar y presentar la Consulting Proposal ante corporaciones transnacionales, respaldando el alcance técnico mediante el Statement of Work (SoW).'],
+        ['Contratación privada (Perú)', 'Elabora y sustenta la Carta Propuesta comercial para grandes empresas nacionales, integrando los marcos legales y operativos requeridos.'],
+        ['Licitación pública (Perú)', 'Formula la Oferta Técnica y Económica del proyecto, asegurando el cumplimiento estricto de los Términos de Referencia (TDR) exigidos por la entidad gubernamental.']
+      ] },
+      { titulo: 'Funciones clave en la gestión de proyectos', items: [
+        ['Costeo de operaciones', 'Determina el valor real de cada servicio mediante el costeo minucioso de procesos y actividades organizacionales.'],
+        ['Análisis costo-beneficio', 'Proyecta la viabilidad económica de cada mejora antes de su implementación, minimizando el riesgo de inversión para el cliente.'],
+        ['Evaluación de impacto', 'Cuantifica los resultados de los cambios estructurales midiendo su impacto directo en tiempo, dinero o valor público.'],
+        ['Supervisión del ciclo de Deming', 'Supervisa las cuatro fases de gestión por procesos, coordinando su ejecución directamente con Alvaro Rojas (Subgerente), Isabel Flores (Automatización), Oriol Romero (Indicadores) y Luis Balarezo (Full Stack).'],
+        ['Gobierno corporativo', 'Dirige el despliegue del proyecto y rinde cuentas de los indicadores de éxito directamente ante el directorio y la alta dirección del cliente.']
+      ] }
     ],
     especialidades: [
-      ['Mejorar', 'servicios.html#mejorar'],
-      ['Análisis económico de procesos', 'servicios.html#servicios'],
+      ['Evaluación de inversión pública y privada', 'servicios.html#mejorar'],
+      ['Propuestas comerciales y licitaciones', 'servicios.html#como-trabajamos'],
       ['Costeo de procesos', 'servicios.html#servicios'],
+      ['Análisis costo-beneficio', 'servicios.html#servicios'],
       ['Evaluación de impacto', 'servicios.html#mejorar'],
-      ['Dirección de proyectos', 'servicios.html#como-trabajamos']
+      ['Mejorar', 'servicios.html#mejorar']
     ],
     experiencia: [],
-    formacion: [{ institucion: '', programa: 'Economía', grado: 'Doctorado' }],
+    formacion: [
+      { programa: 'Magíster en Economía' },
+      { programa: 'Especialización en Inversión Pública y Privada' }
+    ],
     publicaciones: ['art-cuna', 'art-errores', 'art-nt', 'art-avance'],
     correo: '',
     linkedin: 'https://www.linkedin.com/in/jos%C3%A9-antonio-chumacero-calle-1164303a/'
