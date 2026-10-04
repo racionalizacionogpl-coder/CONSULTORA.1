@@ -25,26 +25,26 @@ window.EQUIPO = [
     nombre: 'José Antonio Chumacero Calle',
     corto: 'José Antonio',
     ini: 'JC',
-    cargo: 'Gerente General',
+    cargo: 'Managing Partner & Gerente General',
     sede: 'Lima, Perú',
-    bio: 'Magíster en Economía, especializado en inversión pública y privada. Dirige la relación estratégica con cada cliente y la estructuración de costos de cada propuesta, con decisiones fundamentadas en modelos cuantitativos.',
-    resumen: 'José Antonio es el Gerente General de ROIC & Company y dirige la relación estratégica con cada cliente.',
+    bio: 'Managing Partner y Account Sponsor de cada cliente. Magíster en Economía, especializado en inversión pública y privada: estructura los costos de cada propuesta y asegura su rentabilidad.',
+    resumen: 'José Antonio es Managing Partner y Gerente General de ROIC & Company, y Account Sponsor de cada uno de sus clientes.',
     acerca: [
-      'Como Gerente General de ROIC & Company, José Antonio dirige la relación estratégica con cada cliente desde el diagnóstico preliminar hasta la entrega del valor final. Su grado de Magíster en Economía inyecta un rigor financiero implacable a cada proyecto, garantizando que todo rediseño de procesos se justifique en costo, tiempo y rentabilidad, y que las decisiones de mejora se fundamenten estrictamente en modelos cuantitativos.',
-      'Con una alta especialización en evaluación de inversión pública y privada, José Antonio lidera la viabilidad financiera de las intervenciones. Para ello, trabaja en absoluta sinergia con el Subgerente, Alvaro Rojas Carnero; mientras Alvaro orquesta y diseña la arquitectura integral del plan de gestión del proyecto, José Antonio asume el control exclusivo de la estructuración de costos, asegurando la rentabilidad de la propuesta.'
+      'Como Managing Partner y Gerente General de ROIC & Company, José Antonio es el Account Sponsor de cada cliente: dirige la relación estratégica desde el diagnóstico preliminar hasta la entrega del valor final. Su formación como Magíster en Economía aporta rigor financiero a cada proyecto: todo rediseño de procesos debe justificarse en costo, tiempo y rentabilidad, y toda decisión de mejora debe sustentarse en modelos cuantitativos.',
+      'Especializado en la evaluación de inversión pública y privada, lidera la viabilidad financiera de cada intervención. Trabaja en estrecha sinergia con el Subgerente de Operaciones, Alvaro Rojas Carnero: mientras Alvaro diseña y orquesta la arquitectura integral del plan de gestión del proyecto, José Antonio asume en exclusiva la estructuración de costos y asegura la rentabilidad de la propuesta.'
     ],
     secciones: [
       { titulo: 'Capacidades directivas y estructuración comercial', items: [
-        ['Negociación global', 'Es el encargado de ejecutar y presentar la Consulting Proposal ante corporaciones transnacionales, respaldando el alcance técnico mediante el Statement of Work (SoW).'],
-        ['Contratación privada (Perú)', 'Elabora y sustenta la Carta Propuesta comercial para grandes empresas nacionales, integrando los marcos legales y operativos requeridos.'],
-        ['Licitación pública (Perú)', 'Formula la Oferta Técnica y Económica del proyecto, asegurando el cumplimiento estricto de los Términos de Referencia (TDR) exigidos por la entidad gubernamental.']
+        ['Negociación global', 'Prepara y presenta la Consulting Proposal ante corporaciones transnacionales y respalda su alcance técnico con el Statement of Work (SoW).'],
+        ['Contratación privada (Perú)', 'Elabora y sustenta la carta propuesta comercial para grandes empresas nacionales, integrando los marcos legales y operativos que cada contratación requiere.'],
+        ['Licitación pública (Perú)', 'Formula la oferta técnica y económica del proyecto, en estricto cumplimiento de los Términos de Referencia (TDR) de la entidad convocante.']
       ] },
       { titulo: 'Funciones clave en la gestión de proyectos', items: [
-        ['Costeo de operaciones', 'Determina el valor real de cada servicio mediante el costeo minucioso de procesos y actividades organizacionales.'],
-        ['Análisis costo-beneficio', 'Proyecta la viabilidad económica de cada mejora antes de su implementación, minimizando el riesgo de inversión para el cliente.'],
-        ['Evaluación de impacto', 'Cuantifica los resultados de los cambios estructurales midiendo su impacto directo en tiempo, dinero o valor público.'],
-        ['Supervisión del ciclo de Deming', 'Supervisa las cuatro fases de gestión por procesos, coordinando su ejecución directamente con Alvaro Rojas (Subgerente), Isabel Flores (Automatización), Oriol Romero (Indicadores) y Luis Balarezo (Full Stack).'],
-        ['Gobierno corporativo', 'Dirige el despliegue del proyecto y rinde cuentas de los indicadores de éxito directamente ante el directorio y la alta dirección del cliente.']
+        ['Costeo de operaciones', 'Determina el costo real de cada servicio mediante el costeo detallado de procesos y actividades.'],
+        ['Análisis costo-beneficio', 'Proyecta la viabilidad económica de cada mejora antes de implementarla, para reducir el riesgo de inversión del cliente.'],
+        ['Evaluación de impacto', 'Cuantifica el efecto de cada cambio estructural en tiempo, dinero o valor público.'],
+        ['Supervisión del ciclo de Deming', 'Supervisa las cuatro fases de la gestión por procesos —documentar, procedimentar, medir y mejorar\u2060— y coordina su ejecución directamente con Alvaro Rojas (Subgerente de Operaciones), Isabel Flores (Automatización), Oriol Romero (Indicadores) y Luis Balarezo (Full Stack).'],
+        ['Gobierno corporativo', 'Dirige el despliegue de cada proyecto y rinde cuentas de los indicadores de éxito ante el directorio y la alta dirección del cliente.']
       ] }
     ],
     especialidades: [
@@ -69,12 +69,12 @@ window.EQUIPO = [
     nombre: 'Alvaro Rojas Carnero',
     corto: 'Alvaro',
     ini: 'AR',
-    cargo: 'Subgerente',
+    cargo: 'Subgerente de Operaciones',
     sede: 'Lima',
     bio: 'Supervisa y coordina al equipo de especialistas —automatización, indicadores y desarrollo— y la ejecución de cada proyecto. Analista de procesos y mejora continua: BPMN 2.0, Lean Six Sigma y automatización RPA.',
-    resumen: 'Alvaro es el subgerente de ROIC & Company: supervisa y coordina al equipo de especialistas y la ejecución de cada proyecto.',
+    resumen: 'Alvaro es el Subgerente de Operaciones de ROIC & Company: supervisa y coordina al equipo de especialistas y la ejecución de cada proyecto.',
     acerca: [
-      'Alvaro es el subgerente de ROIC & Company. Supervisa, delega y coordina directamente el trabajo de los especialistas de la firma: Isabel Flores Huamani en automatización, Oriol Romero Saavedra en indicadores, KPI y OKR, y Luis Balarezo en el desarrollo de plataformas. Responde por la calidad técnica de cada entregable y por el cumplimiento del cronograma, y lidera las fases de documentar y procedimentar.',
+      'Alvaro es el Subgerente de Operaciones de ROIC & Company. Supervisa, delega y coordina directamente el trabajo de los especialistas de la firma: Isabel Flores Huamani en automatización, Oriol Romero Saavedra en indicadores, KPI y OKR, y Luis Balarezo en el desarrollo de plataformas. Responde por la calidad técnica de cada entregable y por el cumplimiento del cronograma, y lidera las fases de documentar y procedimentar.',
       'Es analista de procesos y mejora continua en la Oficina General de Planificación de la Universidad Nacional Mayor de San Marcos, donde diseñó el marco metodológico de gestión por procesos de la institución y acompaña técnicamente a sus 20 facultades. Cursa el décimo ciclo de Investigación Operativa en la misma universidad, lo que le da una base cuantitativa para medir cada mejora.',
       'Trabaja con BPM y BPMN 2.0 (Bizagi Modeler y Microsoft Visio), análisis AS-IS/TO-BE, Lean Six Sigma, KPI y OKR, Power BI, Excel avanzado, automatización RPA con UiPath, Google Apps Script e ISO 9001.'
     ],
@@ -127,7 +127,7 @@ window.EQUIPO = [
     resumen: 'Isabel es la especialista en automatización de procesos de ROIC & Company.',
     acerca: [
       'Isabel convierte tareas repetitivas en flujos automáticos: carga y validación de datos, formularios, reportes y alertas. Automatiza solo lo que ya está documentado y estandarizado, para no acelerar un proceso que todavía funciona mal.',
-      'Trabaja bajo la supervisión de Alvaro Rojas Carnero, subgerente, quien le delega y coordina directamente cada automatización. Participa en las fases de procedimentar y mejorar, junto con José Antonio Chumacero Calle y Luis Balarezo.'
+      'Trabaja bajo la supervisión de Alvaro Rojas Carnero, Subgerente de Operaciones, quien le delega y coordina directamente cada automatización. Participa en las fases de procedimentar y mejorar, junto con José Antonio Chumacero Calle y Luis Balarezo.'
     ],
     listaIntro: 'Entre las automatizaciones que diseña:',
     lista: [
@@ -159,7 +159,7 @@ window.EQUIPO = [
     resumen: 'Oriol es el especialista en indicadores, KPI y OKR de ROIC & Company.',
     acerca: [
       'Oriol diseña el sistema de medición de cada proyecto: indicadores con ficha técnica, línea base y meta; OKR que conectan la estrategia con la operación; y tableros que la alta dirección entiende en un minuto.',
-      'Trabaja bajo la supervisión de Alvaro Rojas Carnero, subgerente, quien le delega y coordina directamente el diseño de cada sistema de medición. Lidera la fase de medir y participa en la de mejorar, donde los indicadores muestran si un cambio funcionó.'
+      'Trabaja bajo la supervisión de Alvaro Rojas Carnero, Subgerente de Operaciones, quien le delega y coordina directamente el diseño de cada sistema de medición. Lidera la fase de medir y participa en la de mejorar, donde los indicadores muestran si un cambio funcionó.'
     ],
     listaIntro: 'En cada proyecto, Oriol se encarga de:',
     lista: [
@@ -191,7 +191,7 @@ window.EQUIPO = [
     resumen: 'Luis es el desarrollador full stack de ROIC & Company, con especialidad en backend.',
     acerca: [
       'Luis construye las plataformas que sostienen la gestión por procesos: repositorios de procesos y fichas, módulos de indicadores, encuestas y actas digitales, integrados con los sistemas que el cliente ya usa.',
-      'Trabaja bajo la coordinación de Alvaro Rojas Carnero, subgerente, quien le delega y da seguimiento a cada desarrollo. Participa en las fases de medir y mejorar, junto con José Antonio Chumacero Calle, Oriol Romero Saavedra e Isabel Flores Huamani.'
+      'Trabaja bajo la coordinación de Alvaro Rojas Carnero, Subgerente de Operaciones, quien le delega y da seguimiento a cada desarrollo. Participa en las fases de medir y mejorar, junto con José Antonio Chumacero Calle, Oriol Romero Saavedra e Isabel Flores Huamani.'
     ],
     listaIntro: 'Entre los sistemas que desarrolla:',
     lista: [
