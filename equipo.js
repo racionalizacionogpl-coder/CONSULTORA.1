@@ -11,9 +11,10 @@
                        sobre el degradado celeste, como en McKinsey.
    Si no hay foto, se muestran las iniciales.
 
-   Campos que todavía faltan (se completan con el perfil de LinkedIn):
-     experiencia: [{ empresa: '', cargo: '', periodo: '' }]
-     formacion:   [{ institucion: '', programa: '', grado: '' }]
+   Datos del perfil de LinkedIn de cada integrante:
+     experiencia:     [{ empresa: '', cargo: '', periodo: '' }]
+     formacion:       [{ institucion: '', programa: '', grado: '' }]
+     certificaciones: ['', '']
    Las secciones vacías no se muestran.
    ========================================================== */
 window.EQUIPO = [
@@ -53,34 +54,53 @@ window.EQUIPO = [
   },
   {
     id: 'rojas',
-    nombre: 'Álvaro Rojas Carnero',
-    corto: 'Álvaro',
-    ini: 'ÁR',
+    nombre: 'Alvaro Rojas Carnero',
+    corto: 'Alvaro',
+    ini: 'AR',
     cargo: 'Subgerente',
     sede: 'Lima',
-    bio: 'Coordina la ejecución de los proyectos: plan de trabajo, cronograma, ruta crítica y control de calidad de cada entregable. Lidera la documentación y la procedimentación.',
-    resumen: 'Álvaro es el subgerente de ROIC & Company y coordina la ejecución de sus proyectos.',
+    bio: 'Supervisa y coordina al equipo de especialistas —automatización, indicadores y desarrollo— y la ejecución de cada proyecto. Analista de procesos y mejora continua: BPMN 2.0, Lean Six Sigma y automatización RPA.',
+    resumen: 'Alvaro es el subgerente de ROIC & Company: supervisa y coordina al equipo de especialistas y la ejecución de cada proyecto.',
     acerca: [
-      'Álvaro coordina la ejecución de cada proyecto de ROIC & Company: el plan de trabajo, el cronograma, la ruta crítica y el control de calidad de cada entregable. Es el punto de contacto diario del cliente.',
-      'Lidera las dos primeras fases de la gestión por procesos: documentar —inventario de productos, mapa de procesos y fichas de caracterización\u2060— y procedimentar, esta última junto con Isabel Flores Huamani. También dirige el diagnóstico documental y la gestión del proyecto (PMO).'
+      'Alvaro es el subgerente de ROIC & Company. Supervisa, delega y coordina directamente el trabajo de los especialistas de la firma: Isabel Flores Huamani en automatización, Oriol Romero Saavedra en indicadores, KPI y OKR, y Luis Balarezo en el desarrollo de plataformas. Responde por la calidad técnica de cada entregable y por el cumplimiento del cronograma, y lidera las fases de documentar y procedimentar.',
+      'Es analista de procesos y mejora continua en la Oficina General de Planificación de la Universidad Nacional Mayor de San Marcos, donde diseñó el marco metodológico de gestión por procesos de la institución y acompaña técnicamente a sus 20 facultades. Cursa el décimo ciclo de Investigación Operativa en la misma universidad, lo que le da una base cuantitativa para medir cada mejora.',
+      'Trabaja con BPM y BPMN 2.0 (Bizagi Modeler y Microsoft Visio), análisis AS-IS/TO-BE, Lean Six Sigma, KPI y OKR, Power BI, Excel avanzado, automatización RPA con UiPath, Google Apps Script e ISO 9001.'
     ],
-    listaIntro: 'En cada proyecto, Álvaro se encarga de:',
+    listaIntro: 'Entre sus trabajos recientes:',
     lista: [
-      'auditar la coherencia entre planes, cronogramas y registros, con hallazgos y recomendaciones que tienen un responsable;',
-      'construir el inventario de productos, el mapa de procesos y las fichas de caracterización;',
-      'gestionar el proyecto con cronograma, ruta crítica y control de riesgos;',
-      'revisar la calidad de cada entregable antes de que llegue al cliente.'
+      'redujo en 18,92 % el tiempo de ciclo del procedimiento de disponibilidad presupuestal (de 37 a 30 horas) con un procedimiento operativo estándar y listas de verificación obligatorias, eliminando reprocesos;',
+      'diseñó y estandarizó el marco metodológico de gestión por procesos de la universidad —plan de gestión, guía práctica, fichas de caracterización e indicadores⁠— y reestructuró su mapa de procesos;',
+      'condujo y auditó el modelamiento de procesos de extremo a extremo en BPMN 2.0, identificando las brechas del AS-IS para diseñar flujos TO-BE más eficientes;',
+      'actuó como enlace entre negocio y TI en el Sistema de Gestión por Procesos, donde definió especificaciones funcionales, reglas de negocio y la arquitectura de flujos;',
+      'desarrolló automatizaciones con Google Apps Script para el control documental e implementó un sistema de actas digitales para dar seguimiento a los acuerdos;',
+      'formuló KPI por proceso alineados con los objetivos estratégicos y reportó cada mes a la jefatura con tableros dinámicos y reportes ejecutivos.'
     ],
     especialidades: [
       ['Documentar', 'servicios.html#documentar'],
       ['Procedimentar', 'servicios.html#procedimentar'],
-      ['Diagnóstico documental y PMO', 'servicios.html#servicios'],
-      ['Gestión de proyectos (PMBOK)', 'servicios.html#como-trabajamos'],
-      ['Mapas de procesos', 'servicios.html#documentar']
+      ['BPM y BPMN 2.0', 'servicios.html#procedimentar'],
+      ['Mejora continua y Lean Six Sigma', 'servicios.html#mejorar'],
+      ['Automatización RPA y Apps Script', 'servicios.html#servicios'],
+      ['Indicadores, KPI y OKR', 'servicios.html#medir'],
+      ['Gestión de proyectos y PMO', 'servicios.html#como-trabajamos']
     ],
-    experiencia: [],
-    formacion: [],
-    publicaciones: ['art-errores', 'art-avance', 'art-nt', 'art-cuna'],
+    experiencia: [
+      { empresa: 'Universidad Nacional Mayor de San Marcos', cargo: 'Analista de Procesos y Mejora Continua, Oficina General de Planificación', periodo: 'Julio de 2025 - actualidad' },
+      { empresa: 'Universidad Nacional Mayor de San Marcos', cargo: 'Asistente de Procesos', periodo: 'Mayo - julio de 2025' },
+      { empresa: 'Universidad Nacional Mayor de San Marcos', cargo: 'Asistente de Calidad', periodo: 'Enero - mayo de 2025' },
+      { empresa: 'Facultad de Medicina San Fernando, UNMSM', cargo: 'Asistente de Procesos', periodo: 'Agosto - noviembre de 2024' },
+      { empresa: 'Facultad de Ciencias Matemáticas, UNMSM', cargo: 'Asistente de Procesos', periodo: 'Mayo - julio de 2024' }
+    ],
+    formacion: [
+      { institucion: 'Universidad Nacional Mayor de San Marcos', programa: 'Investigación Operativa', grado: 'Pregrado, décimo ciclo' }
+    ],
+    certificaciones: [
+      'Lean Six Sigma Yellow Belt',
+      'Robotización de Procesos con UiPath',
+      'Gestión por Procesos',
+      'IX Congreso Peruano de Investigación de Operaciones y Sistemas'
+    ],
+    publicaciones: ['art-errores', 'art-avance', 'art-nt', 'art-auto'],
     correo: '',
     linkedin: 'https://www.linkedin.com/in/alvaro-rojas-carnero-015922267/'
   },
@@ -95,7 +115,7 @@ window.EQUIPO = [
     resumen: 'Isabel es la especialista en automatización de procesos de ROIC & Company.',
     acerca: [
       'Isabel convierte tareas repetitivas en flujos automáticos: carga y validación de datos, formularios, reportes y alertas. Automatiza solo lo que ya está documentado y estandarizado, para no acelerar un proceso que todavía funciona mal.',
-      'Participa en la fase de procedimentar, junto con Álvaro Rojas Carnero, y en la de mejorar, junto con José Antonio Chumacero Calle y Luis Balarezo.'
+      'Trabaja bajo la supervisión de Alvaro Rojas Carnero, subgerente, quien le delega y coordina directamente cada automatización. Participa en las fases de procedimentar y mejorar, junto con José Antonio Chumacero Calle y Luis Balarezo.'
     ],
     listaIntro: 'Entre las automatizaciones que diseña:',
     lista: [
@@ -127,7 +147,7 @@ window.EQUIPO = [
     resumen: 'Oriol es el especialista en indicadores, KPI y OKR de ROIC & Company.',
     acerca: [
       'Oriol diseña el sistema de medición de cada proyecto: indicadores con ficha técnica, línea base y meta; OKR que conectan la estrategia con la operación; y tableros que la alta dirección entiende en un minuto.',
-      'Lidera la fase de medir y participa en la de mejorar, donde los indicadores muestran si un cambio funcionó.'
+      'Trabaja bajo la supervisión de Alvaro Rojas Carnero, subgerente, quien le delega y coordina directamente el diseño de cada sistema de medición. Lidera la fase de medir y participa en la de mejorar, donde los indicadores muestran si un cambio funcionó.'
     ],
     listaIntro: 'En cada proyecto, Oriol se encarga de:',
     lista: [
@@ -159,7 +179,7 @@ window.EQUIPO = [
     resumen: 'Luis es el desarrollador full stack de ROIC & Company, con especialidad en backend.',
     acerca: [
       'Luis construye las plataformas que sostienen la gestión por procesos: repositorios de procesos y fichas, módulos de indicadores, encuestas y actas digitales, integrados con los sistemas que el cliente ya usa.',
-      'Participa en las fases de medir y mejorar, junto con José Antonio Chumacero Calle, Oriol Romero Saavedra e Isabel Flores Huamani.'
+      'Trabaja bajo la coordinación de Alvaro Rojas Carnero, subgerente, quien le delega y da seguimiento a cada desarrollo. Participa en las fases de medir y mejorar, junto con José Antonio Chumacero Calle, Oriol Romero Saavedra e Isabel Flores Huamani.'
     ],
     listaIntro: 'Entre los sistemas que desarrolla:',
     lista: [

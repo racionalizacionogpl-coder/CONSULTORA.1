@@ -266,6 +266,10 @@ img{max-width:100%;display:block}
         <h2 class="k" id="pf-edu-t">Formación</h2>
         <div id="pf-edu-l"></div>
       </section>
+      <section class="blk" id="pf-cert" hidden aria-labelledby="pf-cert-t">
+        <h2 class="k" id="pf-cert-t">Certificaciones</h2>
+        <div id="pf-cert-l"></div>
+      </section>
     </article>
     <aside class="pf-side" aria-label="Contacto y especialidades">
       <a class="cta" id="pf-cta" href="servicios.html#contacto"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="4.5" width="16" height="11" rx="1"/><path d="M2.5 5l7.5 6 7.5-6"/></svg>Ponerse en contacto</a>
@@ -337,6 +341,7 @@ img{max-width:100%;display:block}
   }
   if (p.experiencia.length) { $('#pf-exp').hidden = false; $('#pf-exp-l').innerHTML = items(p.experiencia, ['empresa', 'cargo', 'periodo']); }
   if (p.formacion.length) { $('#pf-edu').hidden = false; $('#pf-edu-l').innerHTML = items(p.formacion, ['institucion', 'programa', 'grado']); }
+  if (p.certificaciones && p.certificaciones.length) { $('#pf-cert').hidden = false; $('#pf-cert-l').innerHTML = p.certificaciones.map(function (c) { return '<div class="item"><b>' + esc(c) + '</b></div>'; }).join(''); }
 
   $('#pf-esp').innerHTML = p.especialidades.map(function (e) { return '<li><a href="' + esc(e[1]) + '">' + esc(e[0]) + '</a></li>'; }).join('');
 
@@ -389,9 +394,9 @@ img{max-width:100%;display:block}
     ['Cómo trabajamos', 'Modalidades: proyecto integral, por fase, acompañamiento, formación, tecnología', 'servicios.html#como-trabajamos'],
     ['Preguntas frecuentes', 'Costos, plazos, ISO 9001, herramientas, confidencialidad', 'servicios.html#preguntas'],
     ['Contáctanos', 'Solicitar una propuesta', 'servicios.html#contacto'],
-    ['Nuestra gente', 'José Antonio Chumacero, Álvaro Rojas, Isabel Flores, Oriol Romero, Luis Balarezo', 'index.html#gente'],
+    ['Nuestra gente', 'José Antonio Chumacero, Alvaro Rojas, Isabel Flores, Oriol Romero, Luis Balarezo', 'index.html#gente'],
     ['José Antonio Chumacero Calle', 'Gerente general · Doctor en Economía', 'persona.html?p=chumacero'],
-    ['Álvaro Rojas Carnero', 'Subgerente · Coordinación de proyectos', 'persona.html?p=rojas'],
+    ['Alvaro Rojas Carnero', 'Subgerente · Coordinación de proyectos', 'persona.html?p=rojas'],
     ['Isabel Flores Huamani', 'Especialista en automatización de procesos', 'persona.html?p=flores'],
     ['Oriol Romero Saavedra', 'Especialista en indicadores, KPI y OKR', 'persona.html?p=romero'],
     ['Luis Balarezo', 'Desarrollador full stack, especialidad backend', 'persona.html?p=balarezo']
