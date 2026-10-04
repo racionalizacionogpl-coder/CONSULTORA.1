@@ -111,7 +111,8 @@ img{max-width:100%;display:block}
 /* Foto: recortada sin fondo (como en McKinsey), en círculo o, si no hay, las iniciales. */
 .pf-foto{position:relative;display:flex;justify-content:center}
 .pf-foto.recorte{align-self:end}
-.pf-foto.recorte img{height:clamp(360px,33vw,470px);width:auto;max-width:100%;object-fit:contain;object-position:bottom}
+.pf-in:has(.recorte){grid-template-columns:minmax(0,1fr) auto}
+.pf-foto.recorte img{height:clamp(300px,30vw,450px);width:auto;max-width:none;display:block}
 .pf-foto.circulo{align-self:center}
 .pf-foto.circulo img,.pf-mono{width:clamp(220px,23vw,330px);aspect-ratio:1;border-radius:50%;object-fit:cover;border:6px solid #fff;box-shadow:0 24px 60px rgba(5,28,44,.18)}
 .pf-mono{display:grid;place-items:center;background:var(--ink);color:#fff;font-family:var(--serif);font-weight:600;font-size:clamp(64px,6.6vw,100px);letter-spacing:.02em}
@@ -173,7 +174,8 @@ img{max-width:100%;display:block}
 @media (max-width:900px){
   .pf-in{grid-template-columns:minmax(0,1fr);min-height:0;gap:0}
   .pf-foto{order:-1;padding-top:32px}
-  .pf-foto.recorte img{height:300px}
+  .pf-in:has(.recorte){grid-template-columns:minmax(0,1fr)}
+  .pf-foto.recorte img{height:auto;width:min(100%,520px)}
   .pf-foto.circulo img,.pf-mono{width:200px;font-size:64px}
   .pf-txt{padding-top:28px}
   .pf-body{grid-template-columns:minmax(0,1fr)}
