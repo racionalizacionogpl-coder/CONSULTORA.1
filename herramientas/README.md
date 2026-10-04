@@ -60,15 +60,18 @@ node herramientas/video/generar_video_trabajo.js --muestra  # un solo cuadro en 
 
 Requiere ffmpeg con libx264 y libvpx-vp9.
 
-## Video de la portada (`video/preparar_video_peru.sh`)
+## Videos de las regiones (`video/preparar_videos_regiones.sh`)
 
-Descarga la toma original de Lima en 4K del release `video-peru` y produce
-`media/peru.mp4` (1920 × 1080), `media/peru-720.mp4` (1280 × 720, para
-celulares) y `media/peru.jpg` (imagen mientras carga). El último segundo se
-funde con el principio para que el bucle no se note.
+Descarga los originales de los releases `video-peru` (Lima) y
+`videos-regiones` (un video por región, con el nombre de la región) y deja en
+`media/regiones/` cada video en 1280 × 720 para celulares, en 1920 × 1080
+para computadoras cuando el original llega a esa calidad, y su primer cuadro
+como imagen de espera. Después de agregar una región hay que sumarla a la
+lista `REGIONES` de `index.html`.
 
 ```sh
-sh herramientas/video/preparar_video_peru.sh
+sh herramientas/video/preparar_videos_regiones.sh        # todas
+sh herramientas/video/preparar_videos_regiones.sh puno   # solo una
 ```
 
 ## Verificación (`verificacion/`)

@@ -93,7 +93,26 @@ img{max-width:100%;display:block}
 /* ---------- Hero ---------- */
 .hero{position:relative;height:calc(100vh - var(--hdr));min-height:520px;max-height:960px;overflow:hidden;color:#fff;
   background:#0B2A3C linear-gradient(160deg,#173F57 0%,#0B2A3C 45%,#051C2C 100%)}
-.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.1s ease}
+.hero video.on{opacity:1}
+/* Paso de una región a otra: el video se oscurece y aparece el nombre de la región siguiente. */
+.velo{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 50% 34%,rgba(5,28,44,.5),rgba(5,28,44,.8));opacity:0;transition:opacity .9s ease}
+.hero.cambio .velo{opacity:1}
+.reg{position:absolute;left:0;right:0;top:clamp(36px,15%,190px);z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding-inline:16px;pointer-events:none;color:#fff}
+.reg>*{opacity:0;transition:opacity .45s ease,transform .45s ease,letter-spacing .45s ease,width .45s ease,clip-path .45s ease}
+.reg-k{font-size:clamp(12px,.95vw,14px);font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#AFC2FF;transform:translateY(8px)}
+.reg-n{font-size:clamp(34px,4.8vw,76px);font-weight:300;line-height:1.1;letter-spacing:.5em;margin-right:-.5em;text-transform:uppercase;margin-top:10px;clip-path:inset(0 0 100% 0);transform:translateY(.25em);text-shadow:0 2px 30px rgba(0,0,0,.35)}
+.reg-l{display:block;width:0;height:3px;background:var(--blue);margin-top:18px}
+.reg-c{font-size:clamp(12px,.95vw,14px);letter-spacing:.16em;margin-top:14px;font-variant-numeric:tabular-nums;color:rgba(255,255,255,.85)}
+.hero.cambio .reg>*{opacity:1;transform:none;transition-duration:.9s;transition-timing-function:cubic-bezier(.2,.7,.2,1)}
+.hero.cambio .reg-k{transition-delay:.1s}
+.hero.cambio .reg-n{clip-path:inset(0 0 -10% 0);letter-spacing:.28em;margin-right:-.28em;transition-delay:.2s}
+.hero.cambio .reg-l{width:72px;transition-delay:.55s}
+.hero.cambio .reg-c{transition-delay:.7s}
+/* Región que se está viendo, junto al botón de pausa. */
+.loc{position:absolute;right:calc(clamp(16px,2.2vw,40px) + 60px);bottom:clamp(20px,4vh,40px);z-index:2;height:44px;margin:0;display:flex;align-items:center;gap:10px;color:#fff;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.5);transition:opacity .5s ease}
+.loc::before{content:"";width:22px;height:2px;background:currentColor}
+.hero.cambio .loc{opacity:0}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 25%,rgba(0,0,0,.5) 100%);pointer-events:none}
 .hero-txt{position:absolute;left:0;right:0;bottom:clamp(110px,15vh,150px);z-index:1;text-align:center;padding-inline:16px}
 .hero-txt p{font-size:clamp(15px,1.2vw,18px);font-weight:400;text-shadow:0 1px 8px rgba(0,0,0,.4)}
@@ -219,10 +238,11 @@ img{max-width:100%;display:block}
 
 <main>
   <section class="hero" aria-labelledby="hero-t">
-    <video id="vid" autoplay muted loop playsinline preload="auto" poster="media/peru.jpg" aria-hidden="true">
-      <source src="media/peru-720.mp4" type="video/mp4" media="(max-width: 900px)">
-      <source src="media/peru.mp4" type="video/mp4">
-    </video>
+    <video class="clip on" autoplay muted playsinline preload="auto" poster="media/regiones/lima.jpg" aria-hidden="true"></video>
+    <video class="clip" muted playsinline preload="none" aria-hidden="true"></video>
+    <div class="velo" aria-hidden="true"></div>
+    <div class="reg" aria-hidden="true"><span class="reg-k">Región</span><span class="reg-n" id="reg-n"></span><span class="reg-l"></span><span class="reg-c" id="reg-c"></span></div>
+    <p class="loc" id="loc" aria-hidden="true">Lima · Perú</p>
     <div class="hero-txt">
       <p>Bienvenido a</p>
       <h1 id="hero-t">ROIC &amp; Company Group in the Perú</h1>
@@ -317,21 +337,90 @@ img{max-width:100%;display:block}
       '</div></div></article>';
   }).join('');
 
-  /* ---------- Video ---------- */
-  var vid = $('#vid'), pause = $('#pause'), tip = $('#pause-tip');
+  /* ---------- Videos de las regiones ----------
+     Se suceden en este orden y vuelven a empezar. Antes de cada video aparece
+     el nombre de su región. Para agregar una región: súbala al release
+     «videos-regiones», corra herramientas/video/preparar_videos_regiones.sh y
+     añádala aquí (hd: true si existe media/regiones/<archivo>.mp4 en 1920 × 1080). */
+  var REGIONES = [
+    { nombre: 'Lima', archivo: 'lima', hd: true,  coord: '12°03′ S · 77°02′ O' },
+    { nombre: 'Puno', archivo: 'puno', hd: false, coord: '15°50′ S · 70°01′ O' }
+  ];
+  var hero = $('.hero'), clips = [].slice.call(hero.querySelectorAll('.clip'));
+  var pause = $('#pause'), tip = $('#pause-tip'), loc = $('#loc'), regN = $('#reg-n'), regC = $('#reg-c');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var movil = window.matchMedia('(max-width: 900px)').matches;
+  var act = clips[0], sig = clips[1], actual = 0, anunciado = false, pausado = reduce;
+
+  function fuente(i) { var r = REGIONES[i]; return 'media/regiones/' + r.archivo + (r.hd && !movil ? '' : '-720') + '.mp4'; }
+  function buenas() { return REGIONES.filter(function (r) { return !r.mala; }).length; }
+  function siguiente(i) {
+    for (var k = 1; k <= REGIONES.length; k++) { var j = (i + k) % REGIONES.length; if (!REGIONES[j].mala) return j; }
+    return i;
+  }
+  function cargar(v, i) {
+    v.indice = i;
+    if (v.getAttribute('src') === fuente(i)) { v.currentTime = 0; return; }
+    v.poster = 'media/regiones/' + REGIONES[i].archivo + '.jpg';
+    v.preload = 'auto';
+    v.src = fuente(i);
+  }
+  function reproducir(v) { var r = v.play(); if (r && r.catch) r.catch(function () {}); }
   function setPaused(p) {
+    pausado = p;
     pause.classList.toggle('play', p);
     pause.setAttribute('aria-label', p ? 'Reproducir el video' : 'Pausar el video');
     tip.textContent = p ? 'Reproducir video' : 'Pausar video';
   }
-  vid.addEventListener('error', function () { pause.hidden = true; }, true);
-  vid.querySelector('source:last-of-type').addEventListener('error', function () { pause.hidden = true; });
-  if (vid.networkState === 3 || vid.error) pause.hidden = true;
-  if (reduce) { vid.removeAttribute('autoplay'); vid.pause(); setPaused(true); }
+  function anunciar(i) {
+    regN.textContent = REGIONES[i].nombre;
+    regC.textContent = REGIONES[i].coord;
+    hero.classList.add('cambio');
+  }
+  function pasar() {
+    var i = siguiente(actual);
+    if (sig.indice !== i) cargar(sig, i);
+    if (!hero.classList.contains('cambio')) anunciar(i);
+    var anterior = act;
+    act = sig; sig = anterior; actual = i; anunciado = false;
+    act.classList.add('on'); anterior.classList.remove('on');
+    loc.textContent = REGIONES[i].nombre + ' · Perú';
+    if (!pausado) reproducir(act);
+    // Cuando termine el fundido, el video que salió prepara la región siguiente.
+    setTimeout(function () { if (buenas() > 1) cargar(sig, siguiente(actual)); }, 1300);
+  }
+  function fallo(v) {
+    if (v.indice === undefined) return;
+    REGIONES[v.indice].mala = true;
+    if (!buenas()) { pause.hidden = loc.hidden = true; hero.classList.remove('cambio'); return; }
+    if (v === act) pasar();
+    else if (buenas() > 1) cargar(sig, siguiente(actual));
+  }
+
+  clips.forEach(function (v) {
+    v.addEventListener('timeupdate', function () {
+      if (v !== act || !v.duration) return;
+      // Un segundo antes del final se anuncia la región siguiente…
+      if (!anunciado && buenas() > 1 && v.duration - v.currentTime < 1.1) { anunciado = true; anunciar(siguiente(actual)); }
+      // …y el nombre se retira cuando el nuevo video ya lleva un momento en pantalla.
+      if (!anunciado && v.currentTime > 1.5 && hero.classList.contains('cambio')) hero.classList.remove('cambio');
+    });
+    v.addEventListener('ended', function () { if (v === act) { if (buenas() > 1) pasar(); else { v.currentTime = 0; reproducir(v); } } });
+    v.addEventListener('error', function () { fallo(v); });
+  });
+
+  act.indice = 0;
+  act.src = fuente(0);
+  if (REGIONES.length > 1) {
+    act.addEventListener('playing', function precarga() {
+      act.removeEventListener('playing', precarga);
+      setTimeout(function () { cargar(sig, siguiente(actual)); }, 2000);
+    });
+  }
+  if (reduce) { act.removeAttribute('autoplay'); act.pause(); setPaused(true); }
   pause.addEventListener('click', function () {
-    if (vid.paused) { var r = vid.play(); if (r && r.catch) r.catch(function () {}); setPaused(false); }
-    else { vid.pause(); setPaused(true); }
+    if (pausado) { setPaused(false); reproducir(act); }
+    else { setPaused(true); act.pause(); }
   });
 
   /* ---------- Menus ---------- */
