@@ -82,12 +82,14 @@ sin fondo de la cabecera de su perfil (`media/equipo/rojas-recorte.png`) y la
 foto cuadrada de las tarjetas (`media/equipo/rojas.jpg`), encuadrada en la
 cabeza y los hombros. `recortar_chumacero.py` hace lo mismo con la de José
 Antonio Chumacero Calle, que es de cuerpo entero: el recorte del perfil se
-corta encima del cinturón.
+corta encima del cinturón. `recortar_romero.py`, lo mismo con la de Oriol Romero
+Saavedra.
 
 ```sh
 pip install "rembg[cpu]" opencv-python-headless
 python3 herramientas/fotos/recortar_rojas.py
 python3 herramientas/fotos/recortar_chumacero.py
+python3 herramientas/fotos/recortar_romero.py
 ```
 
 ## Verificación (`verificacion/`)
