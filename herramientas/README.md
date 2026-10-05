@@ -77,10 +77,10 @@ sh herramientas/video/preparar_videos_regiones.sh puno   # solo una
 ## Fotos del equipo (`fotos/`)
 
 `originales/` guarda las fotos tal como las entregó la empresa.
-`recortar_rojas.py` produce, a partir de la de Alvaro Rojas Carnero, el busto
+`recortar_rojas.py` produce, a partir de la de Alvaro Rojas Carnero, la figura
 sin fondo de la cabecera de su perfil (`media/equipo/rojas-recorte.png`) y la
-foto cuadrada de las tarjetas (`media/equipo/rojas.jpg`). Borra el micrófono
-que aparece delante del saco antes de quitar el fondo.
+foto cuadrada de las tarjetas (`media/equipo/rojas.jpg`), encuadrada en la
+cabeza y los hombros.
 
 ```sh
 pip install "rembg[cpu]" opencv-python-headless
