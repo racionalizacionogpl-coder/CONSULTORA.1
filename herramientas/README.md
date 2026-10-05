@@ -80,11 +80,14 @@ sh herramientas/video/preparar_videos_regiones.sh puno   # solo una
 `recortar_rojas.py` produce, a partir de la de Alvaro Rojas Carnero, la figura
 sin fondo de la cabecera de su perfil (`media/equipo/rojas-recorte.png`) y la
 foto cuadrada de las tarjetas (`media/equipo/rojas.jpg`), encuadrada en la
-cabeza y los hombros.
+cabeza y los hombros. `recortar_chumacero.py` hace lo mismo con la de José
+Antonio Chumacero Calle, que es de cuerpo entero: el recorte del perfil se
+corta encima del cinturón.
 
 ```sh
 pip install "rembg[cpu]" opencv-python-headless
 python3 herramientas/fotos/recortar_rojas.py
+python3 herramientas/fotos/recortar_chumacero.py
 ```
 
 ## Verificación (`verificacion/`)
