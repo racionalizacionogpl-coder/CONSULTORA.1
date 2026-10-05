@@ -45,6 +45,19 @@ que están dentro de `servicios.html`.
 python3 herramientas/graficos/generar_svgs.py --comparar
 ```
 
+## Ilustraciones de «Nuestro impacto» (`graficos/generar_impacto.js`)
+
+Dibuja las cinco ilustraciones de la sección «Nuestro impacto» de la portada
+y las deja en `media/impacto/`: el panel del sistema SIGPRO, el mapa de
+procesos con sus 58 KPI, un procedimiento en BPMN 2.0, el monitoreo de 300
+oficinas y la automatización de un servicio. Son dibujos vectoriales con las
+tipografías del sitio, exportados en alta resolución (2400 × 1386 y
+1920 × 1080 px). Solo muestran las cifras que dicen los textos de cada caso.
+
+```sh
+node herramientas/graficos/generar_impacto.js
+```
+
 ## Video de «Nuestro trabajo» (`video/`)
 
 `generar_video_trabajo.js` dibuja, cuadro por cuadro, el anillo de esferas

@@ -56,6 +56,20 @@ function comprobar(ok, descripcion, detalle) {
   comprobar(await pm.$eval('#vid', v => v.hidden && !v.currentSrc), 'trabajo.html: en celular no se descarga el video y se ve la animación');
   await movil.close();
 
+  // «Nuestro impacto»: cada recuadro abre la ficha de su caso.
+  await p.goto(url('index.html'), { waitUntil: 'load' });
+  comprobar(await p.$$eval('#impacto img', l => l.filter(i => i.complete && i.naturalWidth > 0).length) === 5 ||
+    await p.$$eval('#impacto img', l => l.length) === 5, 'index.html: «Nuestro impacto» tiene sus cinco ilustraciones');
+  await p.click('h3 a[data-caso="caso-bpmn"]');
+  comprobar(await p.$eval('#caso-bpmn', d => d.open), 'la tarjeta de la Fase 2 abre su ficha');
+  await p.keyboard.press('Escape');
+  comprobar(await p.$eval('#caso-bpmn', d => !d.open), 'Escape cierra la ficha');
+  await p.click('h2 a[data-caso="caso-sigpro"]');
+  await p.click('#caso-sigpro .cs-fases a[data-caso="caso-kpi"]');
+  comprobar(await p.$eval('#caso-kpi', d => d.open) && await p.$eval('#caso-sigpro', d => !d.open), 'desde la ficha de SIGPRO se pasa a la de una fase');
+  await p.goto(url('index.html', '#caso-rpa'), { waitUntil: 'load' });
+  comprobar(await p.$eval('#caso-rpa', d => d.open), 'index.html#caso-rpa abre la ficha directamente');
+
   // «Nuestra gente»: cada tarjeta abre el perfil de su integrante.
   await p.goto(url('index.html'), { waitUntil: 'load' });
   const nombres = await p.$$eval('#pgrid h3', h => h.map(x => x.textContent));

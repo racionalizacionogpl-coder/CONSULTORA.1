@@ -143,13 +143,33 @@ img{max-width:100%;display:block}
 /* ---------- Cards ---------- */
 .cards{max-width:1600px;margin:clamp(56px,6vw,90px) auto 0;padding:0 clamp(16px,5vw,96px) clamp(72px,8vw,110px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.2vw,40px)}
 .card{padding:20px;margin:-20px;transition:box-shadow .25s;background:var(--white);display:flex;flex-direction:column}
-.card:hover,.card.hl{box-shadow:0 6px 30px rgba(0,0,0,.12)}
+.card:hover{box-shadow:0 6px 30px rgba(0,0,0,.12)}
 .card .media{aspect-ratio:352/198}
 .card .media .ph{font-size:clamp(17px,1.4vw,22px)}
 .card .kind{margin-top:36px}
 .card h3{font-family:var(--sans);font-weight:700;font-size:clamp(21px,1.6vw,26px);line-height:1.35;color:#000}
 .card h3 a:hover{text-decoration:underline;text-underline-offset:4px}
 .card p.sum{margin-top:22px;font-size:clamp(18px,1.3vw,21px);font-weight:300;line-height:1.9;color:var(--text)}
+
+.feat .lead-f{margin-top:22px;font-size:clamp(18px,1.3vw,21px);font-weight:300;line-height:1.8;color:var(--text);max-width:640px}
+
+/* ---------- Fichas de los casos ---------- */
+.cs{width:min(880px,calc(100% - 32px));max-height:calc(100dvh - 48px);padding:0;border:0;background:var(--white);color:var(--text);box-shadow:0 30px 80px rgba(5,28,44,.35);overflow:auto}
+.cs::backdrop{background:rgba(5,28,44,.6)}
+.cs-x{position:sticky;top:0;float:right;margin:10px 12px -54px 0;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.92);font-size:30px;line-height:1;color:var(--ink);z-index:1}
+.cs-x:hover{background:var(--blue);color:#fff}
+.cs-img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#0B2A3C}
+.cs-in{padding:clamp(24px,4vw,48px) clamp(20px,5vw,56px) clamp(32px,5vw,56px)}
+.cs h2{font-family:var(--serif);font-weight:700;font-size:clamp(26px,3vw,38px);line-height:1.2;color:#000;margin-top:4px}
+.cs-in>p:not(.kind){margin-top:20px;font-size:clamp(17px,1.25vw,19px);font-weight:300;line-height:1.8}
+.cs-in>p.cs-ref{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);font-size:15px;font-weight:400;color:var(--muted)}
+.cs-ref a{color:var(--blue)}
+.cs-ref a:hover{text-decoration:underline}
+.cs-sub{font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#000;margin-top:32px}
+.cs-fases{margin:12px 0 0;padding:0;list-style:none;counter-reset:f}
+.cs-fases a{display:block;padding:14px 0;border-bottom:1px solid var(--line);font-size:17px;line-height:1.45;color:var(--text)}
+.cs-fases a:hover{color:var(--blue)}
+.cs-fases b{display:block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin-bottom:2px}
 
 /* ---------- People ---------- */
 .people{background:var(--grey);padding:clamp(48px,5vw,64px) clamp(16px,4.5vw,72px) clamp(64px,7vw,96px)}
@@ -260,37 +280,38 @@ img{max-width:100%;display:block}
   <section id="impacto" aria-labelledby="imp-t">
     <h2 class="label" id="imp-t">Nuestro impacto</h2>
     <div class="feat">
-      <a class="media" href="servicios.html#experiencia" tabindex="-1" aria-hidden="true"><span class="ph">20 facultades · 16 procesos</span><img src="media/caso-universidad.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
+      <a class="media" href="#caso-sigpro" data-caso="caso-sigpro" tabindex="-1" aria-hidden="true"><span class="ph">SIGPRO · mejora continua automatizada</span><img src="media/impacto/sigpro.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
       <div>
         <p class="kind">Estudio de caso</p>
-        <h2><a href="servicios.html#experiencia">Veinte facultades, un mismo mapa de procesos: cómo implementamos la gestión por procesos en una universidad pública.<span class="chev-r" aria-hidden="true"></span></a></h2>
+        <h2><a href="#caso-sigpro" data-caso="caso-sigpro">Excelencia operativa digitalizada: cómo implementamos el sistema SIGPRO para automatizar la mejora continua.<span class="chev-r" aria-hidden="true"></span></a></h2>
+        <p class="lead-f">Diseñamos e implementamos el Sistema de Gestión por Procesos de la universidad pública referente del país: documentación centralizada, desempeño medido y mejora continua automatizada.</p>
       </div>
     </div>
 
     <div class="cards">
       <article class="card">
-        <a class="media" href="servicios.html#art-nt" tabindex="-1" aria-hidden="true"><span class="ph">NT N.º 002-2025-PCM/SGP</span><img src="media/norma.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
-        <p class="kind">Entrada de blog</p>
-        <h3><a href="servicios.html#art-nt">La nueva norma técnica de gestión por procesos, explicada en cinco puntos.<span class="chev-r" aria-hidden="true"></span></a></h3>
-        <p class="sum">Qué exige a las entidades públicas, qué cambió frente a la norma de 2018 y cómo se traduce en entregables concretos.</p>
+        <a class="media" href="#caso-apqc" data-caso="caso-apqc" tabindex="-1" aria-hidden="true"><span class="ph">Fase 1 · Planificar</span><img src="media/impacto/apqc.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
+        <p class="kind">Fase 1 · Planificar</p>
+        <h3><a href="#caso-apqc" data-caso="caso-apqc">Un único mapa de procesos y 58 KPI: cómo estructuramos la arquitectura organizativa bajo estándares APQC.<span class="chev-r" aria-hidden="true"></span></a></h3>
+        <p class="sum">Un mapa de procesos estándar bajo el marco APQC, objetivos SMART, 58 KPI críticos y un sistema de OKR.</p>
       </article>
       <article class="card">
-        <a class="media" href="servicios.html#art-errores" tabindex="-1" aria-hidden="true"><span class="ph">Gestión de proyectos</span><img src="media/errores.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
-        <p class="kind">Entrada de blog</p>
-        <h3><a href="servicios.html#art-errores">Cinco errores que frenan una implementación de gestión por procesos.<span class="chev-r" aria-hidden="true"></span></a></h3>
-        <p class="sum">Ninguno es técnico: todos son de organización y tienen una solución sencilla si se detectan a tiempo.</p>
+        <a class="media" href="#caso-bpmn" data-caso="caso-bpmn" tabindex="-1" aria-hidden="true"><span class="ph">Fase 2 · Hacer</span><img src="media/impacto/bpmn.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
+        <p class="kind">Fase 2 · Hacer</p>
+        <h3><a href="#caso-bpmn" data-caso="caso-bpmn">Trazabilidad operativa absoluta: cómo estandarizamos los procedimientos institucionales con la norma BPMN 2.0.<span class="chev-r" aria-hidden="true"></span></a></h3>
+        <p class="sum">Cada procedimiento con su diagrama de flujo en BPMN 2.0 y su registro formal: trazabilidad completa de las actividades.</p>
       </article>
       <article class="card">
-        <a class="media" href="servicios.html#art-avance" tabindex="-1" aria-hidden="true"><span class="ph">Indicadores</span><img src="media/indicadores.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
-        <p class="kind">Entrada de blog</p>
-        <h3><a href="servicios.html#art-avance">Cómo medir el avance de una implementación sin engañarse.<span class="chev-r" aria-hidden="true"></span></a></h3>
-        <p class="sum">Una fórmula, un peso para lo observado y la trampa que esconde el denominador.</p>
+        <a class="media" href="#caso-kpi" data-caso="caso-kpi" tabindex="-1" aria-hidden="true"><span class="ph">Fase 3 · Verificar</span><img src="media/impacto/kpi.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
+        <p class="kind">Fase 3 · Verificar</p>
+        <h3><a href="#caso-kpi" data-caso="caso-kpi">Monitoreo integral en 300 oficinas: cómo diseñamos el sistema de KPI para una toma de decisiones respaldada en datos.<span class="chev-r" aria-hidden="true"></span></a></h3>
+        <p class="sum">KPI estandarizados por proceso para monitorear el desempeño de 300 oficinas y decidir con datos.</p>
       </article>
-      <article class="card hl">
-        <a class="media" href="servicios.html#diagnostico" tabindex="-1" aria-hidden="true"><span class="ph">Autodiagnóstico</span><img src="media/diagnostico.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
-        <p class="kind">Herramienta</p>
-        <h3><a href="servicios.html#diagnostico">¿En qué nivel de madurez está su organización?<span class="chev-r" aria-hidden="true"></span></a></h3>
-        <p class="sum">Doce preguntas y tres minutos para conocer su nivel, su punto de partida y una hoja de ruta referencial.</p>
+      <article class="card">
+        <a class="media" href="#caso-rpa" data-caso="caso-rpa" tabindex="-1" aria-hidden="true"><span class="ph">Fase 4 · Actuar</span><img src="media/impacto/rpa.jpg" alt="" loading="lazy" onerror="this.remove()"></a>
+        <p class="kind">Fase 4 · Actuar</p>
+        <h3><a href="#caso-rpa" data-caso="caso-rpa">Menos tiempos de espera y máxima eficiencia: cómo lideraremos la automatización de servicios con RPA y Google Workspace.<span class="chev-r" aria-hidden="true"></span></a></h3>
+        <p class="sum">Próxima etapa: simplificar trámites, reducir los tiempos de espera y automatizar tareas clave con RPA.</p>
       </article>
     </div>
   </section>
@@ -299,6 +320,51 @@ img{max-width:100%;display:block}
     <h2 class="label" id="gente-t">Nuestra gente</h2>
     <div class="pgrid" id="pgrid"></div>
   </section>
+  <dialog class="cs" id="caso-sigpro" aria-labelledby="caso-sigpro-t">
+    <button type="button" class="cs-x" data-cerrar aria-label="Cerrar">×</button>
+    <img class="cs-img" src="media/impacto/sigpro.jpg" alt="Panel del sistema SIGPRO con indicadores, desempeño por proceso y el ciclo de Deming" loading="lazy">
+    <div class="cs-in">
+      <p class="kind">Estudio de caso</p>
+      <h2 id="caso-sigpro-t">Excelencia operativa digitalizada: cómo implementamos el sistema SIGPRO para automatizar la mejora continua.</h2>
+      <p>Como hito culminante para la universidad pública referente del país, lideramos el diseño y la implementación integral del Sistema de Gestión por Procesos (SIGPRO). A través del despliegue de esta plataforma, logramos centralizar la documentación operativa, establecer una medición precisa del desempeño y articular de manera automatizada las iniciativas de mejora continua a lo largo de toda la organización.</p><p>Con esta solución tecnológica, consolidamos el ecosistema digital necesario para sostener los ciclos del modelo de Deming, transformando el diseño estratégico en una excelencia operativa real y perdurable.</p><h3 class="cs-sub">Las cuatro fases del proyecto</h3><ol class="cs-fases"><li><a href="#caso-apqc" data-caso="caso-apqc"><b>Fase 1 · Planificar</b>Un único mapa de procesos y 58 KPI: cómo estructuramos la arquitectura organizativa bajo estándares APQC.</a></li><li><a href="#caso-bpmn" data-caso="caso-bpmn"><b>Fase 2 · Hacer</b>Trazabilidad operativa absoluta: cómo estandarizamos los procedimientos institucionales con la norma BPMN 2.0.</a></li><li><a href="#caso-kpi" data-caso="caso-kpi"><b>Fase 3 · Verificar</b>Monitoreo integral en 300 oficinas: cómo diseñamos el sistema de KPI para una toma de decisiones respaldada en datos.</a></li><li><a href="#caso-rpa" data-caso="caso-rpa"><b>Fase 4 · Actuar</b>Menos tiempos de espera y máxima eficiencia: cómo lideraremos la automatización de servicios con RPA y Google Workspace.</a></li></ol>
+    </div>
+  </dialog>
+  <dialog class="cs" id="caso-apqc" aria-labelledby="caso-apqc-t">
+    <button type="button" class="cs-x" data-cerrar aria-label="Cerrar">×</button>
+    <img class="cs-img" src="media/impacto/apqc.jpg" alt="Mapa de procesos institucional en tres niveles bajo el marco APQC, con 58 KPI críticos, objetivos SMART y OKR" loading="lazy">
+    <div class="cs-in">
+      <p class="kind">Fase 1 · Planificar</p>
+      <h2 id="caso-apqc-t">Un único mapa de procesos y 58 KPI: cómo estructuramos la arquitectura organizativa bajo estándares APQC.</h2>
+      <p>En la universidad pública referente del país, ejecutamos exitosamente la definición y arquitectura de sus procesos, adoptando como marco de referencia los estándares globales del American Productivity &amp; Quality Center (APQC). Como resultado de nuestra intervención, consolidamos un único mapa de procesos estándar a nivel institucional y articulamos su medición estratégica mediante el diseño de objetivos SMART, la definición de 58 KPI críticos y la estructuración de un sistema de OKR.</p><p>Con estos entregables, culminamos con éxito la Fase 1 del ciclo de Deming (levantamiento de la documentación · Planificar), dotando a la institución de una planificación robusta y una base organizativa sólida para sostener su mejora continua.</p><p class="cs-ref">Marco de referencia: <a href="https://www.apqc.org/process-frameworks" target="_blank" rel="noopener">APQC: Process Classification Framework (PCF)</a></p>
+    </div>
+  </dialog>
+  <dialog class="cs" id="caso-bpmn" aria-labelledby="caso-bpmn-t">
+    <button type="button" class="cs-x" data-cerrar aria-label="Cerrar">×</button>
+    <img class="cs-img" src="media/impacto/bpmn.jpg" alt="Diagrama BPMN 2.0 de un procedimiento con carriles para el solicitante, la mesa de partes y la unidad responsable" loading="lazy">
+    <div class="cs-in">
+      <p class="kind">Fase 2 · Hacer</p>
+      <h2 id="caso-bpmn-t">Trazabilidad operativa absoluta: cómo estandarizamos los procedimientos institucionales con la norma BPMN 2.0.</h2>
+      <p>Para la universidad pública referente del país, lideramos la estandarización integral de sus operaciones alineándolas estrictamente con la norma internacional BPMN 2.0. Como resultado de nuestra intervención, estructuramos la documentación operativa dotando a cada procedimiento de un diagrama de flujo detallado y un registro formal por proceso, garantizando así la absoluta trazabilidad de sus actividades.</p><p>Con este hito, materializamos con éxito la Fase 2 del ciclo de Deming (procedimentación · Hacer), transformando el diseño estratégico en un modelo operativo documentado, estandarizado y listo para su ejecución a nivel institucional.</p><p class="cs-ref">Marco de referencia: <a href="https://www.omg.org/spec/BPMN/2.0/" target="_blank" rel="noopener">Object Management Group (OMG): especificación BPMN 2.0</a></p>
+    </div>
+  </dialog>
+  <dialog class="cs" id="caso-kpi" aria-labelledby="caso-kpi-t">
+    <button type="button" class="cs-x" data-cerrar aria-label="Cerrar">×</button>
+    <img class="cs-img" src="media/impacto/kpi.jpg" alt="Tablero de monitoreo de 300 oficinas con el estado de sus KPI y la tendencia de tres indicadores" loading="lazy">
+    <div class="cs-in">
+      <p class="kind">Fase 3 · Verificar</p>
+      <h2 id="caso-kpi-t">Monitoreo integral en 300 oficinas: cómo diseñamos el sistema de KPI para una toma de decisiones respaldada en datos.</h2>
+      <p>Para la universidad pública referente del país, diseñamos e implementamos un sistema de indicadores clave de desempeño (KPI) estandarizados para cada proceso. Con esta solución, logramos establecer el monitoreo integral del desempeño de 300 oficinas a lo largo de toda la organización.</p><p>Esta intervención representó la ejecución exitosa de la Fase 3 del ciclo de Deming (medición · Verificar), asegurando el control operativo y sentando las bases para una toma de decisiones respaldada en datos.</p><p class="cs-ref">Marco de referencia: <a href="https://www.iso.org/standard/66266.html" target="_blank" rel="noopener">ISO 21001:2018, sistemas de gestión para organizaciones educativas</a></p>
+    </div>
+  </dialog>
+  <dialog class="cs" id="caso-rpa" aria-labelledby="caso-rpa-t">
+    <button type="button" class="cs-x" data-cerrar aria-label="Cerrar">×</button>
+    <img class="cs-img" src="media/impacto/rpa.jpg" alt="Flujo automatizado de un servicio: formulario, hoja de cálculo, robot y respuesta, con menor tiempo de espera" loading="lazy">
+    <div class="cs-in">
+      <p class="kind">Fase 4 · Actuar</p>
+      <h2 id="caso-rpa-t">Menos tiempos de espera y máxima eficiencia: cómo lideraremos la automatización de servicios con RPA y Google Workspace.</h2>
+      <p>Nos preparamos para liderar la implementación de un modelo de mejora continua en la universidad pública referente del país. Nuestro objetivo es simplificar sus procedimientos administrativos, reducir los tiempos de espera y optimizar el servicio al usuario.</p><p>Este esfuerzo, alineado con la Fase 4 del ciclo de Deming (Actuar), partirá de un diagnóstico riguroso mediante el modelado de procesos As-Is y To-Be, identificando las causas raíz con herramientas como Ishikawa, Pareto y los 5 porqués. Luego materializaremos esta mejora con la digitalización de sus servicios (plataformas web, WordPress, Google Sheets y Google Forms), para escalar hacia la máxima eficiencia con la automatización de tareas clave mediante Google Apps Script, macros, UiPath Studio y Microsoft Power Automate.</p><p class="cs-ref">Marco de referencia: <a href="https://www.mckinsey.com/industries/education/our-insights/building-operational-excellence-in-higher-education" target="_blank" rel="noopener">McKinsey &amp; Company: Building operational excellence in higher education</a></p>
+    </div>
+  </dialog>
 </main>
 
 <script src="equipo.js"></script>
@@ -412,6 +478,24 @@ img{max-width:100%;display:block}
     else { setPaused(true); act.pause(); }
   });
 
+  /* ---------- Fichas de los casos ---------- */
+  function abrirCaso(id) {
+    var d = document.getElementById(id);
+    if (!d || d.tagName !== 'DIALOG') return false;
+    [].forEach.call(document.querySelectorAll('dialog.cs[open]'), function (x) { if (x !== d) x.close(); });
+    if (!d.open) d.showModal();
+    d.scrollTop = 0;
+    return true;
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-caso]');
+    if (a && abrirCaso(a.getAttribute('data-caso'))) { e.preventDefault(); return; }
+    if (e.target.closest('[data-cerrar]')) e.target.closest('dialog').close();
+    else if (e.target.tagName === 'DIALOG' && e.target.classList.contains('cs')) e.target.close();
+  });
+  if (/^#caso-/.test(location.hash)) abrirCaso(location.hash.slice(1));
+  window.addEventListener('hashchange', function () { if (/^#caso-/.test(location.hash)) abrirCaso(location.hash.slice(1)); });
+
   /* ---------- Menus ---------- */
   var side = $('#side'), openBtn = $('#menu-open');
   function setSide(o) { side.hidden = !o; openBtn.setAttribute('aria-expanded', String(o)); document.body.style.overflow = o ? 'hidden' : ''; if (o) $('#menu-close').focus(); else openBtn.focus(); }
@@ -443,6 +527,11 @@ img{max-width:100%;display:block}
     ['Cómo trabajamos', 'Modalidades: proyecto integral, por fase, acompañamiento, formación, tecnología', 'servicios.html#como-trabajamos'],
     ['Preguntas frecuentes', 'Costos, plazos, ISO 9001, herramientas, confidencialidad', 'servicios.html#preguntas'],
     ['Contáctanos', 'Solicitar una propuesta', 'servicios.html#contacto'],
+    ['SIGPRO: excelencia operativa digitalizada', 'Estudio de caso: sistema de gestión por procesos y mejora continua automatizada', '#caso-sigpro'],
+    ['Un único mapa de procesos y 58 KPI', 'Fase 1 · Planificar: arquitectura de procesos bajo el marco APQC, objetivos SMART y OKR', '#caso-apqc'],
+    ['Procedimientos estandarizados con BPMN 2.0', 'Fase 2 · Hacer: diagramas de flujo y registro formal por proceso', '#caso-bpmn'],
+    ['Monitoreo integral en 300 oficinas', 'Fase 3 · Verificar: sistema de KPI por proceso', '#caso-kpi'],
+    ['Automatización de servicios con RPA', 'Fase 4 · Actuar: As-Is/To-Be, Google Workspace, UiPath y Power Automate', '#caso-rpa'],
     ['Nuestra gente', 'José Antonio Chumacero, Alvaro Rojas, Isabel Flores, Oriol Romero, Luis Balarezo', '#gente'],
     ['José Antonio Chumacero Calle', 'Managing Partner & Gerente General · Magíster en Economía', 'persona.html?p=chumacero'],
     ['Alvaro Rojas Carnero', 'Engagement Manager & Subgerente de Operaciones · PMBOK, BPMN 2.0', 'persona.html?p=rojas'],
