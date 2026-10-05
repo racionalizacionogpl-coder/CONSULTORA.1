@@ -141,7 +141,7 @@ Archivos de `media/` (los que aún faltan se reemplazan por un fondo de color):
 | `media/trabajo.webm`, `media/trabajo.mp4` | **Incluidos.** Video de fondo de «Nuestro trabajo»: anillo de esferas plateadas, bucle de 12 s en 1920 × 1080, en VP9 y en H.264. En pantallas de más de 900 px se reproduce el formato que admita el navegador; en celulares se ve la misma animación dibujada, sin descargar el video. Se regenera con `herramientas/video/generar_video_trabajo.js`. |
 | `media/caso-universidad.jpg` | Foto del estudio de caso |
 | `media/norma.jpg`, `media/errores.jpg`, `media/indicadores.jpg`, `media/diagnostico.jpg` | Fotos de las cuatro tarjetas |
-| `media/equipo/chumacero.jpg`, `rojas.jpg`, `flores.jpg`, `romero.jpg`, `balarezo.jpg` | Fotos del equipo, cuadradas. Opcional: `<id>-recorte.png`, la misma foto sin fondo, para la cabecera del perfil |
+| `media/equipo/chumacero.jpg`, `rojas.jpg`, `flores.jpg`, `romero.jpg`, `balarezo.jpg` | Fotos del equipo, cuadradas. Opcional: `<id>-recorte.webp`, la misma foto sin fondo, para la cabecera del perfil |
 
 El equipo está en `equipo.js`: nombres, cargos, textos, especialidades,
 correos y LinkedIn. Lo usan la sección «Nuestra gente» y la página de perfil

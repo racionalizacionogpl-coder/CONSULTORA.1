@@ -6,9 +6,10 @@
    Fotos, en media/equipo/:
      <id>.jpg          foto cuadrada; se usa en las tarjetas y, si no hay
                        recorte, en un círculo en el perfil;
-     <id>-recorte.png  opcional: la misma foto sin fondo (PNG transparente),
-                       de la cintura hacia arriba; el perfil la muestra
-                       sobre el degradado celeste, como en McKinsey.
+     <id>-recorte.webp opcional: la misma foto sin fondo (WebP transparente, a
+                       resolución completa), de la cintura hacia arriba; el
+                       perfil la muestra sobre el degradado celeste, como en
+                       McKinsey. Se genera con herramientas/fotos/preparar_fotos.py.
    Si no hay foto, se muestran las iniciales.
 
    Datos del perfil de LinkedIn de cada integrante:

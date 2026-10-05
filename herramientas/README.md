@@ -77,19 +77,18 @@ sh herramientas/video/preparar_videos_regiones.sh puno   # solo una
 ## Fotos del equipo (`fotos/`)
 
 `originales/` guarda las fotos tal como las entregó la empresa.
-`recortar_rojas.py` produce, a partir de la de Alvaro Rojas Carnero, la figura
-sin fondo de la cabecera de su perfil (`media/equipo/rojas-recorte.png`) y la
-foto cuadrada de las tarjetas (`media/equipo/rojas.jpg`), encuadrada en la
-cabeza y los hombros. `recortar_chumacero.py` hace lo mismo con la de José
-Antonio Chumacero Calle, que es de cuerpo entero: el recorte del perfil se
-corta encima del cinturón. `recortar_romero.py`, lo mismo con la de Oriol Romero
-Saavedra.
+`preparar_fotos.py` produce, para cada integrante con foto, la figura sin
+fondo de la cabecera de su perfil (`media/equipo/<id>-recorte.webp`) y la foto
+cuadrada de las tarjetas (`media/equipo/<id>.jpg`, 800 × 800), encuadrada en la
+cabeza y los hombros. El recorte conserva la resolución completa del original
+para que se vea nítido aun con el navegador ampliado al 400 %; en WebP con
+transparencia pesa entre 150 y 270 KB. Dónde se corta cada recorte y cómo se
+encuadra cada foto cuadrada se ajusta en la tabla `FOTOS` del programa.
 
 ```sh
 pip install "rembg[cpu]" opencv-python-headless
-python3 herramientas/fotos/recortar_rojas.py
-python3 herramientas/fotos/recortar_chumacero.py
-python3 herramientas/fotos/recortar_romero.py
+python3 herramientas/fotos/preparar_fotos.py          # todos
+python3 herramientas/fotos/preparar_fotos.py rojas    # solo uno
 ```
 
 ## Verificación (`verificacion/`)

@@ -175,7 +175,7 @@ img{max-width:100%;display:block}
   .pf-in{grid-template-columns:minmax(0,1fr);min-height:0;gap:0}
   .pf-foto{order:-1;padding-top:32px}
   .pf-in:has(.recorte){grid-template-columns:minmax(0,1fr)}
-  .pf-foto.recorte img{height:auto;width:min(100%,520px)}
+  .pf-foto.recorte img{height:auto;width:min(100%,320px)}
   .pf-foto.circulo img,.pf-mono{width:200px;font-size:64px}
   .pf-txt{padding-top:28px}
   .pf-body{grid-template-columns:minmax(0,1fr)}
@@ -331,8 +331,10 @@ img{max-width:100%;display:block}
   foto.innerHTML = '<div class="pf-mono" aria-hidden="true">' + esc(p.ini) + '</div>';
   function probar(src, ok, mal) { var im = new Image(); im.onload = function () { ok(src); }; im.onerror = mal; im.src = src; }
   function poner(clase) { return function (src) { foto.className = 'pf-foto ' + clase; foto.innerHTML = '<img src="' + esc(src) + '" alt="' + esc(p.nombre) + '">'; }; }
-  probar('media/equipo/' + p.id + '-recorte.png', poner('recorte'), function () {
-    probar('media/equipo/' + p.id + '.jpg', poner('circulo'), function () {});
+  probar('media/equipo/' + p.id + '-recorte.webp', poner('recorte'), function () {
+    probar('media/equipo/' + p.id + '-recorte.png', poner('recorte'), function () {
+      probar('media/equipo/' + p.id + '.jpg', poner('circulo'), function () {});
+    });
   });
 
   $('#pf-acerca-t').textContent = 'Acerca de ' + p.corto;
