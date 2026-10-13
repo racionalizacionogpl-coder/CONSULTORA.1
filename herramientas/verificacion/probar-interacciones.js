@@ -73,13 +73,20 @@ function comprobar(ok, descripcion, detalle) {
   // «Nuestra gente»: cada tarjeta abre el perfil de su integrante.
   await p.goto(url('index.html'), { waitUntil: 'load' });
   const nombres = await p.$$eval('#pgrid h3', h => h.map(x => x.textContent));
-  comprobar(nombres.includes('Isabel Flores Huamani') && nombres.includes('Luis Balarezo'), 'index.html: los nombres del equipo están corregidos', nombres);
-  await p.click('#pgrid h3 >> text=Luis Balarezo');
+  comprobar(nombres.includes('Isabel Flores Huamani') && nombres.includes('Luis Balarezo Ramos') && nombres.length === 8, 'index.html: los nombres del equipo están corregidos', nombres);
+  await p.click('#pgrid h3 >> text=Luis Balarezo Ramos');
   await p.waitForLoadState('load');
-  comprobar(await p.textContent('h1') === 'Luis Balarezo' && p.url().endsWith('persona.html?p=balarezo'), 'la tarjeta abre el perfil de Luis Balarezo', p.url());
+  comprobar(await p.textContent('h1') === 'Luis Balarezo Ramos' && p.url().endsWith('persona.html?p=balarezo'), 'la tarjeta abre el perfil de Luis Balarezo Ramos', p.url());
   comprobar(await p.getAttribute('.pf-soc a[href*="linkedin"]', 'href') === 'https://www.linkedin.com/in/luisbalarezo/', 'el perfil enlaza a su LinkedIn');
   comprobar(await p.$$eval('#pf-pubs .pub', l => l.length) === 4, 'el perfil muestra cuatro publicaciones');
-  comprobar(await p.$$eval('#pf-mas .mp', l => l.length) === 4, 'el perfil muestra al resto del equipo');
+  comprobar(await p.$$eval('#pf-mas .mp', l => l.length) === 7, 'el perfil muestra al resto del equipo (siete personas)');
+  comprobar((await p.textContent('#pf-org-l')).includes('Isabel Flores Huamani'), 'el perfil del líder muestra a su equipo');
+  // Organigrama: ocho integrantes, cuatro áreas y cada nombre abre su perfil.
+  await p.goto(url('index.html'), { waitUntil: 'load' });
+  comprobar(await p.$$eval('#org .org-area', l => l.length) === 4 && await p.$$eval('#org a', l => l.length) === 8, 'index.html: el organigrama muestra cuatro áreas y ocho integrantes');
+  await p.click('#org a >> text=Karla Ñingle Saona');
+  await p.waitForLoadState('load');
+  comprobar(await p.textContent('h1') === 'Karla Ñingle Saona' && (await p.textContent('#pf-org-l')).includes('Alvaro Rojas Carnero'), 'desde el organigrama se abre un perfil que indica a quién reporta');
   await p.click('#pf-mas a >> text=Oriol Romero Saavedra');
   await p.waitForLoadState('load');
   comprobar(await p.textContent('#pf-acerca-t') === 'Acerca de Oriol', 'desde un perfil se pasa al de otro integrante');

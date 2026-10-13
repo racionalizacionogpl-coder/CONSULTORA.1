@@ -142,6 +142,11 @@ img{max-width:100%;display:block}
 .esp a{display:flex;gap:12px;align-items:baseline;padding:9px 0;color:var(--blue);font-size:17px;line-height:1.45}
 .esp a::before{content:"";flex:0 0 6px;width:6px;height:6px;border-top:1.3px solid #8A96B8;border-right:1.3px solid #8A96B8;transform:translateY(-2px) rotate(45deg)}
 .esp a:hover{text-decoration:underline;text-underline-offset:3px}
+.org-d{margin:16px 0 0}
+.org-d dt{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:16px}
+.org-d dd{margin:4px 0 0;font-size:17px;line-height:1.45;color:#222}
+.org-d a{color:var(--blue)}
+.org-d a:hover{text-decoration:underline;text-underline-offset:3px}
 
 /* ---------- Perfil: publicaciones ---------- */
 .pubs{max-width:1400px;margin:clamp(64px,7vw,96px) auto 0;padding-inline:clamp(16px,7vw,100px)}
@@ -282,6 +287,11 @@ img{max-width:100%;display:block}
       <hr>
       <h2 class="k">Especialidades</h2>
       <ul class="esp" id="pf-esp"></ul>
+      <div id="pf-org" hidden>
+        <hr>
+        <h2 class="k">En la organización</h2>
+        <dl class="org-d" id="pf-org-l"></dl>
+      </div>
     </aside>
   </div>
 
@@ -318,7 +328,9 @@ img{max-width:100%;display:block}
 
   document.title = p.nombre + ' | ROIC & Company';
   $('#pf-nombre').textContent = p.nombre;
-  $('#pf-cargo').innerHTML = esc(p.cargo) + ', <a href="index.html">' + esc(p.sede) + '</a>';
+  var UNIDADES = window.UNIDADES || {}, AREAS = window.AREAS || [];
+  var area = AREAS.indexOf(p.unidad) > -1 ? UNIDADES[p.unidad] : '';
+  $('#pf-cargo').innerHTML = esc(p.cargo) + (area ? ' · ' + esc(area) : '') + ', <a href="index.html">' + esc(p.sede) + '</a>';
   $('#pf-res').textContent = p.resumen;
   $('#pf-soc').innerHTML =
     '<a href="' + esc(contacto) + '"><i>' + MAIL + '</i>Contacto</a>' +
@@ -358,6 +370,16 @@ img{max-width:100%;display:block}
   if (p.certificaciones && p.certificaciones.length) { $('#pf-cert').hidden = false; $('#pf-cert-l').innerHTML = p.certificaciones.map(function (c) { return '<div class="item"><b>' + esc(c) + '</b></div>'; }).join(''); }
 
   $('#pf-esp').innerHTML = p.especialidades.map(function (e) { return '<li><a href="' + esc(e[1]) + '">' + esc(e[0]) + '</a></li>'; }).join('');
+
+  // Lugar en el organigrama: unidad, jefe directo y, si dirige un área, su equipo.
+  var jefe = window.EQUIPO.filter(function (x) { return x.id === p.reporta; })[0];
+  var equipo = window.EQUIPO.filter(function (x) { return x.reporta === p.id; });
+  var enlace = function (x) { return '<a href="persona.html?p=' + esc(x.id) + '">' + esc(x.nombre) + '</a>'; };
+  var org = '';
+  if (p.unidad && UNIDADES[p.unidad]) org += '<dt>Unidad</dt><dd><a href="index.html#gente">' + esc(UNIDADES[p.unidad]) + '</a></dd>';
+  if (jefe) org += '<dt>Reporta a</dt><dd>' + enlace(jefe) + '</dd>';
+  if (equipo.length) org += '<dt>' + (p.unidad === 'gerencia' ? 'Dirige a' : 'Equipo a cargo') + '</dt>' + equipo.map(function (x) { return '<dd>' + enlace(x) + '</dd>'; }).join('');
+  if (org) { $('#pf-org').hidden = false; $('#pf-org-l').innerHTML = org; }
 
   // Ilustración de cada publicación: anillos concéntricos, como la rueda de Deming del sitio.
   function arte(color) {
@@ -413,12 +435,15 @@ img{max-width:100%;display:block}
     ['Procedimientos estandarizados con BPMN 2.0', 'Fase 2 · Hacer: diagramas de flujo y registro formal por proceso', 'index.html#caso-bpmn'],
     ['Monitoreo integral en 300 oficinas', 'Fase 3 · Verificar: sistema de KPI por proceso', 'index.html#caso-kpi'],
     ['Automatización de servicios con RPA', 'Fase 4 · Actuar: As-Is/To-Be, Google Workspace, UiPath y Power Automate', 'index.html#caso-rpa'],
-    ['Nuestra gente', 'José Antonio Chumacero, Alvaro Rojas, Isabel Flores, Oriol Romero, Luis Balarezo', 'index.html#gente'],
+    ['Nuestra gente', 'Organigrama y equipo: José Antonio Chumacero, Alvaro Rojas, Karla Ñingle, Luis Balarezo, Isabel Flores, Ulises Vásquez, Oriol Romero, Daniela Ccansaya', 'index.html#gente'],
     ['José Antonio Chumacero Calle', 'Managing Partner & Gerente General · Magíster en Economía', 'persona.html?p=chumacero'],
-    ['Alvaro Rojas Carnero', 'Engagement Manager & Subgerente de Operaciones · PMBOK, BPMN 2.0', 'persona.html?p=rojas'],
-    ['Isabel Flores Huamani', 'Especialista en automatización de procesos', 'persona.html?p=flores'],
-    ['Oriol Romero Saavedra', 'Especialista en indicadores, KPI y OKR', 'persona.html?p=romero'],
-    ['Luis Balarezo', 'Desarrollador full stack, especialidad backend', 'persona.html?p=balarezo']
+    ['Alvaro Rojas Carnero', 'Engagement Manager & Subgerente de Operaciones y Estrategia Corporativa', 'persona.html?p=rojas'],
+    ['Karla Ñingle Saona', 'Consultora Junior de Proyectos · Área de Dirección de Proyectos', 'persona.html?p=ningle'],
+    ['Luis Balarezo Ramos', 'Líder de Transformación Digital y Programador Full Stack', 'persona.html?p=balarezo'],
+    ['Isabel Flores Huamani', 'Consultora Junior de Automatización · Área de Transformación Digital', 'persona.html?p=flores'],
+    ['Ulises Vásquez Gallardo', 'Consultor Junior de Innovación · Área de Transformación Digital', 'persona.html?p=vasquez'],
+    ['Oriol Romero Saavedra', 'Consultor Junior de Gestión por Procesos · Área de Procesos', 'persona.html?p=romero'],
+    ['Daniela Ccansaya Becerra', 'Consultora Junior de Comunicaciones · Área de Marketing y Comunicaciones', 'persona.html?p=ccansaya']
   ];
   var srch = $('#srch'), q = $('#q'), res = $('#srch-res'), none = $('#srch-none'), sBtn = $('#search-open');
   function norm(t) { return t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }

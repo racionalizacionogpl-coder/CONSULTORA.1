@@ -12,6 +12,12 @@
                        McKinsey. Se genera con herramientas/fotos/preparar_fotos.py.
    Si no hay foto, se muestran las iniciales.
 
+   Organigrama (sección «Nuestra estructura» de index.html y perfiles):
+     unidad:  'gerencia', 'subgerencia' o el área (ver UNIDADES, al final);
+     lider:   true si dirige su área;
+     reporta: id de su jefe directo.
+   El orden de esta lista es el de las tarjetas de «Nuestra gente».
+
    Datos del perfil de LinkedIn de cada integrante:
      experiencia:     [{ empresa: '', cargo: '', periodo: '' }]  (o cargos: ['', ''])
      experienciaIntro: texto opcional antes de la experiencia
@@ -28,12 +34,13 @@ window.EQUIPO = [
     corto: 'José Antonio',
     ini: 'JC',
     cargo: 'Managing Partner & Gerente General',
+    unidad: 'gerencia',
     sede: 'Lima, Perú',
     bio: 'Managing Partner y Account Sponsor de cada cliente. Magíster en Economía, especializado en inversión pública y privada: estructura los costos de cada propuesta y asegura su rentabilidad.',
     resumen: 'José Antonio es Managing Partner y Gerente General de ROIC & Company, y Account Sponsor de cada uno de sus clientes.',
     acerca: [
       'Como Managing Partner y Gerente General de ROIC & Company, José Antonio es el Account Sponsor de cada cliente: dirige la relación estratégica desde el diagnóstico preliminar hasta la entrega del valor final. Su formación como Magíster en Economía aporta rigor financiero a cada proyecto: todo rediseño de procesos debe justificarse en costo, tiempo y rentabilidad, y toda decisión de mejora debe sustentarse en modelos cuantitativos.',
-      'Especializado en la evaluación de inversión pública y privada, lidera la viabilidad financiera de cada intervención. Trabaja en estrecha sinergia con el Subgerente de Operaciones, Alvaro Rojas Carnero: mientras Alvaro diseña y orquesta la arquitectura integral del plan de gestión del proyecto, José Antonio asume en exclusiva la estructuración de costos y asegura la rentabilidad de la propuesta.'
+      'Especializado en la evaluación de inversión pública y privada, lidera la viabilidad financiera de cada intervención. Trabaja en estrecha sinergia con el Subgerente de Operaciones y Estrategia Corporativa, Alvaro Rojas Carnero: mientras Alvaro diseña y orquesta la arquitectura integral del plan de gestión del proyecto, José Antonio asume en exclusiva la estructuración de costos y asegura la rentabilidad de la propuesta.'
     ],
     secciones: [
       { titulo: 'Capacidades directivas y estructuración comercial', items: [
@@ -45,7 +52,7 @@ window.EQUIPO = [
         ['Costeo de operaciones', 'Determina el costo real de cada servicio mediante el costeo detallado de procesos y actividades.'],
         ['Análisis costo-beneficio', 'Proyecta la viabilidad económica de cada mejora antes de implementarla, para reducir el riesgo de inversión del cliente.'],
         ['Evaluación de impacto', 'Cuantifica el efecto de cada cambio estructural en tiempo, dinero o valor público.'],
-        ['Supervisión del ciclo de Deming', 'Supervisa las cuatro fases de la gestión por procesos —documentar, procedimentar, medir y mejorar\u2060— y coordina su ejecución directamente con Alvaro Rojas (Subgerente de Operaciones), Isabel Flores (Automatización), Oriol Romero (Indicadores) y Luis Balarezo (Full Stack).'],
+        ['Supervisión del ciclo de Deming', 'Supervisa las cuatro fases de la gestión por procesos —documentar, procedimentar, medir y mejorar\u2060— y coordina su ejecución directamente con la Subgerencia de Operaciones y Estrategia Corporativa, a cargo de Alvaro Rojas, y con las áreas de Dirección de Proyectos, Transformación Digital, Procesos, y Marketing y Comunicaciones.'],
         ['Gobierno corporativo', 'Dirige el despliegue de cada proyecto y rinde cuentas de los indicadores de éxito ante el directorio y la alta dirección del cliente.']
       ] }
     ],
@@ -71,13 +78,15 @@ window.EQUIPO = [
     nombre: 'Alvaro Rojas Carnero',
     corto: 'Alvaro',
     ini: 'AR',
-    cargo: 'Engagement Manager & Subgerente de Operaciones',
+    cargo: 'Engagement Manager & Subgerente de Operaciones y Estrategia Corporativa',
+    unidad: 'subgerencia',
+    reporta: 'chumacero',
     sede: 'Lima, Perú',
-    bio: 'Dirige la ejecución de cada proyecto bajo la guía del PMBOK y supervisa al equipo de especialistas en automatización, indicadores y desarrollo. Investigación Operativa, BPMN 2.0 y Lean Six Sigma.',
-    resumen: 'Alvaro es Engagement Manager y Subgerente de Operaciones de ROIC & Company: dirige la ejecución de cada proyecto y al equipo de especialistas.',
+    bio: 'Dirige la Subgerencia de Operaciones y Estrategia Corporativa, de la que dependen las cuatro áreas de la firma, y la ejecución de cada proyecto bajo la guía del PMBOK. Investigación Operativa, BPMN 2.0 y Lean Six Sigma.',
+    resumen: 'Alvaro es Engagement Manager y Subgerente de Operaciones y Estrategia Corporativa de ROIC & Company: dirige la ejecución de cada proyecto y las cuatro áreas de la firma.',
     acerca: [
-      'Alvaro es Engagement Manager y Subgerente de Operaciones de ROIC & Company. Su liderazgo en la firma se respalda en su trayectoria técnica y directiva en la Universidad Nacional Mayor de San Marcos (UNMSM), donde ocupó el cargo de Analista Senior de Gestión por Procesos y Mejora Continua: diseñó el marco metodológico de gestión por procesos de la institución y brindó acompañamiento técnico a sus 20 facultades.',
-      'En la consultora supervisa, delega y coordina directamente el trabajo de los especialistas técnicos: Isabel Flores Huamani en automatización, Oriol Romero Saavedra en indicadores, KPI y OKR, y Luis Balarezo en el desarrollo de plataformas. Responde ante el Managing Partner & Gerente General por la calidad técnica de cada entregable y por el cumplimiento estricto del cronograma, y dirige personalmente la ejecución de las cuatro fases de la gestión por procesos —documentar, procedimentar, medir y mejorar⁠—, construidas sobre el ciclo de Deming.',
+      'Alvaro es Engagement Manager y Subgerente de Operaciones y Estrategia Corporativa de ROIC & Company. Su liderazgo en la firma se respalda en su trayectoria técnica y directiva en la Universidad Nacional Mayor de San Marcos (UNMSM), donde ocupó el cargo de Analista Senior de Gestión por Procesos y Mejora Continua: diseñó el marco metodológico de gestión por procesos de la institución y brindó acompañamiento técnico a sus 20 facultades.',
+      'En la consultora dirige la Subgerencia de Operaciones y Estrategia Corporativa, de la que dependen las cuatro áreas de la firma: Dirección de Proyectos, Transformación Digital, Procesos, y Marketing y Comunicaciones. Supervisa, delega y coordina directamente el trabajo de sus equipos, entre ellos el de Transformación Digital que lidera Luis Balarezo Ramos. Responde ante el Managing Partner & Gerente General por la calidad técnica de cada entregable y por el cumplimiento estricto del cronograma, y dirige personalmente la ejecución de las cuatro fases de la gestión por procesos —documentar, procedimentar, medir y mejorar⁠—, construidas sobre el ciclo de Deming.',
       'Su formación en Investigación Operativa le da una base cuantitativa rigurosa para medir y sustentar cada mejora. Domina la gestión integral de proyectos: estructura y dirige la ejecución de cada iniciativa según los estándares globales de la guía del PMBOK (7.ª y 8.ª edición). Trabaja además a nivel avanzado con BPM y el estándar BPMN 2.0 (Bizagi Modeler y Microsoft Visio), análisis AS-IS/TO-BE, Lean Six Sigma, diseño de KPI y OKR, Power BI, automatización RPA con UiPath, Google Apps Script y la norma ISO 9001.'
     ],
     listaIntro: 'Entre sus trabajos recientes de mayor impacto:',
@@ -122,17 +131,89 @@ window.EQUIPO = [
     linkedin: 'https://www.linkedin.com/in/alvaro-rojas-carnero-015922267/'
   },
   {
+    id: 'ningle',
+    nombre: 'Karla Ñingle Saona',
+    corto: 'Karla',
+    ini: 'KÑ',
+    cargo: 'Consultora Junior de Proyectos',
+    unidad: 'proyectos',
+    reporta: 'rojas',
+    sede: 'Lima',
+    bio: 'Da soporte a la dirección de cada proyecto: plan de trabajo, cronograma, seguimiento de entregables, actas y reportes de avance para el cliente.',
+    resumen: 'Karla es consultora junior de proyectos en el Área de Dirección de Proyectos de ROIC & Company.',
+    acerca: [
+      'Karla forma parte del Área de Dirección de Proyectos, que asegura que cada proyecto se cumpla en tiempo, alcance y calidad. Mantiene al día el plan de trabajo y el cronograma, da seguimiento a cada entregable hasta su conformidad y prepara la información con la que el cliente ve el avance real del proyecto.',
+      'Trabaja bajo la supervisión de Alvaro Rojas Carnero, Engagement Manager y Subgerente de Operaciones y Estrategia Corporativa, con la metodología de gestión de proyectos de la guía del PMBOK que aplica la firma.'
+    ],
+    listaIntro: 'En cada proyecto, Karla se encarga de:',
+    lista: [
+      'actualizar el plan de trabajo, el cronograma y la ruta crítica;',
+      'dar seguimiento a cada entregable, desde su elaboración hasta la conformidad del cliente;',
+      'registrar acuerdos, riesgos y pendientes en actas y matrices de seguimiento;',
+      'preparar los reportes de avance para el cliente y para la gerencia.'
+    ],
+    especialidades: [
+      ['Gestión de proyectos (PMBOK)', 'servicios.html#como-trabajamos'],
+      ['Cronogramas y ruta crítica', 'servicios.html#como-trabajamos'],
+      ['Seguimiento de entregables', 'servicios.html#como-trabajamos'],
+      ['Medición del avance', 'servicios.html#art-avance']
+    ],
+    experiencia: [],
+    formacion: [],
+    publicaciones: ['art-errores', 'art-avance', 'art-nt', 'art-cuna'],
+    correo: '',
+    linkedin: ''
+  },
+  {
+    id: 'balarezo',
+    nombre: 'Luis Balarezo Ramos',
+    corto: 'Luis',
+    ini: 'LB',
+    cargo: 'Líder de Transformación Digital y Programador Full Stack',
+    unidad: 'digital',
+    lider: true,
+    reporta: 'rojas',
+    sede: 'Lima',
+    bio: 'Lidera el Área de Transformación Digital y construye las plataformas que sostienen la gestión por procesos: repositorios de procesos, módulos de indicadores, actas digitales e integraciones.',
+    resumen: 'Luis lidera el Área de Transformación Digital de ROIC & Company y es su programador full stack, con especialidad en backend.',
+    acerca: [
+      'Luis construye las plataformas que sostienen la gestión por procesos: repositorios de procesos y fichas, módulos de indicadores, encuestas y actas digitales, integrados con los sistemas que el cliente ya usa.',
+      'Lidera el Área de Transformación Digital, donde coordina el trabajo de Isabel Flores Huamani, consultora junior de automatización, y de Ulises Vásquez Gallardo, consultor junior de innovación. Responde ante Alvaro Rojas Carnero, Subgerente de Operaciones y Estrategia Corporativa, y participa en las fases de medir y mejorar.'
+    ],
+    listaIntro: 'Entre los sistemas que desarrolla:',
+    lista: [
+      'repositorios de procesos y fichas de caracterización;',
+      'módulos de indicadores y tableros;',
+      'encuestas y actas digitales;',
+      'integraciones con los sistemas del cliente.'
+    ],
+    especialidades: [
+      ['Plataformas a medida', 'servicios.html#servicios'],
+      ['Backend y API', 'servicios.html#servicios'],
+      ['Bases de datos', 'servicios.html#servicios'],
+      ['Medir', 'servicios.html#medir'],
+      ['Mejorar', 'servicios.html#mejorar']
+    ],
+    experiencia: [],
+    formacion: [],
+    publicaciones: ['art-auto', 'art-kpi', 'art-avance', 'art-errores'],
+    correo: '',
+    linkedin: 'https://www.linkedin.com/in/luisbalarezo/'
+  },
+  {
     id: 'flores',
     nombre: 'Isabel Flores Huamani',
     corto: 'Isabel',
     ini: 'IF',
-    cargo: 'Especialista en automatización de procesos',
+    cargo: 'Consultora Junior de Automatización',
+    unidad: 'digital',
+    reporta: 'balarezo',
     sede: 'Lima',
     bio: 'Convierte tareas repetitivas en flujos automáticos: carga y validación de datos, formularios, reportes y alertas, sobre procesos ya documentados.',
-    resumen: 'Isabel es la especialista en automatización de procesos de ROIC & Company.',
+    resumen: 'Isabel es consultora junior de automatización en el Área de Transformación Digital de ROIC & Company.',
     acerca: [
       'Isabel convierte tareas repetitivas en flujos automáticos: carga y validación de datos, formularios, reportes y alertas. Automatiza solo lo que ya está documentado y estandarizado, para no acelerar un proceso que todavía funciona mal.',
-      'Trabaja bajo la supervisión de Alvaro Rojas Carnero, Subgerente de Operaciones, quien le delega y coordina directamente cada automatización. Participa en las fases de procedimentar y mejorar, junto con José Antonio Chumacero Calle y Luis Balarezo.'
+      'Forma parte del Área de Transformación Digital, que lidera Luis Balarezo Ramos, quien coordina cada automatización; el área depende de la Subgerencia de Operaciones y Estrategia Corporativa, a cargo de Alvaro Rojas Carnero. Participa en las fases de procedimentar y mejorar.'
     ],
     listaIntro: 'Entre las automatizaciones que diseña:',
     lista: [
@@ -154,17 +235,53 @@ window.EQUIPO = [
     linkedin: 'https://www.linkedin.com/in/isabel-jazmin-flores-huamani-241201275/'
   },
   {
+    id: 'vasquez',
+    nombre: 'Ulises Vásquez Gallardo',
+    corto: 'Ulises',
+    ini: 'UV',
+    cargo: 'Consultor Junior de Innovación',
+    unidad: 'digital',
+    reporta: 'balarezo',
+    sede: 'Lima',
+    bio: 'Explora y prototipa nuevas soluciones digitales para los procesos de los clientes: herramientas sin código, automatización e inteligencia artificial aplicada.',
+    resumen: 'Ulises es consultor junior de innovación en el Área de Transformación Digital de ROIC & Company.',
+    acerca: [
+      'Ulises forma parte del Área de Transformación Digital, donde busca nuevas formas de resolver los problemas de los procesos de los clientes. Evalúa herramientas y tecnologías emergentes —plataformas sin código, automatización e inteligencia artificial aplicada⁠—, construye prototipos para validarlas antes de invertir en ellas y propone mejoras a los servicios de la firma.',
+      'Trabaja en el equipo que lidera Luis Balarezo Ramos, junto con Isabel Flores Huamani. El área depende de la Subgerencia de Operaciones y Estrategia Corporativa, a cargo de Alvaro Rojas Carnero.'
+    ],
+    listaIntro: 'En cada proyecto, Ulises se encarga de:',
+    lista: [
+      'identificar oportunidades de innovación en los procesos ya documentados;',
+      'evaluar las herramientas y tecnologías que podrían aprovecharlas;',
+      'construir prototipos rápidos para validar cada idea con el cliente;',
+      'documentar las soluciones probadas para que el equipo pueda reutilizarlas.'
+    ],
+    especialidades: [
+      ['Innovación de procesos', 'servicios.html#mejorar'],
+      ['Prototipos de soluciones digitales', 'servicios.html#servicios'],
+      ['Herramientas sin código y automatización', 'servicios.html#servicios'],
+      ['Mejorar', 'servicios.html#mejorar']
+    ],
+    experiencia: [],
+    formacion: [],
+    publicaciones: ['art-auto', 'art-cuna', 'art-kpi', 'art-errores'],
+    correo: '',
+    linkedin: ''
+  },
+  {
     id: 'romero',
     nombre: 'Oriol Romero Saavedra',
     corto: 'Oriol',
     ini: 'OR',
-    cargo: 'Especialista en indicadores, KPI y OKR',
+    cargo: 'Consultor Junior de Gestión por Procesos',
+    unidad: 'procesos',
+    reporta: 'rojas',
     sede: 'Lima',
-    bio: 'Diseña sistemas de medición: indicadores con ficha técnica, línea base y meta, OKR que conectan la estrategia con la operación, y tableros que se leen en un minuto.',
-    resumen: 'Oriol es el especialista en indicadores, KPI y OKR de ROIC & Company.',
+    bio: 'Gestión por procesos en el Área de Procesos: mapas y fichas de procesos, e indicadores con ficha técnica, línea base y meta, OKR y tableros que se leen en un minuto.',
+    resumen: 'Oriol es consultor junior de gestión por procesos en el Área de Procesos de ROIC & Company.',
     acerca: [
-      'Oriol diseña el sistema de medición de cada proyecto: indicadores con ficha técnica, línea base y meta; OKR que conectan la estrategia con la operación; y tableros que la alta dirección entiende en un minuto.',
-      'Trabaja bajo la supervisión de Alvaro Rojas Carnero, Subgerente de Operaciones, quien le delega y coordina directamente el diseño de cada sistema de medición. Es el responsable técnico de la fase de medir y participa en la de mejorar, donde los indicadores muestran si un cambio funcionó.'
+      'Oriol forma parte del Área de Procesos, donde los procesos de cada cliente se documentan, se procedimentan y se miden. Diseña el sistema de medición de cada proyecto: indicadores con ficha técnica, línea base y meta; OKR que conectan la estrategia con la operación; y tableros que la alta dirección entiende en un minuto.',
+      'Trabaja bajo la supervisión de Alvaro Rojas Carnero, Subgerente de Operaciones y Estrategia Corporativa, quien le delega y coordina directamente su trabajo. Es el responsable técnico de la fase de medir y participa en la documentación y la procedimentación de los procesos.'
     ],
     listaIntro: 'En cada proyecto, Oriol se encarga de:',
     lista: [
@@ -174,6 +291,7 @@ window.EQUIPO = [
       'construir tableros conectados a la fuente del dato.'
     ],
     especialidades: [
+      ['Gestión por procesos', 'servicios.html#documentar'],
       ['Medir', 'servicios.html#medir'],
       ['Indicadores, KPI y OKR', 'servicios.html#servicios'],
       ['Tableros de control', 'servicios.html#medir'],
@@ -186,37 +304,38 @@ window.EQUIPO = [
     linkedin: 'https://www.linkedin.com/in/oriol-maximo-romero-saavedra-883a47277/'
   },
   {
-    id: 'balarezo',
-    nombre: 'Luis Balarezo',
-    corto: 'Luis',
-    ini: 'LB',
-    cargo: 'Desarrollador full stack, especialidad backend',
+    id: 'ccansaya',
+    nombre: 'Daniela Ccansaya Becerra',
+    corto: 'Daniela',
+    ini: 'DC',
+    cargo: 'Consultora Junior de Comunicaciones',
+    unidad: 'marketing',
+    reporta: 'rojas',
     sede: 'Lima',
-    bio: 'Construye las plataformas que sostienen la gestión por procesos: repositorios de procesos, módulos de indicadores, actas digitales e integraciones con los sistemas del cliente.',
-    resumen: 'Luis es el desarrollador full stack de ROIC & Company, con especialidad en backend.',
+    bio: 'Cuida la marca y la comunicación de la firma y, en cada proyecto, la comunicación del cambio: que cada usuario sepa qué cambia en su trabajo, por qué y cómo.',
+    resumen: 'Daniela es consultora junior de comunicaciones en el Área de Marketing y Comunicaciones de ROIC & Company.',
     acerca: [
-      'Luis construye las plataformas que sostienen la gestión por procesos: repositorios de procesos y fichas, módulos de indicadores, encuestas y actas digitales, integrados con los sistemas que el cliente ya usa.',
-      'Trabaja bajo la coordinación de Alvaro Rojas Carnero, Subgerente de Operaciones, quien le delega y da seguimiento a cada desarrollo. Participa en las fases de medir y mejorar, junto con José Antonio Chumacero Calle, Oriol Romero Saavedra e Isabel Flores Huamani.'
+      'Daniela forma parte del Área de Marketing y Comunicaciones. Cuida la identidad de ROIC & Company y su presencia digital: el sitio web, las redes profesionales y las publicaciones de «Nuestras perspectivas».',
+      'En los proyectos acompaña la comunicación del cambio: prepara los mensajes, materiales y campañas internas para que cada persona del cliente entienda qué cambia en su trabajo, por qué y cómo, de modo que los nuevos procesos se adopten y no se queden en el papel. Trabaja bajo la supervisión de Alvaro Rojas Carnero, Subgerente de Operaciones y Estrategia Corporativa.'
     ],
-    listaIntro: 'Entre los sistemas que desarrolla:',
+    listaIntro: 'Entre sus funciones:',
     lista: [
-      'repositorios de procesos y fichas de caracterización;',
-      'módulos de indicadores y tableros;',
-      'encuestas y actas digitales;',
-      'integraciones con los sistemas del cliente.'
+      'gestionar la identidad visual y la presencia digital de la firma;',
+      'producir y difundir los contenidos de «Nuestras perspectivas»;',
+      'diseñar el plan de comunicación del cambio de cada proyecto;',
+      'preparar materiales de difusión y capacitación para los usuarios del cliente.'
     ],
     especialidades: [
-      ['Plataformas a medida', 'servicios.html#servicios'],
-      ['Backend y API', 'servicios.html#servicios'],
-      ['Bases de datos', 'servicios.html#servicios'],
-      ['Medir', 'servicios.html#medir'],
-      ['Mejorar', 'servicios.html#mejorar']
+      ['Comunicación corporativa', 'servicios.html#recursos'],
+      ['Comunicación del cambio', 'servicios.html#mejorar'],
+      ['Marketing digital', 'servicios.html#recursos'],
+      ['Materiales de capacitación', 'servicios.html#como-trabajamos']
     ],
     experiencia: [],
     formacion: [],
-    publicaciones: ['art-auto', 'art-kpi', 'art-avance', 'art-errores'],
+    publicaciones: ['art-nt', 'art-errores', 'art-cuna', 'art-auto'],
     correo: '',
-    linkedin: 'https://www.linkedin.com/in/luisbalarezo/'
+    linkedin: ''
   }
 ];
 
@@ -230,3 +349,14 @@ window.PUBLICACIONES = {
   'art-auto':    { tag: 'Automatización', titulo: 'Automatizar después de documentar', lectura: 'Lectura de 3 min', color: '#43C9B2' },
   'art-cuna':    { tag: 'Metodología', titulo: 'La cuña de Deming: por qué las mejoras retroceden', lectura: 'Lectura de 3 min', color: '#8E9AF5' }
 };
+
+/* Unidades del organigrama, en el orden en que se muestran. */
+window.UNIDADES = {
+  gerencia: 'Gerencia General',
+  subgerencia: 'Subgerencia de Operaciones y Estrategia Corporativa',
+  proyectos: 'Área de Dirección de Proyectos',
+  digital: 'Área de Transformación Digital',
+  procesos: 'Área de Procesos',
+  marketing: 'Área de Marketing y Comunicaciones'
+};
+window.AREAS = ['proyectos', 'digital', 'procesos', 'marketing'];

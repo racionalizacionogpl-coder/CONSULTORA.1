@@ -31,10 +31,13 @@
   "knowsAbout": ["Gestión por procesos", "Ciclo de Deming PHVA", "Norma Técnica N.º 002-2025-PCM/SGP", "BPMN 2.0", "Indicadores KPI", "OKR", "Automatización de procesos", "ISO 9001"],
   "employee": [
     {"@type": "Person", "name": "José Antonio Chumacero Calle", "jobTitle": "Managing Partner & Gerente General", "honorificSuffix": "Magíster en Economía"},
-    {"@type": "Person", "name": "Alvaro Rojas Carnero", "jobTitle": "Engagement Manager & Subgerente de Operaciones"},
-    {"@type": "Person", "name": "Isabel Flores Huamani", "jobTitle": "Especialista en Automatización de Procesos"},
-    {"@type": "Person", "name": "Oriol Romero Saavedra", "jobTitle": "Especialista en Indicadores, KPI y OKR"},
-    {"@type": "Person", "name": "Luis Balarezo", "jobTitle": "Desarrollador Full Stack"}
+    {"@type": "Person", "name": "Alvaro Rojas Carnero", "jobTitle": "Engagement Manager & Subgerente de Operaciones y Estrategia Corporativa"},
+    {"@type": "Person", "name": "Karla Ñingle Saona", "jobTitle": "Consultora Junior de Proyectos"},
+    {"@type": "Person", "name": "Luis Balarezo Ramos", "jobTitle": "Líder de Transformación Digital y Programador Full Stack"},
+    {"@type": "Person", "name": "Isabel Flores Huamani", "jobTitle": "Consultora Junior de Automatización"},
+    {"@type": "Person", "name": "Ulises Vásquez Gallardo", "jobTitle": "Consultor Junior de Innovación"},
+    {"@type": "Person", "name": "Oriol Romero Saavedra", "jobTitle": "Consultor Junior de Gestión por Procesos"},
+    {"@type": "Person", "name": "Daniela Ccansaya Becerra", "jobTitle": "Consultora Junior de Comunicaciones"}
   ]
 }
 </script>
@@ -454,7 +457,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .story h3{font-family:var(--f-display);font-weight:400;font-size:clamp(28px,3vw,38px);line-height:1.12}
 .story p{color:var(--fg-2)}
 .story p+p{margin-top:14px}
-@media (max-width:1000px){.team{grid-template-columns:repeat(2,minmax(0,1fr))}.person,.person.lead-p{grid-column:span 1}.person:last-child{grid-column:1/-1}}
+@media (max-width:1000px){.team{grid-template-columns:repeat(2,minmax(0,1fr))}.person,.person.lead-p{grid-column:span 1}.person:last-child:nth-child(odd){grid-column:1/-1}}
 @media (max-width:640px){.team{grid-template-columns:minmax(0,1fr)}.person:last-child{grid-column:auto}.story{grid-template-columns:minmax(0,1fr)}}
 
 /* ---------- Insights ---------- */
@@ -1062,7 +1065,7 @@ body{font-weight:300;color:#222}
               </ul>
               <dl class="facts">
                 <div><dt>Duración</dt><dd>6 a 12 semanas por ciclo de mejora</dd></div>
-                <div><dt>Lidera</dt><dd>Alvaro Rojas Carnero, con Isabel Flores Huamani y Luis Balarezo; análisis económico de José Antonio Chumacero Calle</dd></div>
+                <div><dt>Lidera</dt><dd>Alvaro Rojas Carnero, con Isabel Flores Huamani y Luis Balarezo Ramos; análisis económico de José Antonio Chumacero Calle</dd></div>
                 <div><dt>Herramientas</dt><dd>Lean, análisis económico, automatización con las herramientas de su organización</dd></div>
               </dl>
             </div>
@@ -1098,7 +1101,7 @@ body{font-weight:300;color:#222}
           <svg viewBox="0 0 34 34" aria-hidden="true"><rect x="3" y="5" width="28" height="22" rx="2"/><path d="M3 11h28"/><path d="M13 17l-3 3 3 3M21 17l3 3-3 3M18.5 16l-3 8"/></svg>
           <h3>Plataformas a medida</h3>
           <p>Sistemas web propios para gestionar procesos: repositorio de procesos y fichas, módulos de indicadores, encuestas y actas digitales, integrados con sus sistemas actuales.</p>
-          <p class="who">Luis Balarezo</p>
+          <p class="who">Luis Balarezo Ramos</p>
         </article>
         <article class="cap">
           <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M4 28h26"/><rect x="7" y="17" width="5" height="11"/><rect x="15" y="11" width="5" height="17"/><rect x="23" y="6" width="5" height="22"/><path d="M6 12l7-5 6 3 9-6"/></svg>
@@ -1450,7 +1453,7 @@ body{font-weight:300;color:#222}
     <header class="sec-head">
       <p class="eyebrow">Equipo</p>
       <h2 class="h2" id="team-t">Un equipo pequeño que cubre <em>el ciclo completo</em>.</h2>
-      <p class="lead">Economía, gestión de proyectos, automatización, indicadores y desarrollo de software. Quien diseña el proceso trabaja en la misma mesa que quien lo mide y quien construye el sistema que lo sostiene.</p>
+      <p class="lead">Una gerencia general, una subgerencia de operaciones y estrategia corporativa, y cuatro áreas: dirección de proyectos, transformación digital, procesos, y marketing y comunicaciones. Quien diseña el proceso trabaja en la misma mesa que quien lo mide, quien construye el sistema que lo sostiene y quien comunica el cambio.</p>
     </header>
 
     <div class="team">
@@ -1459,36 +1462,57 @@ body{font-weight:300;color:#222}
         <p class="bio">Dirige la relación estratégica con cada cliente y la estructuración de costos de cada propuesta. Especializado en inversión pública y privada: que todo rediseño se justifique en costo, tiempo y rentabilidad.</p>
         <div class="p-tags"><span>Inversión pública y privada</span><span>Propuestas y licitaciones</span><span>Análisis costo-beneficio</span><span>Costeo de procesos</span></div>
         <div class="p-phases" aria-label="Fases en las que participa: las cuatro"><i class="on" style="--c:var(--p1)"></i><i class="on" style="--c:var(--p2)"></i><i class="on" style="--c:var(--p3)"></i><i class="on" style="--c:var(--p4)"></i><span>Las cuatro fases</span></div>
-      <a class="p-link" href="persona.html?p=chumacero">Ver perfil <span aria-hidden="true">→</span></a>
-</article>
+        <a class="p-link" href="persona.html?p=chumacero">Ver perfil <span aria-hidden="true">→</span></a>
+      </article>
       <article class="person lead-p">
-        <div class="p-top"><span class="mono-tile" aria-hidden="true">AR</span><div><h3><a href="persona.html?p=rojas">Alvaro Rojas Carnero</a></h3><p class="p-role">Engagement Manager &amp; Subgerente de Operaciones</p><p class="p-cred">Supervisión del equipo de especialistas</p></div></div>
-        <p class="bio">Engagement Manager: dirige la ejecución de las cuatro fases bajo la guía del PMBOK y supervisa, delega y coordina directamente a los especialistas en automatización, indicadores y desarrollo. Responde por la calidad de cada entregable y el cronograma.</p>
-        <div class="p-tags"><span>Gestión de proyectos (PMBOK)</span><span>Mapas de procesos</span><span>Fichas de caracterización</span><span>Control de calidad</span></div>
-        <div class="p-phases" aria-label="Fases que dirige: las cuatro"><i class="on" style="--c:var(--p1)"></i><i class="on" style="--c:var(--p2)"></i><i class="on" style="--c:var(--p3)"></i><i class="on" style="--c:var(--p4)"></i><span>Las cuatro fases</span></div>
-      <a class="p-link" href="persona.html?p=rojas">Ver perfil <span aria-hidden="true">→</span></a>
-</article>
+        <div class="p-top"><span class="mono-tile" aria-hidden="true">AR</span><div><h3><a href="persona.html?p=rojas">Alvaro Rojas Carnero</a></h3><p class="p-role">Engagement Manager &amp; Subgerente de Operaciones y Estrategia Corporativa</p><p class="p-cred">Dirige las cuatro áreas de la firma</p></div></div>
+        <p class="bio">Supervisa, delega y coordina directamente a las áreas de Dirección de Proyectos, Transformación Digital, Procesos, y Marketing y Comunicaciones. Dirige la ejecución de cada proyecto bajo la guía del PMBOK y responde por la calidad de cada entregable y el cronograma.</p>
+        <div class="p-tags"><span>Gestión de proyectos (PMBOK)</span><span>Mapas de procesos</span><span>BPMN 2.0</span><span>Lean Six Sigma</span></div>
+        <div class="p-phases" aria-label="Fases en las que participa: las cuatro"><i class="on" style="--c:var(--p1)"></i><i class="on" style="--c:var(--p2)"></i><i class="on" style="--c:var(--p3)"></i><i class="on" style="--c:var(--p4)"></i><span>Las cuatro fases</span></div>
+        <a class="p-link" href="persona.html?p=rojas">Ver perfil <span aria-hidden="true">→</span></a>
+      </article>
       <article class="person">
-        <div class="p-top"><span class="mono-tile" aria-hidden="true">IF</span><div><h3><a href="persona.html?p=flores">Isabel Flores Huamani</a></h3><p class="p-role">Especialista en automatización</p></div></div>
+        <div class="p-top"><span class="mono-tile" aria-hidden="true">KÑ</span><div><h3><a href="persona.html?p=ningle">Karla Ñingle Saona</a></h3><p class="p-role">Consultora Junior de Proyectos</p><p class="p-cred">Área de Dirección de Proyectos</p></div></div>
+        <p class="bio">Da soporte a la dirección de cada proyecto: plan de trabajo, cronograma, seguimiento de entregables, actas y reportes de avance para el cliente.</p>
+        <div class="p-tags"><span>Plan de trabajo</span><span>Cronograma</span><span>Seguimiento de entregables</span><span>Reportes de avance</span></div>
+        <div class="p-phases" aria-label="Fases en las que participa: las cuatro"><i class="on" style="--c:var(--p1)"></i><i class="on" style="--c:var(--p2)"></i><i class="on" style="--c:var(--p3)"></i><i class="on" style="--c:var(--p4)"></i><span>Las cuatro fases</span></div>
+        <a class="p-link" href="persona.html?p=ningle">Ver perfil <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="person">
+        <div class="p-top"><span class="mono-tile" aria-hidden="true">LB</span><div><h3><a href="persona.html?p=balarezo">Luis Balarezo Ramos</a></h3><p class="p-role">Líder de Transformación Digital y Programador Full Stack</p><p class="p-cred">Área de Transformación Digital</p></div></div>
+        <p class="bio">Lidera el Área de Transformación Digital y construye las plataformas que sostienen la gestión por procesos: repositorios de procesos, módulos de indicadores, actas digitales e integraciones.</p>
+        <div class="p-tags"><span>Backend y API</span><span>Bases de datos</span><span>Plataformas web</span><span>Integraciones</span></div>
+        <div class="p-phases" aria-label="Fases en las que participa: Medir y Mejorar"><i></i><i></i><i class="on" style="--c:var(--p3)"></i><i class="on" style="--c:var(--p4)"></i><span>Medir · Mejorar</span></div>
+        <a class="p-link" href="persona.html?p=balarezo">Ver perfil <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="person">
+        <div class="p-top"><span class="mono-tile" aria-hidden="true">IF</span><div><h3><a href="persona.html?p=flores">Isabel Flores Huamani</a></h3><p class="p-role">Consultora Junior de Automatización</p><p class="p-cred">Área de Transformación Digital</p></div></div>
         <p class="bio">Convierte tareas repetitivas en flujos automáticos: carga y validación de datos, formularios, reportes y alertas. Automatiza solo lo que ya está documentado y estandarizado.</p>
         <div class="p-tags"><span>Automatización de flujos</span><span>Integración de datos</span><span>Validaciones</span></div>
         <div class="p-phases" aria-label="Fases en las que participa: Procedimentar y Mejorar"><i></i><i class="on" style="--c:var(--p2)"></i><i></i><i class="on" style="--c:var(--p4)"></i><span>Procedimentar · Mejorar</span></div>
-      <a class="p-link" href="persona.html?p=flores">Ver perfil <span aria-hidden="true">→</span></a>
-</article>
+        <a class="p-link" href="persona.html?p=flores">Ver perfil <span aria-hidden="true">→</span></a>
+      </article>
       <article class="person">
-        <div class="p-top"><span class="mono-tile" aria-hidden="true">OR</span><div><h3><a href="persona.html?p=romero">Oriol Romero Saavedra</a></h3><p class="p-role">Especialista en KPI y OKR</p></div></div>
-        <p class="bio">Diseña el sistema de medición: indicadores con ficha técnica, línea base y meta; OKR que conectan la estrategia con la operación; y tableros que se leen en un minuto.</p>
-        <div class="p-tags"><span>KPI</span><span>OKR</span><span>Tableros de control</span><span>Fichas de indicadores</span></div>
-        <div class="p-phases" aria-label="Fases en las que participa: Medir y Mejorar"><i></i><i></i><i class="on" style="--c:var(--p3)"></i><i class="on" style="--c:var(--p4)"></i><span>Medir · Mejorar</span></div>
-      <a class="p-link" href="persona.html?p=romero">Ver perfil <span aria-hidden="true">→</span></a>
-</article>
+        <div class="p-top"><span class="mono-tile" aria-hidden="true">UV</span><div><h3><a href="persona.html?p=vasquez">Ulises Vásquez Gallardo</a></h3><p class="p-role">Consultor Junior de Innovación</p><p class="p-cred">Área de Transformación Digital</p></div></div>
+        <p class="bio">Explora y prototipa nuevas soluciones digitales para los procesos de los clientes: herramientas sin código, automatización e inteligencia artificial aplicada.</p>
+        <div class="p-tags"><span>Innovación</span><span>Prototipos</span><span>Herramientas sin código</span><span>IA aplicada</span></div>
+        <div class="p-phases" aria-label="Fases en las que participa: Mejorar"><i></i><i></i><i></i><i class="on" style="--c:var(--p4)"></i><span>Mejorar</span></div>
+        <a class="p-link" href="persona.html?p=vasquez">Ver perfil <span aria-hidden="true">→</span></a>
+      </article>
       <article class="person">
-        <div class="p-top"><span class="mono-tile" aria-hidden="true">LB</span><div><h3><a href="persona.html?p=balarezo">Luis Balarezo</a></h3><p class="p-role">Desarrollador full stack · backend</p></div></div>
-        <p class="bio">Construye las plataformas que sostienen la gestión por procesos: repositorios de procesos, módulos de indicadores, encuestas y actas digitales, e integraciones con los sistemas del cliente.</p>
-        <div class="p-tags"><span>Backend y API</span><span>Bases de datos</span><span>Plataformas web</span><span>Integraciones</span></div>
-        <div class="p-phases" aria-label="Fases en las que participa: Medir y Mejorar"><i></i><i></i><i class="on" style="--c:var(--p3)"></i><i class="on" style="--c:var(--p4)"></i><span>Medir · Mejorar</span></div>
-      <a class="p-link" href="persona.html?p=balarezo">Ver perfil <span aria-hidden="true">→</span></a>
-</article>
+        <div class="p-top"><span class="mono-tile" aria-hidden="true">OR</span><div><h3><a href="persona.html?p=romero">Oriol Romero Saavedra</a></h3><p class="p-role">Consultor Junior de Gestión por Procesos</p><p class="p-cred">Área de Procesos</p></div></div>
+        <p class="bio">Documenta y mide los procesos de cada cliente: mapas y fichas de procesos, e indicadores con ficha técnica, línea base y meta, OKR y tableros que se leen en un minuto.</p>
+        <div class="p-tags"><span>Mapas de procesos</span><span>Fichas de indicadores</span><span>KPI y OKR</span><span>Tableros</span></div>
+        <div class="p-phases" aria-label="Fases en las que participa: Documentar, Procedimentar y Medir"><i class="on" style="--c:var(--p1)"></i><i class="on" style="--c:var(--p2)"></i><i class="on" style="--c:var(--p3)"></i><i></i><span>Documentar · Procedimentar · Medir</span></div>
+        <a class="p-link" href="persona.html?p=romero">Ver perfil <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="person">
+        <div class="p-top"><span class="mono-tile" aria-hidden="true">DC</span><div><h3><a href="persona.html?p=ccansaya">Daniela Ccansaya Becerra</a></h3><p class="p-role">Consultora Junior de Comunicaciones</p><p class="p-cred">Área de Marketing y Comunicaciones</p></div></div>
+        <p class="bio">Cuida la marca y la comunicación de la firma y, en cada proyecto, la comunicación del cambio: que cada usuario sepa qué cambia en su trabajo, por qué y cómo.</p>
+        <div class="p-tags"><span>Comunicación corporativa</span><span>Comunicación del cambio</span><span>Marketing digital</span></div>
+        <div class="p-phases" aria-label="Fases en las que participa: Mejorar"><i></i><i></i><i></i><i class="on" style="--c:var(--p4)"></i><span>Mejorar</span></div>
+        <a class="p-link" href="persona.html?p=ccansaya">Ver perfil <span aria-hidden="true">→</span></a>
+      </article>
     </div>
   </div>
 </section>
@@ -1905,12 +1929,15 @@ body{font-weight:300;color:#222}
     ['Procedimientos estandarizados con BPMN 2.0', 'Fase 2 · Hacer: diagramas de flujo y registro formal por proceso', 'index.html#caso-bpmn'],
     ['Monitoreo integral en 300 oficinas', 'Fase 3 · Verificar: sistema de KPI por proceso', 'index.html#caso-kpi'],
     ['Automatización de servicios con RPA', 'Fase 4 · Actuar: As-Is/To-Be, Google Workspace, UiPath y Power Automate', 'index.html#caso-rpa'],
-    ['Nuestra gente', 'José Antonio Chumacero, Alvaro Rojas, Isabel Flores, Oriol Romero, Luis Balarezo', 'index.html#gente'],
+    ['Nuestra gente', 'Organigrama y equipo: José Antonio Chumacero, Alvaro Rojas, Karla Ñingle, Luis Balarezo, Isabel Flores, Ulises Vásquez, Oriol Romero, Daniela Ccansaya', 'index.html#gente'],
     ['José Antonio Chumacero Calle', 'Managing Partner & Gerente General · Magíster en Economía', 'persona.html?p=chumacero'],
-    ['Alvaro Rojas Carnero', 'Engagement Manager & Subgerente de Operaciones · PMBOK, BPMN 2.0', 'persona.html?p=rojas'],
-    ['Isabel Flores Huamani', 'Especialista en automatización de procesos', 'persona.html?p=flores'],
-    ['Oriol Romero Saavedra', 'Especialista en indicadores, KPI y OKR', 'persona.html?p=romero'],
-    ['Luis Balarezo', 'Desarrollador full stack, especialidad backend', 'persona.html?p=balarezo']
+    ['Alvaro Rojas Carnero', 'Engagement Manager & Subgerente de Operaciones y Estrategia Corporativa', 'persona.html?p=rojas'],
+    ['Karla Ñingle Saona', 'Consultora Junior de Proyectos · Área de Dirección de Proyectos', 'persona.html?p=ningle'],
+    ['Luis Balarezo Ramos', 'Líder de Transformación Digital y Programador Full Stack', 'persona.html?p=balarezo'],
+    ['Isabel Flores Huamani', 'Consultora Junior de Automatización · Área de Transformación Digital', 'persona.html?p=flores'],
+    ['Ulises Vásquez Gallardo', 'Consultor Junior de Innovación · Área de Transformación Digital', 'persona.html?p=vasquez'],
+    ['Oriol Romero Saavedra', 'Consultor Junior de Gestión por Procesos · Área de Procesos', 'persona.html?p=romero'],
+    ['Daniela Ccansaya Becerra', 'Consultora Junior de Comunicaciones · Área de Marketing y Comunicaciones', 'persona.html?p=ccansaya']
   ];
   var srch = $('#srch'), q = $('#q'), res = $('#srch-res'), none = $('#srch-none'), sBtn = $('#search-open');
   function norm(t) { return t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }

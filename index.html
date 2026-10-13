@@ -171,6 +171,51 @@ img{max-width:100%;display:block}
 .cs-fases a:hover{color:var(--blue)}
 .cs-fases b{display:block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin-bottom:2px}
 
+/* ---------- Organigrama ---------- */
+.org{--ln:#9AA8BA;max-width:1360px;margin:0 auto clamp(56px,6vw,88px)}
+.org ul{list-style:none;margin:0;padding:0}
+.org-top{display:flex;justify-content:center;position:relative;padding-bottom:30px}
+.org-top::after{content:"";position:absolute;left:50%;bottom:0;height:30px;border-left:2px solid var(--ln)}
+.org-box{display:block;width:min(640px,100%);text-align:center;padding:20px 28px;transition:box-shadow .2s}
+.org-box:hover{box-shadow:0 10px 34px rgba(5,28,44,.22)}
+.org-u{display:block;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;line-height:1.4}
+.org-box b{display:block;font-family:var(--serif);font-weight:700;font-size:clamp(22px,1.9vw,28px);line-height:1.2;margin-top:6px}
+.org-c{display:block;font-size:15px;line-height:1.4;margin-top:4px}
+.org-gg{background:var(--ink);color:#fff}
+.org-gg .org-u,.org-gg .org-c{color:#AFC2FF}
+.org-sg{background:#fff;color:#000;border:2px solid var(--ink);border-top:6px solid var(--blue)}
+.org-sg .org-u{color:var(--blue)}
+.org-sg .org-c{color:var(--muted)}
+.org-areas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.org-area{position:relative;padding-top:30px}
+.org-area::before{content:"";position:absolute;top:0;left:50%;height:30px;border-left:2px solid var(--ln)}
+.org-area::after{content:"";position:absolute;top:0;left:-12px;right:-12px;border-top:2px solid var(--ln)}
+.org-area:first-child::after{left:50%}
+.org-area:last-child::after{right:50%}
+.org-ah{display:grid;place-items:center;min-height:80px;padding:16px 14px;background:var(--ink);color:#fff;font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-align:center;line-height:1.4}
+.org .org-ps{position:relative;padding-top:22px}
+.org-ps::before{content:"";position:absolute;top:0;left:50%;height:22px;border-left:2px solid var(--ln)}
+.org-ps>li+li{margin-top:14px}
+.org-p{display:block;position:relative;background:#fff;border-left:4px solid var(--blue);padding:16px 18px;transition:box-shadow .2s}
+.org-p:hover{box-shadow:0 8px 30px rgba(0,0,0,.12)}
+.org-p:hover b{color:var(--blue)}
+.org-p b{display:block;font-family:var(--serif);font-weight:700;font-size:19px;line-height:1.25;color:#000}
+.org-p span{display:block;font-size:14px;line-height:1.4;color:var(--muted);margin-top:4px}
+.org-p.lider{border-left-color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.org-p.lider span{color:var(--blue);font-weight:600}
+.org .org-team{margin-left:20px;padding:14px 0 0 22px}
+.org-team li{position:relative}
+.org-team li+li{margin-top:14px}
+.org-team li::before{content:"";position:absolute;left:-22px;top:-14px;width:20px;height:50px;border-left:2px solid var(--ln);border-bottom:2px solid var(--ln)}
+.org-team li:not(:last-child)::after{content:"";position:absolute;left:-22px;top:36px;bottom:-14px;border-left:2px solid var(--ln)}
+.unit{font-size:14px;color:var(--muted);margin-top:4px;line-height:1.45}
+@media (max-width:1100px){
+  .org-areas{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:32px}
+  .org-top.sub::after,.org-area::before,.org-area::after{display:none}
+  .org-area{padding-top:0}
+}
+@media (max-width:620px){.org-areas{grid-template-columns:minmax(0,1fr)}}
+
 /* ---------- People ---------- */
 .people{background:var(--grey);padding:clamp(48px,5vw,64px) clamp(16px,4.5vw,72px) clamp(64px,7vw,96px)}
 .people .label{margin-bottom:clamp(32px,4vw,56px)}
@@ -318,6 +363,7 @@ img{max-width:100%;display:block}
 
   <section class="people" id="gente" aria-labelledby="gente-t">
     <h2 class="label" id="gente-t">Nuestra gente</h2>
+    <div class="org" id="org" role="group" aria-label="Organigrama de ROIC &amp; Company"></div>
     <div class="pgrid" id="pgrid"></div>
   </section>
   <dialog class="cs" id="caso-sigpro" aria-labelledby="caso-sigpro-t">
@@ -374,9 +420,31 @@ img{max-width:100%;display:block}
 
   /* El equipo (nombres, cargos, fotos y perfiles) está en equipo.js. */
   var EQUIPO = window.EQUIPO || [];
+  var UNIDADES = window.UNIDADES || {}, AREAS = window.AREAS || [];
 
   var $ = function (s) { return document.querySelector(s); };
   function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  /* ---------- Organigrama ---------- */
+  function enUnidad(u) { return EQUIPO.filter(function (p) { return p.unidad === u; }); }
+  function persona(p, clase) {
+    return '<a class="org-p' + (clase ? ' ' + clase : '') + '" href="persona.html?p=' + esc(p.id) + '"><b>' + esc(p.nombre) + '</b><span>' + esc(p.cargo) + '</span></a>';
+  }
+  function cabeza(u, clase, extra) {
+    var p = enUnidad(u)[0];
+    if (!p) return '';
+    return '<div class="org-top' + (extra ? ' ' + extra : '') + '"><a class="org-box ' + clase + '" href="persona.html?p=' + esc(p.id) + '"><span class="org-u">' + esc(UNIDADES[u]) +
+      '</span><b>' + esc(p.nombre) + '</b><span class="org-c">' + esc(p.cargo) + '</span></a></div>';
+  }
+  $('#org').innerHTML = cabeza('gerencia', 'org-gg') + cabeza('subgerencia', 'org-sg', 'sub') +
+    '<ul class="org-areas">' + AREAS.map(function (a) {
+      var gente = enUnidad(a), lider = gente.filter(function (p) { return p.lider; })[0];
+      var resto = gente.filter(function (p) { return p !== lider; });
+      var cuerpo = lider
+        ? '<ul class="org-ps"><li>' + persona(lider, 'lider') + '<ul class="org-team">' + resto.map(function (p) { return '<li>' + persona(p) + '</li>'; }).join('') + '</ul></li></ul>'
+        : '<ul class="org-ps">' + resto.map(function (p) { return '<li>' + persona(p) + '</li>'; }).join('') + '</ul>';
+      return '<li class="org-area"><h3 class="org-ah">' + esc(UNIDADES[a]) + '</h3>' + cuerpo + '</li>';
+    }).join('') + '</ul>';
 
   /* ---------- People ---------- */
   var MAIL = '<svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="4.5" width="16" height="11" rx="1"/><path d="M2.5 5l7.5 6 7.5-6"/></svg>';
@@ -386,7 +454,8 @@ img{max-width:100%;display:block}
     var nombre = (p.tratamiento ? p.tratamiento + ' ' : '') + p.nombre;
     return '<article class="person">' +
       '<div class="avatar" aria-hidden="true">' + esc(p.ini) + '<img src="media/equipo/' + esc(p.id) + '.jpg" alt="" loading="lazy" onerror="this.remove()"></div>' +
-      '<div><h3><a href="persona.html?p=' + esc(p.id) + '">' + esc(nombre) + '</a></h3><p class="role">' + esc(p.cargo) + (p.sede ? ', ' + esc(p.sede) : '') + '</p><hr><p class="bio">' + esc(p.bio) + '</p>' +
+      '<div><h3><a href="persona.html?p=' + esc(p.id) + '">' + esc(nombre) + '</a></h3><p class="role">' + esc(p.cargo) + (p.sede ? ', ' + esc(p.sede) : '') + '</p>' +
+      (AREAS.indexOf(p.unidad) > -1 ? '<p class="unit">' + esc(UNIDADES[p.unidad]) + '</p>' : '') + '<hr><p class="bio">' + esc(p.bio) + '</p>' +
       '<div class="soc"><a href="' + esc(mail) + '" aria-label="Escribir a ' + esc(p.nombre) + '">' + MAIL + '</a>' +
       (p.linkedin ? '<a href="' + esc(p.linkedin) + '" target="_blank" rel="noopener" aria-label="LinkedIn de ' + esc(p.nombre) + '">' + IN + '</a>' : '') +
       '</div></div></article>';
@@ -532,12 +601,15 @@ img{max-width:100%;display:block}
     ['Procedimientos estandarizados con BPMN 2.0', 'Fase 2 · Hacer: diagramas de flujo y registro formal por proceso', '#caso-bpmn'],
     ['Monitoreo integral en 300 oficinas', 'Fase 3 · Verificar: sistema de KPI por proceso', '#caso-kpi'],
     ['Automatización de servicios con RPA', 'Fase 4 · Actuar: As-Is/To-Be, Google Workspace, UiPath y Power Automate', '#caso-rpa'],
-    ['Nuestra gente', 'José Antonio Chumacero, Alvaro Rojas, Isabel Flores, Oriol Romero, Luis Balarezo', '#gente'],
+    ['Nuestra gente', 'Organigrama y equipo: José Antonio Chumacero, Alvaro Rojas, Karla Ñingle, Luis Balarezo, Isabel Flores, Ulises Vásquez, Oriol Romero, Daniela Ccansaya', '#gente'],
     ['José Antonio Chumacero Calle', 'Managing Partner & Gerente General · Magíster en Economía', 'persona.html?p=chumacero'],
-    ['Alvaro Rojas Carnero', 'Engagement Manager & Subgerente de Operaciones · PMBOK, BPMN 2.0', 'persona.html?p=rojas'],
-    ['Isabel Flores Huamani', 'Especialista en automatización de procesos', 'persona.html?p=flores'],
-    ['Oriol Romero Saavedra', 'Especialista en indicadores, KPI y OKR', 'persona.html?p=romero'],
-    ['Luis Balarezo', 'Desarrollador full stack, especialidad backend', 'persona.html?p=balarezo']
+    ['Alvaro Rojas Carnero', 'Engagement Manager & Subgerente de Operaciones y Estrategia Corporativa', 'persona.html?p=rojas'],
+    ['Karla Ñingle Saona', 'Consultora Junior de Proyectos · Área de Dirección de Proyectos', 'persona.html?p=ningle'],
+    ['Luis Balarezo Ramos', 'Líder de Transformación Digital y Programador Full Stack', 'persona.html?p=balarezo'],
+    ['Isabel Flores Huamani', 'Consultora Junior de Automatización · Área de Transformación Digital', 'persona.html?p=flores'],
+    ['Ulises Vásquez Gallardo', 'Consultor Junior de Innovación · Área de Transformación Digital', 'persona.html?p=vasquez'],
+    ['Oriol Romero Saavedra', 'Consultor Junior de Gestión por Procesos · Área de Procesos', 'persona.html?p=romero'],
+    ['Daniela Ccansaya Becerra', 'Consultora Junior de Comunicaciones · Área de Marketing y Comunicaciones', 'persona.html?p=ccansaya']
   ];
   var srch = $('#srch'), q = $('#q'), res = $('#srch-res'), none = $('#srch-none'), sBtn = $('#search-open');
   function norm(t) { return t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }

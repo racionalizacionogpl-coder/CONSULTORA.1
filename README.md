@@ -149,6 +149,12 @@ de cada integrante, `persona.html?p=<id>` (por ejemplo,
 La experiencia previa y la formación se completan en los campos `experiencia`
 y `formacion`; mientras estén vacíos, esas secciones no se muestran.
 
+En `equipo.js` también está el organigrama: cada integrante indica su unidad
+(`gerencia`, `subgerencia` o su área), si lidera el área (`lider`) y a quién
+reporta (`reporta`). Con eso se dibuja el organigrama de «Nuestra gente» en
+la portada y la sección «En la organización» de cada perfil. Las áreas y sus
+nombres están en `UNIDADES` y `AREAS`, al final del archivo.
+
 ## Nuestro impacto (impacto.html)
 
 Sigue la estructura de la página «Nuestro impacto social» de McKinsey: portada
