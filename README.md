@@ -159,9 +159,11 @@ nombres están en `UNIDADES` y `AREAS`, al final del archivo.
 
 Las cinco páginas comparten un mismo sistema de animación, con las reglas de
 las skills de animación de Emil Kowalski y de Taste Skill adaptadas al sitio
-en `.claude/skills/roic-movimiento/SKILL.md`:
+en `.claude/skills/roic-movimiento/SKILL.md`. Las skills originales están
+instaladas en `.claude/skills/` (lista, origen y prioridad en
+`.claude/skills/README.md`):
 
-- la portada: el título entra palabra por palabra y el video se acerca muy
+- la portada: el título sube renglón por renglón y el video se acerca muy
   despacio; al bajar, el texto sube y se desvanece;
 - en todas las páginas, el contenido aparece escalonado al llegar a él y las
   imágenes se descubren de abajo hacia arriba;

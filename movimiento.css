@@ -9,6 +9,7 @@
    - Lo que se mueve por la pantalla, con ease-in-out.
    - Interfaz por debajo de 300 ms; las entradas de contenido, más largas.
    - Escalonado de 70 ms; subida de 24 px; nada aparece desde scale(0).
+   - Una sola respuesta al pasar el ratón; ningún bucle sin fin.
    - Efectos de ratón solo con ratón.
    - Con «reducir movimiento»: menos y más suave, no nada. Se conservan
      los fundidos y se quitan los desplazamientos.
@@ -62,7 +63,8 @@ html.rv-suave{--rv-y:0px;--rv-cortina:inset(0);--rv-zoom:1;--m-acerca:1;--m-entr
 .rv .hero .clip{transform:scale(var(--m-acerca));transition:opacity 1.1s var(--m-out),transform 12s linear}
 .rv .hero .clip.on{transform:scale(1)}
 @keyframes m-flecha{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,9px,0)}}
-.rv:not(.rv-suave) .down svg{animation:m-flecha 2.4s var(--m-in-out) infinite}
+/* La flecha invita a bajar tres veces y se detiene: nada de bucles sin fin. */
+.rv:not(.rv-suave) .down svg{animation:m-flecha 2.4s var(--m-in-out) 1.6s 3}
 
 /* ---------- 3. Encabezado: se esconde al bajar y vuelve al subir ---------- */
 .hdr,.mk-hdr{transition:transform 260ms var(--m-out),box-shadow 200ms ease}
@@ -85,15 +87,12 @@ html.rv-suave{--rv-y:0px;--rv-cortina:inset(0);--rv-zoom:1;--m-acerca:1;--m-entr
 /* Al presionar un botón, se hunde un poco (scale independiente de transform). */
 :is(.btn, .cta, .pause, .cs-x){transition-property:background-color,color,border-color,scale;transition-duration:200ms,200ms,200ms,140ms;transition-timing-function:ease,ease,ease,var(--m-out)}
 :is(.btn, .cta, .pause, .cs-x):active{scale:.97}
+/* Una sola respuesta al pasar el ratón, igual en todo el sitio: la imagen se acerca un poco. */
 @media (hover:hover) and (pointer:fine){
   :is(.feat .media, .cards .media, .amedia, .fmedia, .story, .im-shape, .pub-art) > :is(img, canvas, svg){transition:transform 500ms ease}
   :is(.feat:hover .media, .card:hover .media, .acard:hover .amedia, .fcard:hover .fmedia, .pub:hover .pub-art) > :is(img, canvas, svg),
   .story:hover > :is(img, canvas){transform:scale(1.035)}
   a:hover .chev-r,.card:hover .chev-r,.pub:hover .chev-r{transform:translate3d(4px,0,0) rotate(45deg)}
-  .org-p,.org-box{transition:box-shadow 200ms ease,transform 200ms ease}
-  .org-p:hover,.org-box:hover{transform:translate3d(0,-3px,0)}
-  .person .avatar img,.mp .av img{transition:transform 500ms ease}
-  .person:hover .avatar img,.mp:hover .av img{transform:scale(1.05)}
 }
 
 /* ---------- 5. Cifras con contador ---------- */
@@ -122,7 +121,7 @@ html.rv-suave{--rv-y:0px;--rv-cortina:inset(0);--rv-zoom:1;--m-acerca:1;--m-entr
 .rv:not(.rv-suave) .org.org-in .org-team li::after{transform:none;transition:transform 550ms var(--m-in-out) var(--ld,0ms)}
 
 /* ---------- 7. Fichas y artículos que se abren (modales: centrados) ---------- */
-dialog:is(.cs, .reader){opacity:0;transform:translate3d(0,8px,0) scale(.97);transition:opacity 160ms var(--m-out),transform 160ms var(--m-out),overlay 160ms allow-discrete,display 160ms allow-discrete}
+dialog:is(.cs, .reader){opacity:0;transform:translate3d(0,8px,0) scale(.97);transition:opacity 200ms var(--m-out),transform 200ms var(--m-out),overlay 200ms allow-discrete,display 200ms allow-discrete}
 dialog:is(.cs, .reader)[open]{opacity:1;transform:none;transition:opacity 220ms var(--m-out),transform 300ms var(--m-out),overlay 300ms allow-discrete,display 300ms allow-discrete}
 @starting-style{dialog:is(.cs, .reader)[open]{opacity:0;transform:translate3d(0,8px,0) scale(.97)}}
 dialog:is(.cs, .reader)::backdrop{opacity:0;transition:opacity 220ms ease,overlay 220ms allow-discrete,display 220ms allow-discrete}
@@ -135,6 +134,9 @@ dialog:is(.cs, .reader)[open]::backdrop{opacity:1}
 ::view-transition-old(root){animation:160ms var(--m-out) both m-sale}
 ::view-transition-new(root){animation:420ms var(--m-out) both m-entra}
 ::view-transition-group(nombre){animation-duration:500ms;animation-timing-function:var(--m-in-out)}
+/* Un desenfoque leve a mitad del viaje funde el nombre pequeño con el grande. */
+::view-transition-image-pair(nombre){animation:m-funde 500ms var(--m-in-out)}
+@keyframes m-funde{50%{filter:blur(2px)}}
 @keyframes m-sale{to{opacity:0}}
 @keyframes m-entra{from{opacity:0;transform:translate3d(0,12px,0)}}
 

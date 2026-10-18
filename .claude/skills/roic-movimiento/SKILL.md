@@ -12,6 +12,13 @@ Emil Kowalski (`animate` y `review-animations`, de
 reglas de movimiento de Taste Skill
 ([github.com/Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)).
 
+Las skills originales están instaladas en `.claude/skills/` (ver
+`.claude/skills/README.md`). Para crear una animación, use `animate`; para
+revisarla, `review-animations` (con sus valores en `STANDARDS.md`); para
+auditar todo el sitio, `improve-animations`. Esta skill manda sobre ellas en
+lo que es propio de este sitio, y el diseño de McKinsey que pidió el cliente
+manda sobre las reglas de estilo de las skills de Taste.
+
 Todo el movimiento vive en dos archivos que comparten las cinco páginas:
 
 - `movimiento.css`: curvas, duraciones, estados iniciales y finales.
@@ -43,19 +50,24 @@ del título).
 5. **Duraciones.**
    - Al presionar un botón: 140 ms.
    - Encabezado y efectos al pasar el ratón: 200–280 ms.
-   - Fichas y artículos que se abren: 220–300 ms al abrir; 160 ms al cerrar.
+   - Fichas y artículos que se abren: 220–300 ms al abrir; 200 ms al cerrar.
    - Interfaz, siempre por debajo de 300 ms.
    - Contenido que aparece al desplazarse: 700 ms; imágenes, 900 ms la
      cortina y 1,2 s el asentamiento.
    - Portada: palabras de 900 ms; contadores, 1,6 s.
 6. **Escalonado de 70 ms**, con un máximo de 490 ms. Nada entra todo a la
-   vez.
+   vez. En la portada se escalonan como mucho cuatro cosas: el título sube
+   renglón por renglón (90 ms entre renglones), no palabra por palabra.
 7. **Subida de 24 px** con fundido. Nada aparece desde `scale(0)`: como
    mucho desde `scale(.97)`.
 8. **Las fichas (modales) se abren centradas**, desde `scale(.97)` y 8 px
    más abajo.
 9. **Efectos al pasar el ratón solo con ratón:** dentro de
-   `@media (hover:hover) and (pointer:fine)`.
+   `@media (hover:hover) and (pointer:fine)`. Y una sola respuesta, igual en
+   todo el sitio: la imagen de la tarjeta se acerca un poco. No se levantan
+   ni se agrandan las tarjetas, las cajas del organigrama ni las fotos.
+   **Ningún bucle sin fin:** la flecha de la portada rebota tres veces y se
+   detiene.
 10. **Movimiento reducido: menos y más suave, no nada.** Con
     `prefers-reduced-motion: reduce` el `<head>` agrega la clase `rv-suave`.
     Con ella todo aparece con fundido y sin desplazamiento, los contadores
@@ -70,13 +82,13 @@ del título).
 
 | Dónde | Qué hace |
 |---|---|
-| Portada | El título entra palabra por palabra; el video se acerca muy despacio; el texto se desplaza y se desvanece al bajar; la flecha invita a bajar. |
+| Portada | El título sube renglón por renglón desde una máscara; el video se acerca muy despacio; el texto se desplaza y se desvanece al bajar; la flecha invita a bajar tres veces. |
 | Todas las páginas | El contenido aparece al llegar a él, escalonado; las imágenes se descubren de abajo hacia arriba. |
 | Encabezado | Se esconde al bajar y vuelve al subir; una línea azul se desliza hasta la pestaña señalada; una barra arriba marca el avance de lectura. |
 | «Nuestro impacto en cifras» | Contadores de 0 a cada cifra. |
 | Organigrama | Las líneas se dibujan de arriba abajo y cada caja aparece en orden. |
 | Fichas de casos y artículos | Se abren desde abajo y se cierran más rápido. |
-| Paso de una página a otra | Fundido; el nombre de una persona viaja desde su tarjeta hasta el título de su perfil. |
+| Paso de una página a otra | Fundido con el encabezado fijo; el nombre de una persona viaja desde su tarjeta hasta el título de su perfil, con un desenfoque leve a mitad de camino. |
 | Botones | Se hunden un poco al presionarlos. |
 
 ## Para animar un elemento nuevo
@@ -91,6 +103,7 @@ del título).
 ## Revisión antes de publicar
 
 - Nada de `transition: all`, `scale(0)` ni `ease-in`.
+- Una sola respuesta al pasar el ratón y ningún bucle sin fin.
 - Nada que mida más de 300 ms en la interfaz sin motivo.
 - Recorrer cada página hasta el final y comprobar que no queda nada oculto
   (opacidad 0 o cortina cerrada).

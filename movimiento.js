@@ -63,19 +63,27 @@
     var texto = titulo.textContent;
     var palabras = texto.split(/\s+/).filter(Boolean);
     titulo.textContent = '';
-    palabras.forEach(function (p, i) {
+    var cajas = palabras.map(function (p, i) {
       var caja = document.createElement('span'), interior = document.createElement('span');
       caja.className = 'm-pal';
       interior.textContent = p;
-      interior.style.setProperty('--wd', (120 + i * 70) + 'ms');
       caja.appendChild(interior);
       titulo.appendChild(caja);
       if (i < palabras.length - 1) titulo.appendChild(document.createTextNode(' '));
+      return caja;
+    });
+    // El título sube renglón por renglón (las palabras de un mismo renglón, juntas):
+    // dos pasos en computadora, hasta cuatro en celular.
+    var renglones = [];
+    cajas.forEach(function (caja) {
+      var arriba = Math.round(caja.offsetTop);
+      if (renglones.indexOf(arriba) < 0) renglones.push(arriba);
+      caja.firstChild.style.setProperty('--wd', (120 + renglones.indexOf(arriba) * 90) + 'ms');
     });
     titulo.classList.add('m-partido');
     requestAnimationFrame(function () { requestAnimationFrame(function () { heroTxt.classList.add('m-listo'); }); });
     // Terminada la entrada, el título vuelve a ser texto simple (con su sombra completa).
-    setTimeout(function () { titulo.textContent = texto; }, 120 + palabras.length * 70 + 1100);
+    setTimeout(function () { titulo.textContent = texto; }, 120 + renglones.length * 90 + 1100);
   } else if (heroTxt) {
     heroTxt.classList.add('m-listo');
     if (titulo) titulo.classList.add('m-partido');
