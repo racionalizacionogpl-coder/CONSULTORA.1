@@ -41,6 +41,10 @@ FOTOS = {
     'vasquez':   ('vasquez.jpg',   2000, (190, 70, 1670, 1550)),
     # Daniela: retrato de medio cuerpo sobre fondo blanco; el perfil usa la foto entera.
     'ccansaya':  ('ccansaya.jpg',  2000, (120, 50, 1320, 1250)),
+    # Karla: de pie sobre fondo blanco; el perfil se corta a la cintura, encima de las manos.
+    'ningle':    ('ningle.jpg',    1450, (595, 0, 1415, 820)),
+    # Luis: hasta la cadera sobre fondo blanco; el perfil se corta encima del cinturón.
+    'balarezo':  ('balarezo.jpg',  1780, (333, 0, 1313, 980)),
 }
 
 # Pelo suelto sobre fondo liso: el fondo que se ve entre los mechones se vuelve
