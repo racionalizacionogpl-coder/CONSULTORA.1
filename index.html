@@ -178,13 +178,11 @@ img{max-width:100%;display:block}
 .org-top::after{content:"";position:absolute;left:50%;bottom:0;height:30px;border-left:2px solid var(--ln)}
 .org-box{display:block;width:min(640px,100%);text-align:center;padding:20px 28px;transition:box-shadow .2s}
 .org-box:hover{box-shadow:0 10px 34px rgba(5,28,44,.22)}
-.org-u{display:block;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;line-height:1.4}
-.org-box b{display:block;font-family:var(--serif);font-weight:700;font-size:clamp(22px,1.9vw,28px);line-height:1.2;margin-top:6px}
+.org-box b{display:block;font-family:var(--serif);font-weight:700;font-size:clamp(22px,1.9vw,28px);line-height:1.2}
 .org-c{display:block;font-size:15px;line-height:1.4;margin-top:4px}
 .org-gg{background:var(--ink);color:#fff}
-.org-gg .org-u,.org-gg .org-c{color:#AFC2FF}
+.org-gg .org-c{color:#AFC2FF}
 .org-sg{background:#fff;color:#000;border:2px solid var(--ink);border-top:6px solid var(--blue)}
-.org-sg .org-u{color:var(--blue)}
 .org-sg .org-c{color:var(--muted)}
 .org-areas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
 .org-area{position:relative;padding-top:30px}
@@ -433,8 +431,7 @@ img{max-width:100%;display:block}
   function cabeza(u, clase, extra) {
     var p = enUnidad(u)[0];
     if (!p) return '';
-    return '<div class="org-top' + (extra ? ' ' + extra : '') + '"><a class="org-box ' + clase + '" href="persona.html?p=' + esc(p.id) + '"><span class="org-u">' + esc(UNIDADES[u]) +
-      '</span><b>' + esc(p.nombre) + '</b><span class="org-c">' + esc(p.cargo) + '</span></a></div>';
+    return '<div class="org-top' + (extra ? ' ' + extra : '') + '"><a class="org-box ' + clase + '" href="persona.html?p=' + esc(p.id) + '"><b>' + esc(p.nombre) + '</b><span class="org-c">' + esc(p.cargo) + '</span></a></div>';
   }
   $('#org').innerHTML = cabeza('gerencia', 'org-gg') + cabeza('subgerencia', 'org-sg', 'sub') +
     '<ul class="org-areas">' + AREAS.map(function (a) {
