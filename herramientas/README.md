@@ -95,7 +95,7 @@ fondo de la cabecera de su perfil (`media/equipo/<id>-recorte.webp`) y la foto
 cuadrada de las tarjetas (`media/equipo/<id>.jpg`, 800 × 800), encuadrada en la
 cabeza y los hombros. El recorte conserva la resolución completa del original
 para que se vea nítido aun con el navegador ampliado al 400 %; en WebP con
-transparencia pesa entre 150 y 270 KB. Dónde se corta cada recorte y cómo se
+transparencia pesa entre 150 y 360 KB. Dónde se corta cada recorte y cómo se
 encuadra cada foto cuadrada se ajusta en la tabla `FOTOS` del programa.
 
 ```sh

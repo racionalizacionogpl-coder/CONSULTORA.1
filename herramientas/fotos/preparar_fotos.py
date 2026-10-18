@@ -35,6 +35,10 @@ FOTOS = {
     'rojas':     ('rojas.jpg',     2000, (580, 40, 1400, 860)),
     # Oriol: hasta la cadera, fondo de oficina; el perfil se corta a la cintura.
     'romero':    ('romero.jpg',    1450, (560, 0, 1380, 820)),
+    # Isabel: retrato de medio cuerpo sobre fondo blanco; el perfil usa la foto entera.
+    'flores':    ('flores.jpg',    2000, (440, 0, 1540, 1100)),
+    # Ulises: retrato de medio cuerpo sobre fondo blanco; el perfil usa la foto entera.
+    'vasquez':   ('vasquez.jpg',   2000, (190, 70, 1670, 1550)),
 }
 
 sesion = new_session('u2net_human_seg')
