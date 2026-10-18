@@ -180,6 +180,39 @@ function comprobar(ok, descripcion, detalle) {
   await p.waitForTimeout(300);
   comprobar(await p.$eval('#art-nt', d => d.open), 'servicios.html#art-nt abre el artículo');
 
+  // Movimiento: al recorrer cada página no queda nada oculto, las cifras
+  // llegan a su valor y, con movimiento reducido, todo se ve sin desplazarse.
+  const ocultosTras = async (pg) => {
+    await pg.evaluate(async () => {
+      for (let y = 0; y <= document.body.scrollHeight; y += 300) { window.scrollTo({ top: y, behavior: 'instant' }); await new Promise(r => setTimeout(r, 90)); }
+    });
+    await pg.waitForTimeout(2600);
+    return pg.evaluate(() => [...document.querySelectorAll('main *')].filter(e => {
+      const s = getComputedStyle(e);
+      return (s.opacity === '0' || s.clipPath.startsWith('inset(100%')) && e.getBoundingClientRect().height > 0 &&
+        !e.closest('dialog, [hidden], .velo, .reg, .tip, .hero, input');
+    }).map(e => e.tagName.toLowerCase() + '.' + e.className).slice(0, 5));
+  };
+  for (const pagina of ['index.html', 'trabajo.html', 'impacto.html', 'servicios.html', 'persona.html?p=rojas']) {
+    await p.goto(url(pagina), { waitUntil: 'load' });
+    const ocultos = await ocultosTras(p);
+    comprobar(ocultos.length === 0, `${pagina}: al recorrerla, todo el contenido queda visible`, ocultos);
+  }
+  await p.goto(url('index.html'), { waitUntil: 'load' });
+  await p.evaluate(() => document.querySelector('.cifras').scrollIntoView({ block: 'center' }));
+  await p.waitForTimeout(2400);
+  comprobar((await p.$$eval('[data-cuenta]', l => l.map(x => x.textContent))).join() === '20,16,58,300', 'los contadores llegan a 20, 16, 58 y 300',
+    await p.$$eval('[data-cuenta]', l => l.map(x => x.textContent)));
+  await p.waitForTimeout(1500);
+  comprobar(await p.$eval('.hero-txt h1', h => h.textContent) === 'ROIC & Company Group in the Perú', 'el título de la portada queda como texto normal tras su entrada');
+  const suave = await navegador.newContext({ viewport: { width: 1440, height: 900 }, reducedMotion: 'reduce', ignoreHTTPSErrors: true });
+  const ps = await suave.newPage();
+  await ps.goto(url('index.html'), { waitUntil: 'load' });
+  comprobar(await ps.evaluate(() => document.documentElement.classList.contains('rv-suave')) &&
+    (await ps.$$eval('[data-cuenta]', l => l.map(x => x.textContent))).join() === '20,16,58,300', 'con movimiento reducido: modo suave y cifras completas desde el inicio');
+  comprobar((await ocultosTras(ps)).length === 0, 'con movimiento reducido, todo el contenido queda visible');
+  await suave.close();
+
   comprobar(errores.length === 0, 'sin errores de JavaScript', errores);
   await navegador.close();
   console.log(fallas ? `\n${fallas} prueba(s) fallaron.` : '\nTodas las pruebas pasaron.');

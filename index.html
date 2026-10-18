@@ -245,6 +245,9 @@ img{max-width:100%;display:block}
 .side-logo img{width:240px;height:auto}
 @media (max-width:1279px){.logo img{height:48px}}
 </style>
+<link rel="stylesheet" href="movimiento.css">
+<script>/* Movimiento: oculta lo que va a aparecer al desplazarse antes de dibujar la página; si movimiento.js no llega, todo se muestra a los 3 s. */
+(function (d) { if ('IntersectionObserver' in window) { d.classList.add('rv'); if (matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('rv-suave'); setTimeout(function () { if (!d.classList.contains('rv-js')) d.classList.remove('rv'); }, 3000); } })(document.documentElement);</script>
 </head>
 <body>
 
@@ -318,6 +321,19 @@ img{max-width:100%;display:block}
 
   <section class="intro" id="intro">
     <p>Desde Lima acompañamos a entidades públicas y empresas privadas de todo el país a ordenar la forma en que trabajan: documentamos sus procesos, los convertimos en procedimientos claros, los medimos con indicadores y los mejoramos siguiendo el ciclo de Deming. Junto con nuestros clientes de los sectores público y privado, estamos comprometidos con organizaciones que entregan mejores servicios, con menos trámites, decisiones basadas en datos y resultados que se sostienen en el tiempo.</p>
+  </section>
+
+  <section class="cifras" aria-labelledby="cifras-t">
+    <div class="cifras-in">
+      <h2 class="label" id="cifras-t">Nuestro impacto en cifras</h2>
+      <ul class="cifras-grid">
+        <li class="cifra"><b data-cuenta="20" aria-hidden="true">20</b><span><span class="vh">20 </span>facultades acompañadas en la implementación de la gestión por procesos</span></li>
+        <li class="cifra"><b data-cuenta="16" aria-hidden="true">16</b><span><span class="vh">16 </span>procesos de nivel 0 en un único mapa de procesos institucional</span></li>
+        <li class="cifra"><b data-cuenta="58" aria-hidden="true">58</b><span><span class="vh">58 </span>KPI críticos definidos, con objetivos SMART y OKR</span></li>
+        <li class="cifra"><b data-cuenta="300" aria-hidden="true">300</b><span><span class="vh">300 </span>oficinas con monitoreo integral de su desempeño</span></li>
+      </ul>
+      <p class="cifras-nota">En la universidad pública referente del país, a lo largo de las cuatro fases del ciclo de Deming.</p>
+    </div>
   </section>
 
   <section id="impacto" aria-labelledby="imp-t">
@@ -630,5 +646,6 @@ img{max-width:100%;display:block}
   });
 })();
 </script>
+<script src="movimiento.js"></script>
 </body>
 </html>

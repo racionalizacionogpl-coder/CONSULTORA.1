@@ -155,6 +155,27 @@ reporta (`reporta`). Con eso se dibuja el organigrama de «Nuestra gente» en
 la portada y la sección «En la organización» de cada perfil. Las áreas y sus
 nombres están en `UNIDADES` y `AREAS`, al final del archivo.
 
+## Movimiento (movimiento.css y movimiento.js)
+
+Las cinco páginas comparten un mismo sistema de animación, con las reglas de
+las skills de animación de Emil Kowalski y de Taste Skill adaptadas al sitio
+en `.claude/skills/roic-movimiento/SKILL.md`:
+
+- la portada: el título entra palabra por palabra y el video se acerca muy
+  despacio; al bajar, el texto sube y se desvanece;
+- en todas las páginas, el contenido aparece escalonado al llegar a él y las
+  imágenes se descubren de abajo hacia arriba;
+- el encabezado se esconde al bajar y vuelve al subir; una línea azul se
+  desliza entre las pestañas; una barra arriba marca el avance de lectura;
+- «Nuestro impacto en cifras» (20 facultades, 16 procesos, 58 KPI,
+  300 oficinas) cuenta desde cero;
+- el organigrama dibuja sus líneas y presenta a cada persona en orden;
+- las fichas se abren y cierran con suavidad, y al pasar de una página a
+  otra el nombre de una persona viaja desde su tarjeta hasta su perfil.
+
+Con «reducir movimiento» activado en el equipo, todo aparece con fundido y
+sin desplazamientos. Si el script no carga, el contenido se muestra igual.
+
 ## Nuestro impacto (impacto.html)
 
 Sigue la estructura de la página «Nuestro impacto social» de McKinsey: portada

@@ -109,7 +109,7 @@ python3 herramientas/fotos/preparar_fotos.py rojas    # solo uno
 | Archivo | Qué revisa |
 |---|---|
 | `verificar.js` | Las páginas del sitio (incluido un perfil) en diez anchos (320 a 1920 px): errores de JavaScript, archivos que no cargan, desplazamiento horizontal y pestañas pegadas a la búsqueda. Con `--capturas` guarda una captura de cada combinación en `verificacion/capturas/`. |
-| `probar-interacciones.js` | Video de «Nuestro trabajo» (reproducción, pausa y que no se descargue en celular), selector «¿En qué podemos ayudarle?», pestañas, menú lateral, búsqueda, autodiagnóstico, formulario, artículos y enlaces directos. |
+| `probar-interacciones.js` | Video de «Nuestro trabajo» (reproducción, pausa y que no se descargue en celular), selector «¿En qué podemos ayudarle?», pestañas, menú lateral, búsqueda, autodiagnóstico, formulario, artículos y enlaces directos. También el movimiento: que al recorrer cada página no quede nada oculto, que los contadores lleguen a sus cifras y que con movimiento reducido todo se vea. |
 
 ```sh
 node herramientas/verificacion/verificar.js

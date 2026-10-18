@@ -718,6 +718,9 @@ body{font-weight:300;color:#222}
 .ftr-logo{display:inline-block;background:#fff;padding:14px 18px;margin-bottom:18px}
 .ftr-logo img{width:220px;height:auto;display:block}
 </style>
+<link rel="stylesheet" href="movimiento.css">
+<script>/* Movimiento: oculta lo que va a aparecer al desplazarse antes de dibujar la página; si movimiento.js no llega, todo se muestra a los 3 s. */
+(function (d) { if ('IntersectionObserver' in window) { d.classList.add('rv'); if (matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('rv-suave'); setTimeout(function () { if (!d.classList.contains('rv-js')) d.classList.remove('rv'); }, 3000); } })(document.documentElement);</script>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -2304,5 +2307,6 @@ body{font-weight:300;color:#222}
   });
 })();
 </script>
+<script src="movimiento.js"></script>
 </body>
 </html>
