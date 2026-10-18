@@ -39,9 +39,28 @@ FOTOS = {
     'flores':    ('flores.jpg',    2000, (440, 0, 1540, 1100)),
     # Ulises: retrato de medio cuerpo sobre fondo blanco; el perfil usa la foto entera.
     'vasquez':   ('vasquez.jpg',   2000, (190, 70, 1670, 1550)),
+    # Daniela: retrato de medio cuerpo sobre fondo blanco; el perfil usa la foto entera.
+    'ccansaya':  ('ccansaya.jpg',  2000, (120, 50, 1320, 1250)),
 }
 
+# Pelo suelto sobre fondo liso: el fondo que se ve entre los mechones se vuelve
+# transparente (ver limpiar_mechones).
+MECHONES = {'ccansaya'}
+
 sesion = new_session('u2net_human_seg')
+
+
+def limpiar_mechones(rgb, alfa):
+    """Cerca del borde de la figura, vuelve transparente lo que tiene el color del
+    fondo (tomado de las esquinas superiores). Solo sirve con fondo liso."""
+    esquinas = np.concatenate([rgb[:40, :40].reshape(-1, 3), rgb[:40, -40:].reshape(-1, 3)])
+    fondo = np.median(esquinas, axis=0)
+    distancia = np.linalg.norm(rgb.astype(np.float32) - fondo, axis=2)
+    # A 20 de distancia del color del fondo, transparente; desde 80, opaco.
+    clave = np.clip((distancia - 20) / 60, 0, 1) * 255
+    # Solo a menos de 80 px del fondo ya quitado, para no tocar la ropa clara.
+    borde = cv2.distanceTransform((alfa >= 10).astype(np.uint8), cv2.DIST_L2, 5) < 80
+    return np.where(borde, np.minimum(alfa, clave), alfa)
 
 
 def preparar(id_, original, busto_hasta, cuadro):
@@ -53,6 +72,8 @@ def preparar(id_, original, busto_hasta, cuadro):
     alfa = rgba[:, :, 3].astype(np.float32)
     alfa = cv2.erode(alfa, np.ones((5, 5), np.uint8), iterations=2)
     alfa = cv2.GaussianBlur(alfa, (5, 5), 0)
+    if id_ in MECHONES:
+        alfa = limpiar_mechones(np.array(foto), alfa)
     rgba[:, :, 3] = np.clip(alfa, 0, 255).astype(np.uint8)
     figura = Image.fromarray(rgba)
 

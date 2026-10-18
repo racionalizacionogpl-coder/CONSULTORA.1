@@ -97,6 +97,8 @@ cabeza y los hombros. El recorte conserva la resolución completa del original
 para que se vea nítido aun con el navegador ampliado al 400 %; en WebP con
 transparencia pesa entre 150 y 360 KB. Dónde se corta cada recorte y cómo se
 encuadra cada foto cuadrada se ajusta en la tabla `FOTOS` del programa.
+En las fotos de pelo suelto sobre fondo liso (lista `MECHONES`), además se
+vuelve transparente el fondo que se ve entre los mechones.
 
 ```sh
 pip install "rembg[cpu]" opencv-python-headless
